@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/aires-acondicionados", label: "Equipos" },
   { href: "/instalacion-aire-acondicionado", label: "Instalación" },
   { href: "/todo-incluido", label: "Todo Incluido" },
+  { href: "/climatizacion-inteligente", label: "Inteligente" },
   { href: "/mantencion", label: "Mantención" },
   { href: "/nosotros", label: "Nosotros" },
 ];
