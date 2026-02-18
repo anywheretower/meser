@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackFormSubmit } from "@/lib/gtm";
 
 const COMUNAS = [
   "Las Condes",
@@ -81,6 +82,7 @@ export default function CotizarForm() {
   const handleSubmit = () => {
     // TODO: Send to API endpoint / webhook
     console.log("Form submitted:", formData);
+    trackFormSubmit(formData);
     setSubmitted(true);
   };
 

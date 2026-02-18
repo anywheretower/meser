@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { trackWhatsAppClick, trackPhoneClick, trackCotizarClick } from "@/lib/gtm";
 
 export default function StickyCTA() {
   const [visible, setVisible] = useState(false);
@@ -23,6 +24,7 @@ export default function StickyCTA() {
         href="https://wa.me/56982351110"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick("sticky_cta")}
         className="flex-1 flex items-center justify-center gap-2 rounded-full bg-green-500 px-3 py-2.5 text-xs font-semibold text-white"
       >
         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -32,6 +34,7 @@ export default function StickyCTA() {
       </a>
       <a
         href="tel:+56982351110"
+        onClick={() => trackPhoneClick("sticky_cta")}
         className="flex-1 flex items-center justify-center gap-2 rounded-full border border-navy px-3 py-2.5 text-xs font-semibold text-navy"
       >
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -41,6 +44,7 @@ export default function StickyCTA() {
       </a>
       <a
         href="/cotizar"
+        onClick={() => trackCotizarClick("sticky_cta")}
         className="flex-1 flex items-center justify-center gap-2 rounded-full bg-cyan px-3 py-2.5 text-xs font-semibold text-navy"
       >
         Cotizar

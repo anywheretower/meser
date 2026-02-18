@@ -1,11 +1,14 @@
 "use client";
 
+import { trackWhatsAppClick } from "@/lib/gtm";
+
 export default function WhatsAppWidget() {
   return (
     <a
       href="https://wa.me/56982351110?text=Hola%2C%20quiero%20consultar%20por%20climatizaci%C3%B3n"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick("floating_widget")}
       className="fixed bottom-6 right-6 z-40 hidden lg:flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors hover:scale-105 active:scale-95"
       aria-label="Escríbenos por WhatsApp"
     >
