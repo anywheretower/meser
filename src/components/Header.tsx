@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import CartButton from "@/components/CartButton";
 
 const navLinks = [
   { href: "/climatizacion-integral", label: "Soluciones" },
   { href: "/aires-acondicionados", label: "Equipos" },
+  { href: "/termos", label: "Termos" },
   { href: "/instalacion-aire-acondicionado", label: "Instalación" },
   { href: "/todo-incluido", label: "Todo Incluido" },
   { href: "/climatizacion-inteligente", label: "Inteligente" },
@@ -41,14 +43,15 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA + Phone */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Desktop CTA + Cart + Phone */}
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+56982351110"
               className="text-sm font-medium text-navy/70 hover:text-navy"
             >
               +569 8235 1110
             </a>
+            <CartButton />
             <Link
               href="/cotizar"
               className="rounded-full bg-cyan px-5 py-2.5 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors"
@@ -57,22 +60,25 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-navy"
-            aria-label="Abrir menú"
-          >
-            {mobileOpen ? (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
+          {/* Mobile: cart + menu button */}
+          <div className="flex lg:hidden items-center gap-2">
+            <CartButton />
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 text-navy"
+              aria-label="Abrir menú"
+            >
+              {mobileOpen ? (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 

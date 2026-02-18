@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import { CartProvider } from "@/lib/cart-context";
 import { GTM_ID } from "@/lib/gtm";
 
 const inter = Inter({
@@ -55,11 +56,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <StickyCTA />
-        <WhatsAppWidget />
+        <CartProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <StickyCTA />
+          <WhatsAppWidget />
+        </CartProvider>
       </body>
     </html>
   );

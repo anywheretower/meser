@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { airesGroups, formatPrice } from "@/lib/products";
+import AddToCartButton from "@/components/AddToCartButton";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
@@ -7,117 +9,6 @@ export const metadata: Metadata = {
   description:
     "Catálogo completo de aires acondicionados Samsung Wind-Free y Midea EcoMaster. Todos Inverter, frío/calor, WiFi. Precio todo incluido con instalación.",
 };
-
-const productos = [
-  {
-    marca: "Midea",
-    linea: "EcoMaster",
-    modelos: [
-      {
-        nombre: "Midea EcoMaster 9.000 BTU",
-        btu: "9.000",
-        cobertura: "Hasta 17 m²",
-        precioAntes: "$549.990",
-        precio: "$319.990",
-        precioTodoIncluido: "$449.980",
-        features: ["Inverter frío/calor", "WiFi + IA", "Clase A", "19 dB"],
-        popular: false,
-      },
-      {
-        nombre: "Midea EcoMaster 12.000 BTU",
-        btu: "12.000",
-        cobertura: "Hasta 22 m²",
-        precioAntes: "$629.990",
-        precio: "$349.990",
-        precioTodoIncluido: "$499.980",
-        features: ["Inverter frío/calor", "WiFi + IA", "Clase A", "22 dB"],
-        popular: true,
-      },
-      {
-        nombre: "Midea EcoMaster 18.000 BTU",
-        btu: "18.000",
-        cobertura: "Hasta 32 m²",
-        precioAntes: "$899.990",
-        precio: "$529.990",
-        precioTodoIncluido: "$679.990",
-        features: ["Inverter frío/calor", "WiFi + IA", "Clase A", "24 dB"],
-        popular: false,
-      },
-      {
-        nombre: "Midea EcoMaster 24.000 BTU",
-        btu: "24.000",
-        cobertura: "Hasta 40 m²",
-        precioAntes: "$1.069.990",
-        precio: "$649.990",
-        precioTodoIncluido: "Consultar",
-        features: ["Inverter frío/calor", "WiFi + IA", "Clase A", "26 dB"],
-        popular: false,
-      },
-    ],
-  },
-  {
-    marca: "Samsung",
-    linea: "Wind-Free",
-    modelos: [
-      {
-        nombre: "Samsung Wind-Free 9.000 BTU",
-        btu: "9.000",
-        cobertura: "Hasta 17 m²",
-        precioAntes: "",
-        precio: "Consultar",
-        precioTodoIncluido: "$499.980",
-        features: ["Inverter frío/calor", "Wind-Free", "WiFi", "Clase A"],
-        popular: false,
-      },
-      {
-        nombre: "Samsung Wind-Free 12.000 BTU",
-        btu: "12.000",
-        cobertura: "Hasta 22 m²",
-        precioAntes: "",
-        precio: "Consultar",
-        precioTodoIncluido: "$549.980",
-        features: ["Inverter frío/calor", "Wind-Free", "WiFi", "Clase A"],
-        popular: false,
-      },
-      {
-        nombre: "Samsung Wind-Free 18.000 BTU",
-        btu: "18.000",
-        cobertura: "Hasta 32 m²",
-        precioAntes: "",
-        precio: "Consultar",
-        precioTodoIncluido: "$699.980",
-        features: ["Inverter frío/calor", "Wind-Free", "WiFi", "Clase A"],
-        popular: false,
-      },
-    ],
-  },
-  {
-    marca: "Midea",
-    linea: "Consola Xtreme Heat",
-    modelos: [
-      {
-        nombre: "Consola Midea Xtreme Heat 14.000 BTU",
-        btu: "14.000",
-        cobertura: "Hasta 23 m²",
-        precioAntes: "$899.990",
-        precio: "$499.990",
-        precioTodoIncluido: "$649.990",
-        features: ["Inverter frío/calor", "Piso-cielo", "WiFi", "Ideal mansardas"],
-        popular: false,
-      },
-      {
-        nombre: "Consola Midea Xtreme Heat 18.000 BTU",
-        btu: "18.000",
-        cobertura: "Hasta 32 m²",
-        precioAntes: "$1.049.990",
-        precio: "$579.990",
-        precioTodoIncluido: "$729.990",
-        features: ["Inverter frío/calor", "Piso-cielo", "WiFi", "Ideal mansardas"],
-        popular: false,
-      },
-    ],
-  },
-];
 
 export default function AiresAcondicionadosPage() {
   return (
@@ -139,21 +30,21 @@ export default function AiresAcondicionadosPage() {
       </section>
 
       {/* Catálogo por marca */}
-      {productos.map((grupo) => (
+      {airesGroups.map((grupo) => (
         <section
-          key={`${grupo.marca}-${grupo.linea}`}
+          key={`${grupo.brand}-${grupo.line}`}
           className="py-16 odd:bg-gray-50 even:bg-white"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-navy">{grupo.marca}</h2>
-              <p className="text-sm font-medium text-cyan">{grupo.linea}</p>
+              <h2 className="text-2xl font-bold text-navy">{grupo.brand}</h2>
+              <p className="text-sm font-medium text-cyan">{grupo.line}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {grupo.modelos.map((producto) => (
+              {grupo.models.map((producto) => (
                 <div
-                  key={producto.nombre}
+                  key={producto.id}
                   className={`relative rounded-2xl border p-6 flex flex-col ${
                     producto.popular
                       ? "border-2 border-cyan shadow-lg"
@@ -167,40 +58,46 @@ export default function AiresAcondicionadosPage() {
                   )}
 
                   <h3 className="text-base font-semibold text-navy">
-                    {producto.nombre}
+                    {producto.name}
                   </h3>
-                  <p className="mt-1 text-sm text-steel-dark">
-                    {producto.cobertura}
-                  </p>
+                  {producto.coverage && (
+                    <p className="mt-1 text-sm text-steel-dark">
+                      {producto.coverage}
+                    </p>
+                  )}
 
                   {/* Precio equipo */}
                   <div className="mt-4">
-                    {producto.precioAntes && (
+                    {producto.originalPrice > 0 && (
                       <span className="text-xs text-steel line-through mr-2">
-                        {producto.precioAntes}
+                        {formatPrice(producto.originalPrice)}
                       </span>
                     )}
                     <span className="text-lg font-bold text-navy">
-                      {producto.precio}
+                      {formatPrice(producto.price)}
                     </span>
-                    <span className="block text-xs text-steel-dark mt-0.5">
-                      Solo equipo
-                    </span>
+                    {producto.price > 0 && (
+                      <span className="block text-xs text-steel-dark mt-0.5">
+                        Solo equipo
+                      </span>
+                    )}
                   </div>
 
                   {/* Precio todo incluido */}
-                  <div className="mt-3 rounded-lg bg-cyan/5 border border-cyan/20 px-3 py-2">
-                    <span className="text-xs text-steel-dark">
-                      Todo incluido:
-                    </span>
-                    <span className="ml-1 text-base font-bold text-cyan">
-                      {producto.precioTodoIncluido}
-                    </span>
-                  </div>
+                  {producto.todoIncluidoPrice > 0 && (
+                    <div className="mt-3 rounded-lg bg-cyan/5 border border-cyan/20 px-3 py-2">
+                      <span className="text-xs text-steel-dark">
+                        Todo incluido:
+                      </span>
+                      <span className="ml-1 text-base font-bold text-cyan">
+                        {formatPrice(producto.todoIncluidoPrice)}
+                      </span>
+                    </div>
+                  )}
 
                   {/* Features */}
                   <div className="mt-4 flex flex-wrap gap-1.5">
-                    {producto.features.map((f) => (
+                    {producto.specs.map((f) => (
                       <span
                         key={f}
                         className="text-[10px] font-medium text-steel-dark bg-gray-100 px-2 py-0.5 rounded-full"
@@ -211,12 +108,16 @@ export default function AiresAcondicionadosPage() {
                   </div>
 
                   <div className="mt-auto pt-6">
-                    <Link
-                      href="/cotizar"
-                      className="block w-full text-center rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
-                    >
-                      Consultar precio
-                    </Link>
+                    {producto.price > 0 ? (
+                      <AddToCartButton productId={producto.id} />
+                    ) : (
+                      <Link
+                        href="/cotizar"
+                        className="block w-full text-center rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
+                      >
+                        Consultar precio
+                      </Link>
+                    )}
                   </div>
                 </div>
               ))}
@@ -247,7 +148,7 @@ export default function AiresAcondicionadosPage() {
                 href="/mantencion"
                 className="mt-4 inline-flex text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
               >
-                Ver detalles →
+                Ver detalles &rarr;
               </Link>
             </div>
             <div className="rounded-2xl border border-gray-200 p-6">
@@ -264,7 +165,7 @@ export default function AiresAcondicionadosPage() {
                 href="/instalacion-aire-acondicionado"
                 className="mt-4 inline-flex text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
               >
-                Ver detalles →
+                Ver detalles &rarr;
               </Link>
             </div>
             <div className="rounded-2xl border border-gray-200 p-6">
@@ -281,7 +182,7 @@ export default function AiresAcondicionadosPage() {
                 href="/cotizar"
                 className="mt-4 inline-flex text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
               >
-                Consultar →
+                Consultar &rarr;
               </Link>
             </div>
           </div>
