@@ -6,18 +6,88 @@ import { getProductById, formatPrice } from "@/lib/products";
 import { useState } from "react";
 import { pushEvent } from "@/lib/gtm";
 
+const COMUNAS = [
+  "Las Condes",
+  "Vitacura",
+  "Providencia",
+  "Lo Barnechea",
+  "Ñuñoa",
+  "La Reina",
+  "Peñalolén",
+  "Santiago Centro",
+  "Independencia",
+  "Recoleta",
+  "Macul",
+  "La Florida",
+  "Puente Alto",
+  "Maipú",
+  "Colina",
+  "Chicureo",
+  "Otra",
+];
+
+interface BillingData {
+  nombre: string;
+  apellidos: string;
+  rut: string;
+  telefono: string;
+  email: string;
+  direccion: string;
+  depto: string;
+  comuna: string;
+  notas: string;
+}
+
+function formatRut(value: string): string {
+  const clean = value.replace(/[^0-9kK]/g, "").toUpperCase();
+  if (clean.length <= 1) return clean;
+  const body = clean.slice(0, -1);
+  const dv = clean.slice(-1);
+  const formatted = body.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return `${formatted}-${dv}`;
+}
+
 export default function CarritoPage() {
   const { items, removeItem, updateQuantity, clearCart, totalPrice } =
     useCart();
   const [loading, setLoading] = useState(false);
+  const [billing, setBilling] = useState<BillingData>({
+    nombre: "",
+    apellidos: "",
+    rut: "",
+    telefono: "",
+    email: "",
+    direccion: "",
+    depto: "",
+    comuna: "",
+    notas: "",
+  });
+
+  const updateBilling = (field: keyof BillingData, value: string) => {
+    if (field === "rut") {
+      setBilling((prev) => ({ ...prev, rut: formatRut(value) }));
+    } else {
+      setBilling((prev) => ({ ...prev, [field]: value }));
+    }
+  };
+
+  const isFormValid =
+    billing.nombre.trim() !== "" &&
+    billing.apellidos.trim() !== "" &&
+    billing.rut.trim().length >= 9 &&
+    billing.telefono.trim() !== "" &&
+    billing.email.trim() !== "" &&
+    billing.direccion.trim() !== "" &&
+    billing.comuna !== "";
 
   const handleCheckout = async () => {
+    if (!isFormValid) return;
     setLoading(true);
     try {
       const res = await fetch("/api/transbank/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items }),
+        body: JSON.stringify({ items, billing }),
       });
       const data = await res.json();
 
@@ -84,6 +154,7 @@ export default function CarritoPage() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <h1 className="text-3xl font-bold text-navy">Tu carrito</h1>
 
+        {/* Items */}
         <div className="mt-8 divide-y divide-gray-200">
           {items.map((item) => {
             const product = getProductById(item.productId);
@@ -157,6 +228,7 @@ export default function CarritoPage() {
           })}
         </div>
 
+        {/* Total */}
         <div className="mt-8 border-t border-gray-200 pt-6">
           <div className="flex justify-between items-center">
             <span className="text-lg font-semibold text-navy">Total</span>
@@ -164,14 +236,165 @@ export default function CarritoPage() {
               {formatPrice(totalPrice)}
             </span>
           </div>
+        </div>
 
+        {/* Datos de facturación */}
+        <div className="mt-10">
+          <h2 className="text-xl font-semibold text-navy">Datos de facturación</h2>
+          <p className="mt-1 text-sm text-steel-dark">
+            Completa tus datos para procesar el pago.
+          </p>
+
+          <div className="mt-6 space-y-4">
+            {/* Nombre + Apellidos */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-navy mb-1.5">
+                  Nombre <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={billing.nombre}
+                  onChange={(e) => updateBilling("nombre", e.target.value)}
+                  placeholder="Juan"
+                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-navy mb-1.5">
+                  Apellidos <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={billing.apellidos}
+                  onChange={(e) => updateBilling("apellidos", e.target.value)}
+                  placeholder="Pérez González"
+                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                />
+              </div>
+            </div>
+
+            {/* RUT */}
+            <div>
+              <label className="block text-sm font-medium text-navy mb-1.5">
+                RUT <span className="text-red-400">*</span>
+              </label>
+              <input
+                type="text"
+                value={billing.rut}
+                onChange={(e) => updateBilling("rut", e.target.value)}
+                placeholder="12.345.678-9"
+                maxLength={12}
+                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+              />
+            </div>
+
+            {/* Teléfono + Email */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-navy mb-1.5">
+                  Teléfono <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="tel"
+                  value={billing.telefono}
+                  onChange={(e) => updateBilling("telefono", e.target.value)}
+                  placeholder="+56 9 1234 5678"
+                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-navy mb-1.5">
+                  Email <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="email"
+                  value={billing.email}
+                  onChange={(e) => updateBilling("email", e.target.value)}
+                  placeholder="juan@email.com"
+                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                />
+              </div>
+            </div>
+
+            {/* Dirección + Depto */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="sm:col-span-2">
+                <label className="block text-sm font-medium text-navy mb-1.5">
+                  Dirección <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={billing.direccion}
+                  onChange={(e) => updateBilling("direccion", e.target.value)}
+                  placeholder="Los Militares 5620"
+                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-navy mb-1.5">
+                  Depto/Oficina <span className="text-steel font-normal">(opcional)</span>
+                </label>
+                <input
+                  type="text"
+                  value={billing.depto}
+                  onChange={(e) => updateBilling("depto", e.target.value)}
+                  placeholder="Of. 905"
+                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                />
+              </div>
+            </div>
+
+            {/* Comuna */}
+            <div>
+              <label className="block text-sm font-medium text-navy mb-1.5">
+                Comuna <span className="text-red-400">*</span>
+              </label>
+              <select
+                value={billing.comuna}
+                onChange={(e) => updateBilling("comuna", e.target.value)}
+                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white focus:border-cyan focus:outline-none transition-colors"
+              >
+                <option value="">Selecciona tu comuna</option>
+                {COMUNAS.map((comuna) => (
+                  <option key={comuna} value={comuna}>
+                    {comuna}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Notas */}
+            <div>
+              <label className="block text-sm font-medium text-navy mb-1.5">
+                Notas del pedido <span className="text-steel font-normal">(opcional)</span>
+              </label>
+              <textarea
+                value={billing.notas}
+                onChange={(e) => updateBilling("notas", e.target.value)}
+                placeholder="Instrucciones especiales para la entrega o instalación..."
+                rows={3}
+                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white placeholder:text-steel focus:border-cyan focus:outline-none transition-colors resize-none"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Pagar */}
+        <div className="mt-8">
           <button
             onClick={handleCheckout}
-            disabled={loading}
-            className="mt-6 w-full rounded-full bg-cyan px-6 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={loading || !isFormValid}
+            className="w-full rounded-full bg-cyan px-6 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            {loading ? "Procesando..." : "Pagar con WebPay"}
+            {loading ? "Procesando..." : `Pagar ${formatPrice(totalPrice)} con WebPay`}
           </button>
+
+          {!isFormValid && (
+            <p className="mt-2 text-center text-xs text-steel">
+              Completa todos los campos obligatorios para continuar.
+            </p>
+          )}
 
           <div className="mt-4 flex justify-between">
             <Link

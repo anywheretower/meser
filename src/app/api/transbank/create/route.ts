@@ -28,7 +28,7 @@ function getTx() {
 
 export async function POST(request: Request) {
   try {
-    const { items } = await request.json();
+    const { items, billing } = await request.json();
 
     if (!items || !Array.isArray(items) || items.length === 0) {
       return NextResponse.json({ error: "Carrito vacío" }, { status: 400 });
@@ -60,6 +60,10 @@ export async function POST(request: Request) {
         );
       }
       total += unitPrice * item.quantity;
+    }
+
+    if (billing) {
+      console.log("Billing data:", JSON.stringify(billing));
     }
 
     const buyOrder = `MESER-${Date.now()}`;
