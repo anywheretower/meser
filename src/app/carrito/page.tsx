@@ -88,22 +88,37 @@ export default function CarritoPage() {
           {items.map((item) => {
             const product = getProductById(item.productId);
             if (!product) return null;
+            const unitPrice = item.withInstallation
+              ? product.todoIncluidoPrice
+              : product.price;
+            const cartKey = `${item.productId}-${item.withInstallation ? "inst" : "solo"}`;
             return (
               <div
-                key={item.productId}
+                key={cartKey}
                 className="py-6 flex items-start gap-4"
               >
                 <div className="flex-1">
                   <h3 className="text-base font-semibold text-navy">
                     {product.name}
                   </h3>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span
+                      className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+                        item.withInstallation
+                          ? "bg-cyan/10 text-cyan"
+                          : "bg-gray-100 text-steel-dark"
+                      }`}
+                    >
+                      {item.withInstallation ? "Con instalación" : "Solo equipo"}
+                    </span>
+                  </div>
                   <p className="text-sm text-steel-dark mt-1">
-                    {formatPrice(product.price)} c/u
+                    {formatPrice(unitPrice)} c/u
                   </p>
                   <div className="mt-3 flex items-center gap-3">
                     <button
                       onClick={() =>
-                        updateQuantity(item.productId, item.quantity - 1)
+                        updateQuantity(item.productId, item.withInstallation, item.quantity - 1)
                       }
                       className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-navy hover:bg-gray-50"
                     >
@@ -116,6 +131,7 @@ export default function CarritoPage() {
                       onClick={() =>
                         updateQuantity(
                           item.productId,
+                          item.withInstallation,
                           Math.min(item.quantity + 1, 10)
                         )
                       }
@@ -124,7 +140,7 @@ export default function CarritoPage() {
                       +
                     </button>
                     <button
-                      onClick={() => removeItem(item.productId)}
+                      onClick={() => removeItem(item.productId, item.withInstallation)}
                       className="ml-4 text-xs text-red-500 hover:text-red-700"
                     >
                       Eliminar
@@ -133,7 +149,7 @@ export default function CarritoPage() {
                 </div>
                 <div className="text-right">
                   <span className="text-lg font-bold text-navy">
-                    {formatPrice(product.price * item.quantity)}
+                    {formatPrice(unitPrice * item.quantity)}
                   </span>
                 </div>
               </div>

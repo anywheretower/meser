@@ -126,7 +126,7 @@ export default function AiresAcondicionadosPage() {
 
                   <div className="mt-auto pt-6 flex flex-col gap-2">
                     {producto.price > 0 ? (
-                      <AddToCartButton productId={producto.id} />
+                      <AddToCartButton productId={producto.id} price={producto.price} todoIncluidoPrice={producto.todoIncluidoPrice} />
                     ) : (
                       <Link
                         href="/cotizar"

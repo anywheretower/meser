@@ -14,13 +14,14 @@ import { getProductById } from "@/lib/products";
 export interface CartItem {
   productId: string;
   quantity: number;
+  withInstallation: boolean;
 }
 
 interface CartContextType {
   items: CartItem[];
-  addItem: (productId: string) => void;
-  removeItem: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
+  addItem: (productId: string, withInstallation: boolean) => void;
+  removeItem: (productId: string, withInstallation: boolean) => void;
+  updateQuantity: (productId: string, withInstallation: boolean, quantity: number) => void;
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
@@ -58,41 +59,51 @@ export function CartProvider({ children }: { children: ReactNode }) {
     if (loaded) saveCart(items);
   }, [items, loaded]);
 
-  const addItem = useCallback((productId: string) => {
+  const addItem = useCallback((productId: string, withInstallation: boolean) => {
     setItems((prev) => {
-      const existing = prev.find((i) => i.productId === productId);
+      const existing = prev.find(
+        (i) => i.productId === productId && i.withInstallation === withInstallation
+      );
       if (existing) {
         return prev.map((i) =>
-          i.productId === productId
+          i.productId === productId && i.withInstallation === withInstallation
             ? { ...i, quantity: Math.min(i.quantity + 1, 10) }
             : i
         );
       }
-      return [...prev, { productId, quantity: 1 }];
+      return [...prev, { productId, quantity: 1, withInstallation }];
     });
     const product = getProductById(productId);
     if (product) {
       pushEvent({
         event: "add_to_cart",
         product_name: product.name,
-        product_price: product.price,
+        product_price: withInstallation ? product.todoIncluidoPrice : product.price,
         product_category: product.category,
       });
     }
   }, []);
 
-  const removeItem = useCallback((productId: string) => {
-    setItems((prev) => prev.filter((i) => i.productId !== productId));
+  const removeItem = useCallback((productId: string, withInstallation: boolean) => {
+    setItems((prev) =>
+      prev.filter(
+        (i) => !(i.productId === productId && i.withInstallation === withInstallation)
+      )
+    );
   }, []);
 
   const updateQuantity = useCallback(
-    (productId: string, quantity: number) => {
+    (productId: string, withInstallation: boolean, quantity: number) => {
       if (quantity <= 0) {
-        setItems((prev) => prev.filter((i) => i.productId !== productId));
+        setItems((prev) =>
+          prev.filter(
+            (i) => !(i.productId === productId && i.withInstallation === withInstallation)
+          )
+        );
       } else {
         setItems((prev) =>
           prev.map((i) =>
-            i.productId === productId
+            i.productId === productId && i.withInstallation === withInstallation
               ? { ...i, quantity: Math.min(quantity, 10) }
               : i
           )
@@ -110,7 +121,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const totalPrice = items.reduce((sum, i) => {
     const product = getProductById(i.productId);
-    return sum + (product ? product.price * i.quantity : 0);
+    if (!product) return sum;
+    const unitPrice = i.withInstallation ? product.todoIncluidoPrice : product.price;
+    return sum + unitPrice * i.quantity;
   }, 0);
 
   return (

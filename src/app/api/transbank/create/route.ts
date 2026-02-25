@@ -38,7 +38,16 @@ export async function POST(request: Request) {
     let total = 0;
     for (const item of items) {
       const product = getProductById(item.productId);
-      if (!product || product.price === 0) {
+      if (!product) {
+        return NextResponse.json(
+          { error: `Producto no disponible para compra: ${item.productId}` },
+          { status: 400 }
+        );
+      }
+      const unitPrice = item.withInstallation
+        ? product.todoIncluidoPrice
+        : product.price;
+      if (unitPrice === 0) {
         return NextResponse.json(
           { error: `Producto no disponible para compra: ${item.productId}` },
           { status: 400 }
@@ -50,7 +59,7 @@ export async function POST(request: Request) {
           { status: 400 }
         );
       }
-      total += product.price * item.quantity;
+      total += unitPrice * item.quantity;
     }
 
     const buyOrder = `MESER-${Date.now()}`;

@@ -105,7 +105,7 @@ export default function TermosPage() {
                 </div>
 
                 <div className="mt-auto pt-6 flex flex-col gap-2">
-                  <AddToCartButton productId={producto.id} />
+                  <AddToCartButton productId={producto.id} price={producto.price} todoIncluidoPrice={producto.todoIncluidoPrice} />
                   <a
                     href={`https://wa.me/56962490657?text=${encodeURIComponent(`Hola, me interesa el ${producto.name}. ¿Podrían darme más información?`)}`}
                     target="_blank"
