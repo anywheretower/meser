@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { airesGroups, formatPrice } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
@@ -54,6 +55,24 @@ export default function AiresAcondicionadosPage() {
                   {producto.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-cyan px-3 py-0.5 text-xs font-semibold text-navy">
                       Más vendido
+                    </div>
+                  )}
+
+                  {producto.originalPrice > 0 && producto.price > 0 && (
+                    <div className="absolute -top-3 -right-3 w-11 h-11 rounded-full bg-red-500 flex items-center justify-center text-white text-[11px] font-bold shadow-md z-10">
+                      -{Math.round(((producto.originalPrice - producto.price) / producto.originalPrice) * 100)}%
+                    </div>
+                  )}
+
+                  {producto.image && (
+                    <div className="relative w-full h-40 mb-4">
+                      <Image
+                        src={producto.image}
+                        alt={producto.name}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                      />
                     </div>
                   )}
 

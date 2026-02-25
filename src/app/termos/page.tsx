@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { termosGroup, formatPrice } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
@@ -47,6 +48,24 @@ export default function TermosPage() {
                 key={producto.id}
                 className="relative rounded-2xl border border-gray-200 hover:border-cyan hover:shadow-lg p-6 flex flex-col transition-all bg-white"
               >
+                {producto.originalPrice > 0 && producto.price > 0 && (
+                  <div className="absolute -top-3 -right-3 w-11 h-11 rounded-full bg-red-500 flex items-center justify-center text-white text-[11px] font-bold shadow-md z-10">
+                    -{Math.round(((producto.originalPrice - producto.price) / producto.originalPrice) * 100)}%
+                  </div>
+                )}
+
+                {producto.image && (
+                  <div className="relative w-full h-48 mb-4">
+                    <Image
+                      src={producto.image}
+                      alt={producto.name}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                    />
+                  </div>
+                )}
+
                 <h3 className="text-base font-semibold text-navy">
                   {producto.name}
                 </h3>
