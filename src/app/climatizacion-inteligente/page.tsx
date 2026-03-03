@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title:
@@ -38,7 +38,7 @@ export default function ClimatizacionInteligentePage() {
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
                 Cotiza tu equipo inteligente
@@ -433,13 +433,6 @@ export default function ClimatizacionInteligentePage() {
         </div>
       </section>
 
-      {/* CTA Final */}
-      <CTASection
-        title="¿Quieres climatización inteligente en tu hogar?"
-        text="Todos nuestros equipos incluyen WiFi y control desde el celular. Cotiza sin compromiso y te asesoramos sobre la mejor opción para tu casa."
-        ctaLabel="Cotiza tu equipo inteligente"
-        whatsapp
-      />
     </>
   );
 }

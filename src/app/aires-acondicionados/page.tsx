@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { airesGroups, formatPrice } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Aires Acondicionados · Catálogo Meser · Samsung y Midea",
@@ -129,7 +129,7 @@ export default function AiresAcondicionadosPage() {
                       <AddToCartButton productId={producto.id} price={producto.price} todoIncluidoPrice={producto.todoIncluidoPrice} />
                     ) : (
                       <Link
-                        href="/cotizar"
+                        href="#agendar"
                         className="block w-full text-center rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
                       >
                         Consultar precio
@@ -207,7 +207,7 @@ export default function AiresAcondicionadosPage() {
                 Circuito eléctrico dedicado para tu equipo de climatización.
               </p>
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="mt-4 inline-flex text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
               >
                 Consultar &rarr;
@@ -217,11 +217,6 @@ export default function AiresAcondicionadosPage() {
         </div>
       </section>
 
-      <CTASection
-        title="¿No sabes qué equipo elegir?"
-        text="Agenda un diagnóstico gratuito por Zoom de 25 minutos. Un experto Meser te recomienda el equipo ideal para tu espacio."
-        ctaLabel="Diagnóstico gratuito"
-      />
     </>
   );
 }

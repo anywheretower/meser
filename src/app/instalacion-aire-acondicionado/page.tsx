@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title:
@@ -33,7 +33,7 @@ export default function InstalacionPage() {
             </p>
             <div className="mt-10">
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
                 Cotiza tu instalación
@@ -313,7 +313,7 @@ export default function InstalacionPage() {
             instalación con técnicos certificados en tu zona.
           </p>
           <Link
-            href="/cotizar"
+            href="#agendar"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
           >
             ¿Cubrimos tu comuna? Consulta aquí
@@ -366,12 +366,6 @@ export default function InstalacionPage() {
         </div>
       </section>
 
-      {/* CTA Final */}
-      <CTASection
-        title="¿Necesitas una instalación profesional?"
-        text="Cotiza sin compromiso. Diagnóstico gratuito por Zoom, precio cerrado y garantía total sobre la instalación."
-        ctaLabel="Cotiza tu instalación"
-      />
     </>
   );
 }

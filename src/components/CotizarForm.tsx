@@ -145,10 +145,10 @@ export default function CotizarForm() {
             </h2>
             <div className="mt-6 grid grid-cols-2 gap-3">
               {[
-                { value: "departamento", label: "Departamento", icon: "🏢" },
-                { value: "casa", label: "Casa", icon: "🏠" },
-                { value: "oficina", label: "Oficina / Local", icon: "🏪" },
-                { value: "otro", label: "Otro", icon: "📍" },
+                { value: "departamento", label: "Departamento", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2 22V6l10-4 10 4v16M2 22h20M6 10v2m4-2v2m4-2v2m-8 4v2m4-2v2m4-2v2" /></svg> },
+                { value: "casa", label: "Casa", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-8 9 8M5 10v10a1 1 0 001 1h3v-5h6v5h3a1 1 0 001-1V10" /></svg> },
+                { value: "oficina", label: "Oficina / Local", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7m16 0l-8 4m-8-4l8 4m0 0v10" /></svg> },
+                { value: "otro", label: "Otro", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg> },
               ].map((option) => (
                 <button
                   key={option.value}
@@ -158,11 +158,11 @@ export default function CotizarForm() {
                   }}
                   className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition-all ${
                     formData.tipoEspacio === option.value
-                      ? "border-cyan bg-cyan/5"
-                      : "border-gray-200 hover:border-gray-300"
+                      ? "border-cyan bg-cyan/5 text-cyan"
+                      : "border-gray-200 hover:border-gray-300 text-navy"
                   }`}
                 >
-                  <span className="text-2xl">{option.icon}</span>
+                  <span className="shrink-0">{option.icon}</span>
                   <span className="text-sm font-medium text-navy">
                     {option.label}
                   </span>

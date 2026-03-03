@@ -117,7 +117,7 @@ export default function ContactoPage() {
               menos de 2 horas con una propuesta personalizada.
             </p>
             <Link
-              href="/cotizar"
+              href="#agendar"
               className="mt-6 inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
             >
               Cotizar ahora

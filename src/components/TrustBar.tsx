@@ -13,7 +13,7 @@ const items = [
   },
   { icon: null, text: "Samsung + Midea" },
   { icon: null, text: "Garantía total" },
-  { icon: null, text: "Hasta 3 cuotas sin interés" },
+  { icon: null, text: "Hasta 3 cuotas sin interés", bold: true },
   { icon: null, text: "Toda la RM" },
 ];
 
@@ -23,12 +23,12 @@ export default function TrustBar() {
       {/* Subtle top gradient border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/20 to-transparent" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3.5">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           {items.map((item, i) => (
             <span
               key={i}
-              className="flex items-center gap-1.5 text-xs font-medium text-steel-light/90 tracking-wide"
+              className={`flex items-center gap-1.5 text-sm text-steel-light/90 tracking-wide ${item.bold ? "font-bold" : "font-medium"}`}
             >
               {item.icon}
               {item.text}

@@ -37,7 +37,7 @@ export default function CoberturaLayout({
             </p>
             <div className="mt-10">
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
                 Agendar asesoría gratuita

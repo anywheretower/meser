@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { termosGroup, formatPrice } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Termos Eléctricos · Midea Lume · Meser",
@@ -159,11 +159,6 @@ export default function TermosPage() {
         </div>
       </section>
 
-      <CTASection
-        title="¿Necesitas asesoría?"
-        text="Agenda un diagnóstico gratuito por Zoom de 25 minutos. Un experto Meser te ayuda a elegir el termo ideal para tu hogar."
-        ctaLabel="Diagnóstico gratuito"
-      />
     </>
   );
 }

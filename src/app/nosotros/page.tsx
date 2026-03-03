@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Somos Meser · Climatización Integral Santiago",
@@ -140,7 +140,7 @@ export default function NosotrosPage() {
             </div>
           </div>
           <Link
-            href="/cotizar"
+            href="#agendar"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
           >
             Agenda tu asesoría gratuita

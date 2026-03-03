@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Club Meser · Plan de Referidos",
@@ -264,13 +264,6 @@ export default function ClubMeserPage() {
         </div>
       </section>
 
-      <CTASection
-        title="¿Listo para referir?"
-        text="Comparte Meser con alguien que necesite climatización y empieza a acumular descuentos en tu mantención."
-        ctaLabel="Contactar a Meser"
-        ctaHref="/contacto"
-        whatsapp
-      />
     </>
   );
 }

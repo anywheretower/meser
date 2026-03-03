@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Mantención Aire Acondicionado Santiago · Desde $59.990 · Meser",
@@ -32,7 +32,7 @@ export default function MantencionPage() {
             </p>
             <div className="mt-10">
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
                 Agendar mantención
@@ -102,7 +102,7 @@ export default function MantencionPage() {
                 </li>
               </ul>
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
                 Agendar mantención
@@ -151,12 +151,6 @@ export default function MantencionPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <CTASection
-        title="¿Tu equipo necesita mantención?"
-        text="Agenda tu mantención profesional desde $59.990. Técnicos certificados, cobertura toda la RM."
-        ctaLabel="Agendar mantención"
-      />
     </>
   );
 }

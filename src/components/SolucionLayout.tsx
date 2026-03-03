@@ -46,7 +46,7 @@ export default function SolucionLayout({
             </p>
             <div className="mt-10">
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
                 Diagnóstico gratuito por Zoom
@@ -105,7 +105,7 @@ export default function SolucionLayout({
                     {p.precio}
                   </span>
                   <Link
-                    href="/cotizar"
+                    href="#agendar"
                     className="rounded-full bg-cyan px-5 py-2 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors whitespace-nowrap"
                   >
                     Cotizar

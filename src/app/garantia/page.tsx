@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Garantía Total Meser · Equipo + Instalación",
@@ -180,10 +180,6 @@ export default function GarantiaPage() {
         </div>
       </section>
 
-      <CTASection
-        title="¿Quieres comprar con la tranquilidad de una garantía real?"
-        text="Todos nuestros paquetes incluyen garantía total: equipo + instalación. Agenda tu asesoría gratuita."
-      />
     </>
   );
 }

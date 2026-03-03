@@ -4,8 +4,9 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FormularioGlobal from "@/components/FormularioGlobal";
 import StickyCTA from "@/components/StickyCTA";
-import WhatsAppWidget from "@/components/WhatsAppWidget";
+import SocialSidebar from "@/components/SocialSidebar";
 import { CartProvider } from "@/lib/cart-context";
 import { GTM_ID } from "@/lib/gtm";
 
@@ -61,9 +62,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <CartProvider>
           <Header />
           <main>{children}</main>
+          <FormularioGlobal />
           <Footer />
           <StickyCTA />
-          <WhatsAppWidget />
+          <SocialSidebar />
         </CartProvider>
       </body>
     </html>

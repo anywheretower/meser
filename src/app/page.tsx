@@ -1,64 +1,59 @@
 import Link from "next/link";
+import Image from "next/image";
 import TrustBar from "@/components/TrustBar";
-import CTASection from "@/components/CTASection";
+import RevealOnScroll from "@/components/RevealOnScroll";
+
 
 export default function Home() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative bg-navy overflow-hidden min-h-[85vh] flex items-center">
-        {/* Gradient mesh background */}
-        <div className="absolute inset-0">
-          <div className="absolute -top-[20%] -right-[10%] w-[700px] h-[700px] rounded-full bg-cyan/[0.06] blur-[140px] animate-breathe-slow" />
-          <div className="absolute -bottom-[15%] -left-[10%] w-[500px] h-[500px] rounded-full bg-blue-500/[0.04] blur-[120px] animate-breathe" />
-          <div className="absolute top-[30%] left-[40%] w-[300px] h-[300px] rounded-full bg-cyan/[0.03] blur-[100px] animate-breathe-slow" />
-        </div>
-        {/* Dot grid overlay */}
-        <div className="absolute inset-0 dot-grid opacity-40" />
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-navy to-transparent" />
+      <section className="relative overflow-hidden min-h-[85vh] flex items-center bg-gray-100">
+        {/* Background image */}
+        <Image
+          src="/images/hero-home.png"
+          alt="Climatización integral para tu hogar"
+          fill
+          priority
+          className="object-cover object-right"
+        />
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white from-30% via-white/80 via-45% to-transparent to-65%" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
-          <div className="max-w-3xl">
+        <div className="relative mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
+          <div className="max-w-xl">
             <div className="animate-fade-in-up stagger-1">
-              <span className="inline-block text-[11px] font-semibold tracking-[0.25em] uppercase text-cyan/70 mb-6">
+              <span className="inline-block text-[11px] font-semibold tracking-[0.25em] uppercase text-cyan-dark mb-6">
                 Climatización integral &middot; Santiago
               </span>
             </div>
 
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.05] animate-fade-in-up stagger-2">
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-navy leading-[0.9] animate-fade-in-up stagger-2">
               Confort inteligente para cada rincón de tu hogar
             </h1>
 
-            <p className="mt-8 text-lg sm:text-xl text-steel-light/70 leading-relaxed max-w-2xl animate-fade-in-up stagger-3">
+            <p className="mt-8 text-lg sm:text-xl text-steel-dark leading-relaxed max-w-xl animate-fade-in-up stagger-3">
               Diagnóstico gratuito, precio cerrado, instalación estética
               invisible. Samsung y Midea Inverter con WiFi.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-4">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-4 whitespace-nowrap">
               <Link
-                href="/cotizar"
-                className="group inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow"
+                href="#agendar"
+                className="group inline-flex items-center justify-center rounded-full bg-cyan px-5 py-2.5 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow"
               >
-                Agenda tu asesoría gratuita
-                <svg
-                  className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
+                <svg className="mr-1.5 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
+                Agenda tu asesoría gratuita
               </Link>
               <Link
                 href="/todo-incluido"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 px-8 py-4 text-base font-semibold text-white/80 hover:text-white hover:bg-white/[0.04] hover:border-white/25 transition-all"
+                className="group inline-flex items-center justify-center rounded-full border border-navy/20 px-5 py-2.5 text-sm font-semibold text-navy hover:bg-navy hover:text-white transition-all"
               >
+                <svg className="mr-1.5 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
                 Ver paquetes todo incluido
               </Link>
             </div>
@@ -71,7 +66,7 @@ export default function Home() {
       {/* ── Paquetes destacados ── */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in-up">
+          <RevealOnScroll className="text-center">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy">
               Paquetes todo incluido
             </h2>
@@ -79,184 +74,194 @@ export default function Home() {
               Equipo + instalación estética + garantía total. Un precio. Cero
               sorpresas.
             </p>
-          </div>
+          </RevealOnScroll>
 
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Paquete Habitación */}
-            <div className="group rounded-2xl border border-gray-200 p-8 card-lift animate-fade-in-up stagger-2">
-              <div className="text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
-                Habitación
-              </div>
-              <div className="mt-2 text-sm text-steel-dark">
-                Hasta 18 m²
-              </div>
-              <div className="mt-5">
-                <span className="text-3xl font-bold text-navy tracking-tight">
-                  $449.980
-                </span>
-              </div>
-              <ul className="mt-6 space-y-3">
-                {[
-                  "Equipo Inverter 9.000 BTU frío/calor",
-                  "WiFi + opción IA",
-                  "Instalación estética completa",
-                  "Garantía total Meser",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2.5 text-sm text-navy/70"
-                  >
-                    <svg
-                      className="w-4 h-4 text-cyan shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
+            <RevealOnScroll delay={0}>
+              <div className="group rounded-2xl border border-gray-200 p-8 card-lift h-full">
+                <div className="text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
+                  Habitación
+                </div>
+                <div className="mt-2 text-sm text-steel-dark">
+                  Hasta 18 m²
+                </div>
+                <div className="mt-5">
+                  <span className="text-3xl font-bold text-navy tracking-tight">
+                    $449.980
+                  </span>
+                </div>
+                <ul className="mt-6 space-y-3">
+                  {[
+                    "Equipo Inverter 9.000 BTU frío/calor",
+                    "WiFi + opción IA",
+                    "Instalación estética completa",
+                    "Garantía total Meser",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-sm text-navy/70"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/cotizar"
-                className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
-              >
-                Quiero este paquete
-              </Link>
-            </div>
+                      <svg
+                        className="w-4 h-4 text-cyan shrink-0 mt-0.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="#agendar"
+                  className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
+                >
+                  Quiero este paquete
+                </Link>
+              </div>
+            </RevealOnScroll>
 
             {/* Paquete Living — destacado */}
-            <div className="group relative rounded-2xl border-2 border-cyan p-8 glow-md animate-fade-in-up stagger-3">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-cyan px-4 py-1 text-[11px] font-bold text-navy uppercase tracking-wider">
-                Más popular
-              </div>
-              <div className="text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
-                Living
-              </div>
-              <div className="mt-2 text-sm text-steel-dark">
-                Hasta 24 m²
-              </div>
-              <div className="mt-5">
-                <span className="text-3xl font-bold text-navy tracking-tight">
-                  $499.980
-                </span>
-              </div>
-              <ul className="mt-6 space-y-3">
-                {[
-                  "Equipo Inverter 12.000 BTU frío/calor",
-                  "WiFi + IA (aprende tus hábitos)",
-                  "Instalación estética completa",
-                  "Garantía total Meser",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2.5 text-sm text-navy/70"
-                  >
-                    <svg
-                      className="w-4 h-4 text-cyan shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
+            <RevealOnScroll delay={0.15}>
+              <div className="group relative rounded-2xl border-2 border-cyan p-8 glow-md h-full">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-cyan px-4 py-1 text-[11px] font-bold text-navy uppercase tracking-wider">
+                  Más popular
+                </div>
+                <div className="text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
+                  Living
+                </div>
+                <div className="mt-2 text-sm text-steel-dark">
+                  Hasta 24 m²
+                </div>
+                <div className="mt-5">
+                  <span className="text-3xl font-bold text-navy tracking-tight">
+                    $499.980
+                  </span>
+                </div>
+                <ul className="mt-6 space-y-3">
+                  {[
+                    "Equipo Inverter 12.000 BTU frío/calor",
+                    "WiFi + IA (aprende tus hábitos)",
+                    "Instalación estética completa",
+                    "Garantía total Meser",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-sm text-navy/70"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/cotizar"
-                className="mt-8 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow"
-              >
-                Quiero este paquete
-              </Link>
-            </div>
+                      <svg
+                        className="w-4 h-4 text-cyan shrink-0 mt-0.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="#agendar"
+                  className="mt-8 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow"
+                >
+                  Quiero este paquete
+                </Link>
+              </div>
+            </RevealOnScroll>
 
             {/* Multi Split */}
-            <div className="group rounded-2xl border border-gray-200 p-8 card-lift animate-fade-in-up stagger-4">
-              <div className="text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
-                Multi Split
-              </div>
-              <div className="mt-2 text-sm text-steel-dark">
-                Varios ambientes
-              </div>
-              <div className="mt-5">
-                <span className="text-3xl font-bold text-navy tracking-tight">
-                  Personalizado
-                </span>
-              </div>
-              <ul className="mt-6 space-y-3">
-                {[
-                  "1 exterior + múltiples interiores",
-                  "Ideal para departamentos y casas",
-                  "Diagnóstico personalizado por Zoom",
-                  "Garantía total Meser",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2.5 text-sm text-navy/70"
-                  >
-                    <svg
-                      className="w-4 h-4 text-cyan shrink-0 mt-0.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
+            <RevealOnScroll delay={0.3}>
+              <div className="group rounded-2xl border border-gray-200 p-8 card-lift h-full">
+                <div className="text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
+                  Multi Split
+                </div>
+                <div className="mt-2 text-sm text-steel-dark">
+                  Varios ambientes
+                </div>
+                <div className="mt-5">
+                  <span className="text-3xl font-bold text-navy tracking-tight">
+                    Personalizado
+                  </span>
+                </div>
+                <ul className="mt-6 space-y-3">
+                  {[
+                    "1 exterior + múltiples interiores",
+                    "Ideal para departamentos y casas",
+                    "Diagnóstico personalizado por Zoom",
+                    "Garantía total Meser",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-sm text-navy/70"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/cotizar"
-                className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
-              >
-                Agendar diagnóstico
-              </Link>
-            </div>
+                      <svg
+                        className="w-4 h-4 text-cyan shrink-0 mt-0.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="#agendar"
+                  className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
+                >
+                  Agendar diagnóstico
+                </Link>
+              </div>
+            </RevealOnScroll>
           </div>
 
-          <div className="mt-10 text-center animate-fade-in-up stagger-5">
+          <RevealOnScroll className="mt-10 text-center">
             <Link
               href="/todo-incluido"
               className="text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
             >
               Ver todos los paquetes &rarr;
             </Link>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
       {/* ── Por qué Meser ── */}
-      <section className="relative py-24 bg-navy overflow-hidden">
-        {/* Atmospheric background */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-[20%] w-[400px] h-[400px] rounded-full bg-cyan/[0.03] blur-[120px]" />
-        </div>
-        <div className="absolute inset-0 dot-grid opacity-20" />
+      <section className="relative pt-16 lg:pt-20 pb-80 lg:pb-[30rem] bg-navy overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/por-que-meser-bg.png"
+          alt=""
+          fill
+          className="object-cover object-bottom"
+        />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center animate-fade-in-up">
-            ¿Por qué Meser?
-          </h2>
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <RevealOnScroll>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center">
+              ¿Por qué Meser?
+            </h2>
+          </RevealOnScroll>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: (
@@ -303,13 +308,10 @@ export default function Home() {
                 text: "No un vendedor, no un call center. El dueño te asesora personalmente.",
               },
             ].map((item, i) => (
-              <div
-                key={i}
-                className={`glass-card rounded-2xl p-6 animate-fade-in-up stagger-${i + 2}`}
-              >
-                <div className="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center">
+              <RevealOnScroll key={i} delay={i * 0.12} className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-cyan flex items-center justify-center">
                   <svg
-                    className="w-6 h-6 text-cyan"
+                    className="w-6 h-6 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -318,13 +320,13 @@ export default function Home() {
                     {item.icon}
                   </svg>
                 </div>
-                <h3 className="mt-4 text-base font-semibold text-white">
+                <h3 className="mt-4 text-base font-semibold text-white leading-tight">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-steel-light/60 leading-relaxed">
+                <p className="mt-2 text-sm text-white/80 leading-snug">
                   {item.text}
                 </p>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
@@ -333,9 +335,11 @@ export default function Home() {
       {/* ── Proceso en 3 pasos ── */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center animate-fade-in-up">
-            Así de simple es climatizar tu hogar
-          </h2>
+          <RevealOnScroll>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center">
+              Así de simple es climatizar tu hogar
+            </h2>
+          </RevealOnScroll>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
@@ -357,11 +361,8 @@ export default function Home() {
                 text: "Técnicos certificados instalan tu equipo con canaletas ocultas, sin cables a la vista. Garantía total Meser.",
               },
             ].map((item, i) => (
-              <div
-                key={item.step}
-                className={`relative animate-fade-in-up stagger-${i + 2}`}
-              >
-                <span className="text-5xl font-bold text-gray-100 font-serif">
+              <RevealOnScroll key={item.step} delay={i * 0.15} className="relative">
+                <span className="text-5xl font-bold text-cyan font-serif">
                   {item.step}
                 </span>
                 <h3 className="mt-3 text-lg font-semibold text-navy">
@@ -373,24 +374,24 @@ export default function Home() {
                 <p className="mt-3 text-sm text-steel-dark leading-relaxed">
                   {item.text}
                 </p>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <RevealOnScroll className="mt-10 text-center">
             <Link
               href="/climatizacion-integral"
               className="text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
             >
               Conoce más sobre nuestro proceso &rarr;
             </Link>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
       {/* ── Equipos / Marcas ── */}
       <section className="py-24 bg-gray-50 dot-grid-dark">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in-up">
+          <RevealOnScroll className="text-center">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy">
               Trabajamos con las mejores marcas
             </h2>
@@ -398,52 +399,73 @@ export default function Home() {
               Todos nuestros equipos son Inverter, frío/calor, con WiFi y
               eficiencia energética clase A.
             </p>
+          </RevealOnScroll>
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <RevealOnScroll delay={0}>
+              <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center card-lift h-full">
+                <h3 className="text-2xl font-bold text-navy tracking-tight">
+                  Samsung
+                </h3>
+                <p className="mt-1 text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
+                  Wind-Free
+                </p>
+                <div className="mt-4 mx-auto w-12 h-px bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
+                <p className="mt-4 text-sm text-steel-dark leading-relaxed">
+                  Tecnología Wind-Free: enfriamiento sin corrientes de aire
+                  directas. Confort silencioso y uniforme.
+                </p>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.15}>
+              <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center card-lift h-full">
+                <h3 className="text-2xl font-bold text-navy tracking-tight">
+                  Midea
+                </h3>
+                <p className="mt-1 text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
+                  EcoMaster con IA
+                </p>
+                <div className="mt-4 mx-auto w-12 h-px bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
+                <p className="mt-4 text-sm text-steel-dark leading-relaxed">
+                  Línea EcoMaster con IA: aprende tus hábitos y optimiza el
+                  consumo automáticamente.
+                </p>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.3}>
+              <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center card-lift h-full">
+                <h3 className="text-2xl font-bold text-navy tracking-tight">
+                  Anwo
+                </h3>
+                <p className="mt-1 text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
+                  Ecoflow
+                </p>
+                <div className="mt-4 mx-auto w-12 h-px bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
+                <p className="mt-4 text-sm text-steel-dark leading-relaxed">
+                  Línea Ecoflow con refrigerante R32: eficiencia energética
+                  máxima y menor impacto ambiental.
+                </p>
+              </div>
+            </RevealOnScroll>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center card-lift animate-fade-in-up stagger-2">
-              <h3 className="text-2xl font-bold text-navy tracking-tight">
-                Samsung
-              </h3>
-              <p className="mt-1 text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
-                Wind-Free
-              </p>
-              <div className="mt-4 mx-auto w-12 h-px bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
-              <p className="mt-4 text-sm text-steel-dark leading-relaxed">
-                Tecnología Wind-Free: enfriamiento sin corrientes de aire
-                directas. Confort silencioso y uniforme.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center card-lift animate-fade-in-up stagger-3">
-              <h3 className="text-2xl font-bold text-navy tracking-tight">
-                Midea
-              </h3>
-              <p className="mt-1 text-xs font-semibold text-cyan uppercase tracking-[0.15em]">
-                EcoMaster con IA
-              </p>
-              <div className="mt-4 mx-auto w-12 h-px bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
-              <p className="mt-4 text-sm text-steel-dark leading-relaxed">
-                Línea EcoMaster con IA: aprende tus hábitos y optimiza el
-                consumo automáticamente.
-              </p>
-            </div>
-          </div>
-          <div className="mt-10 text-center">
+          <RevealOnScroll className="mt-10 text-center">
             <Link
               href="/aires-acondicionados"
               className="text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
             >
               Ver catálogo completo &rarr;
             </Link>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
       {/* ── Testimonios ── */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center animate-fade-in-up">
-            Lo que dicen nuestros clientes
-          </h2>
+          <RevealOnScroll>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center">
+              Lo que dicen nuestros clientes
+            </h2>
+          </RevealOnScroll>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -465,10 +487,7 @@ export default function Home() {
                 location: "Providencia",
               },
             ].map((testimonial, i) => (
-              <div
-                key={i}
-                className={`relative rounded-2xl border border-gray-100 bg-gray-50/50 p-8 card-lift animate-fade-in-up stagger-${i + 2}`}
-              >
+              <RevealOnScroll key={i} delay={i * 0.15} className="relative p-8">
                 {/* Decorative quote */}
                 <span className="absolute -top-3 left-6 text-6xl font-serif text-cyan/15 leading-none select-none">
                   &ldquo;
@@ -478,7 +497,7 @@ export default function Home() {
                   {[...Array(5)].map((_, j) => (
                     <svg
                       key={j}
-                      className="w-3.5 h-3.5 text-amber-400"
+                      className="w-3.5 h-3.5 text-cyan"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -497,17 +516,12 @@ export default function Home() {
                     {testimonial.location}
                   </p>
                 </div>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Final */}
-      <CTASection
-        title="¿Listo para climatizar tu hogar sin sorpresas?"
-        text="Agenda una asesoría gratuita de 25 minutos por Zoom. Sin compromiso, sin presión — solo la información que necesitas."
-      />
     </>
   );
 }

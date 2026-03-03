@@ -43,7 +43,7 @@ export default function StickyCTA() {
         Llamar
       </a>
       <a
-        href="/cotizar"
+        href="#agendar"
         onClick={() => trackCotizarClick("sticky_cta")}
         className="flex-1 flex items-center justify-center gap-2 rounded-full bg-cyan px-3 py-2.5 text-xs font-semibold text-navy"
       >

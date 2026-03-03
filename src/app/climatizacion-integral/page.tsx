@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Climatización Integral Santiago · Diagnóstico Gratis · Precio Cerrado",
@@ -32,7 +32,7 @@ export default function ClimatizacionIntegralPage() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
                 Agenda tu asesoría gratuita
@@ -390,9 +390,6 @@ export default function ClimatizacionIntegralPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Final */}
-      <CTASection />
 
       {/* FAQ Schema Markup */}
       <script

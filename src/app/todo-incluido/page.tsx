@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Aire Acondicionado Todo Incluido desde $449.980 · Meser Santiago",
@@ -37,7 +37,7 @@ export default function TodoIncluidoPage() {
             </p>
             <div className="mt-10">
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
                 Consulta tu precio cerrado
@@ -88,7 +88,7 @@ export default function TodoIncluidoPage() {
                 Ideal para: dormitorio, estudio, oficina pequeña
               </p>
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
               >
                 Quiero este paquete
@@ -130,7 +130,7 @@ export default function TodoIncluidoPage() {
                 Ideal para: living-comedor, sala de estar
               </p>
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
                 Quiero este paquete
@@ -169,7 +169,7 @@ export default function TodoIncluidoPage() {
                 Ideal para: living amplio, local comercial pequeño
               </p>
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
               >
                 Quiero este paquete
@@ -197,7 +197,7 @@ export default function TodoIncluidoPage() {
                 espacios difíciles.
               </p>
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="mt-6 inline-flex text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
               >
                 Cotizar mi espacio →
@@ -220,7 +220,7 @@ export default function TodoIncluidoPage() {
                 sin saturar la fachada.
               </p>
               <Link
-                href="/cotizar"
+                href="#agendar"
                 className="mt-6 inline-flex text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
               >
                 Agendar diagnóstico →
@@ -340,12 +340,6 @@ export default function TodoIncluidoPage() {
         </div>
       </section>
 
-      {/* CTA Final */}
-      <CTASection
-        title="¿Listo para tu paquete todo incluido?"
-        text="Consulta tu precio cerrado en menos de 1 minuto. Sin compromiso, sin presión."
-        ctaLabel="Consulta tu precio cerrado"
-      />
     </>
   );
 }

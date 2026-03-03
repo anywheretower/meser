@@ -212,14 +212,14 @@ export default function Header() {
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/85 backdrop-blur-xl backdrop-saturate-150 border-b border-gray-200/60 shadow-sm"
-          : "bg-white/95 backdrop-blur-sm border-b border-transparent"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="text-2xl font-bold text-navy tracking-tight">
+            <span className="text-4xl font-bold text-navy tracking-tight">
               meser
             </span>
             <span className="hidden sm:inline text-[11px] text-steel-dark font-medium tracking-wide uppercase">
@@ -254,7 +254,7 @@ export default function Header() {
             </a>
             <CartButton />
             <Link
-              href="/cotizar"
+              href="#agendar"
               className="rounded-full bg-cyan px-5 py-2.5 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow"
             >
               Asesoría gratuita
@@ -327,7 +327,7 @@ export default function Header() {
             )}
             <div className="pt-3 mt-2 border-t border-gray-100">
               <Link
-                href="/cotizar"
+                href="#agendar"
                 onClick={closeMobile}
                 className="block w-full text-center rounded-full bg-cyan px-5 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors"
               >
