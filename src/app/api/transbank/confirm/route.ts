@@ -7,7 +7,7 @@ import {
   IntegrationApiKeys,
 } from "transbank-sdk";
 import { Resend } from "resend";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { formatPrice } from "@/lib/products";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -50,7 +50,7 @@ async function handleConfirmation(tokenWs: string) {
   if (result.response_code === 0) {
     // Pago exitoso — actualizar pedido
     const cardLast4 = result.card_detail?.card_number || null;
-    await supabaseAdmin
+    await getSupabaseAdmin()
       .from("meser_pedidos")
       .update({
         estado: "pagado",
@@ -64,7 +64,7 @@ async function handleConfirmation(tokenWs: string) {
 
     // Enviar email de notificación
     try {
-      const { data: pedido } = await supabaseAdmin
+      const { data: pedido } = await getSupabaseAdmin()
         .from("meser_pedidos")
         .select("*")
         .eq("buy_order", result.buy_order)
@@ -136,7 +136,7 @@ async function handleConfirmation(tokenWs: string) {
   }
 
   // Pago rechazado
-  await supabaseAdmin
+  await getSupabaseAdmin()
     .from("meser_pedidos")
     .update({ estado: "rechazado" })
     .eq("buy_order", result.buy_order);

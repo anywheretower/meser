@@ -7,7 +7,7 @@ import {
   IntegrationApiKeys,
 } from "transbank-sdk";
 import { getProductById } from "@/lib/products";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
 function getTx() {
   const isProduction = process.env.TRANSBANK_ENVIRONMENT === "production";
@@ -85,7 +85,7 @@ export async function POST(request: Request) {
       };
     });
 
-    await supabaseAdmin.from("meser_pedidos").insert({
+    await getSupabaseAdmin().from("meser_pedidos").insert({
       buy_order: buyOrder,
       session_id: sessionId,
       estado: "pendiente",
