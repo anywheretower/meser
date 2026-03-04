@@ -66,7 +66,7 @@ export async function POST(request: Request) {
 
     const { error } = await resend.emails.send({
       from: "Meser Web <contacto@meser.cl>",
-      to: "contacto@jorgetorres.cl",
+      to: ["contacto@meser.cl", "comercialmeser@gmail.com"],
       replyTo: email || undefined,
       subject: `Nueva cotización — ${nombre} · ${tipoLabels[tipoEspacio] || tipoEspacio} · ${comuna}`,
       html,

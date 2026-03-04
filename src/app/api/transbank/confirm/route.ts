@@ -86,7 +86,7 @@ async function handleConfirmation(tokenWs: string) {
 
         await resend.emails.send({
           from: "Meser <pedidos@meser.cl>",
-          to: "contacto@jorgetorres.cl",
+          to: ["contacto@meser.cl", "comercialmeser@gmail.com"],
           subject: `Nuevo pedido pagado — ${result.buy_order}`,
           html: `
             <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
