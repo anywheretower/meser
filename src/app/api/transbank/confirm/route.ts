@@ -85,7 +85,7 @@ async function handleConfirmation(tokenWs: string) {
           .join("");
 
         await resend.emails.send({
-          from: "Meser <onboarding@resend.dev>",
+          from: "Meser <pedidos@meser.cl>",
           to: "contacto@jorgetorres.cl",
           subject: `Nuevo pedido pagado — ${result.buy_order}`,
           html: `
