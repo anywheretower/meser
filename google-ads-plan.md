@@ -1,3 +1,6 @@
+comercialmeser@gmail.com envio de correos
+
+
 # Plan de Campañas Google Ads — Meser Climatización
 
 ## Campañas Search (Red de Búsqueda)

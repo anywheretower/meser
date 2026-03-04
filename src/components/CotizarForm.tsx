@@ -39,6 +39,8 @@ type FormData = {
 export default function CotizarForm() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     tipoEspacio: "",
     ambientes: "",
@@ -79,11 +81,23 @@ export default function CotizarForm() {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = () => {
-    // TODO: Send to API endpoint / webhook
-    console.log("Form submitted:", formData);
-    trackFormSubmit(formData);
-    setSubmitted(true);
+  const handleSubmit = async () => {
+    setSending(true);
+    setError(false);
+    try {
+      const res = await fetch("/api/contacto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Error al enviar");
+      trackFormSubmit(formData);
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   if (submitted) {
@@ -355,12 +369,23 @@ export default function CotizarForm() {
           </div>
         )}
 
+        {/* Error message */}
+        {error && (
+          <div className="mt-4 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+            Error al enviar. Intenta de nuevo o contáctanos por{" "}
+            <a href="https://wa.me/56982351110" target="_blank" rel="noopener noreferrer" className="font-semibold underline">
+              WhatsApp
+            </a>.
+          </div>
+        )}
+
         {/* Navigation */}
         <div className="mt-8 flex items-center justify-between">
           {step > 1 ? (
             <button
               onClick={handleBack}
-              className="flex items-center gap-1 text-sm font-medium text-steel-dark hover:text-navy transition-colors"
+              disabled={sending}
+              className="flex items-center gap-1 text-sm font-medium text-steel-dark hover:text-navy transition-colors disabled:opacity-40"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -374,10 +399,10 @@ export default function CotizarForm() {
           {step === TOTAL_STEPS ? (
             <button
               onClick={handleSubmit}
-              disabled={!canAdvance()}
+              disabled={!canAdvance() || sending}
               className="rounded-full bg-cyan px-8 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              Enviar cotización
+              {sending ? "Enviando..." : "Enviar cotización"}
             </button>
           ) : (
             <button

@@ -36,13 +36,13 @@ export default function OficinaPage() {
           label: "Oficina pequeña",
           btu: "Split Muro 9K BTU",
           espacio: "Hasta 18 m²",
-          precio: "Desde $449.980",
+          precio: "Desde $449.990",
         },
         {
           label: "Oficina / local mediano",
           btu: "Split Muro 12K-18K BTU",
           espacio: "Hasta 32 m²",
-          precio: "Desde $499.980",
+          precio: "Desde $499.990",
         },
         {
           label: "Oficina completa",

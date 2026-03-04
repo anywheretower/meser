@@ -7,6 +7,7 @@ import {
   IntegrationApiKeys,
 } from "transbank-sdk";
 import { getProductById } from "@/lib/products";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 
 function getTx() {
   const isProduction = process.env.TRANSBANK_ENVIRONMENT === "production";
@@ -62,10 +63,6 @@ export async function POST(request: Request) {
       total += unitPrice * item.quantity;
     }
 
-    if (billing) {
-      console.log("Billing data:", JSON.stringify(billing));
-    }
-
     const buyOrder = `MESER-${Date.now()}`;
     const sessionId = `SES-${Date.now()}`;
     const baseUrl =
@@ -74,6 +71,36 @@ export async function POST(request: Request) {
 
     const tx = getTx();
     const response = await tx.create(buyOrder, sessionId, total, returnUrl);
+
+    // Guardar pedido pendiente en Supabase
+    const itemsDetail = items.map((item: { productId: string; quantity: number; withInstallation?: boolean }) => {
+      const product = getProductById(item.productId)!;
+      const unitPrice = item.withInstallation ? product.todoIncluidoPrice : product.price;
+      return {
+        productId: item.productId,
+        name: product.name,
+        quantity: item.quantity,
+        unitPrice,
+        withInstallation: !!item.withInstallation,
+      };
+    });
+
+    await supabaseAdmin.from("meser_pedidos").insert({
+      buy_order: buyOrder,
+      session_id: sessionId,
+      estado: "pendiente",
+      nombre: billing?.firstName || null,
+      apellidos: billing?.lastName || null,
+      rut: billing?.rut || null,
+      telefono: billing?.phone || null,
+      email: billing?.email || null,
+      direccion: billing?.address || null,
+      depto: billing?.apartment || null,
+      comuna: billing?.comuna || null,
+      notas: billing?.notes || null,
+      items: itemsDetail,
+      total,
+    });
 
     return NextResponse.json({
       url: response.url,
