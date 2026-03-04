@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
+import AddPackageButton from "@/components/AddPackageButton";
 
 
 export const metadata: Metadata = {
@@ -87,12 +88,12 @@ export default function TodoIncluidoPage() {
               <p className="mt-4 text-xs text-steel-dark">
                 Ideal para: dormitorio, estudio, oficina pequeña
               </p>
-              <Link
-                href="#agendar"
-                className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
+              <AddPackageButton
+                productId="midea-ecomaster-9k"
+                className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
               >
                 Quiero este paquete
-              </Link>
+              </AddPackageButton>
             </div>
 
             {/* Living — destacado */}
@@ -129,12 +130,12 @@ export default function TodoIncluidoPage() {
               <p className="mt-4 text-xs text-steel-dark">
                 Ideal para: living-comedor, sala de estar
               </p>
-              <Link
-                href="#agendar"
-                className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors"
+              <AddPackageButton
+                productId="midea-ecomaster-12k"
+                className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
               >
                 Quiero este paquete
-              </Link>
+              </AddPackageButton>
             </div>
 
             {/* Espacios Grandes */}
@@ -168,12 +169,12 @@ export default function TodoIncluidoPage() {
               <p className="mt-4 text-xs text-steel-dark">
                 Ideal para: living amplio, local comercial pequeño
               </p>
-              <Link
-                href="#agendar"
-                className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
+              <AddPackageButton
+                productId="midea-ecomaster-18k"
+                className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
               >
                 Quiero este paquete
-              </Link>
+              </AddPackageButton>
             </div>
           </div>
 
