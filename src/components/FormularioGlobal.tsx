@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CotizarForm from "./CotizarForm";
+import WhatsAppLink from "./WhatsAppLink";
 
 export default function FormularioGlobal() {
   return (
@@ -56,14 +57,13 @@ export default function FormularioGlobal() {
 
         <p className="mt-6 text-sm text-steel-light/60">
           ¿Prefieres hablar ahora?{" "}
-          <a
+          <WhatsAppLink
             href="https://wa.me/56982351110"
-            target="_blank"
-            rel="noopener noreferrer"
+            location="formulario_global"
             className="font-semibold text-cyan hover:text-cyan-dark transition-colors"
           >
             +569 8235 1110
-          </a>
+          </WhatsAppLink>
         </p>
       </div>
     </section>

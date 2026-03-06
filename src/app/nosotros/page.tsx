@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PhoneLink from "@/components/PhoneLink";
 
 
 export const metadata: Metadata = {
@@ -122,9 +123,9 @@ export default function NosotrosPage() {
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="rounded-xl bg-gray-50 p-6">
               <p className="text-sm font-semibold text-navy">Teléfono</p>
-              <a href="tel:+56982351110" className="mt-1 text-sm text-cyan hover:text-cyan-dark">
+              <PhoneLink href="tel:+56982351110" location="nosotros" className="mt-1 text-sm text-cyan hover:text-cyan-dark">
                 +569 8235 1110
-              </a>
+              </PhoneLink>
             </div>
             <div className="rounded-xl bg-gray-50 p-6">
               <p className="text-sm font-semibold text-navy">Email</p>

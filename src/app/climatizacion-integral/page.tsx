@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 
 export const metadata: Metadata = {
@@ -37,14 +38,13 @@ export default function ClimatizacionIntegralPage() {
               >
                 Agenda tu asesoría gratuita
               </Link>
-              <a
+              <WhatsAppLink
                 href="https://wa.me/56982351110"
-                target="_blank"
-                rel="noopener noreferrer"
+                location="climatizacion_integral_hero"
                 className="inline-flex items-center justify-center rounded-full border-2 border-white/20 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-colors"
               >
                 O escríbenos por WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
         </div>

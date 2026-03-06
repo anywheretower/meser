@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { trackFormSubmit } from "@/lib/gtm";
+import { trackFormSubmit, trackWhatsAppClick } from "@/lib/gtm";
 
 const COMUNAS = [
   "Las Condes",
@@ -122,6 +122,7 @@ export default function CotizarForm() {
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-cyan hover:text-cyan-dark"
+            onClick={() => trackWhatsAppClick("cotizar_exito")}
           >
             +569 8235 1110
           </a>
@@ -373,7 +374,7 @@ export default function CotizarForm() {
         {error && (
           <div className="mt-4 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
             Error al enviar. Intenta de nuevo o contáctanos por{" "}
-            <a href="https://wa.me/56982351110" target="_blank" rel="noopener noreferrer" className="font-semibold underline">
+            <a href="https://wa.me/56982351110" target="_blank" rel="noopener noreferrer" className="font-semibold underline" onClick={() => trackWhatsAppClick("cotizar_error")}>
               WhatsApp
             </a>.
           </div>

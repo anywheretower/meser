@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import PhoneLink from "@/components/PhoneLink";
 
 export const metadata: Metadata = {
   title: "Contacto · Meser Climatización",
@@ -22,10 +24,9 @@ export default function ContactoPage() {
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* WhatsApp */}
-            <a
+            <WhatsAppLink
               href="https://wa.me/56982351110?text=Hola%2C%20quiero%20consultar%20por%20climatizaci%C3%B3n"
-              target="_blank"
-              rel="noopener noreferrer"
+              location="contacto"
               className="group rounded-2xl border border-gray-200 p-8 hover:border-green-400 hover:shadow-lg transition-all"
             >
               <div className="w-12 h-12 rounded-xl bg-green-50 text-green-500 flex items-center justify-center">
@@ -42,11 +43,12 @@ export default function ContactoPage() {
               <p className="mt-3 text-sm font-medium text-green-600">
                 +569 8235 1110
               </p>
-            </a>
+            </WhatsAppLink>
 
             {/* Teléfono */}
-            <a
+            <PhoneLink
               href="tel:+56982351110"
+              location="contacto"
               className="group rounded-2xl border border-gray-200 p-8 hover:border-cyan hover:shadow-lg transition-all"
             >
               <div className="w-12 h-12 rounded-xl bg-cyan/10 text-cyan flex items-center justify-center">
@@ -63,7 +65,7 @@ export default function ContactoPage() {
               <p className="mt-3 text-sm font-medium text-cyan">
                 +569 8235 1110
               </p>
-            </a>
+            </PhoneLink>
 
             {/* Email */}
             <a

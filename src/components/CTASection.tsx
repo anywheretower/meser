@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WhatsAppLink from "./WhatsAppLink";
 
 interface CTASectionProps {
   title?: string;
@@ -52,14 +53,13 @@ export default function CTASection({
             </svg>
           </Link>
           {whatsapp && (
-            <a
+            <WhatsAppLink
               href="https://wa.me/56982351110"
-              target="_blank"
-              rel="noopener noreferrer"
+              location="cta_section"
               className="text-sm font-medium text-steel-light/70 hover:text-cyan transition-colors"
             >
               Prefiero WhatsApp &rarr; +569 8235 1110
-            </a>
+            </WhatsAppLink>
           )}
         </div>
       </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import CartButton from "@/components/CartButton";
+import { trackPhoneClick } from "@/lib/gtm";
 
 interface DropdownItem {
   href: string;
@@ -249,6 +250,7 @@ export default function Header() {
             <a
               href="tel:+56982351110"
               className="text-[13px] font-medium text-navy/50 hover:text-navy transition-colors"
+              onClick={() => trackPhoneClick("header")}
             >
               +569 8235 1110
             </a>
