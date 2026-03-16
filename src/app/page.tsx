@@ -9,31 +9,31 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden min-h-[85vh] flex items-center bg-gray-100">
+      <section className="relative overflow-hidden min-h-[85vh] flex items-center bg-navy">
         {/* Background image */}
         <Image
           src="/images/hero-home.webp"
-          alt="Climatización integral para tu hogar"
+          alt="Pareja revisando opciones de climatización junto a aire acondicionado Midea"
           fill
           priority
           className="object-cover object-right"
         />
         {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white from-30% via-white/80 via-45% to-transparent to-65%" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy from-25% via-navy/85 via-45% to-transparent to-65%" />
 
         <div className="relative mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="max-w-xl">
             <div className="animate-fade-in-up stagger-1">
-              <span className="inline-block text-[11px] font-semibold tracking-[0.25em] uppercase text-cyan-dark mb-6">
+              <span className="inline-block text-[11px] font-semibold tracking-[0.25em] uppercase text-cyan mb-6">
                 Climatización integral &middot; Santiago
               </span>
             </div>
 
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-navy leading-[0.9] animate-fade-in-up stagger-2">
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.9] animate-fade-in-up stagger-2">
               Confort inteligente para cada rincón de tu hogar
             </h1>
 
-            <p className="mt-8 text-lg sm:text-xl text-steel-dark leading-relaxed max-w-xl animate-fade-in-up stagger-3">
+            <p className="mt-8 text-lg sm:text-xl text-steel-light leading-relaxed max-w-xl animate-fade-in-up stagger-3">
               Diagnóstico gratuito, precio cerrado, instalación estética
               invisible. Samsung y Midea Inverter con WiFi.
             </p>
@@ -50,7 +50,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/todo-incluido"
-                className="group inline-flex items-center justify-center rounded-full border border-navy/20 px-5 py-2.5 text-sm font-semibold text-navy hover:bg-navy hover:text-white transition-all"
+                className="group inline-flex items-center justify-center rounded-full border border-white/30 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white hover:text-navy transition-all"
               >
                 <svg className="mr-1.5 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
