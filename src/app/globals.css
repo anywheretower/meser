@@ -28,6 +28,30 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Compensate for mobile sticky CTA bar */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 4.5rem;
+  }
+}
+
+/* Focus-visible for interactive elements */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #00D4FF;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Card focus-visible */
+.card-lift:focus-within {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 2px #00D4FF,
+    0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
 ::selection {
   background-color: #00D4FF;
   color: #0A1628;

@@ -129,7 +129,7 @@ export default function AiresAcondicionadosPage() {
                     <div className="relative w-full h-40 mb-4">
                       <Image
                         src={producto.image}
-                        alt={producto.name}
+                        alt={`${producto.name} - aire acondicionado ${producto.brand} ${producto.coverage || ""}`}
                         fill
                         className="object-contain"
                         sizes="(max-width: 768px) 100vw, 25vw"

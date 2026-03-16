@@ -102,6 +102,11 @@ export default function SchemaOrg() {
     "@type": "WebSite",
     name: "Meser",
     url: "https://www.meser.cl",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.meser.cl/blog?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (

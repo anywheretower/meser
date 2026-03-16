@@ -16,7 +16,7 @@ export default function FormularioGlobal() {
       <div className="absolute inset-0 bg-gradient-to-r from-navy from-40% via-navy/90 via-55% to-transparent to-75%" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white leading-tight whitespace-nowrap">
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
           Agenda tu asesoría gratuita
         </h2>
         <p className="mt-4 text-lg text-steel-light/80 leading-relaxed max-w-lg">

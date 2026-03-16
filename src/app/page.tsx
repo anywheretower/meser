@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden min-h-[85vh] flex items-center bg-navy">
+      <section className="relative overflow-hidden min-h-[85dvh] flex items-center bg-navy">
         {/* Background image */}
         <Image
           src="/images/hero-home.webp"

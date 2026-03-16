@@ -13,7 +13,7 @@ export default function CTASection({
   title = "¿Listo para climatizar tu hogar?",
   text = "Agenda una asesoría gratuita de 25 minutos por Zoom. Sin compromiso, sin presión — solo la información que necesitas para tomar la mejor decisión.",
   ctaLabel = "Agendar asesoría gratuita",
-  ctaHref = "/cotizar",
+  ctaHref = "#agendar",
   whatsapp = true,
 }: CTASectionProps) {
   return (

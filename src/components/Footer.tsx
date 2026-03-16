@@ -107,8 +107,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Productos */}
-          <div>
+          {/* Productos + Servicios */}
+          <nav aria-label="Productos y servicios">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-steel">
               Productos
             </h3>
@@ -140,10 +140,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Soluciones */}
-          <div>
+          <nav aria-label="Soluciones">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-steel">
               Soluciones
             </h3>
@@ -159,10 +159,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Empresa */}
-          <div>
+          <nav aria-label="Empresa">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-steel">
               Empresa
             </h3>
@@ -178,7 +178,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* Bottom */}
