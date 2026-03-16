@@ -26,6 +26,12 @@ export default function NunoaPage() {
         quote: "Vivo en un departamento nuevo en Ñuñoa y necesitaba algo silencioso. El equipo Samsung Wind-Free no se escucha. La instalación quedó impecable.",
         name: "Javiera Soto",
       }}
+      localInfo={{
+        clima: "Ñuñoa tiene temperaturas similares al centro de Santiago: veranos hasta 33°C con islas de calor en zonas más densas, inviernos entre 3-7°C. La comuna ha crecido mucho en densidad, aumentando la necesidad de climatización.",
+        tipoVivienda: "Boom inmobiliario reciente: muchos departamentos nuevos de 40-70 m² en Irarrázaval y Plaza Ñuñoa. También casas antiguas de 80-150 m² en barrios residenciales que requieren soluciones diferentes.",
+        desafio: "En edificios nuevos el espacio para la unidad exterior es limitado (balcones pequeños). Las casas antiguas tienen techos altos y muros gruesos que dificultan el paso de cañerías.",
+        solucion: "Equipos compactos de alta eficiencia para departamentos nuevos. En casas antiguas, diagnóstico experto para encontrar la ruta óptima de cañerías con mínima intervención.",
+      }}
     />
   );
 }

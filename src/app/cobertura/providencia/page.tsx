@@ -26,6 +26,12 @@ export default function ProvidenciaPage() {
         quote: "El precio cerrado fue clave. Sin sorpresas, sin costos extra. Exactamente lo que prometieron desde el diagnóstico por Zoom.",
         name: "Carolina Muñoz",
       }}
+      localInfo={{
+        clima: "Providencia tiene el microclima típico de Santiago centro-oriente: veranos de 30-35°C con noches cálidas, inviernos de 3-8°C. La contaminación invernal hace útil el modo filtro anti-PM2.5.",
+        tipoVivienda: "Mix de departamentos nuevos (30-80 m²) en torres de Nueva Providencia y departamentos antiguos remodelados en barrios como Pedro de Valdivia y Manuel Montt. Oficinas en el eje Providencia.",
+        desafio: "Departamentos antiguos con muros gruesos y sin preparación para AC requieren adaptación especial. Los edificios nuevos tienen espacios prediseñados pero muchas veces con distancias cortas al vecino.",
+        solucion: "Equipos Inverter ultra-silenciosos (20 dB) para convivencia en departamentos. Instalación con perforación y sellado profesional que minimiza intervención en muros antiguos.",
+      }}
     />
   );
 }

@@ -26,6 +26,12 @@ export default function VitacuraPage() {
         quote: "Por fin encontré un servicio que entiende que no quiero ver cables ni tubos. La instalación quedó perfecta, como si siempre hubiera estado ahí.",
         name: "Rodrigo Fernández",
       }}
+      localInfo={{
+        clima: "Vitacura es una de las comunas más calurosas de Santiago en verano (picos de 36°C+) por su ubicación en el piedemonte. Inviernos con heladas frecuentes (0-3°C). Equipo frío/calor es imprescindible.",
+        tipoVivienda: "Casas de 150-400 m² con múltiples ambientes y mansardas, además de departamentos premium en Alonso de Córdova y Nueva Costanera. Proyectos multi split son frecuentes para climatizar toda la casa.",
+        desafio: "Las viviendas amplias requieren soluciones multi-ambiente. Muchas casas tienen mansardas con techos inclinados que complican la instalación estándar y necesitan diagnóstico experto.",
+        solucion: "Multi Split con una sola unidad exterior para toda la casa. Consolas piso-cielo para mansardas. Cada ambiente con control independiente de temperatura.",
+      }}
     />
   );
 }

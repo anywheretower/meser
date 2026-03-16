@@ -207,6 +207,31 @@ export default function MantencionPage() {
         </div>
       </section>
 
+      {/* Schema: HowTo */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "Cómo se realiza la mantención de un aire acondicionado",
+            description: "Proceso profesional de mantención de aire acondicionado split en Santiago, Chile.",
+            totalTime: "PT1H",
+            estimatedCost: { "@type": "MonetaryAmount", currency: "CLP", value: "59990" },
+            step: [
+              { "@type": "HowToStep", position: 1, name: "Desconexión y protección", text: "Se desconecta el equipo y se protege el piso y muebles cercanos." },
+              { "@type": "HowToStep", position: 2, name: "Limpieza de filtros internos", text: "Se extraen y lavan los filtros de la unidad interior con agua y jabón neutro." },
+              { "@type": "HowToStep", position: 3, name: "Limpieza del evaporador", text: "Limpieza profunda del serpentín evaporador con productos especializados." },
+              { "@type": "HowToStep", position: 4, name: "Limpieza de unidad exterior", text: "Limpieza del condensador y ventilador de la unidad exterior." },
+              { "@type": "HowToStep", position: 5, name: "Revisión del drenaje", text: "Se verifica y limpia el sistema de drenaje de condensado para evitar goteo." },
+              { "@type": "HowToStep", position: 6, name: "Verificación de gas refrigerante", text: "Se mide la presión del gas y se verifica que esté dentro de los parámetros normales." },
+              { "@type": "HowToStep", position: 7, name: "Revisión eléctrica", text: "Se revisan conexiones eléctricas, voltaje y estado de contactores." },
+              { "@type": "HowToStep", position: 8, name: "Prueba de rendimiento", text: "Se enciende el equipo y se mide rendimiento en modo frío y calor. Se entrega informe de estado." },
+            ],
+          }),
+        }}
+      />
+
       {/* Schema: FAQPage */}
       <script
         type="application/ld+json"

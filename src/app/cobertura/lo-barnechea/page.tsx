@@ -26,6 +26,12 @@ export default function LoBarnecheaPage() {
         quote: "Teníamos una mansarda imposible de climatizar. Meser propuso una consola piso-cielo y quedó perfecto. El diagnóstico por Zoom nos ahorró tiempo y plata.",
         name: "Felipe Araya",
       }}
+      localInfo={{
+        clima: "Lo Barnechea tiene el clima más extremo del sector oriente: veranos muy calurosos (35-38°C) en zonas bajas como La Dehesa, e inviernos con heladas frecuentes (-2 a 3°C). El equipo frío/calor potente es esencial.",
+        tipoVivienda: "Predominan casas de 150-500 m² en condominios cerrados (La Dehesa, El Arrayán, Valle Escondido). Muchas con 2-3 pisos, mansardas y amplios jardines. Proyectos multi split de 3-5 ambientes son frecuentes.",
+        desafio: "Las casas grandes requieren múltiples equipos. Las mansardas con techos inclinados necesitan soluciones especiales. Los condominios tienen horarios de acceso para trabajos de instalación.",
+        solucion: "Proyectos integrales Multi Split: una sola unidad exterior potente para 3-5 ambientes. Consolas piso-cielo para mansardas. Coordinamos instalación respetando horarios y normas del condominio.",
+      }}
     />
   );
 }

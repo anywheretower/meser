@@ -230,6 +230,55 @@ export default function AiresAcondicionadosPage() {
         </section>
       ))}
 
+      {/* Comparativa de marcas */}
+      <section className="py-16 bg-gray-50">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy text-center mb-4">
+            Samsung vs Midea vs Anwo: ¿cuál elegir?
+          </h2>
+          <p className="text-sm text-steel-dark text-center max-w-2xl mx-auto mb-10">
+            Las tres marcas que instalamos son Inverter, frío/calor y con WiFi. La diferencia está en tecnología, precio y funciones.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="w-full text-sm">
+              <thead>
+                <tr>
+                  <th className="bg-navy px-4 py-3 text-left text-xs font-semibold text-white">Aspecto</th>
+                  <th className="bg-navy px-4 py-3 text-center text-xs font-semibold text-white">Samsung Wind-Free</th>
+                  <th className="bg-navy px-4 py-3 text-center text-xs font-semibold text-white">Midea EcoMaster</th>
+                  <th className="bg-navy px-4 py-3 text-center text-xs font-semibold text-white">Anwo Ecoflow</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  ["Precio (12K BTU con instalación)", "$649.990", "$499.990", "$499.990"],
+                  ["Tecnología destacada", "Wind-Free (sin corriente directa)", "IA EcoMaster (aprende hábitos)", "Refrigerante R32 (ecológico)"],
+                  ["Eficiencia energética", "Clase A", "Clase A", "Clase A"],
+                  ["Nivel de ruido interior", "~19 dB (ultra silencioso)", "~22 dB (muy silencioso)", "~24 dB (silencioso)"],
+                  ["Control WiFi / App", "SmartThings (muy completa)", "Midea AIR (buena)", "App Anwo (básica)"],
+                  ["Mejor para", "Premium, hogar conectado, máximo confort", "Mejor relación calidad-precio, ahorro en luz", "Presupuesto medio, eficiencia ecológica"],
+                  ["Garantía con Meser", "Total (equipo + instalación)", "Total (equipo + instalación)", "Total (equipo + instalación)"],
+                ].map(([aspect, samsung, midea, anwo], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
+                    <td className="px-4 py-3 font-medium text-navy">{aspect}</td>
+                    <td className="px-4 py-3 text-center text-navy/80">{samsung}</td>
+                    <td className="px-4 py-3 text-center text-navy/80">{midea}</td>
+                    <td className="px-4 py-3 text-center text-navy/80">{anwo}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-6 text-center text-sm text-steel-dark">
+            ¿No estás seguro cuál elegir?{" "}
+            <Link href="#agendar" className="font-semibold text-cyan hover:text-cyan-dark">
+              Agenda un diagnóstico gratuito
+            </Link>{" "}
+            y te ayudamos a decidir.
+          </p>
+        </div>
+      </section>
+
       {/* Servicios adicionales */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -404,6 +404,32 @@ export default function InstalacionPage() {
           }),
         }}
       />
+      {/* Schema: HowTo */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "Cómo instalar un aire acondicionado con Meser",
+            description: "Proceso completo de instalación profesional de aire acondicionado en Santiago, desde el diagnóstico hasta la puesta en marcha.",
+            totalTime: "PT5H",
+            estimatedCost: { "@type": "MonetaryAmount", currency: "CLP", value: "449990" },
+            step: [
+              { "@type": "HowToStep", position: 1, name: "Diagnóstico por Zoom", text: "Un especialista Meser evalúa tu espacio por videollamada (25 min gratis) y calcula la capacidad exacta en BTU que necesitas." },
+              { "@type": "HowToStep", position: 2, name: "Propuesta con precio cerrado", text: "Recibes una cotización detallada que incluye equipo, instalación, materiales y garantía. El precio no cambia." },
+              { "@type": "HowToStep", position: 3, name: "Coordinación de fecha", text: "Elegimos juntos el día y horario de instalación. Plazo típico: 3-7 días hábiles desde la aprobación." },
+              { "@type": "HowToStep", position: 4, name: "Preparación del espacio", text: "El técnico protege pisos y muebles. Se define la ubicación exacta de unidades interior y exterior." },
+              { "@type": "HowToStep", position: 5, name: "Perforación y montaje", text: "Perforación de muro para paso de cañerías. Montaje de soportes para unidad exterior e interior." },
+              { "@type": "HowToStep", position: 6, name: "Cañerías con aislación", text: "Conexión de cañerías frigoríficas con aislación térmica entre ambas unidades." },
+              { "@type": "HowToStep", position: 7, name: "Canaletas ocultas", text: "Instalación de canaletas pintadas al tono de la pared para ocultar tubos y cables." },
+              { "@type": "HowToStep", position: 8, name: "Conexión eléctrica y desagüe", text: "Conexión al sistema eléctrico y canalización del desagüe de condensado." },
+              { "@type": "HowToStep", position: 9, name: "Vacío y carga de gas", text: "Proceso de vacío del sistema y verificación de presión del gas refrigerante." },
+              { "@type": "HowToStep", position: 10, name: "Puesta en marcha y prueba", text: "Encendido del equipo, prueba de frío y calor, configuración WiFi e inducción de uso al cliente." },
+            ],
+          }),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

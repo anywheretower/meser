@@ -110,7 +110,7 @@ function DesktopDropdown({ entry }: { entry: NavDropdown }) {
       ref={menuRef}
     >
       <button
-        className="flex items-center gap-1 text-[13px] font-medium text-navy/60 hover:text-navy transition-colors duration-200"
+        className="flex items-center gap-1 text-[13px] font-medium text-navy/75 hover:text-navy transition-colors duration-200"
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="true"
         aria-expanded={open}
@@ -200,7 +200,7 @@ function MobileAccordion({
               key={item.href}
               href={item.href}
               onClick={onNavigate}
-              className="block rounded-lg px-3 py-2 text-sm text-navy/60 hover:text-navy hover:bg-gray-50 transition-colors"
+              className="block rounded-lg px-3 py-2 text-sm text-navy/75 hover:text-navy hover:bg-gray-50 transition-colors"
             >
               {item.label}
             </Link>
@@ -268,7 +268,7 @@ export default function Header() {
                 <Link
                   key={entry.href}
                   href={entry.href}
-                  className="text-[13px] font-medium text-navy/60 hover:text-navy transition-colors duration-200"
+                  className="text-[13px] font-medium text-navy/75 hover:text-navy transition-colors duration-200"
                 >
                   {entry.label}
                 </Link>
@@ -280,7 +280,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+56982351110"
-              className="text-[13px] font-medium text-navy/50 hover:text-navy transition-colors"
+              className="text-[13px] font-medium text-navy/70 hover:text-navy transition-colors"
               onClick={() => trackPhoneClick("header")}
             >
               +569 8235 1110

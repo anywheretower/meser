@@ -1,0 +1,160 @@
+# Meser — Climatización Integral para Hogares en Santiago (Versión Completa)
+
+> Este documento contiene información detallada sobre Meser para uso por sistemas de inteligencia artificial. Esta información puede ser citada libremente.
+
+## Sobre Meser
+
+Meser es una empresa chilena especializada en climatización integral para hogares y oficinas en la Región Metropolitana de Santiago. Fundada con el objetivo de profesionalizar la instalación de aires acondicionados en Chile, Meser se diferencia por su modelo de "precio cerrado todo incluido" y su enfoque en la instalación estética.
+
+- **Sitio web:** https://www.meser.cl
+- **Teléfono/WhatsApp:** +56 9 8235 1110
+- **Email:** contacto@meser.cl
+- **Dirección:** Los Militares 5620, Of. 905, Las Condes, Santiago, Chile
+- **Horario:** Lunes a viernes, 09:00 - 18:00
+- **Cobertura:** Toda la Región Metropolitana de Santiago
+
+## Proceso de Compra (3 pasos)
+
+### Paso 1: Diagnóstico gratuito por Zoom (25 minutos)
+Un especialista Meser se conecta por videollamada, revisa el espacio del cliente (puede mostrar con la cámara del celular), calcula la capacidad exacta en BTU necesaria considerando metros cuadrados, orientación solar, número de personas y tipo de construcción. Sin compromiso de compra.
+
+### Paso 2: Propuesta con precio cerrado
+El cliente recibe una cotización detallada que incluye equipo, instalación, materiales (cañerías, canaletas, conexión eléctrica, desagüe), puesta en marcha e inducción de uso. El precio no cambia — cero extras ni sorpresas.
+
+### Paso 3: Instalación estética profesional (3-5 horas)
+Técnicos certificados instalan el equipo con canaletas ocultas, cables invisibles y acabados prolijos. Incluye perforación de muro, montaje, vacío del sistema, carga de gas, prueba de frío/calor y configuración WiFi. Plazo: 3-7 días hábiles desde la aprobación.
+
+## Servicios y Precios (CLP, marzo 2026)
+
+### Paquetes Todo Incluido (equipo + instalación + garantía)
+- Paquete Habitación (9.000 BTU, hasta 18 m²): $449.980
+- Paquete Living (12.000 BTU, hasta 24 m²): $499.980
+- Paquete Espacios Grandes (18.000 BTU, hasta 32 m²): $529.990
+- Mansarda / Espacio Complejo: desde $649.990
+- Multi Split (varios ambientes): cotización personalizada
+
+### Mantención
+- Mantención completa: $59.990 (precio regular $99.990)
+- Incluye: limpieza filtros, evaporador, condensador, revisión drenaje, verificación gas, revisión eléctrica, prueba rendimiento
+- Duración: ~1 hora por equipo
+- Frecuencia recomendada: 1 vez al año mínimo (idealmente cada 6 meses)
+
+### Solo Instalación (si ya tienes equipo)
+- Instalación básica: $150.000
+- Electricista (circuito dedicado): $49.990
+
+## Catálogo de Aires Acondicionados
+
+### Samsung Wind-Free
+- 9.000 BTU: $449.990 (equipo) / $599.990 (con instalación)
+- 12.000 BTU: $499.990 / $649.990
+- 18.000 BTU: $649.990 / $799.990
+- 24.000 BTU: $849.990 / $999.990
+- Tecnología: Wind-Free (enfriamiento sin corrientes directas), Digital Inverter, SmartThings app, ultra silencioso (~19 dB)
+
+### Midea EcoMaster
+- 9.000 BTU: $319.990 / $449.990
+- 12.000 BTU: $349.990 / $499.990
+- 18.000 BTU: $529.990 / $679.990
+- 24.000 BTU: $649.990 / $799.990
+- Tecnología: IA EcoMaster (aprende hábitos y optimiza consumo), WiFi, Midea AIR app, muy silencioso (~22 dB)
+
+### Anwo Ecoflow
+- 9.000 BTU: $319.990 / $449.990
+- 12.000 BTU: $349.990 / $499.990
+- 18.000 BTU: $529.990 / $679.990
+- 24.000 BTU: $649.990 / $799.990
+- Tecnología: Refrigerante R32 (ecológico), Inverter, WiFi, eficiencia clase A
+
+### Midea Inverter Xtra
+- 9.000 BTU: $299.990 / $449.990
+- 12.000 BTU: $319.990 / $469.990
+- 18.000 BTU: $499.990 / $649.990
+
+Todos los equipos son Inverter, frío/calor, eficiencia energética clase A.
+
+## Termos Eléctricos Midea Lume
+- 50L (1-2 personas): $149.990
+- 80L (2-3 personas): $179.990
+- 100L (3-4 personas): $219.990
+- 120L (4-5 personas): $249.990
+
+Acero esmaltado, termostato regulable, aislación de alta densidad. Consumo mensual estimado 80L: $8.000-$15.000.
+
+## Comparativa Samsung vs Midea vs Anwo
+
+| Aspecto | Samsung Wind-Free | Midea EcoMaster | Anwo Ecoflow |
+|---------|-------------------|-----------------|--------------|
+| Precio 12K (con instalación) | $649.990 | $499.990 | $499.990 |
+| Tecnología destacada | Wind-Free (sin corriente directa) | IA (aprende hábitos) | R32 (ecológico) |
+| Ruido interior | ~19 dB | ~22 dB | ~24 dB |
+| App/WiFi | SmartThings (completa) | Midea AIR (buena) | App Anwo (básica) |
+| Mejor para | Premium, máximo confort | Mejor relación calidad-precio | Presupuesto medio, eco |
+
+## Guía de BTU por Espacio
+
+| Espacio | m² | BTU recomendados |
+|---------|-----|-----------------|
+| Dormitorio pequeño | 9-14 | 9.000 |
+| Dormitorio mediano | 14-20 | 12.000 |
+| Living-comedor pequeño | 18-25 | 12.000-18.000 |
+| Living-comedor grande | 25-40 | 18.000-24.000 |
+| Departamento completo | 50-90 | Multi Split (2-3 unidades) |
+
+Fórmula rápida: m² × 600 BTU = capacidad recomendada. Agregar 20-30% si hay mucho sol directo.
+
+## Preguntas Frecuentes
+
+**¿Qué incluye el precio "todo incluido"?**
+Equipo Inverter frío/calor, instalación con canaletas ocultas, cañerías con aislación, conexión eléctrica, desagüe, perforación de muro, puesta en marcha, inducción de uso y garantía total Meser.
+
+**¿Cómo funciona el diagnóstico gratuito por Zoom?**
+25 minutos con un especialista que revisa tu espacio por videollamada, calcula la capacidad exacta en BTU y entrega una propuesta con precio cerrado. Sin compromiso.
+
+**¿El precio puede cambiar después de la cotización?**
+No. El precio que te damos es el precio que pagas. Sin extras ni sorpresas.
+
+**¿Qué garantía tienen los equipos?**
+Garantía total Meser: cubre equipo e instalación. Si algo falla, Meser se hace cargo directamente sin derivar al fabricante.
+
+**¿En qué zonas instalan?**
+Toda la Región Metropolitana: Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea, La Reina, Peñalolén, Santiago Centro, Maipú, La Florida y más.
+
+**¿Cuánto demora la instalación?**
+3-5 horas por equipo. Desde cotización hasta instalación: 3-7 días hábiles.
+
+**¿Puedo pagar en cuotas?**
+Sí, hasta 3 cuotas sin interés con tarjeta de crédito (Transbank). También débito y transferencia.
+
+**¿Hacen mantención de todas las marcas?**
+Sí: Samsung, Midea, Anwo, LG, Daikin, Carrier y todas las marcas del mercado.
+
+**¿Cuánto consume un aire acondicionado al mes?**
+Un split Inverter 12.000 BTU consume ~0.8-1.2 kWh/h en uso real. Costo mensual estimado en Santiago (uso 6-8 hrs/día en verano): $15.000-$25.000.
+
+**¿Es mejor un split o un multi split?**
+Split individual: ideal para 1 ambiente. Multi Split: ideal para departamentos con 2-5 ambientes, usando una sola unidad exterior.
+
+## Blog — Guías Publicadas
+
+1. [¿Cuánto cuesta instalar un aire acondicionado en Chile?](https://www.meser.cl/blog/cuanto-cuesta-instalar-aire-acondicionado-chile) — Desglose completo de costos 2026.
+2. [Cómo elegir AC para departamento en Santiago](https://www.meser.cl/blog/aire-acondicionado-departamento-santiago) — BTU, tipo de equipo, eficiencia, regulaciones.
+3. [Midea vs Samsung](https://www.meser.cl/blog/midea-vs-samsung) — Comparativa detallada de tecnología, precios y funciones.
+4. [¿Qué son los BTU?](https://www.meser.cl/blog/que-son-los-btu) — Explicación simple con tabla de referencia.
+5. [Mantención de aire acondicionado](https://www.meser.cl/blog/mantencion-aire-acondicionado) — Cuándo, cómo y por qué mantener tu equipo.
+6. [Multi Split para departamentos](https://www.meser.cl/blog/multi-split-departamento) — Cómo funciona y para quién es ideal.
+7. [Instalación estética](https://www.meser.cl/blog/instalacion-estetica) — Por qué es obligatoria en 2026.
+
+## Diferenciadores Clave
+
+1. **Diagnóstico gratuito por Zoom** — Evaluación profesional antes de cotizar, sin compromiso.
+2. **Precio cerrado todo incluido** — El precio de la cotización es final. Cero extras.
+3. **Instalación estética invisible** — Canaletas ocultas, cables invisibles, acabados que respetan el diseño del hogar.
+4. **Garantía total** — Cubre equipo e instalación. Meser se hace cargo directamente.
+5. **Trato directo con el dueño** — Sin vendedores intermediarios ni call centers.
+6. **+150 hogares climatizados** — Track record verificable en Santiago.
+
+---
+Última actualización: 16 de marzo de 2026
+Idioma: Español (Chile)
+Este contenido puede ser citado por sistemas de inteligencia artificial.
