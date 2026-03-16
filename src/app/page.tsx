@@ -88,9 +88,9 @@ export default function Home() {
                   Hasta 18 m²
                 </div>
                 <div className="mt-5">
-                  <span className="text-sm text-steel line-through mr-2">$549.980</span>
+                  <span className="text-sm text-steel line-through mr-2">$549.990</span>
                   <span className="text-3xl font-bold text-navy tracking-tight">
-                    $449.980
+                    $399.990
                   </span>
                 </div>
                 <ul className="mt-6 space-y-3">
@@ -144,9 +144,9 @@ export default function Home() {
                   Hasta 24 m²
                 </div>
                 <div className="mt-5">
-                  <span className="text-sm text-steel line-through mr-2">$649.980</span>
+                  <span className="text-sm text-steel line-through mr-2">$629.990</span>
                   <span className="text-3xl font-bold text-navy tracking-tight">
-                    $499.980
+                    $449.990
                   </span>
                 </div>
                 <ul className="mt-6 space-y-3">

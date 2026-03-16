@@ -6,10 +6,10 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Todo Incluido · Santiago",
+  title: "Aire Acondicionado Todo Incluido desde $399.990",
   alternates: { canonical: "/todo-incluido" },
   description:
-    "Aire acondicionado Inverter frío/calor + instalación + garantía desde $449.980. Precio cerrado, cero sorpresas. Ahorra hasta $172.000 vs comprar por separado.",
+    "Aire acondicionado Inverter frío/calor + instalación + garantía desde $399.990. Precio cerrado, cero sorpresas. Ahorra hasta $222.000 vs comprar por separado.",
 };
 
 export default function TodoIncluidoPage() {
@@ -28,7 +28,7 @@ export default function TodoIncluidoPage() {
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Aire acondicionado con instalación incluida desde{" "}
-              <span className="text-cyan">$449.980</span>
+              <span className="text-cyan">$399.990</span>
             </h1>
             <p className="mt-4 text-lg text-cyan font-medium">
               Equipo Inverter frío/calor + instalación estética + garantía
@@ -69,7 +69,7 @@ export default function TodoIncluidoPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel line-through">$549.990</span>
                 <span className="ml-2 text-3xl font-bold text-navy">
-                  $449.980
+                  $399.990
                 </span>
               </div>
               <ul className="mt-6 space-y-2.5">
@@ -111,7 +111,7 @@ export default function TodoIncluidoPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel line-through">$629.990</span>
                 <span className="ml-2 text-3xl font-bold text-navy">
-                  $499.980
+                  $449.990
                 </span>
               </div>
               <ul className="mt-6 space-y-2.5">
@@ -150,7 +150,7 @@ export default function TodoIncluidoPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel line-through">$899.990</span>
                 <span className="ml-2 text-3xl font-bold text-navy">
-                  $529.990
+                  $629.990
                 </span>
               </div>
               <ul className="mt-6 space-y-2.5">
@@ -326,7 +326,7 @@ export default function TodoIncluidoPage() {
                     $530.000 - $622.000
                   </td>
                   <td className="px-6 py-4 text-sm text-center bg-navy/5">
-                    <span className="text-lg text-cyan">$449.980</span>
+                    <span className="text-lg text-cyan">$399.990</span>
                   </td>
                 </tr>
                 <tr className="bg-cyan/5">
@@ -335,7 +335,7 @@ export default function TodoIncluidoPage() {
                   </td>
                   <td className="px-6 py-4" />
                   <td className="px-6 py-4 text-sm font-bold text-green-600 text-center">
-                    Ahorras $80.000 - $172.000
+                    Ahorras $130.000 - $222.000
                   </td>
                 </tr>
               </tbody>
@@ -468,7 +468,7 @@ export default function TodoIncluidoPage() {
             areaServed: { "@type": "State", name: "Región Metropolitana de Santiago" },
             offers: {
               "@type": "AggregateOffer",
-              lowPrice: "449980",
+              lowPrice: "399990",
               highPrice: "999990",
               priceCurrency: "CLP",
               offerCount: 3,

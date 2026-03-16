@@ -39,7 +39,7 @@ export default function DepartamentoPage() {
           label: "Dormitorio",
           btu: "Split Muro 9K BTU",
           espacio: "Hasta 18 m²",
-          precio: "Desde $449.990",
+          precio: "Desde $399.990",
         },
         {
           label: "Living-comedor",

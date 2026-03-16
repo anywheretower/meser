@@ -104,7 +104,7 @@ function ArticleCuantoCuesta() {
         <Link href="/todo-incluido" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
           paquetes todo incluido
         </Link>{" "}
-        parten desde <strong>$449.990</strong> con equipo Inverter frío/calor,
+        parten desde <strong>$399.990</strong> con equipo Inverter frío/calor,
         instalación estética y garantía total. Precio cerrado, cero sorpresas.
       </p>
 

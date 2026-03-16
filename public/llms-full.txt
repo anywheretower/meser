@@ -27,9 +27,9 @@ Técnicos certificados instalan el equipo con canaletas ocultas, cables invisibl
 ## Servicios y Precios (CLP, marzo 2026)
 
 ### Paquetes Todo Incluido (equipo + instalación + garantía)
-- Paquete Habitación (9.000 BTU, hasta 18 m²): $449.980
-- Paquete Living (12.000 BTU, hasta 24 m²): $499.980
-- Paquete Espacios Grandes (18.000 BTU, hasta 32 m²): $529.990
+- Paquete Habitación (9.000 BTU, hasta 18 m²): $399.990
+- Paquete Living (12.000 BTU, hasta 24 m²): $449.990
+- Paquete Espacios Grandes (18.000 BTU, hasta 32 m²): $629.990
 - Mansarda / Espacio Complejo: desde $649.990
 - Multi Split (varios ambientes): cotización personalizada
 
@@ -40,36 +40,36 @@ Técnicos certificados instalan el equipo con canaletas ocultas, cables invisibl
 - Frecuencia recomendada: 1 vez al año mínimo (idealmente cada 6 meses)
 
 ### Solo Instalación (si ya tienes equipo)
-- Instalación básica: $150.000
+- Instalación básica: $100.000
 - Electricista (circuito dedicado): $49.990
 
 ## Catálogo de Aires Acondicionados
 
 ### Samsung Wind-Free
-- 9.000 BTU: $449.990 (equipo) / $599.990 (con instalación)
-- 12.000 BTU: $499.990 / $649.990
-- 18.000 BTU: $649.990 / $799.990
-- 24.000 BTU: $849.990 / $999.990
+- 9.000 BTU: $449.990 (equipo) / $549.990 (con instalación)
+- 12.000 BTU: $529.990 / $629.990
+- 18.000 BTU: $699.990 / $799.990
+- 24.000 BTU: $849.990 / $949.990
 - Tecnología: Wind-Free (enfriamiento sin corrientes directas), Digital Inverter, SmartThings app, ultra silencioso (~19 dB)
 
 ### Midea EcoMaster
-- 9.000 BTU: $319.990 / $449.990
-- 12.000 BTU: $349.990 / $499.990
-- 18.000 BTU: $529.990 / $679.990
-- 24.000 BTU: $649.990 / $799.990
+- 9.000 BTU: $319.990 / $419.990
+- 12.000 BTU: $349.990 / $449.990
+- 18.000 BTU: $529.990 / $629.990
+- 24.000 BTU: $649.990 / $749.990
 - Tecnología: IA EcoMaster (aprende hábitos y optimiza consumo), WiFi, Midea AIR app, muy silencioso (~22 dB)
 
 ### Anwo Ecoflow
-- 9.000 BTU: $319.990 / $449.990
-- 12.000 BTU: $349.990 / $499.990
-- 18.000 BTU: $529.990 / $679.990
-- 24.000 BTU: $649.990 / $799.990
+- 9.000 BTU: $319.990 / $419.990
+- 12.000 BTU: $349.990 / $449.990
+- 18.000 BTU: $529.990 / $629.990
+- 24.000 BTU: $649.990 / $749.990
 - Tecnología: Refrigerante R32 (ecológico), Inverter, WiFi, eficiencia clase A
 
 ### Midea Inverter Xtra
-- 9.000 BTU: $299.990 / $449.990
-- 12.000 BTU: $319.990 / $469.990
-- 18.000 BTU: $499.990 / $649.990
+- 9.000 BTU: $299.990 / $399.990
+- 12.000 BTU: $319.990 / $419.990
+- 18.000 BTU: $499.990 / $599.990
 
 Todos los equipos son Inverter, frío/calor, eficiencia energética clase A.
 
@@ -85,7 +85,7 @@ Acero esmaltado, termostato regulable, aislación de alta densidad. Consumo mens
 
 | Aspecto | Samsung Wind-Free | Midea EcoMaster | Anwo Ecoflow |
 |---------|-------------------|-----------------|--------------|
-| Precio 12K (con instalación) | $649.990 | $499.990 | $499.990 |
+| Precio 12K (con instalación) | $629.990 | $449.990 | $449.990 |
 | Tecnología destacada | Wind-Free (sin corriente directa) | IA (aprende hábitos) | R32 (ecológico) |
 | Ruido interior | ~19 dB | ~22 dB | ~24 dB |
 | App/WiFi | SmartThings (completa) | Midea AIR (buena) | App Anwo (básica) |

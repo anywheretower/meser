@@ -102,7 +102,7 @@ export default function InstalacionPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel">Desde</span>
                 <span className="ml-1 text-xl font-bold text-navy">
-                  $449.980
+                  $399.990
                 </span>
                 <span className="text-sm text-steel-dark ml-1">
                   todo incluido
@@ -277,7 +277,7 @@ export default function InstalacionPage() {
                   <span className="text-steel-dark">
                     Equipo + instalación + garantía
                   </span>
-                  <span className="font-bold text-cyan text-lg">$449.980</span>
+                  <span className="font-bold text-cyan text-lg">$399.990</span>
                 </li>
                 <li className="flex justify-between text-sm">
                   <span className="text-steel-dark">Extras</span>
@@ -446,9 +446,9 @@ export default function InstalacionPage() {
             areaServed: { "@type": "State", name: "Región Metropolitana de Santiago" },
             offers: {
               "@type": "Offer",
-              price: "449990",
+              price: "399990",
               priceCurrency: "CLP",
-              description: "Desde $449.990 todo incluido (equipo + instalación + garantía)",
+              description: "Desde $399.990 todo incluido (equipo + instalación + garantía)",
             },
           }),
         }}

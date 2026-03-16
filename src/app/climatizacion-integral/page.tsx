@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Climatización Integral Santiago · Precio Cerrado",
   alternates: { canonical: "/climatizacion-integral" },
   description:
-    "Resolvemos tu climatización completa: diagnóstico gratis por Zoom, precio cerrado sin sorpresas, instalación estética invisible. Desde $449.980 todo incluido.",
+    "Resolvemos tu climatización completa: diagnóstico gratis por Zoom, precio cerrado sin sorpresas, instalación estética invisible. Desde $399.990 todo incluido.",
 };
 
 export default function ClimatizacionIntegralPage() {
@@ -338,7 +338,7 @@ export default function ClimatizacionIntegralPage() {
             {[
               {
                 q: "¿Cuánto cuesta instalar un aire acondicionado con Meser?",
-                a: "Nuestros paquetes todo incluido (equipo + instalación + garantía) parten desde $449.980 para espacios de hasta 18 m². El precio exacto depende de tu espacio y necesidades — por eso ofrecemos un diagnóstico gratuito por Zoom donde definimos juntos la mejor solución.",
+                a: "Nuestros paquetes todo incluido (equipo + instalación + garantía) parten desde $399.990 para espacios de hasta 18 m². El precio exacto depende de tu espacio y necesidades — por eso ofrecemos un diagnóstico gratuito por Zoom donde definimos juntos la mejor solución.",
               },
               {
                 q: "¿Qué incluye el precio cerrado?",
@@ -407,7 +407,7 @@ export default function ClimatizacionIntegralPage() {
                 name: "¿Cuánto cuesta instalar un aire acondicionado con Meser?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Nuestros paquetes todo incluido (equipo + instalación + garantía) parten desde $449.980 para espacios de hasta 18 m².",
+                  text: "Nuestros paquetes todo incluido (equipo + instalación + garantía) parten desde $399.990 para espacios de hasta 18 m².",
                 },
               },
               {

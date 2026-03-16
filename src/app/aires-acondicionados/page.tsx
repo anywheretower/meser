@@ -10,7 +10,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Aires Acondicionados · Catálogo Samsung y Midea",
   description:
-    "Catálogo de aires acondicionados Samsung Wind-Free, Midea y Anwo. Desde $299.990 solo equipo o $449.990 con instalación incluida en Santiago.",
+    "Catálogo de aires acondicionados Samsung Wind-Free, Midea y Anwo. Desde $299.990 solo equipo o $399.990 con instalación incluida en Santiago.",
   alternates: { canonical: "/aires-acondicionados" },
 };
 
@@ -251,7 +251,7 @@ export default function AiresAcondicionadosPage() {
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {[
-                  ["Precio (12K BTU con instalación)", "$649.990", "$499.990", "$499.990"],
+                  ["Precio (12K BTU con instalación)", "$629.990", "$449.990", "$449.990"],
                   ["Tecnología destacada", "Wind-Free (sin corriente directa)", "IA EcoMaster (aprende hábitos)", "Refrigerante R32 (ecológico)"],
                   ["Eficiencia energética", "Clase A", "Clase A", "Clase A"],
                   ["Nivel de ruido interior", "~19 dB (ultra silencioso)", "~22 dB (muy silencioso)", "~24 dB (silencioso)"],
@@ -309,7 +309,7 @@ export default function AiresAcondicionadosPage() {
                 Instalación (solo servicio)
               </h3>
               <div className="mt-2">
-                <span className="text-xl font-bold text-navy">$150.000</span>
+                <span className="text-xl font-bold text-navy">$100.000</span>
               </div>
               <p className="mt-2 text-sm text-steel-dark">
                 Si ya tienes equipo. Incluye montaje, cañerías, puesta en marcha.
