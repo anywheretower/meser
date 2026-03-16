@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 
 const descuentos = [
   { referidos: 0, porcentaje: 0, precio: "$59.990" },
-  { referidos: 1, porcentaje: 25, precio: "$44.993" },
-  { referidos: 2, porcentaje: 50, precio: "$29.995" },
-  { referidos: 3, porcentaje: 75, precio: "$14.998" },
+  { referidos: 1, porcentaje: 25, precio: "$44.990" },
+  { referidos: 2, porcentaje: 50, precio: "$29.990" },
+  { referidos: 3, porcentaje: 75, precio: "$14.990" },
   { referidos: 4, porcentaje: 100, precio: "Gratis" },
 ];
 
