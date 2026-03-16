@@ -43,63 +43,41 @@ export default function BlogPage() {
 
           {/* Artículos */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((articulo) => {
-              const inner = (
-                <>
-                  {/* Placeholder image */}
-                  <div className="h-40 bg-gradient-to-br from-navy to-navy-light flex items-center justify-center">
-                    <span className="text-xs font-medium text-cyan bg-cyan/10 px-3 py-1 rounded-full">
-                      {articulo.categoria}
+            {blogPosts.map((articulo) => (
+              <Link
+                key={articulo.slug}
+                href={`/blog/${articulo.slug}`}
+                className="group rounded-2xl border border-gray-200 overflow-hidden hover:border-cyan hover:shadow-lg transition-all"
+              >
+                <div className="h-40 bg-gradient-to-br from-navy to-navy-light flex items-center justify-center">
+                  <span className="text-xs font-medium text-cyan bg-cyan/10 px-3 py-1 rounded-full">
+                    {articulo.categoria}
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h2 className="text-base font-semibold text-navy leading-snug group-hover:text-cyan transition-colors">
+                    {articulo.titulo}
+                  </h2>
+                  <p className="mt-2 text-sm text-steel-dark leading-relaxed line-clamp-3">
+                    {articulo.descripcion}
+                  </p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <span className="text-sm font-medium text-cyan">
+                      Leer artículo →
                     </span>
-                  </div>
-                  <div className="p-6">
-                    <h2 className="text-base font-semibold text-navy leading-snug group-hover:text-cyan transition-colors">
-                      {articulo.titulo}
-                    </h2>
-                    <p className="mt-2 text-sm text-steel-dark leading-relaxed line-clamp-3">
-                      {articulo.descripcion}
-                    </p>
-                    <div className="mt-4 flex items-center justify-between">
-                      {articulo.published ? (
-                        <span className="text-sm font-medium text-cyan">
-                          Leer artículo →
-                        </span>
-                      ) : (
-                        <span className="text-sm font-medium text-steel">
-                          Próximamente
-                        </span>
-                      )}
-                      <div className="flex items-center gap-3 text-xs text-steel">
-                        <span>{articulo.readTime}</span>
-                        <span>
-                          {new Date(articulo.fecha).toLocaleDateString("es-CL", {
-                            day: "numeric",
-                            month: "short",
-                          })}
-                        </span>
-                      </div>
+                    <div className="flex items-center gap-3 text-xs text-steel">
+                      <span>{articulo.readTime}</span>
+                      <span>
+                        {new Date(articulo.fecha).toLocaleDateString("es-CL", {
+                          day: "numeric",
+                          month: "short",
+                        })}
+                      </span>
                     </div>
                   </div>
-                </>
-              );
-
-              return articulo.published ? (
-                <Link
-                  key={articulo.slug}
-                  href={`/blog/${articulo.slug}`}
-                  className="group rounded-2xl border border-gray-200 overflow-hidden hover:border-cyan hover:shadow-lg transition-all"
-                >
-                  {inner}
-                </Link>
-              ) : (
-                <article
-                  key={articulo.slug}
-                  className="group rounded-2xl border border-gray-200 overflow-hidden opacity-60"
-                >
-                  {inner}
-                </article>
-              );
-            })}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -6,7 +6,6 @@ export interface BlogPost {
   categoria: string;
   fecha: string;
   readTime: string;
-  published: boolean;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -20,7 +19,6 @@ export const blogPosts: BlogPost[] = [
     categoria: "Precios",
     fecha: "2026-03-16",
     readTime: "6 min",
-    published: true,
   },
   {
     slug: "aire-acondicionado-departamento-santiago",
@@ -32,7 +30,6 @@ export const blogPosts: BlogPost[] = [
     categoria: "Guías",
     fecha: "2026-03-16",
     readTime: "8 min",
-    published: true,
   },
   {
     slug: "midea-vs-samsung",
@@ -43,7 +40,6 @@ export const blogPosts: BlogPost[] = [
     categoria: "Comparativas",
     fecha: "2026-03-16",
     readTime: "7 min",
-    published: true,
   },
   {
     slug: "que-son-los-btu",
@@ -54,7 +50,6 @@ export const blogPosts: BlogPost[] = [
     categoria: "Guías",
     fecha: "2026-03-16",
     readTime: "5 min",
-    published: true,
   },
   {
     slug: "mantencion-aire-acondicionado",
@@ -65,7 +60,6 @@ export const blogPosts: BlogPost[] = [
     categoria: "Mantención",
     fecha: "2026-03-16",
     readTime: "8 min",
-    published: true,
   },
   {
     slug: "multi-split-departamento",
@@ -76,7 +70,6 @@ export const blogPosts: BlogPost[] = [
     categoria: "Soluciones",
     fecha: "2026-03-16",
     readTime: "7 min",
-    published: true,
   },
   {
     slug: "instalacion-estetica",
@@ -88,42 +81,6 @@ export const blogPosts: BlogPost[] = [
     categoria: "Instalación",
     fecha: "2026-03-16",
     readTime: "6 min",
-    published: true,
-  },
-  {
-    slug: "inverter-vale-la-pena",
-    titulo:
-      "Aire acondicionado Inverter: ¿Vale la pena? (Ahorro real calculado)",
-    descripcion:
-      "Calculamos cuánto ahorra un equipo Inverter vs uno convencional en la cuenta de luz mensual. Los números hablan solos.",
-    keywords: "aire acondicionado inverter vale la pena",
-    categoria: "Guías",
-    fecha: "2026-03-16",
-    readTime: "6 min",
-    published: false,
-  },
-  {
-    slug: "climatizar-mansarda",
-    titulo: "Climatizar una mansarda: desafíos y soluciones",
-    descripcion:
-      "Las mansardas son los espacios más difíciles de climatizar. Te explicamos por qué y cómo resolverlo con la solución correcta.",
-    keywords: "aire acondicionado mansarda",
-    categoria: "Soluciones",
-    fecha: "2026-03-16",
-    readTime: "5 min",
-    published: false,
-  },
-  {
-    slug: "todo-incluido-vs-separado",
-    titulo:
-      "Todo incluido vs. comprar por separado: la verdad sobre los precios",
-    descripcion:
-      "Hacemos la matemática que nadie hace. ¿Realmente conviene comprar equipo e instalación por separado? Spoiler: no.",
-    keywords: "aire acondicionado todo incluido precio",
-    categoria: "Precios",
-    fecha: "2026-03-16",
-    readTime: "5 min",
-    published: false,
   },
 ];
 
@@ -132,5 +89,5 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 }
 
 export function getPublishedPosts(): BlogPost[] {
-  return blogPosts.filter((p) => p.published);
+  return blogPosts;
 }
