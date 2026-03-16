@@ -35,6 +35,14 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
     },
     keywords: post.keywords,
     articleSection: post.categoria,
+    about: {
+      "@type": "Thing",
+      name: post.keywords,
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".prose-meser p:first-of-type", ".prose-meser h2 + p", ".tip-box"],
+    },
   };
 
   return (

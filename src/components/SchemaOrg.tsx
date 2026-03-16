@@ -16,6 +16,19 @@ export default function SchemaOrg() {
       addressRegion: "Región Metropolitana",
       addressCountry: "CL",
     },
+    knowsAbout: [
+      "aire acondicionado",
+      "climatización integral",
+      "instalación split",
+      "mantención aire acondicionado",
+      "Midea",
+      "Samsung Wind-Free",
+      "Anwo",
+      "BTU",
+      "HVAC residencial",
+      "multi split",
+      "bomba de calor",
+    ],
     areaServed: {
       "@type": "State",
       name: "Región Metropolitana de Santiago",
@@ -102,6 +115,10 @@ export default function SchemaOrg() {
     "@type": "WebSite",
     name: "Meser",
     url: "https://www.meser.cl",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".prose-meser p:first-of-type", ".tip-box"],
+    },
     potentialAction: {
       "@type": "SearchAction",
       target: "https://www.meser.cl/blog?q={search_term_string}",

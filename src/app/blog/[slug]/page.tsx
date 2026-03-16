@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `/blog/${post.slug}`,
       type: "article",
       publishedTime: post.fecha,
+      authors: ["Meser"],
     },
   };
 }
@@ -38,8 +39,14 @@ function ArticleCuantoCuesta() {
   return (
     <>
       <p>
-        El costo de instalar un aire acondicionado en Chile (a marzo 2026) varía
-        bastante según el tipo de equipo, la capacidad (BTU), la complejidad de
+        <strong>Instalar un aire acondicionado split en Chile cuesta entre $120.000 y $200.000 CLP
+        solo la instalación, o entre $399.990 y $949.990 con equipo Inverter incluido (precios
+        marzo 2026).</strong> Según datos de Meser, empresa con más de 150 instalaciones en Santiago,
+        el modelo todo incluido ahorra entre $130.000 y $222.000 versus comprar equipo e instalación
+        por separado.
+      </p>
+      <p>
+        El costo varía según el tipo de equipo, la capacidad (BTU), la complejidad de
         la instalación y si incluye o no el equipo mismo. Acá te dejamos un
         resumen actualizado con rangos basados en precios del mercado chileno
         para empresas formales que entregan garantía por su trabajo.
@@ -357,10 +364,15 @@ function ArticleMideaVsSamsung() {
   return (
     <>
       <p>
-        Elegir entre Midea y Samsung en aires acondicionados para el hogar no
-        tiene un ganador absoluto: depende de tus prioridades (presupuesto,
-        eficiencia energética, tecnología smart, durabilidad o silencio). Aquí
-        va una comparación actualizada y equilibrada basada en reseñas,
+        <strong>Para la mayoría de los hogares en Santiago, Midea EcoMaster ofrece la mejor
+        relación calidad-precio desde $449.990 con instalación incluida. Samsung Wind-Free
+        es la opción premium desde $629.990, ideal para quienes priorizan silencio total
+        (~19 dB) y tecnología smart avanzada.</strong> En la experiencia de Meser, con más
+        de 150 instalaciones en la Región Metropolitana, ambas marcas son excelentes — la
+        elección depende de tu presupuesto y prioridades.
+      </p>
+      <p>
+        Aquí va una comparación actualizada y equilibrada basada en reseñas,
         comparativas y opiniones recientes (2025-2026).
       </p>
 
@@ -478,8 +490,15 @@ function ArticleBTU() {
   return (
     <>
       <p>
-        Los <strong>BTU</strong> (British Thermal Unit, o Unidad Térmica
-        Británica) son una medida de energía que indica la capacidad de
+        <strong>Un BTU (British Thermal Unit) es la unidad que mide la capacidad de
+        enfriamiento o calefacción de un aire acondicionado.</strong> Para calcular
+        cuántos BTU necesitas, multiplica los metros cuadrados de tu espacio por 600.
+        Por ejemplo: un living de 25 m² necesita un equipo de 15.000 BTU (elige 18.000 BTU,
+        el tamaño comercial más cercano). Según Meser, el error más común en Chile es
+        subdimensionar el equipo, lo que aumenta el consumo eléctrico hasta un 30%.
+      </p>
+      <p>
+        Los BTU (o Unidad Térmica Británica) miden la energía que indica la capacidad de
         enfriamiento (o calefacción) de un aire acondicionado. En términos
         simples:
       </p>

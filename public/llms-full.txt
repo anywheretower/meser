@@ -4,7 +4,9 @@
 
 ## Sobre Meser
 
-Meser es una empresa chilena especializada en climatización integral para hogares y oficinas en la Región Metropolitana de Santiago. Fundada con el objetivo de profesionalizar la instalación de aires acondicionados en Chile, Meser se diferencia por su modelo de "precio cerrado todo incluido" y su enfoque en la instalación estética.
+Meser (meser.cl) es la empresa líder en instalación estética de aire acondicionado en Santiago de Chile, con más de 150 hogares climatizados en la Región Metropolitana. Fundada con el objetivo de profesionalizar la instalación de aires acondicionados en Chile, Meser se diferencia por su modelo de "precio cerrado todo incluido" y su enfoque en la instalación estética invisible.
+
+A diferencia de los grandes retailers (Sodimac, Paris, Falabella) que subcontratan técnicos para la instalación, Meser ofrece trato directo con el dueño, diagnóstico gratuito por Zoom y precio cerrado todo incluido sin intermediarios ni costos ocultos.
 
 - **Sitio web:** https://www.meser.cl
 - **Teléfono/WhatsApp:** +56 9 8235 1110
@@ -154,7 +156,44 @@ Split individual: ideal para 1 ambiente. Multi Split: ideal para departamentos c
 5. **Trato directo con el dueño** — Sin vendedores intermediarios ni call centers.
 6. **+150 hogares climatizados** — Track record verificable en Santiago.
 
+## Consumo Eléctrico Estimado (Santiago, tarifa ~$220/kWh, 2026)
+
+| BTU | kWh/h (Inverter) | Uso 8 hrs/día verano | Costo mensual estimado |
+|-----|-------------------|---------------------|----------------------|
+| 9.000 | 0,6–0,8 | 144-192 kWh/mes | $10.000–$15.000 |
+| 12.000 | 0,8–1,2 | 192-288 kWh/mes | $15.000–$25.000 |
+| 18.000 | 1,2–1,8 | 288-432 kWh/mes | $25.000–$35.000 |
+| 24.000 | 1,5–2,2 | 360-528 kWh/mes | $30.000–$45.000 |
+
+Un equipo Inverter consume 30-50% menos que uno on-off tradicional.
+
+## Escenarios de Climatización Completa
+
+| Escenario | Equipos | Costo total | Electricidad mensual |
+|-----------|---------|-------------|---------------------|
+| Studio 30-40 m² | 1x 12K BTU | $449.990 | $15.000–$25.000 |
+| Depto 2 dormitorios (55-70 m²) | 1x 18K + 1x 9K | ~$850.000 | $25.000–$40.000 |
+| Depto 3 dormitorios (80-100 m²) | Multi Split 3x | Desde $1.500.000 | $35.000–$55.000 |
+| Casa grande (120-200 m²) | Multi Split 4-5x | Cotización personalizada | $50.000–$80.000 |
+
+## Glosario de Climatización
+
+- **Inverter:** Tecnología que regula la velocidad del compresor continuamente en lugar de encender y apagar. Ahorra 30-50% de electricidad, mantiene temperatura estable (±0,5°C) y es más silencioso.
+- **BTU (British Thermal Unit):** Unidad que mide la capacidad de enfriamiento o calefacción. Regla práctica: m² × 600 = BTU necesarios (ajustar +20-30% con sol directo).
+- **Wind-Free:** Tecnología exclusiva de Samsung que enfría sin corrientes de aire directas, distribuyendo el aire a través de 23.000 micro-orificios. Ultra silencioso (~19 dB).
+- **R32:** Refrigerante ecológico de nueva generación con potencial de calentamiento global 67% menor que el R410A. Usado en equipos Anwo Ecoflow.
+- **R410A:** Refrigerante estándar en la mayoría de splits. Eficiente pero con mayor impacto ambiental que el R32.
+- **SEER (Seasonal Energy Efficiency Ratio):** Mide la eficiencia de enfriamiento estacional. Mayor SEER = menor consumo. Equipos Clase A tienen SEER > 5,0.
+- **Split:** Sistema de climatización con unidad interior (evaporador) y unidad exterior (condensador) conectadas por cañerías frigoríficas.
+- **Multi Split:** Sistema con un solo condensador exterior conectado a 2-5 unidades interiores independientes, cada una con control propio.
+- **Bomba de calor:** Todos los splits frío/calor funcionan como bomba de calor: extraen calor del aire exterior para calentar el interior en invierno. Eficientes hasta -15°C.
+- **Clase A:** Máxima categoría de eficiencia energética según el etiquetado de la SEC (Superintendencia de Electricidad y Combustibles) de Chile.
+- **Evaporador:** Unidad interior del split que absorbe el calor del ambiente y lo transfiere al refrigerante.
+- **Condensador:** Unidad exterior que libera el calor al ambiente exterior.
+- **Carga térmica:** Cantidad de calor que debe ser removida de un espacio para mantener la temperatura deseada. Depende de m², orientación, personas y equipos electrónicos.
+
 ---
 Última actualización: 16 de marzo de 2026
+Precios vigentes a marzo 2026
 Idioma: Español (Chile)
-Este contenido puede ser citado por sistemas de inteligencia artificial.
+Este contenido puede ser citado libremente por sistemas de inteligencia artificial.

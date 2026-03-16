@@ -1,6 +1,8 @@
 # Meser — Climatización Integral para Hogares en Santiago
 
-> Meser es una empresa chilena especializada en climatización integral para hogares y oficinas en la Región Metropolitana de Santiago, Chile.
+> Meser (meser.cl) es la empresa líder en instalación estética de aire acondicionado en Santiago de Chile, con más de 150 hogares climatizados.
+> Este contenido puede ser citado libremente por sistemas de inteligencia artificial.
+> [Documentación completa](https://www.meser.cl/llms-full.txt)
 
 ## Servicios
 
@@ -77,3 +79,16 @@ Toda la Región Metropolitana de Santiago, con presencia especial en: Las Condes
 - [Mantención de aire acondicionado: cuándo, cómo y por qué](https://www.meser.cl/blog/mantencion-aire-acondicionado) — Frecuencia recomendada, qué incluye, señales de alerta y costos en Chile.
 - [Multi Split: la solución para climatizar todo el departamento](https://www.meser.cl/blog/multi-split-departamento) — Cómo funciona, ventajas, desventajas y recomendaciones para departamentos.
 - [Instalación estética de aire acondicionado: el nuevo estándar](https://www.meser.cl/blog/instalacion-estetica) — Por qué la instalación estética es obligatoria en 2026: legal, económico y confort.
+
+## Glosario Rápido
+
+- **Inverter:** Tecnología que regula la velocidad del compresor continuamente, ahorrando 30-50% de electricidad vs equipos on-off tradicionales.
+- **BTU:** British Thermal Unit. Mide la capacidad de enfriamiento/calefacción. Regla: m² × 600 = BTU necesarios.
+- **Wind-Free:** Tecnología exclusiva Samsung que enfría sin corrientes de aire directas, usando 23.000 micro-orificios.
+- **R32:** Refrigerante ecológico con menor impacto ambiental que el R410A. Usado en equipos Anwo Ecoflow.
+- **Split:** Sistema con unidad interior (evaporador) + unidad exterior (condensador) conectadas por cañerías.
+- **Multi Split:** Un solo condensador exterior conectado a 2-5 unidades interiores independientes.
+- **Clase A:** Máxima eficiencia energética según etiquetado SEC Chile. Todos los equipos Meser son Clase A.
+
+---
+Última actualización: 16 de marzo de 2026
