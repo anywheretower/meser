@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ const descuentos = [
 export default function ClubMeserPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Club Meser" }]} />
       {/* Hero */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

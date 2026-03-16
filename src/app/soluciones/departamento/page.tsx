@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 export default function DepartamentoPage() {
   return (
     <SolucionLayout
+      slug="departamento"
+      label="Departamentos"
       h1="Aire acondicionado para departamentos en Santiago"
       subtitulo="Instalación discreta que respeta la estética y las normas de tu edificio."
       parrafo="Climatizar un departamento tiene sus particularidades: regulaciones del edificio, ubicación de la unidad exterior, ruido para los vecinos y estética del espacio. En Meser evaluamos todo esto en un diagnóstico por Zoom gratuito y te proponemos la solución exacta para tu caso."

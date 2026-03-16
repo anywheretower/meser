@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import PhoneLink from "@/components/PhoneLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Contacto · Climatización Santiago",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function ContactoPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Contacto" }]} />
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl font-bold text-navy">

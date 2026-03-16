@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 export default function MansardaPage() {
   return (
     <SolucionLayout
+      slug="mansarda"
+      label="Mansardas"
       h1="Climatización para mansardas y altillos"
       subtitulo="Espacios difíciles requieren soluciones inteligentes."
       parrafo="Las mansardas son de los espacios más desafiantes para climatizar: techos inclinados, geometrías irregulares, poco espacio en paredes y temperaturas extremas por la exposición directa al techo. En Meser tenemos experiencia resolviendo estos casos con soluciones a medida."

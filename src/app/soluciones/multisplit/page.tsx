@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 export default function MultisplitPage() {
   return (
     <SolucionLayout
+      slug="multisplit"
+      label="Multi Split"
       h1="Multi Split: climatiza todo tu hogar con un solo equipo exterior"
       subtitulo="Hasta 5 ambientes independientes, una sola unidad exterior."
       parrafo="El sistema Multi Split es la solución perfecta cuando necesitas climatizar varios ambientes sin llenar la fachada de unidades exteriores. Un solo compresor exterior alimenta múltiples unidades interiores, cada una con control independiente de temperatura."

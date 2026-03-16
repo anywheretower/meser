@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function ClimatizacionInteligentePage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Servicios", href: "/climatizacion-integral" }, { label: "Climatización Inteligente" }]} />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90" />
@@ -433,6 +435,58 @@ export default function ClimatizacionInteligentePage() {
         </div>
       </section>
 
+      {/* Schema: FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "¿Necesito WiFi en mi casa para usar estas funciones?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Sí, necesitas una red WiFi 2.4 GHz (la que tienen la mayoría de los routers). La configuración es simple: descargas la app, conectas el equipo y listo. Te ayudamos en la puesta en marcha.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Todos los equipos que venden tienen WiFi?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Sí. Todos los equipos Samsung Wind-Free y Midea EcoMaster que instalamos incluyen módulo WiFi integrado de fábrica. No necesitas comprar adaptadores adicionales.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Puedo controlar varios equipos desde una sola app?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Sí. Tanto SmartThings (Samsung) como Midea AIR permiten controlar múltiples equipos desde la misma cuenta. Ideal para casas con multi-split o varios ambientes.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿La inteligencia artificial consume más electricidad?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Al contrario. Los modos de IA optimizan el consumo, reduciendo el gasto energético entre un 20% y 60% respecto al uso manual. La IA trabaja para que gastes menos.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Meser me ayuda a configurar la app y la domótica?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Sí. La puesta en marcha incluye configurar la app en tu celular, conectar el equipo al WiFi y enseñarte a usar todas las funciones inteligentes. Sin costo adicional.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

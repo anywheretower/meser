@@ -7,7 +7,7 @@ export default function FormularioGlobal() {
     <section id="agendar" className="relative bg-navy py-20 overflow-hidden">
       {/* Background image */}
       <Image
-        src="/images/formulario-bg.png"
+        src="/images/formulario-bg.webp"
         alt=""
         fill
         className="object-cover object-right"

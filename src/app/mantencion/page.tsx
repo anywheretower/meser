@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function MantencionPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Servicios", href: "/climatizacion-integral" }, { label: "Mantención" }]} />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90" />
@@ -151,6 +153,30 @@ export default function MantencionPage() {
         </div>
       </section>
 
+      {/* Schema: Service */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Mantención de Aire Acondicionado",
+            description: "Mantención profesional de aire acondicionado en Santiago. Limpieza profunda, revisión técnica, optimización de rendimiento.",
+            provider: {
+              "@type": "Organization",
+              name: "Meser",
+              url: "https://www.meser.cl",
+            },
+            areaServed: { "@type": "State", name: "Región Metropolitana de Santiago" },
+            offers: {
+              "@type": "Offer",
+              price: "59990",
+              priceCurrency: "CLP",
+              description: "Mantención completa desde $59.990",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

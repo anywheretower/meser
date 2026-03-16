@@ -12,7 +12,7 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-[85vh] flex items-center bg-gray-100">
         {/* Background image */}
         <Image
-          src="/images/hero-home.png"
+          src="/images/hero-home.webp"
           alt="Climatización integral para tu hogar"
           fill
           priority
@@ -250,7 +250,7 @@ export default function Home() {
       <section className="relative pt-16 lg:pt-20 pb-80 lg:pb-[30rem] bg-navy overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/por-que-meser-bg.png"
+          src="/images/por-que-meser-bg.webp"
           alt=""
           fill
           className="object-cover object-bottom"

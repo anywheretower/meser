@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 export default function OficinaPage() {
   return (
     <SolucionLayout
+      slug="oficina"
+      label="Oficinas"
       h1="Climatización para oficinas y locales comerciales"
       subtitulo="Equipos eficientes que mantienen la productividad."
       parrafo="Un espacio de trabajo bien climatizado mejora la productividad y el bienestar. En Meser instalamos equipos Inverter que operan de forma silenciosa y eficiente, sin impactar tu cuenta de luz."

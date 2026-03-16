@@ -1,5 +1,14 @@
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+
+const todasSoluciones = [
+  { name: "Departamentos", slug: "departamento" },
+  { name: "Casas", slug: "casa" },
+  { name: "Mansardas", slug: "mansarda" },
+  { name: "Oficinas", slug: "oficina" },
+  { name: "Multi Split", slug: "multisplit" },
+];
 
 type Desafio = {
   title: string;
@@ -20,6 +29,8 @@ interface SolucionLayoutProps {
   desafios: Desafio[];
   paquetes: Paquete[];
   ctaTitle?: string;
+  slug?: string;
+  label?: string;
 }
 
 export default function SolucionLayout({
@@ -29,9 +40,18 @@ export default function SolucionLayout({
   desafios,
   paquetes,
   ctaTitle,
+  slug,
+  label,
 }: SolucionLayoutProps) {
+  const otrasSoluciones = slug
+    ? todasSoluciones.filter((s) => s.slug !== slug)
+    : todasSoluciones;
+
   return (
     <>
+      {label && (
+        <Breadcrumbs items={[{ label: "Soluciones" }, { label }]} />
+      )}
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90" />
@@ -150,6 +170,26 @@ export default function SolucionLayout({
                 </h3>
                 <p className="mt-2 text-sm text-steel-dark">{item.text}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Otras soluciones */}
+      <section className="py-12 bg-gray-50">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-lg font-semibold text-navy text-center mb-6">
+            Otras soluciones
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {otrasSoluciones.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/soluciones/${s.slug}`}
+                className="rounded-full border border-gray-200 px-4 py-2 text-sm text-navy hover:border-cyan hover:text-cyan transition-colors"
+              >
+                {s.name}
+              </Link>
             ))}
           </div>
         </div>

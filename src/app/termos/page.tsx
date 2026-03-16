@@ -4,6 +4,7 @@ import Link from "next/link";
 import { termosGroup, formatPrice } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
 import WhatsAppLink from "@/components/WhatsAppLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function TermosPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Termos Eléctricos" }]} />
       {/* Hero */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

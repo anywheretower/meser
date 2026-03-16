@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function NosotrosPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Nosotros" }]} />
       {/* Hero */}
       <section className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
 import WhatsAppLink from "@/components/WhatsAppLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function ClimatizacionIntegralPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Climatización Integral" }]} />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90" />

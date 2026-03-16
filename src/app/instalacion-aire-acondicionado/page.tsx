@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function InstalacionPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Servicios", href: "/climatizacion-integral" }, { label: "Instalación" }]} />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90" />
@@ -366,6 +368,65 @@ export default function InstalacionPage() {
         </div>
       </section>
 
+      {/* Schema: FAQPage + Service */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "¿Puedo comprar el equipo en otro lado y que Meser lo instale?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Sí, ofrecemos servicio de instalación independiente. Sin embargo, cuando compras el equipo con nosotros, el precio total es menor que comprando por separado. Y la garantía cubre equipo e instalación de forma integral.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Necesito un circuito eléctrico independiente?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Depende del equipo y de tu instalación eléctrica actual. Lo evaluamos en el diagnóstico por Zoom y lo incluimos en la propuesta si es necesario. Sin sorpresas.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Cuánto demora la instalación?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "La instalación estándar toma entre 3 y 5 horas. Coordinamos horarios que te acomoden. Desde que aceptas la propuesta, el equipo está instalado en 3 a 7 días hábiles.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Instalación de Aire Acondicionado",
+            description: "Instalación profesional de aire acondicionado en Santiago. Canaletas ocultas, acabados prolijos, garantía total.",
+            provider: {
+              "@type": "Organization",
+              name: "Meser",
+              url: "https://www.meser.cl",
+            },
+            areaServed: { "@type": "State", name: "Región Metropolitana de Santiago" },
+            offers: {
+              "@type": "Offer",
+              price: "449990",
+              priceCurrency: "CLP",
+              description: "Desde $449.990 todo incluido (equipo + instalación + garantía)",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

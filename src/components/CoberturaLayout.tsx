@@ -1,5 +1,14 @@
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import Breadcrumbs from "@/components/Breadcrumbs";
+
+const todasComunas = [
+  { name: "Las Condes", slug: "las-condes" },
+  { name: "Vitacura", slug: "vitacura" },
+  { name: "Providencia", slug: "providencia" },
+  { name: "Ñuñoa", slug: "nunoa" },
+  { name: "Lo Barnechea", slug: "lo-barnechea" },
+];
 
 interface CoberturaLayoutProps {
   comuna: string;
@@ -21,8 +30,11 @@ export default function CoberturaLayout({
   experiencia,
   testimonio,
 }: CoberturaLayoutProps) {
+  const otrasComunas = todasComunas.filter((c) => c.name !== comuna);
+
   return (
     <>
+      <Breadcrumbs items={[{ label: "Cobertura" }, { label: comuna }]} />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90" />
@@ -124,6 +136,26 @@ export default function CoberturaLayout({
                 <p className="mt-3 text-sm font-bold text-cyan">
                   {service.precio}
                 </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Otras comunas */}
+      <section className="py-12 bg-gray-50">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-lg font-semibold text-navy text-center mb-6">
+            También instalamos en
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {otrasComunas.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/cobertura/${c.slug}`}
+                className="rounded-full border border-gray-200 px-4 py-2 text-sm text-navy hover:border-cyan hover:text-cyan transition-colors"
+              >
+                {c.name}
               </Link>
             ))}
           </div>

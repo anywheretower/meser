@@ -4,6 +4,7 @@ import Link from "next/link";
 import { airesGroups, formatPrice } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
 import WhatsAppLink from "@/components/WhatsAppLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
@@ -72,6 +73,7 @@ export default function AiresAcondicionadosPage() {
   return (
     <>
       <ProductSchemaScript />
+      <Breadcrumbs items={[{ label: "Aires Acondicionados" }]} />
       {/* Hero */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

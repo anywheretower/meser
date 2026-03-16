@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 export default function CasaPage() {
   return (
     <SolucionLayout
+      slug="casa"
+      label="Casas"
       h1="Climatización integral para casas en Santiago"
       subtitulo="Desde una habitación hasta toda la vivienda con sistema multisplit."
       parrafo="Las casas ofrecen más flexibilidad para la instalación, pero también más variables: múltiples pisos, distancias entre unidades, y la necesidad de mantener la estética exterior. En Meser diseñamos proyectos integrales que consideran cada detalle."
