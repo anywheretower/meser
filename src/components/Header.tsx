@@ -82,6 +82,7 @@ const nav: NavEntry[] = [
 function DesktopDropdown({ entry }: { entry: NavDropdown }) {
   const [open, setOpen] = useState(false);
   const timeout = useRef<ReturnType<typeof setTimeout>>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const show = () => {
     if (timeout.current) clearTimeout(timeout.current);
@@ -91,15 +92,28 @@ function DesktopDropdown({ entry }: { entry: NavDropdown }) {
     timeout.current = setTimeout(() => setOpen(false), 120);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setOpen(false);
+    } else if (e.key === "ArrowDown" && !open) {
+      e.preventDefault();
+      setOpen(true);
+    }
+  };
+
   return (
     <div
       className="relative"
       onMouseEnter={show}
       onMouseLeave={hide}
+      onKeyDown={handleKeyDown}
+      ref={menuRef}
     >
       <button
         className="flex items-center gap-1 text-[13px] font-medium text-navy/60 hover:text-navy transition-colors duration-200"
         onClick={() => setOpen((v) => !v)}
+        aria-haspopup="true"
+        aria-expanded={open}
       >
         {entry.label}
         <svg
@@ -108,6 +122,7 @@ function DesktopDropdown({ entry }: { entry: NavDropdown }) {
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth={2}
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -118,13 +133,15 @@ function DesktopDropdown({ entry }: { entry: NavDropdown }) {
       </button>
 
       {open && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50" role="menu">
           <div className="w-64 rounded-xl bg-white/95 backdrop-blur-xl border border-gray-200/80 shadow-lg shadow-black/[0.04] p-2 animate-fade-in">
             {entry.items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
+                role="menuitem"
                 onClick={() => setOpen(false)}
+                onKeyDown={(e) => { if (e.key === "Escape") setOpen(false); }}
                 className="block rounded-lg px-3 py-2.5 hover:bg-gray-50 transition-colors group"
               >
                 <span className="text-sm font-medium text-navy group-hover:text-cyan transition-colors">
@@ -205,6 +222,20 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   const closeMobile = () => setMobileOpen(false);
 

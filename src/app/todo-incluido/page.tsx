@@ -344,6 +344,113 @@ export default function TodoIncluidoPage() {
         </div>
       </section>
 
+      {/* Preguntas frecuentes */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-navy text-center">
+            Preguntas frecuentes
+          </h2>
+          <div className="mt-12 space-y-4">
+            {[
+              {
+                q: "¿El precio puede cambiar después de la cotización?",
+                a: "No. El precio que te damos es el precio que pagas. Incluye equipo, instalación, materiales, puesta en marcha y garantía. Cero extras, cero sorpresas.",
+              },
+              {
+                q: "¿Qué marcas de equipos usan?",
+                a: "Trabajamos con Samsung (línea Wind-Free), Midea (línea EcoMaster con IA) y Anwo (línea Ecoflow). Todos son Inverter, frío/calor, con WiFi y eficiencia clase A.",
+              },
+              {
+                q: "¿Puedo pagar en cuotas?",
+                a: "Sí, aceptamos hasta 3 cuotas sin interés con tarjeta de crédito a través de Transbank. También puedes pagar con débito o transferencia.",
+              },
+              {
+                q: "¿Cuánto tiempo toma desde que cotizo hasta que instalan?",
+                a: "Desde la aprobación de la cotización, la instalación se coordina en 3 a 7 días hábiles. El día de la instalación toma entre 3 y 5 horas por equipo.",
+              },
+              {
+                q: "¿Qué pasa si mi espacio necesita algo especial?",
+                a: "En el diagnóstico gratuito por Zoom evaluamos tu espacio y detectamos cualquier particularidad. Si hay una necesidad especial (mansarda, instalación en altura, etc.), te lo indicamos en la cotización con el precio cerrado correspondiente.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="group rounded-2xl border border-gray-200 bg-white open:shadow-sm transition-all"
+              >
+                <summary className="flex cursor-pointer items-center justify-between px-6 py-5 text-sm font-semibold text-navy">
+                  {faq.q}
+                  <svg
+                    className="w-5 h-5 text-steel shrink-0 ml-4 transition-transform group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="px-6 pb-5 text-sm text-steel-dark leading-relaxed">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Schema: FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "¿El precio puede cambiar después de la cotización?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. El precio que te damos es el precio que pagas. Incluye equipo, instalación, materiales, puesta en marcha y garantía.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Qué marcas de equipos usan?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Samsung (Wind-Free), Midea (EcoMaster con IA) y Anwo (Ecoflow). Todos Inverter, frío/calor, WiFi, clase A.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Puedo pagar en cuotas?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Sí, hasta 3 cuotas sin interés con tarjeta de crédito a través de Transbank. También débito o transferencia.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Cuánto tiempo toma desde que cotizo hasta que instalan?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "3 a 7 días hábiles desde la aprobación. La instalación toma entre 3 y 5 horas por equipo.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Qué pasa si mi espacio necesita algo especial?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "En el diagnóstico Zoom evaluamos tu espacio. Si hay una necesidad especial, se incluye en la cotización con precio cerrado.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* Schema: Service */}
       <script
         type="application/ld+json"

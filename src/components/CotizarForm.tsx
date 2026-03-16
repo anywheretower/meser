@@ -104,7 +104,7 @@ export default function CotizarForm() {
     return (
       <div className="rounded-2xl bg-white border border-gray-200 p-10 text-center">
         <div className="mx-auto w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-          <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -143,7 +143,7 @@ export default function CotizarForm() {
             {Math.round((step / TOTAL_STEPS) * 100)}%
           </span>
         </div>
-        <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+        <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={TOTAL_STEPS} aria-label={`Paso ${step} de ${TOTAL_STEPS}`}>
           <div
             className="h-full bg-cyan rounded-full transition-all duration-300"
             style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
@@ -151,22 +151,24 @@ export default function CotizarForm() {
         </div>
       </div>
 
-      <div className="p-8">
+      <div className="p-8" aria-live="polite">
         {/* Step 1: Tipo de espacio */}
         {step === 1 && (
-          <div>
-            <h2 className="text-xl font-semibold text-navy">
+          <fieldset>
+            <legend className="text-xl font-semibold text-navy">
               ¿Qué tipo de espacio quieres climatizar?
-            </h2>
-            <div className="mt-6 grid grid-cols-2 gap-3">
+            </legend>
+            <div className="mt-6 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Tipo de espacio">
               {[
-                { value: "departamento", label: "Departamento", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M2 22V6l10-4 10 4v16M2 22h20M6 10v2m4-2v2m4-2v2m-8 4v2m4-2v2m4-2v2" /></svg> },
-                { value: "casa", label: "Casa", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-8 9 8M5 10v10a1 1 0 001 1h3v-5h6v5h3a1 1 0 001-1V10" /></svg> },
-                { value: "oficina", label: "Oficina / Local", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7m16 0l-8 4m-8-4l8 4m0 0v10" /></svg> },
-                { value: "otro", label: "Otro", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg> },
+                { value: "departamento", label: "Departamento", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2 22V6l10-4 10 4v16M2 22h20M6 10v2m4-2v2m4-2v2m-8 4v2m4-2v2m4-2v2" /></svg> },
+                { value: "casa", label: "Casa", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-8 9 8M5 10v10a1 1 0 001 1h3v-5h6v5h3a1 1 0 001-1V10" /></svg> },
+                { value: "oficina", label: "Oficina / Local", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7m16 0l-8 4m-8-4l8 4m0 0v10" /></svg> },
+                { value: "otro", label: "Otro", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg> },
               ].map((option) => (
                 <button
                   key={option.value}
+                  role="radio"
+                  aria-checked={formData.tipoEspacio === option.value}
                   onClick={() => {
                     updateField("tipoEspacio", option.value);
                     setStep(2);
@@ -184,16 +186,16 @@ export default function CotizarForm() {
                 </button>
               ))}
             </div>
-          </div>
+          </fieldset>
         )}
 
         {/* Step 2: Ambientes */}
         {step === 2 && (
-          <div>
-            <h2 className="text-xl font-semibold text-navy">
+          <fieldset>
+            <legend className="text-xl font-semibold text-navy">
               ¿Cuántos ambientes?
-            </h2>
-            <div className="mt-6 grid grid-cols-2 gap-3">
+            </legend>
+            <div className="mt-6 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Cantidad de ambientes">
               {[
                 { value: "1", label: "1 ambiente" },
                 { value: "2", label: "2 ambientes" },
@@ -202,6 +204,8 @@ export default function CotizarForm() {
               ].map((option) => (
                 <button
                   key={option.value}
+                  role="radio"
+                  aria-checked={formData.ambientes === option.value}
                   onClick={() => {
                     updateField("ambientes", option.value);
                     setStep(3);
@@ -221,17 +225,18 @@ export default function CotizarForm() {
                 </button>
               ))}
             </div>
-          </div>
+          </fieldset>
         )}
 
         {/* Step 3: Comuna */}
         {step === 3 && (
           <div>
-            <h2 className="text-xl font-semibold text-navy">
+            <label htmlFor="cotizar-comuna" className="block text-xl font-semibold text-navy">
               ¿En qué comuna estás?
-            </h2>
+            </label>
             <div className="mt-6">
               <select
+                id="cotizar-comuna"
                 value={formData.comuna}
                 onChange={(e) => {
                   updateField("comuna", e.target.value);
@@ -252,11 +257,11 @@ export default function CotizarForm() {
 
         {/* Step 4: Necesidad */}
         {step === 4 && (
-          <div>
-            <h2 className="text-xl font-semibold text-navy">
+          <fieldset>
+            <legend className="text-xl font-semibold text-navy">
               ¿Ya tienes equipo o necesitas uno?
-            </h2>
-            <div className="mt-6 space-y-3">
+            </legend>
+            <div className="mt-6 space-y-3" role="radiogroup" aria-label="Tipo de necesidad">
               {[
                 {
                   value: "todo-incluido",
@@ -281,6 +286,8 @@ export default function CotizarForm() {
               ].map((option) => (
                 <button
                   key={option.value}
+                  role="radio"
+                  aria-checked={formData.necesidad === option.value}
                   onClick={() => {
                     updateField("necesidad", option.value);
                     setStep(5);
@@ -299,13 +306,13 @@ export default function CotizarForm() {
                       {option.desc}
                     </span>
                   </div>
-                  <svg className="w-5 h-5 text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
               ))}
             </div>
-          </div>
+          </fieldset>
         )}
 
         {/* Step 5: Datos */}
@@ -317,11 +324,13 @@ export default function CotizarForm() {
             </p>
             <div className="mt-6 space-y-4">
               <div>
-                <label className="block text-sm font-medium text-navy mb-1.5">
+                <label htmlFor="cotizar-nombre" className="block text-sm font-medium text-navy mb-1.5">
                   Nombre *
                 </label>
                 <input
+                  id="cotizar-nombre"
                   type="text"
+                  required
                   value={formData.nombre}
                   onChange={(e) => updateField("nombre", e.target.value)}
                   placeholder="Tu nombre"
@@ -329,11 +338,14 @@ export default function CotizarForm() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy mb-1.5">
+                <label htmlFor="cotizar-telefono" className="block text-sm font-medium text-navy mb-1.5">
                   Teléfono *
                 </label>
                 <input
+                  id="cotizar-telefono"
                   type="tel"
+                  required
+                  pattern="\+?[0-9\s]{8,15}"
                   value={formData.telefono}
                   onChange={(e) => updateField("telefono", e.target.value)}
                   placeholder="+569 XXXX XXXX"
@@ -341,11 +353,12 @@ export default function CotizarForm() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy mb-1.5">
+                <label htmlFor="cotizar-email" className="block text-sm font-medium text-navy mb-1.5">
                   Email{" "}
                   <span className="text-steel font-normal">(opcional)</span>
                 </label>
                 <input
+                  id="cotizar-email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => updateField("email", e.target.value)}
@@ -354,11 +367,12 @@ export default function CotizarForm() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy mb-1.5">
+                <label htmlFor="cotizar-comentario" className="block text-sm font-medium text-navy mb-1.5">
                   Comentario{" "}
                   <span className="text-steel font-normal">(opcional)</span>
                 </label>
                 <textarea
+                  id="cotizar-comentario"
                   value={formData.comentario}
                   onChange={(e) => updateField("comentario", e.target.value)}
                   placeholder="¿Algo que debamos saber sobre tu espacio?"
@@ -388,7 +402,7 @@ export default function CotizarForm() {
               disabled={sending}
               className="flex items-center gap-1 text-sm font-medium text-steel-dark hover:text-navy transition-colors disabled:opacity-40"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               Volver

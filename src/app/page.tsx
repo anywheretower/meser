@@ -463,6 +463,114 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Preguntas frecuentes ── */}
+      <section className="py-24 bg-gray-50">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <RevealOnScroll>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center">
+              Preguntas frecuentes
+            </h2>
+          </RevealOnScroll>
+          <div className="mt-14 space-y-4">
+            {[
+              {
+                q: "¿Qué incluye el precio \"todo incluido\"?",
+                a: "Equipo Inverter frío/calor de marca (Samsung o Midea), instalación profesional con canaletas ocultas, cañerías, conexión eléctrica, desagüe, perforación de muro, puesta en marcha, inducción de uso y garantía total Meser.",
+              },
+              {
+                q: "¿Cómo funciona el diagnóstico gratuito por Zoom?",
+                a: "Te conectas 25 minutos con un especialista Meser que revisa tu espacio (puedes mostrar con la cámara del celular), calcula la capacidad exacta que necesitas y te entrega una propuesta con precio cerrado. Sin compromiso de compra.",
+              },
+              {
+                q: "¿Qué garantía tienen los equipos y la instalación?",
+                a: "Garantía total Meser: si algo falla en el equipo o la instalación, nosotros nos hacemos cargo. No te derivamos al fabricante ni a terceros. La garantía cubre equipo e instalación.",
+              },
+              {
+                q: "¿En qué zonas de Santiago instalan?",
+                a: "Cubrimos toda la Región Metropolitana: Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea, La Reina, Peñalolén, Santiago Centro, Maipú, La Florida y más.",
+              },
+              {
+                q: "¿Cuánto demora la instalación?",
+                a: "Una instalación estándar de un equipo toma entre 3 y 5 horas. Coordinamos el día y horario contigo. Desde la cotización hasta la instalación, el proceso completo toma entre 3 y 7 días hábiles.",
+              },
+            ].map((faq) => (
+              <RevealOnScroll key={faq.q}>
+                <details className="group rounded-2xl border border-gray-200 bg-white open:shadow-sm transition-all">
+                  <summary className="flex cursor-pointer items-center justify-between px-6 py-5 text-sm font-semibold text-navy">
+                    {faq.q}
+                    <svg
+                      className="w-5 h-5 text-steel shrink-0 ml-4 transition-transform group-open:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <p className="px-6 pb-5 text-sm text-steel-dark leading-relaxed">
+                    {faq.a}
+                  </p>
+                </details>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Schema: FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "¿Qué incluye el precio \"todo incluido\"?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Equipo Inverter frío/calor de marca, instalación profesional con canaletas ocultas, cañerías, conexión eléctrica, desagüe, perforación de muro, puesta en marcha, inducción de uso y garantía total Meser.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Cómo funciona el diagnóstico gratuito por Zoom?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "25 minutos con un especialista que revisa tu espacio, calcula la capacidad exacta y entrega una propuesta con precio cerrado. Sin compromiso.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Qué garantía tienen los equipos y la instalación?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Garantía total Meser: cubre equipo e instalación. Si algo falla, Meser se hace cargo directamente.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿En qué zonas de Santiago instalan?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Toda la Región Metropolitana: Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea, La Reina, Peñalolén, Santiago Centro, Maipú, La Florida y más.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Cuánto demora la instalación?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Una instalación estándar toma entre 3 y 5 horas. El proceso completo desde cotización hasta instalación toma 3-7 días hábiles.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* ── Testimonios ── */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
