@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SolucionLayout from "@/components/SolucionLayout";
 
 export const metadata: Metadata = {
-  title: "Sistema Multi Split · Varios Ambientes · Meser Santiago",
+  title: "Sistema Multi Split · Varios Ambientes · Santiago",
   description:
     "Un solo equipo exterior para múltiples ambientes. Multi Split ideal para departamentos y casas. Cotización personalizada con diagnóstico Zoom gratuito.",
 };

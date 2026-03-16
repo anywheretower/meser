@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 export const metadata: Metadata = {
-  title: "Garantía Total Meser · Equipo + Instalación",
+  title: "Garantía Total · Equipo + Instalación",
   description:
     "Garantía total Meser: cubre equipo e instalación. Si algo falla, nosotros nos hacemos cargo. Sin derivarte al fabricante, sin trámites.",
 };

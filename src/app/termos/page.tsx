@@ -7,7 +7,7 @@ import WhatsAppLink from "@/components/WhatsAppLink";
 
 
 export const metadata: Metadata = {
-  title: "Termos Eléctricos · Midea Lume · Meser",
+  title: "Termos Eléctricos · Midea Lume",
   description:
     "Termos eléctricos Midea Lume de 50L, 80L, 100L y 120L. Acero esmaltado, termostato regulable. Entrega e instalación en Santiago.",
 };

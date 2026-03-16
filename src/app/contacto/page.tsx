@@ -4,7 +4,7 @@ import WhatsAppLink from "@/components/WhatsAppLink";
 import PhoneLink from "@/components/PhoneLink";
 
 export const metadata: Metadata = {
-  title: "Contacto · Meser Climatización",
+  title: "Contacto · Climatización Santiago",
   description:
     "Contáctanos para tu proyecto de climatización. WhatsApp, teléfono, email o visítanos en Las Condes. Respuesta en menos de 2 horas.",
 };

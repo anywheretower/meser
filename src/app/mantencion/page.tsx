@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 export const metadata: Metadata = {
-  title: "Mantención Aire Acondicionado Santiago · Desde $59.990 · Meser",
+  title: "Mantención Aire Acondicionado Santiago · Desde $59.990",
   description:
     "Mantención de aire acondicionado en Santiago desde $59.990. Limpieza profunda, revisión técnica, optimización de rendimiento. Toda la RM.",
 };

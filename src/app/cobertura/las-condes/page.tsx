@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CoberturaLayout from "@/components/CoberturaLayout";
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Las Condes · Instalación Estética · Meser",
+  title: "Aire Acondicionado Las Condes · Instalación Estética",
   description:
     "Instalación de aire acondicionado en Las Condes. Servicio integral con instalación estética, precio cerrado y garantía total. Diagnóstico gratuito por Zoom.",
 };

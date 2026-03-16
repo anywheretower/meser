@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 export const metadata: Metadata = {
-  title: "Club Meser · Plan de Referidos",
+  title: "Club · Plan de Referidos",
   description:
     "Refiere a un amigo que instale con Meser y acumula 25% de descuento en tu próxima mantención preventiva. Acumulable sin límite.",
 };

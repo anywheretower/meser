@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import CotizarForm from "@/components/CotizarForm";
 
 export const metadata: Metadata = {
-  title: "Cotiza tu Climatización · Respuesta en 2 horas · Meser",
+  title: "Cotiza tu Climatización · Respuesta en 2 horas",
   description:
     "Cotiza tu proyecto de climatización en menos de 1 minuto. Te contactamos en menos de 2 horas con una propuesta personalizada.",
+  robots: { index: false, follow: true },
 };
 
 export default function CotizarPage() {

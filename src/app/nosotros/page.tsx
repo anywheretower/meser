@@ -4,7 +4,7 @@ import PhoneLink from "@/components/PhoneLink";
 
 
 export const metadata: Metadata = {
-  title: "Somos Meser · Climatización Integral Santiago",
+  title: "Nosotros · Climatización Integral Santiago",
   description:
     "Empresa chilena especializada en climatización integral. Diagnóstico gratuito, precio cerrado, instalación estética. +150 hogares climatizados en Santiago.",
 };

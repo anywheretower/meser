@@ -7,14 +7,71 @@ import WhatsAppLink from "@/components/WhatsAppLink";
 
 
 export const metadata: Metadata = {
-  title: "Aires Acondicionados · Catálogo Meser · Samsung y Midea",
+  title: "Aires Acondicionados · Catálogo Samsung y Midea",
   description:
     "Catálogo completo de aires acondicionados Samsung Wind-Free y Midea EcoMaster. Todos Inverter, frío/calor, WiFi. Precio todo incluido con instalación.",
 };
 
+function ProductSchemaScript() {
+  const products = airesGroups.flatMap((grupo) =>
+    grupo.models.map((p) => ({
+      "@type": "Product",
+      name: p.name,
+      brand: { "@type": "Brand", name: p.brand },
+      description: `${p.name} - ${p.specs.join(", ")}. ${p.coverage || ""}`.trim(),
+      image: p.image ? `https://www.meser.cl${p.image}` : undefined,
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "CLP",
+        lowPrice: p.price,
+        highPrice: p.todoIncluidoPrice,
+        offerCount: 2,
+        offers: [
+          {
+            "@type": "Offer",
+            name: "Solo equipo",
+            price: p.price,
+            priceCurrency: "CLP",
+            availability: "https://schema.org/InStock",
+            seller: { "@type": "Organization", name: "Meser" },
+          },
+          {
+            "@type": "Offer",
+            name: "Con instalación todo incluido",
+            price: p.todoIncluidoPrice,
+            priceCurrency: "CLP",
+            availability: "https://schema.org/InStock",
+            seller: { "@type": "Organization", name: "Meser" },
+          },
+        ],
+      },
+    }))
+  );
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Catálogo de Aires Acondicionados Meser",
+    numberOfItems: products.length,
+    itemListElement: products.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: p,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export default function AiresAcondicionadosPage() {
   return (
     <>
+      <ProductSchemaScript />
       {/* Hero */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

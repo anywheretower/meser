@@ -5,7 +5,7 @@ import AddPackageButton from "@/components/AddPackageButton";
 
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Todo Incluido desde $449.980 · Meser Santiago",
+  title: "Aire Acondicionado Todo Incluido desde $449.980 · Santiago",
   description:
     "Aire acondicionado Inverter frío/calor + instalación + garantía desde $449.980. Precio cerrado, cero sorpresas. Ahorra hasta $172.000 vs comprar por separado.",
 };

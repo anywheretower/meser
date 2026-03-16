@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CoberturaLayout from "@/components/CoberturaLayout";
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Ñuñoa · Instalación Estética · Meser",
+  title: "Aire Acondicionado Ñuñoa · Instalación Estética",
   description:
     "Instalación de aire acondicionado en Ñuñoa. Departamentos y casas. Precio cerrado, instalación estética, garantía total. Diagnóstico gratuito.",
 };

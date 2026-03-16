@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CoberturaLayout from "@/components/CoberturaLayout";
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Providencia · Instalación Estética · Meser",
+  title: "Aire Acondicionado Providencia · Instalación Estética",
   description:
     "Instalación de aire acondicionado en Providencia. Equipos silenciosos, instalación discreta, precio cerrado. Diagnóstico gratuito por Zoom.",
 };

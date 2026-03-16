@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CoberturaLayout from "@/components/CoberturaLayout";
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Vitacura · Instalación Estética · Meser",
+  title: "Aire Acondicionado Vitacura · Instalación Estética",
   description:
     "Instalación de aire acondicionado en Vitacura. Precio cerrado, instalación estética invisible, garantía total. Diagnóstico gratuito por Zoom.",
 };

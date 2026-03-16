@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SolucionLayout from "@/components/SolucionLayout";
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado para Departamentos Santiago · Meser",
+  title: "Aire Acondicionado para Departamentos Santiago",
   description:
     "Climatización discreta para departamentos en Santiago. Equipos silenciosos, instalación sin afectar fachadas. Diagnóstico gratuito por Zoom.",
 };

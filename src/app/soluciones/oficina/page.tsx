@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SolucionLayout from "@/components/SolucionLayout";
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado para Oficinas Santiago · Meser",
+  title: "Aire Acondicionado para Oficinas Santiago",
   description:
     "Climatización eficiente para oficinas y locales comerciales. Equipos silenciosos que mantienen la productividad sin elevar la cuenta de luz.",
 };

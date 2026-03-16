@@ -9,6 +9,7 @@ import StickyCTA from "@/components/StickyCTA";
 import SocialSidebar from "@/components/SocialSidebar";
 import { CartProvider } from "@/lib/cart-context";
 import { GTM_ID } from "@/lib/gtm";
+import SchemaOrg from "@/components/SchemaOrg";
 
 const geist = Geist({
   variable: "--font-body",
@@ -22,11 +23,14 @@ export const metadata: Metadata = {
   },
   description:
     "Climatización integral para hogares en Santiago. Diagnóstico gratuito por Zoom, precio cerrado todo incluido y instalación estética. Samsung y Midea. +150 hogares.",
-  metadataBase: new URL("https://meser.cl"),
+  metadataBase: new URL("https://www.meser.cl"),
   openGraph: {
     type: "website",
     locale: "es_CL",
     siteName: "Meser",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
@@ -37,6 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <SchemaOrg />
+      </head>
       <Script
         id="gtm-script"
         strategy="afterInteractive"
