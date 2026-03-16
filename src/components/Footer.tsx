@@ -3,6 +3,10 @@ import WhatsAppLink from "./WhatsAppLink";
 import PhoneLink from "./PhoneLink";
 
 const footerLinks = {
+  productos: [
+    { href: "/aires-acondicionados", label: "Aires Acondicionados" },
+    { href: "/termos", label: "Termos Eléctricos" },
+  ],
   servicios: [
     { href: "/climatizacion-integral", label: "Climatización Integral" },
     { href: "/instalacion-aire-acondicionado", label: "Instalación" },
@@ -103,9 +107,25 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Servicios */}
+          {/* Productos */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-steel">
+              Productos
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerLinks.productos.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-steel-light hover:text-cyan transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-steel mt-6">
               Servicios
             </h3>
             <ul className="mt-4 space-y-3">

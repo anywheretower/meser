@@ -251,7 +251,7 @@ export default function Home() {
         {/* Background image */}
         <Image
           src="/images/por-que-meser-bg.webp"
-          alt=""
+          alt="Equipo de climatización instalado con acabado estético en hogar de Santiago"
           fill
           className="object-cover object-bottom"
         />

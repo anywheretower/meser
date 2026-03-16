@@ -8,7 +8,7 @@ export default function FormularioGlobal() {
       {/* Background image */}
       <Image
         src="/images/formulario-bg.webp"
-        alt=""
+        alt="Interior de hogar climatizado con aire acondicionado"
         fill
         className="object-cover object-right"
       />
