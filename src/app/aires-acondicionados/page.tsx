@@ -304,11 +304,15 @@ export default function AiresAcondicionadosPage() {
                 Ver detalles &rarr;
               </Link>
             </div>
-            <div className="rounded-2xl border border-gray-200 p-6">
+            <div className="relative rounded-2xl border-2 border-cyan p-6">
+              <div className="absolute -top-3 left-4 rounded-full bg-red-500 px-3 py-0.5 text-[11px] font-bold text-white uppercase tracking-wider">
+                Promo marzo
+              </div>
               <h3 className="text-base font-semibold text-navy">
                 Instalación (solo servicio)
               </h3>
               <div className="mt-2">
+                <span className="text-sm text-steel line-through mr-2">$150.000</span>
                 <span className="text-xl font-bold text-navy">$100.000</span>
               </div>
               <p className="mt-2 text-sm text-steel-dark">
