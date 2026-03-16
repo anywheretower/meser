@@ -30,12 +30,13 @@ export default function Home() {
             </div>
 
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.9] animate-fade-in-up stagger-2">
-              Confort inteligente para cada rincón de tu hogar
+              Aire acondicionado con instalación desde $399.990
             </h1>
 
             <p className="mt-8 text-lg sm:text-xl text-steel-light leading-relaxed max-w-xl animate-fade-in-up stagger-3">
-              Diagnóstico gratuito, precio cerrado, instalación estética
-              invisible. Samsung y Midea Inverter con WiFi.
+              Precio cerrado todo incluido. Diagnóstico gratuito por Zoom,
+              instalación estética invisible, garantía total.
+              Samsung y Midea Inverter.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-4 whitespace-nowrap">

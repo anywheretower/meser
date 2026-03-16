@@ -3,6 +3,7 @@
 import { useCart } from "@/lib/cart-context";
 import { useState, useRef, useEffect } from "react";
 import { formatPrice } from "@/lib/products";
+import { trackAddToCart } from "@/lib/gtm";
 
 interface AddToCartButtonProps {
   productId: string;
@@ -32,6 +33,7 @@ export default function AddToCartButton({
 
   const handleSelect = (withInstallation: boolean) => {
     addItem(productId, withInstallation);
+    trackAddToCart(productId, withInstallation ? todoIncluidoPrice : price, withInstallation);
     setOpen(false);
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);

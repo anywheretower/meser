@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { trackFormSubmit, trackWhatsAppClick } from "@/lib/gtm";
+import { trackFormSubmit, trackFormStep, trackWhatsAppClick } from "@/lib/gtm";
 
 const COMUNAS = [
   "Las Condes",
@@ -92,6 +92,9 @@ export default function CotizarForm() {
       });
       if (!res.ok) throw new Error("Error al enviar");
       trackFormSubmit(formData);
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("meser_form_submitted", "1");
+      }
       setSubmitted(true);
     } catch {
       setError(true);
@@ -171,6 +174,7 @@ export default function CotizarForm() {
                   aria-checked={formData.tipoEspacio === option.value}
                   onClick={() => {
                     updateField("tipoEspacio", option.value);
+                    trackFormStep(1, "tipoEspacio", option.value);
                     setStep(2);
                   }}
                   className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition-all ${
@@ -208,6 +212,7 @@ export default function CotizarForm() {
                   aria-checked={formData.ambientes === option.value}
                   onClick={() => {
                     updateField("ambientes", option.value);
+                    trackFormStep(2, "ambientes", option.value);
                     setStep(3);
                   }}
                   className={`rounded-xl border-2 p-4 text-center transition-all ${
@@ -240,7 +245,10 @@ export default function CotizarForm() {
                 value={formData.comuna}
                 onChange={(e) => {
                   updateField("comuna", e.target.value);
-                  if (e.target.value) setStep(4);
+                  if (e.target.value) {
+                    trackFormStep(3, "comuna", e.target.value);
+                    setStep(4);
+                  }
                 }}
                 className="w-full rounded-xl border-2 border-gray-200 px-4 py-3.5 text-sm text-navy bg-white focus:border-cyan focus:outline-none transition-colors"
               >
@@ -290,6 +298,7 @@ export default function CotizarForm() {
                   aria-checked={formData.necesidad === option.value}
                   onClick={() => {
                     updateField("necesidad", option.value);
+                    trackFormStep(4, "necesidad", option.value);
                     setStep(5);
                   }}
                   className={`w-full flex items-center justify-between rounded-xl border-2 p-4 text-left transition-all ${

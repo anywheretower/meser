@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import FormularioGlobal from "@/components/FormularioGlobal";
 import StickyCTA from "@/components/StickyCTA";
 import SocialSidebar from "@/components/SocialSidebar";
+import ScrollDepthTracker from "@/components/ScrollDepthTracker";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { CartProvider } from "@/lib/cart-context";
 import { GTM_ID } from "@/lib/gtm";
 import SchemaOrg from "@/components/SchemaOrg";
@@ -88,6 +90,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <Footer />
           <StickyCTA />
           <SocialSidebar />
+          <ScrollDepthTracker />
+          <ExitIntentPopup />
         </CartProvider>
       </body>
     </html>
