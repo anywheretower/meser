@@ -8,7 +8,7 @@ export default function FormularioGlobal() {
       {/* Background image */}
       <Image
         src="/images/formulario-bg.webp"
-        alt="Interior de hogar climatizado con aire acondicionado"
+        alt="Living de hogar en Santiago con climatización integral instalada"
         fill
         className="object-cover object-right"
       />
