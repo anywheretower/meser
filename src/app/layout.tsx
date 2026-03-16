@@ -28,9 +28,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     siteName: "Meser",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Meser — Climatización Integral para tu Hogar en Santiago",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/images/og-image.png"],
   },
 };
 
