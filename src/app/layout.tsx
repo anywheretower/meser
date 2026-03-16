@@ -57,6 +57,7 @@ export default function RootLayout({
       <head>
         <SchemaOrg />
         <link rel="llms-txt" href="/llms.txt" />
+        <meta name="google-site-verification" content="CpYswW3k5lPNH4Cn5OkRIaX_yatm8PZz_gwfL85M2IA" />
       </head>
       <Script
         id="gtm-script"
