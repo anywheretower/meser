@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es-CL">
       <head>
         <SchemaOrg />
       </head>
@@ -77,8 +77,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <CartProvider>
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:rounded-lg focus:bg-cyan focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-navy">
+            Saltar al contenido
+          </a>
           <Header />
-          <main>{children}</main>
+          <main id="main-content">{children}</main>
           <FormularioGlobal />
           <Footer />
           <StickyCTA />

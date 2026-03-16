@@ -8,9 +8,7 @@ export default function StickyCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPercent =
-        window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      setVisible(scrollPercent > 0.15);
+      setVisible(window.scrollY > 400);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -47,7 +45,7 @@ export default function StickyCTA() {
         onClick={() => trackCotizarClick("sticky_cta")}
         className="flex-1 flex items-center justify-center gap-2 rounded-full bg-cyan px-3 py-2.5 text-xs font-semibold text-navy"
       >
-        Cotizar
+        Asesoría gratis
       </a>
     </div>
   );

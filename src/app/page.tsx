@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import TrustBar from "@/components/TrustBar";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import AddPackageButton from "@/components/AddPackageButton";
+// AddPackageButton removed — packages now link to consultation
 
 
 export default function Home() {
@@ -88,6 +88,7 @@ export default function Home() {
                   Hasta 18 m²
                 </div>
                 <div className="mt-5">
+                  <span className="text-sm text-steel line-through mr-2">$549.980</span>
                   <span className="text-3xl font-bold text-navy tracking-tight">
                     $449.980
                   </span>
@@ -109,6 +110,7 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         strokeWidth={2.5}
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -120,12 +122,12 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <AddPackageButton
-                  productId="midea-ecomaster-9k"
-                  className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
+                <Link
+                  href="#agendar"
+                  className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
                 >
                   Quiero este paquete
-                </AddPackageButton>
+                </Link>
               </div>
             </RevealOnScroll>
 
@@ -142,6 +144,7 @@ export default function Home() {
                   Hasta 24 m²
                 </div>
                 <div className="mt-5">
+                  <span className="text-sm text-steel line-through mr-2">$649.980</span>
                   <span className="text-3xl font-bold text-navy tracking-tight">
                     $499.980
                   </span>
@@ -163,6 +166,7 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         strokeWidth={2.5}
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -174,12 +178,12 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <AddPackageButton
-                  productId="midea-ecomaster-12k"
-                  className="mt-8 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow cursor-pointer"
+                <Link
+                  href="#agendar"
+                  className="mt-8 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow"
                 >
                   Quiero este paquete
-                </AddPackageButton>
+                </Link>
               </div>
             </RevealOnScroll>
 

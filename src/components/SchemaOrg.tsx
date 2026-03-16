@@ -21,8 +21,8 @@ export default function SchemaOrg() {
       name: "Región Metropolitana de Santiago",
     },
     sameAs: [
-      "https://www.facebook.com/meserchile",
-      "https://www.instagram.com/meserchile",
+      "https://www.facebook.com/profile.php?id=61575725826039",
+      "https://instagram.com/meser_spa",
     ],
   };
 

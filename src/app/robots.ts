@@ -8,6 +8,26 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/carrito", "/cotizar", "/pago/", "/api/"],
       },
+      {
+        userAgent: "GPTBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Google-Extended",
+        allow: "/",
+      },
+      {
+        userAgent: "ClaudeBot",
+        allow: "/",
+      },
+      {
+        userAgent: "PerplexityBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Bytespider",
+        allow: "/",
+      },
     ],
     sitemap: "https://www.meser.cl/sitemap.xml",
   };

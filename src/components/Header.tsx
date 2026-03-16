@@ -269,7 +269,8 @@ export default function Header() {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 text-navy"
-              aria-label="Abrir menú"
+              aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={mobileOpen}
             >
               {mobileOpen ? (
                 <svg
@@ -327,7 +328,17 @@ export default function Header() {
                 </Link>
               )
             )}
-            <div className="pt-3 mt-2 border-t border-gray-100">
+            <div className="pt-3 mt-2 border-t border-gray-100 space-y-3">
+              <a
+                href="tel:+56982351110"
+                onClick={() => { trackPhoneClick("mobile_menu"); closeMobile(); }}
+                className="flex items-center justify-center gap-2 w-full text-sm font-medium text-navy/70 hover:text-navy transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                +569 8235 1110
+              </a>
               <Link
                 href="#agendar"
                 onClick={closeMobile}

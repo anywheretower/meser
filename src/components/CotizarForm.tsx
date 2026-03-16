@@ -372,7 +372,7 @@ export default function CotizarForm() {
 
         {/* Error message */}
         {error && (
-          <div className="mt-4 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+          <div role="alert" className="mt-4 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
             Error al enviar. Intenta de nuevo o contáctanos por{" "}
             <a href="https://wa.me/56982351110" target="_blank" rel="noopener noreferrer" className="font-semibold underline" onClick={() => trackWhatsAppClick("cotizar_error")}>
               WhatsApp
@@ -403,7 +403,7 @@ export default function CotizarForm() {
               disabled={!canAdvance() || sending}
               className="rounded-full bg-cyan px-8 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              {sending ? "Enviando..." : "Enviar cotización"}
+              {sending ? "Enviando..." : "Agendar mi asesoría gratuita"}
             </button>
           ) : (
             <button
