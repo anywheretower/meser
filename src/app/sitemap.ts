@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getPublishedPosts } from "@/lib/blog-posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.meser.cl";
@@ -105,5 +106,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...solucionPages, ...coberturaPages];
+  const blogPages: MetadataRoute.Sitemap = getPublishedPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: lastUpdate,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...solucionPages, ...coberturaPages, ...blogPages];
 }

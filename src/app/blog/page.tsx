@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
   title: "Blog · Guías y Consejos de Climatización",
@@ -9,80 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-const articulos = [
-  {
-    titulo: "¿Cuánto cuesta instalar un aire acondicionado en Chile? (Guía 2026)",
-    descripcion:
-      "Desglosamos todos los costos: equipo, instalación, materiales. Comparamos precios del mercado y te mostramos cómo ahorrar con el modelo todo incluido.",
-    keywords: "cuánto cuesta instalar aire acondicionado Chile",
-    categoria: "Precios",
-  },
-  {
-    titulo: "Cómo elegir el aire acondicionado ideal para tu departamento en Santiago",
-    descripcion:
-      "Guía paso a paso para elegir el equipo correcto: BTU necesarios, tipo de instalación, ruido, consumo y regulaciones de edificios.",
-    keywords: "aire acondicionado departamento Santiago",
-    categoria: "Guías",
-  },
-  {
-    titulo: "Midea vs Samsung: ¿Cuál es mejor para tu hogar?",
-    descripcion:
-      "Comparativa detallada entre las dos marcas que instalamos. Tecnología, precios, eficiencia, ruido y funciones inteligentes.",
-    keywords: "Midea vs Samsung aire acondicionado",
-    categoria: "Comparativas",
-  },
-  {
-    titulo: "¿Qué son los BTU y cuántos necesito?",
-    descripcion:
-      "Explicación simple de la unidad de medida más importante en climatización. Incluye tabla de referencia por metros cuadrados.",
-    keywords: "BTU aire acondicionado calculadora",
-    categoria: "Guías",
-  },
-  {
-    titulo: "Aire acondicionado Inverter: ¿Vale la pena? (Ahorro real calculado)",
-    descripcion:
-      "Calculamos cuánto ahorra un equipo Inverter vs uno convencional en la cuenta de luz mensual. Los números hablan solos.",
-    keywords: "aire acondicionado inverter vale la pena",
-    categoria: "Guías",
-  },
-  {
-    titulo: "Mantención de aire acondicionado: cuándo, cómo y por qué",
-    descripcion:
-      "Todo sobre la mantención: frecuencia recomendada, qué incluye, señales de alerta y por qué no deberías saltártela.",
-    keywords: "mantención aire acondicionado",
-    categoria: "Mantención",
-  },
-  {
-    titulo: "Climatizar una mansarda: desafíos y soluciones",
-    descripcion:
-      "Las mansardas son los espacios más difíciles de climatizar. Te explicamos por qué y cómo resolverlo con la solución correcta.",
-    keywords: "aire acondicionado mansarda",
-    categoria: "Soluciones",
-  },
-  {
-    titulo: "Multi Split: la solución para climatizar todo el departamento",
-    descripcion:
-      "Un solo equipo exterior, múltiples interiores. Cómo funciona, cuánto cuesta y para quién es ideal el sistema Multi Split.",
-    keywords: "multi split departamento",
-    categoria: "Soluciones",
-  },
-  {
-    titulo: "Instalación estética de aire acondicionado: el nuevo estándar",
-    descripcion:
-      "Canaletas ocultas, cables invisibles, acabados perfectos. Por qué la instalación estética debería ser la norma, no la excepción.",
-    keywords: "instalación estética aire acondicionado",
-    categoria: "Instalación",
-  },
-  {
-    titulo: "Todo incluido vs. comprar por separado: la verdad sobre los precios",
-    descripcion:
-      "Hacemos la matemática que nadie hace. ¿Realmente conviene comprar equipo e instalación por separado? Spoiler: no.",
-    keywords: "aire acondicionado todo incluido precio",
-    categoria: "Precios",
-  },
-];
-
-const categorias = [...new Set(articulos.map((a) => a.categoria))];
+const categorias = [...new Set(blogPosts.map((a) => a.categoria))];
 
 export default function BlogPage() {
   return (
@@ -115,30 +43,63 @@ export default function BlogPage() {
 
           {/* Artículos */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articulos.map((articulo) => (
-              <article
-                key={articulo.titulo}
-                className="group rounded-2xl border border-gray-200 overflow-hidden hover:border-cyan hover:shadow-lg transition-all"
-              >
-                {/* Placeholder image */}
-                <div className="h-40 bg-gradient-to-br from-navy to-navy-light flex items-center justify-center">
-                  <span className="text-xs font-medium text-cyan bg-cyan/10 px-3 py-1 rounded-full">
-                    {articulo.categoria}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h2 className="text-base font-semibold text-navy leading-snug group-hover:text-cyan transition-colors">
-                    {articulo.titulo}
-                  </h2>
-                  <p className="mt-2 text-sm text-steel-dark leading-relaxed line-clamp-3">
-                    {articulo.descripcion}
-                  </p>
-                  <span className="mt-4 inline-block text-sm font-medium text-cyan">
-                    Próximamente
-                  </span>
-                </div>
-              </article>
-            ))}
+            {blogPosts.map((articulo) => {
+              const inner = (
+                <>
+                  {/* Placeholder image */}
+                  <div className="h-40 bg-gradient-to-br from-navy to-navy-light flex items-center justify-center">
+                    <span className="text-xs font-medium text-cyan bg-cyan/10 px-3 py-1 rounded-full">
+                      {articulo.categoria}
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <h2 className="text-base font-semibold text-navy leading-snug group-hover:text-cyan transition-colors">
+                      {articulo.titulo}
+                    </h2>
+                    <p className="mt-2 text-sm text-steel-dark leading-relaxed line-clamp-3">
+                      {articulo.descripcion}
+                    </p>
+                    <div className="mt-4 flex items-center justify-between">
+                      {articulo.published ? (
+                        <span className="text-sm font-medium text-cyan">
+                          Leer artículo →
+                        </span>
+                      ) : (
+                        <span className="text-sm font-medium text-steel">
+                          Próximamente
+                        </span>
+                      )}
+                      <div className="flex items-center gap-3 text-xs text-steel">
+                        <span>{articulo.readTime}</span>
+                        <span>
+                          {new Date(articulo.fecha).toLocaleDateString("es-CL", {
+                            day: "numeric",
+                            month: "short",
+                          })}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              );
+
+              return articulo.published ? (
+                <Link
+                  key={articulo.slug}
+                  href={`/blog/${articulo.slug}`}
+                  className="group rounded-2xl border border-gray-200 overflow-hidden hover:border-cyan hover:shadow-lg transition-all"
+                >
+                  {inner}
+                </Link>
+              ) : (
+                <article
+                  key={articulo.slug}
+                  className="group rounded-2xl border border-gray-200 overflow-hidden opacity-60"
+                >
+                  {inner}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

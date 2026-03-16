@@ -197,3 +197,133 @@ html {
     transparent
   );
 }
+
+/* ── Blog Prose Styles ── */
+
+.prose-meser h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0A1628;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.prose-meser h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0A1628;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.prose-meser p {
+  font-size: 1rem;
+  color: rgba(10, 22, 40, 0.8);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.prose-meser ul,
+.prose-meser ol {
+  margin-bottom: 1.25rem;
+  padding-left: 0;
+}
+
+.prose-meser ul {
+  list-style: none;
+}
+
+.prose-meser ul > li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: rgba(10, 22, 40, 0.8);
+  line-height: 1.75;
+}
+
+.prose-meser ul > li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00D4FF;
+  font-weight: 700;
+}
+
+.prose-meser ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.prose-meser ol > li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: rgba(10, 22, 40, 0.8);
+  line-height: 1.75;
+}
+
+.prose-meser strong {
+  color: #0A1628;
+  font-weight: 600;
+}
+
+.prose-meser a {
+  color: #00D4FF;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.prose-meser a:hover {
+  color: #00B8DB;
+}
+
+.prose-meser table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.prose-meser thead th {
+  background-color: #0A1628;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+
+.prose-meser tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: rgba(10, 22, 40, 0.8);
+}
+
+.prose-meser tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.prose-meser blockquote {
+  border-left: 4px solid #00D4FF;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: rgba(10, 22, 40, 0.7);
+}
+
+.prose-meser .tip-box {
+  background-color: #f0fdff;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.prose-meser .tip-box p {
+  margin-bottom: 0;
+}
