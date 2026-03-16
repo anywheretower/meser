@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import CoberturaLayout from "@/components/CoberturaLayout";
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Lo Barnechea · Instalación Estética",
+  title: "Aire Acondicionado en Lo Barnechea",
   description:
     "Instalación de aire acondicionado en Lo Barnechea. Casas amplias, mansardas, proyectos multi-ambiente. Precio cerrado con diagnóstico gratuito.",
+  alternates: { canonical: "/cobertura/lo-barnechea" },
 };
 
 export default function LoBarnecheaPage() {

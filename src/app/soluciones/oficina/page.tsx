@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Aire Acondicionado para Oficinas Santiago",
   description:
     "Climatización eficiente para oficinas y locales comerciales. Equipos silenciosos que mantienen la productividad sin elevar la cuenta de luz.",
+  alternates: { canonical: "/soluciones/oficina" },
 };
 
 export default function OficinaPage() {

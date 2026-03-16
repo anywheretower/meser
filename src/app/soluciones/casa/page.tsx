@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Climatización para Casas en Santiago",
   description:
     "Proyecto integral de climatización para casas. Desde una habitación hasta toda la vivienda con sistema multisplit. Precio cerrado, instalación estética.",
+  alternates: { canonical: "/soluciones/casa" },
 };
 
 export default function CasaPage() {

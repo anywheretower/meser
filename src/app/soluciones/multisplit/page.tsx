@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Sistema Multi Split · Varios Ambientes · Santiago",
   description:
     "Un solo equipo exterior para múltiples ambientes. Multi Split ideal para departamentos y casas. Cotización personalizada con diagnóstico Zoom gratuito.",
+  alternates: { canonical: "/soluciones/multisplit" },
 };
 
 export default function MultisplitPage() {

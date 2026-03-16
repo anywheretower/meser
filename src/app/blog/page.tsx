@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Blog · Guías y Consejos de Climatización",
   description:
     "Guías, consejos y comparativas sobre aire acondicionado. ¿Cuánto cuesta instalar? ¿Midea vs Samsung? ¿Qué son los BTU? Todo lo que necesitas saber.",
+  alternates: { canonical: "/blog" },
 };
 
 const articulos = [

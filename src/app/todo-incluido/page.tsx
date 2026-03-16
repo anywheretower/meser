@@ -6,7 +6,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Todo Incluido desde $449.980 · Santiago",
+  title: "Aire Acondicionado Todo Incluido · Santiago",
+  alternates: { canonical: "/todo-incluido" },
   description:
     "Aire acondicionado Inverter frío/calor + instalación + garantía desde $449.980. Precio cerrado, cero sorpresas. Ahorra hasta $172.000 vs comprar por separado.",
 };

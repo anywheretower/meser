@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Nosotros · Climatización Integral Santiago",
   description:
     "Empresa chilena especializada en climatización integral. Diagnóstico gratuito, precio cerrado, instalación estética. +150 hogares climatizados en Santiago.",
+  alternates: { canonical: "/nosotros" },
 };
 
 export default function NosotrosPage() {

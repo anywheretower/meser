@@ -10,7 +10,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Aires Acondicionados · Catálogo Samsung y Midea",
   description:
-    "Catálogo completo de aires acondicionados Samsung Wind-Free y Midea EcoMaster. Todos Inverter, frío/calor, WiFi. Precio todo incluido con instalación.",
+    "Catálogo de aires acondicionados Samsung Wind-Free, Midea y Anwo. Desde $299.990 solo equipo o $449.990 con instalación incluida en Santiago.",
+  alternates: { canonical: "/aires-acondicionados" },
 };
 
 function ProductSchemaScript() {

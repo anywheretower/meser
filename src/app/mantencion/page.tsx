@@ -4,9 +4,10 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Mantención Aire Acondicionado Santiago · Desde $59.990",
+  title: "Mantención Aire Acondicionado Santiago · $59.990",
   description:
     "Mantención de aire acondicionado en Santiago desde $59.990. Limpieza profunda, revisión técnica, optimización de rendimiento. Toda la RM.",
+  alternates: { canonical: "/mantencion" },
 };
 
 export default function MantencionPage() {
@@ -152,6 +153,112 @@ export default function MantencionPage() {
           </div>
         </div>
       </section>
+
+      {/* Preguntas frecuentes */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy text-center">
+            Preguntas frecuentes
+          </h2>
+          <div className="mt-10 space-y-6">
+            {[
+              {
+                q: "¿Cada cuánto tiempo debo hacer mantención a mi aire acondicionado?",
+                a: "Recomendamos al menos una mantención al año. Si usas el equipo intensamente (más de 8 horas diarias) o tienes mascotas, lo ideal es cada 6 meses. Antes de verano e invierno son los mejores momentos.",
+              },
+              {
+                q: "¿Cuánto demora una mantención?",
+                a: "Una mantención estándar toma aproximadamente 1 hora por equipo. Si hay varios equipos, coordinamos para hacer todos el mismo día.",
+              },
+              {
+                q: "¿Qué pasa si mi equipo necesita gas refrigerante?",
+                a: "Durante la mantención revisamos la presión del gas. Si está bajo, te informamos el costo de la recarga antes de proceder. La recarga no está incluida en el precio base de $59.990.",
+              },
+              {
+                q: "¿Hacen mantención de todas las marcas?",
+                a: "Sí, realizamos mantención de aires acondicionados Samsung, Midea, Anwo, LG, Daikin, Carrier y todas las marcas del mercado. No es necesario que el equipo haya sido instalado por nosotros.",
+              },
+              {
+                q: "¿Qué zonas cubren para mantención?",
+                a: "Cubrimos toda la Región Metropolitana de Santiago: Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea, La Reina, Santiago Centro y más.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="group rounded-xl border border-gray-200 bg-gray-50 open:bg-white open:shadow-sm transition-all"
+              >
+                <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-semibold text-navy">
+                  {faq.q}
+                  <svg
+                    className="w-5 h-5 text-steel shrink-0 transition-transform group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="px-6 pb-4 text-sm text-steel-dark leading-relaxed">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Schema: FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "¿Cada cuánto tiempo debo hacer mantención a mi aire acondicionado?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Recomendamos al menos una mantención al año. Si usas el equipo intensamente (más de 8 horas diarias) o tienes mascotas, lo ideal es cada 6 meses.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Cuánto demora una mantención?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Una mantención estándar toma aproximadamente 1 hora por equipo. Si hay varios equipos, coordinamos para hacer todos el mismo día.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Qué pasa si mi equipo necesita gas refrigerante?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Durante la mantención revisamos la presión del gas. Si está bajo, te informamos el costo de la recarga antes de proceder. La recarga no está incluida en el precio base de $59.990.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Hacen mantención de todas las marcas?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Sí, realizamos mantención de aires acondicionados Samsung, Midea, Anwo, LG, Daikin, Carrier y todas las marcas del mercado.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Qué zonas cubren para mantención?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Cubrimos toda la Región Metropolitana de Santiago: Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea, La Reina, Santiago Centro y más.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
 
       {/* Schema: Service */}
       <script

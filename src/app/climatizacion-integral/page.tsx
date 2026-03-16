@@ -6,7 +6,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Climatización Integral Santiago · Diagnóstico Gratis · Precio Cerrado",
+  title: "Climatización Integral Santiago · Precio Cerrado",
+  alternates: { canonical: "/climatizacion-integral" },
   description:
     "Resolvemos tu climatización completa: diagnóstico gratis por Zoom, precio cerrado sin sorpresas, instalación estética invisible. Desde $449.980 todo incluido.",
 };

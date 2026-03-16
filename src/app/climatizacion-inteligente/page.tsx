@@ -5,8 +5,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title:
-    "Climatización Inteligente · Control WiFi · Domótica · IA",
+  title: "Climatización Inteligente · WiFi · Domótica",
+  alternates: { canonical: "/climatizacion-inteligente" },
   description:
     "Controla tu aire acondicionado desde el celular, con WiFi, asistentes de voz e inteligencia artificial. Samsung SmartThings y Midea AIR app. Meser Santiago.",
 };

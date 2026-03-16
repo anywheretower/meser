@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Garantía Total · Equipo + Instalación",
   description:
     "Garantía total Meser: cubre equipo e instalación. Si algo falla, nosotros nos hacemos cargo. Sin derivarte al fabricante, sin trámites.",
+  alternates: { canonical: "/garantia" },
 };
 
 export default function GarantiaPage() {

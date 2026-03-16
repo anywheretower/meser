@@ -50,6 +50,12 @@ export default function SchemaOrg() {
       "@type": "State",
       name: "Región Metropolitana de Santiago",
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "150",
+      bestRating: "5",
+    },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Aire Acondicionado para Departamentos Santiago",
   description:
     "Climatización discreta para departamentos en Santiago. Equipos silenciosos, instalación sin afectar fachadas. Diagnóstico gratuito por Zoom.",
+  alternates: { canonical: "/soluciones/departamento" },
 };
 
 export default function DepartamentoPage() {

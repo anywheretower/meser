@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Termos Eléctricos · Midea Lume",
   description:
     "Termos eléctricos Midea Lume de 50L, 80L, 100L y 120L. Acero esmaltado, termostato regulable. Entrega e instalación en Santiago.",
+  alternates: { canonical: "/termos" },
 };
 
 export default function TermosPage() {
@@ -174,6 +175,147 @@ export default function TermosPage() {
           </div>
         </div>
       </section>
+
+      {/* Guía de capacidad */}
+      <section className="py-16 bg-gray-50">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy text-center">
+            ¿Qué capacidad necesitas?
+          </h2>
+          <p className="mt-4 text-center text-sm text-steel-dark max-w-2xl mx-auto">
+            La capacidad ideal depende del número de personas en tu hogar y
+            el uso de agua caliente. Aquí una guía rápida:
+          </p>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { cap: "50L", personas: "1–2 personas", uso: "Ducha + lavamanos", ideal: "Departamento studio o 1 dormitorio" },
+              { cap: "80L", personas: "2–3 personas", uso: "2 duchas + cocina", ideal: "Departamento 2 dormitorios" },
+              { cap: "100L", personas: "3–4 personas", uso: "2 duchas simultáneas", ideal: "Casa o depto 3 dormitorios" },
+              { cap: "120L", personas: "4–5 personas", uso: "Uso intensivo", ideal: "Casa grande o familia numerosa" },
+            ].map((item) => (
+              <div
+                key={item.cap}
+                className="rounded-2xl border border-gray-200 bg-white p-6 text-center"
+              >
+                <div className="text-3xl font-bold text-cyan">{item.cap}</div>
+                <div className="mt-2 text-sm font-semibold text-navy">
+                  {item.personas}
+                </div>
+                <div className="mt-1 text-xs text-steel-dark">{item.uso}</div>
+                <div className="mt-3 text-xs text-steel bg-gray-50 rounded-lg px-3 py-2">
+                  {item.ideal}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Preguntas frecuentes */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy text-center">
+            Preguntas frecuentes
+          </h2>
+          <div className="mt-10 space-y-6">
+            {[
+              {
+                q: "¿Cuánto consume un termo eléctrico al mes?",
+                a: "Un termo de 80L consume entre $8.000 y $15.000 mensuales en electricidad, dependiendo del uso. Los termos Midea Lume tienen aislación de alta densidad que minimiza las pérdidas de calor y reduce el consumo.",
+              },
+              {
+                q: "¿Es mejor un termo eléctrico o un calefón a gas?",
+                a: "El termo eléctrico es más seguro (no hay combustión ni riesgo de fuga de gas), más fácil de instalar y no requiere ventilación especial. El calefón calienta al instante pero necesita gas y mantención frecuente. Para departamentos, el termo es la opción más práctica.",
+              },
+              {
+                q: "¿Cuánto tarda en calentar el agua?",
+                a: "Desde temperatura ambiente, un termo de 80L tarda aproximadamente 1,5 a 2 horas en alcanzar los 65°C. Una vez caliente, el termostato mantiene la temperatura automáticamente.",
+              },
+              {
+                q: "¿Necesita mantención un termo eléctrico?",
+                a: "Se recomienda revisar el ánodo de magnesio cada 2 años para prolongar la vida útil del tanque. Los termos Midea Lume tienen acero esmaltado que resiste la corrosión y facilita la mantención.",
+              },
+              {
+                q: "¿Dónde se instala el termo?",
+                a: "Se puede instalar en baño, cocina, logia o cualquier espacio con acceso a agua y electricidad. Requiere un muro resistente ya que pesa entre 18 y 30 kg lleno. Nuestro equipo evalúa la mejor ubicación durante la instalación.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="group rounded-xl border border-gray-200 bg-gray-50 open:bg-white open:shadow-sm transition-all"
+              >
+                <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-semibold text-navy">
+                  {faq.q}
+                  <svg
+                    className="w-5 h-5 text-steel shrink-0 transition-transform group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="px-6 pb-4 text-sm text-steel-dark leading-relaxed">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Schema: FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "¿Cuánto consume un termo eléctrico al mes?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Un termo de 80L consume entre $8.000 y $15.000 mensuales en electricidad, dependiendo del uso. Los termos Midea Lume tienen aislación de alta densidad que reduce el consumo.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Es mejor un termo eléctrico o un calefón a gas?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "El termo eléctrico es más seguro (no hay combustión ni riesgo de fuga de gas), más fácil de instalar y no requiere ventilación especial. Para departamentos, es la opción más práctica.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Cuánto tarda en calentar el agua?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Desde temperatura ambiente, un termo de 80L tarda aproximadamente 1,5 a 2 horas en alcanzar los 65°C. Una vez caliente, el termostato mantiene la temperatura automáticamente.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Necesita mantención un termo eléctrico?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Se recomienda revisar el ánodo de magnesio cada 2 años para prolongar la vida útil del tanque. Los termos Midea Lume tienen acero esmaltado que resiste la corrosión.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "¿Dónde se instala el termo?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Se puede instalar en baño, cocina, logia o cualquier espacio con acceso a agua y electricidad. Requiere un muro resistente ya que pesa entre 18 y 30 kg lleno.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
 
     </>
   );
