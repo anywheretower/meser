@@ -88,6 +88,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: `${baseUrl}/politica-devoluciones`,
+      lastModified: lastUpdate,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ];
 
   const soluciones = ["departamento", "casa", "mansarda", "oficina", "multisplit"];
@@ -108,7 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = getPublishedPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: lastUpdate,
+    lastModified: new Date(post.fecha),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

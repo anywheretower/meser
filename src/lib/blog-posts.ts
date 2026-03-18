@@ -12,7 +12,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "cuanto-cuesta-instalar-aire-acondicionado-chile",
     titulo:
-      "¿Cuánto cuesta instalar un aire acondicionado en Chile? (Guía 2026)",
+      "Costo de instalar aire acondicionado en Chile (2026)",
     descripcion:
       "Desglosamos todos los costos: equipo, instalación, materiales. Comparamos precios del mercado y te mostramos cómo ahorrar con el modelo todo incluido.",
     keywords: "cuánto cuesta instalar aire acondicionado Chile",

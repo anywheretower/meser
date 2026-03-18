@@ -36,6 +36,55 @@ type FormData = {
   comentario: string;
 };
 
+export function QuickCapture() {
+  const [phone, setPhone] = useState("");
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+
+  const handleQuickSubmit = async () => {
+    if (!phone.trim() || phone.trim().length < 8) return;
+    setSending(true);
+    try {
+      await fetch("/api/contacto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ telefono: phone, nombre: "Captura rápida", tipoEspacio: "", ambientes: "", comuna: "", necesidad: "", email: "", comentario: "Captura rápida — solicita llamada" }),
+      });
+      trackFormSubmit({ telefono: phone, nombre: "Captura rápida", tipoEspacio: "", ambientes: "", comuna: "", necesidad: "", email: "", comentario: "" });
+      setSent(true);
+    } catch { /* silently fail */ } finally {
+      setSending(false);
+    }
+  };
+
+  if (sent) {
+    return (
+      <p className="text-sm text-green-400 font-medium">
+        ¡Listo! Te llamamos en menos de 2 horas.
+      </p>
+    );
+  }
+
+  return (
+    <div className="flex gap-2">
+      <input
+        type="tel"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+        placeholder="+569 XXXX XXXX"
+        className="flex-1 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-steel-light/50 focus:border-cyan focus:outline-none"
+      />
+      <button
+        onClick={handleQuickSubmit}
+        disabled={sending || phone.trim().length < 8}
+        className="rounded-full bg-cyan px-5 py-2.5 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors disabled:opacity-40"
+      >
+        {sending ? "..." : "Llámame"}
+      </button>
+    </div>
+  );
+}
+
 export default function CotizarForm() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);

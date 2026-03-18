@@ -1,32 +1,45 @@
 "use client";
 
-import { motion, type Variants } from "motion/react";
-import type { ReactNode } from "react";
-import { fadeUp } from "@/lib/animations";
+import { useEffect, useRef, type ReactNode } from "react";
 
 interface RevealOnScrollProps {
   children: ReactNode;
-  variants?: Variants;
   className?: string;
   delay?: number;
 }
 
 export default function RevealOnScroll({
   children,
-  variants = fadeUp,
   className = "",
   delay = 0,
 }: RevealOnScrollProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (delay) {
+            setTimeout(() => el.classList.add("reveal-visible"), delay * 1000);
+          } else {
+            el.classList.add("reveal-visible");
+          }
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
+
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={variants}
-      transition={delay ? { delay } : undefined}
-      className={className}
-    >
+    <div ref={ref} className={`reveal-on-scroll ${className}`}>
       {children}
-    </motion.div>
+    </div>
   );
 }

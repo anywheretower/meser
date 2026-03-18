@@ -59,7 +59,10 @@ export default function TodoIncluidoPage() {
           <h2 className="text-3xl sm:text-4xl font-bold text-navy text-center">
             Elige tu paquete todo incluido
           </h2>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <p className="mt-3 text-center text-sm font-medium text-red-600">
+            Precios válidos hasta el 31 de marzo 2026 o agotar stock
+          </p>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Habitación */}
             <div className="rounded-2xl border border-gray-200 p-8 hover:border-cyan hover:shadow-lg transition-all">
               <div className="text-sm font-medium text-cyan uppercase tracking-wider">

@@ -484,7 +484,7 @@ export default function Home() {
               },
               {
                 q: "¿Qué garantía tienen los equipos y la instalación?",
-                a: "Garantía total Meser: si algo falla en el equipo o la instalación, nosotros nos hacemos cargo. No te derivamos al fabricante ni a terceros. La garantía cubre equipo e instalación.",
+                a: "Garantía total Meser de 1 año: cubre equipo e instalación. Si algo falla, nosotros nos hacemos cargo directamente — no te derivamos al fabricante ni a terceros. Más detalles en nuestra página de garantía.",
               },
               {
                 q: "¿En qué zonas de Santiago instalan?",

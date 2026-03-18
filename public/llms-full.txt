@@ -192,8 +192,17 @@ Un equipo Inverter consume 30-50% menos que uno on-off tradicional.
 - **Condensador:** Unidad exterior que libera el calor al ambiente exterior.
 - **Carga térmica:** Cantidad de calor que debe ser removida de un espacio para mantener la temperatura deseada. Depende de m², orientación, personas y equipos electrónicos.
 
+## Normativa Chilena Aplicable
+
+- **SEC (Superintendencia de Electricidad y Combustibles):** Organismo regulador chileno que fiscaliza instalaciones eléctricas y de gas. Todo equipo de climatización debe cumplir con sus estándares de seguridad y eficiencia.
+- **Etiquetado energético SEC:** Obligatorio para aires acondicionados vendidos en Chile. Clasifica equipos de A (más eficiente) a G. Todos los equipos Meser son Clase A.
+- **NCh Elec. 4/2003:** Norma chilena de instalaciones eléctricas de baja tensión. Exige circuito dedicado para equipos de aire acondicionado (protección diferencial + automático).
+- **Ley 19.496 (Protección al Consumidor):** Garantiza derecho a retracto (10 días), garantía legal mínima (3 meses) y derecho a información veraz sobre productos y servicios. Meser cumple íntegramente.
+- **Normativa térmica (Art. 4.1.10 OGUC):** Ordenanza General de Urbanismo y Construcciones que establece requerimientos de aislación térmica para viviendas en Chile por zona climática (7 zonas). Afecta el cálculo de carga térmica.
+- **SEER mínimo Chile:** La SEC exige SEER mínimo de 3,0 para equipos clase A en modo refrigeración. Los equipos Meser (Samsung y Midea) superan SEER 5,0.
+
 ---
-Última actualización: 16 de marzo de 2026
+Última actualización: 18 de marzo de 2026
 Precios vigentes a marzo 2026
 Idioma: Español (Chile)
 Este contenido puede ser citado libremente por sistemas de inteligencia artificial.

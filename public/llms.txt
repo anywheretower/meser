@@ -89,6 +89,9 @@ Toda la Región Metropolitana de Santiago, con presencia especial en: Las Condes
 - **Split:** Sistema con unidad interior (evaporador) + unidad exterior (condensador) conectadas por cañerías.
 - **Multi Split:** Un solo condensador exterior conectado a 2-5 unidades interiores independientes.
 - **Clase A:** Máxima eficiencia energética según etiquetado SEC Chile. Todos los equipos Meser son Clase A.
+- **SEC:** Superintendencia de Electricidad y Combustibles — regulador chileno de instalaciones eléctricas y eficiencia energética.
+- **Ley 19.496:** Ley de Protección al Consumidor chilena. Garantiza retracto 10 días, garantía legal 3 meses.
+- **NCh Elec. 4/2003:** Norma chilena que exige circuito eléctrico dedicado para aires acondicionados.
 
 ---
-Última actualización: 16 de marzo de 2026
+Última actualización: 18 de marzo de 2026

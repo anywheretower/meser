@@ -320,7 +320,7 @@ export default function AiresAcondicionadosPage() {
             </div>
             <div className="relative rounded-2xl border-2 border-cyan p-6">
               <div className="absolute -top-3 left-4 rounded-full bg-red-500 px-3 py-0.5 text-[11px] font-bold text-white uppercase tracking-wider">
-                Promo marzo
+                Promo hasta 31/03
               </div>
               <h3 className="text-base font-semibold text-navy">
                 Instalación (solo servicio)

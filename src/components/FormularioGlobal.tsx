@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CotizarForm from "./CotizarForm";
+import CotizarForm, { QuickCapture } from "./CotizarForm";
 import WhatsAppLink from "./WhatsAppLink";
 
 export default function FormularioGlobal() {
@@ -38,6 +38,7 @@ export default function FormularioGlobal() {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={3}
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -53,6 +54,13 @@ export default function FormularioGlobal() {
 
         <div className="mt-8 max-w-lg">
           <CotizarForm />
+        </div>
+
+        <div className="mt-8 max-w-lg">
+          <p className="text-sm text-steel-light/70 mb-2">
+            ¿Sin tiempo? Déjanos tu número y te llamamos:
+          </p>
+          <QuickCapture />
         </div>
 
         <p className="mt-6 text-sm text-steel-light/60">
