@@ -222,13 +222,13 @@
         </tr>
         <tr>
           <td>S8</td>
-          <td>Agregar /politica-devoluciones al sitemap<div class="detail">P&aacute;gina existe pero no est&aacute; incluida en sitemap.ts. Importante para se&ntilde;ales E-E-A-T.</div></td>
-          <td><span class="badge badge-pending">Pendiente</span></td>
+          <td>Agregar /politica-devoluciones al sitemap<div class="detail">Agregada con priority 0.5 y changeFrequency monthly.</div></td>
+          <td><span class="badge badge-done">Aplicado</span></td>
         </tr>
         <tr>
           <td>S9</td>
-          <td>lastModified individual por blog post<div class="detail">Todos los posts comparten la misma fecha (lastUpdate). Deber&iacute;a usar post.dateModified o post.publishedAt real.</div></td>
-          <td><span class="badge badge-pending">Pendiente</span></td>
+          <td>lastModified individual por blog post<div class="detail">Sitemap usa new Date(post.fecha) por cada post en lugar de fecha global.</div></td>
+          <td><span class="badge badge-done">Aplicado</span></td>
         </tr>
       </table>
     </div>
@@ -259,8 +259,8 @@
         </tr>
         <tr>
           <td>S14</td>
-          <td>T&iacute;tulo blog excede 60 caracteres<div class="detail">&ldquo;&iquest;Cu&aacute;nto cuesta instalar un aire acondicionado en Chile? (Gu&iacute;a 2026) | Meser&rdquo; &mdash; ~78 chars. Recortar a &lt;60.</div></td>
-          <td><span class="badge badge-pending">Pendiente</span></td>
+          <td>T&iacute;tulo blog recortado a &lt;60 chars<div class="detail">&ldquo;Costo de instalar aire acondicionado en Chile (2026) | Meser&rdquo; &mdash; 58 chars.</div></td>
+          <td><span class="badge badge-done">Aplicado</span></td>
         </tr>
         <tr>
           <td>S15</td>
@@ -404,8 +404,8 @@
         </tr>
         <tr>
           <td>G10</td>
-          <td>Expandir glosario con normativa chilena<div class="detail">Agregar t&eacute;rminos SEC, normativa t&eacute;rmica, NCh (norma chilena), etiquetado energ&eacute;tico para mayor autoridad local.</div></td>
-          <td><span class="badge badge-pending">Pendiente</span></td>
+          <td>Expandir glosario con normativa chilena<div class="detail">Agregados 6 t&eacute;rminos: SEC, etiquetado energ&eacute;tico, NCh Elec. 4/2003, Ley 19.496, normativa t&eacute;rmica OGUC, SEER m&iacute;nimo Chile.</div></td>
+          <td><span class="badge badge-done">Aplicado</span></td>
         </tr>
       </table>
     </div>
@@ -448,8 +448,8 @@
         </tr>
         <tr>
           <td>C5</td>
-          <td>Reducir fricci&oacute;n del formulario<div class="detail">5 pasos generan abandono. Considerar: captura r&aacute;pida tel&eacute;fono (1 campo) como alternativa al formulario completo.</div></td>
-          <td><span class="badge badge-pending">Pendiente</span></td>
+          <td>Reducir fricci&oacute;n del formulario<div class="detail">QuickCapture: campo tel&eacute;fono + bot&oacute;n &ldquo;Ll&aacute;mame&rdquo; como alternativa r&aacute;pida al formulario de 5 pasos.</div></td>
+          <td><span class="badge badge-done">Aplicado</span></td>
         </tr>
         <tr>
           <td>C6</td>
@@ -487,13 +487,13 @@
         <tr><th style="width:40px">#</th><th>Medida</th><th style="width:100px">Estado</th></tr>
         <tr>
           <td>C10</td>
-          <td>Agregar se&ntilde;ales de urgencia/escasez<div class="detail">Sin fechas l&iacute;mite ni indicadores de demanda. Agregar: &ldquo;V&aacute;lido hasta [fecha]&rdquo; en ofertas, disponibilidad limitada.</div></td>
-          <td><span class="badge badge-pending">Pendiente</span></td>
+          <td>Agregar se&ntilde;ales de urgencia/escasez<div class="detail">&ldquo;Precios v&aacute;lidos hasta 31 de marzo 2026 o agotar stock&rdquo; en paquetes todo incluido. Promo instalaci&oacute;n con fecha l&iacute;mite 31/03.</div></td>
+          <td><span class="badge badge-done">Aplicado</span></td>
         </tr>
         <tr>
           <td>C11</td>
-          <td>Clarificar plazo y condiciones de garant&iacute;a<div class="detail">La garant&iacute;a se menciona como &ldquo;total&rdquo; pero sin especificar duraci&oacute;n visible en homepage. Detallado en /garant&iacute;a.</div></td>
-          <td><span class="badge badge-pending">Pendiente</span></td>
+          <td>Clarificar plazo y condiciones de garant&iacute;a<div class="detail">FAQ homepage actualizada: &ldquo;Garant&iacute;a total Meser de 1 a&ntilde;o: cubre equipo e instalaci&oacute;n&rdquo;.</div></td>
+          <td><span class="badge badge-done">Aplicado</span></td>
         </tr>
       </table>
     </div>
@@ -535,8 +535,8 @@
         </tr>
         <tr>
           <td>R4</td>
-          <td>Reducir JavaScript no utilizado (~171 KiB)<div class="detail">Oportunidad detectada por Lighthouse. Revisar dependencias npm y aplicar tree-shaking/code splitting m&aacute;s agresivo.</div></td>
-          <td><span class="badge badge-pending">Pendiente</span></td>
+          <td>Reducir JavaScript no utilizado<div class="detail">Eliminada dependencia motion/react. RevealOnScroll reescrito con CSS + IntersectionObserver nativo. animations.ts eliminado.</div></td>
+          <td><span class="badge badge-done">Aplicado</span></td>
         </tr>
       </table>
     </div>
@@ -600,8 +600,8 @@
         </tr>
         <tr>
           <td>A3</td>
-          <td>Agregar aria-hidden a SVG checkmarks decorativos<div class="detail">SVGs de checkmarks en FormularioGlobal no tienen aria-hidden. Son decorativos y deben ocultarse de lectores.</div></td>
-          <td><span class="badge badge-pending">Pendiente</span></td>
+          <td>Agregar aria-hidden a SVG checkmarks decorativos<div class="detail">aria-hidden=&quot;true&quot; agregado a SVGs decorativos en FormularioGlobal.</div></td>
+          <td><span class="badge badge-done">Aplicado</span></td>
         </tr>
       </table>
     </div>
@@ -657,12 +657,12 @@
     <div style="text-align: center; margin-bottom: 16px; font-size: 13px; font-weight: 600; color: #475569;">Resumen Total de Medidas</div>
     <div class="footer-grid">
       <div class="footer-item">
-        <div class="footer-num" style="color: #16a34a;">48</div>
+        <div class="footer-num" style="color: #16a34a;">57</div>
         <div class="footer-label">Aplicadas</div>
       </div>
       <div class="footer-divider"></div>
       <div class="footer-item">
-        <div class="footer-num" style="color: #ea580c;">12</div>
+        <div class="footer-num" style="color: #ea580c;">3</div>
         <div class="footer-label">Pendientes</div>
       </div>
       <div class="footer-divider"></div>
