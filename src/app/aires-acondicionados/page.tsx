@@ -8,9 +8,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Aires Acondicionados · Catálogo Samsung y Midea",
+  title: "Aires Acondicionados Samsung y Midea · Venta e Instalación Santiago",
   description:
-    "Catálogo de aires acondicionados Samsung Wind-Free, Midea y Anwo. Desde $299.990 solo equipo o $399.990 con instalación incluida en Santiago.",
+    "Compra aire acondicionado Samsung Wind-Free, Midea y Anwo Inverter. Desde $299.990 solo equipo o $399.990 todo incluido con instalación en Santiago.",
   alternates: { canonical: "/aires-acondicionados" },
 };
 
@@ -80,19 +80,32 @@ export default function AiresAcondicionadosPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-navy">
-              Aires acondicionados
+              Compra tu aire acondicionado con instalación en Santiago
             </h1>
             <p className="mt-4 text-lg text-steel-dark leading-relaxed">
-              Todos nuestros equipos son Inverter, frío/calor, con WiFi y
-              eficiencia energética clase A. Precio todo incluido con
-              instalación estética y garantía total.
+              Samsung, Midea y Anwo Inverter frío/calor con WiFi y eficiencia clase A.
+              Solo equipo desde $299.990 o todo incluido con instalación estética desde $399.990.
             </p>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-steel-dark">
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                +150 hogares climatizados
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Instalación en 24-48 hrs
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Garantía total incluida
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Catálogo por marca */}
-      {airesGroups.map((grupo) => (
+      {airesGroups.map((grupo, groupIdx) => (
         <section
           key={`${grupo.brand}-${grupo.line}`}
           className="py-16 odd:bg-gray-50 even:bg-white"
@@ -104,7 +117,7 @@ export default function AiresAcondicionadosPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {grupo.models.map((producto) => (
+              {grupo.models.map((producto, modelIdx) => (
                 <div
                   key={producto.id}
                   className={`relative rounded-2xl border p-6 flex flex-col ${
@@ -133,6 +146,7 @@ export default function AiresAcondicionadosPage() {
                         fill
                         className="object-contain"
                         sizes="(max-width: 768px) 100vw, 25vw"
+                        {...(groupIdx === 0 && modelIdx < 4 ? { priority: true } : { loading: "lazy" })}
                       />
                     </div>
                   )}

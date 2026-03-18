@@ -8,9 +8,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Termos Eléctricos · Midea Lume",
+  title: "Termos Eléctricos Midea · Compra con Instalación en Santiago",
   description:
-    "Termos eléctricos Midea Lume de 50L, 80L, 100L y 120L. Acero esmaltado, termostato regulable. Entrega e instalación en Santiago.",
+    "Compra termo eléctrico Midea Lume de 50, 80, 100 y 120 litros. Desde $149.990 solo equipo o $249.990 todo incluido con instalación en Santiago.",
   alternates: { canonical: "/termos" },
 };
 
@@ -23,13 +23,26 @@ export default function TermosPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-navy">
-              Termos eléctricos
+              Termos eléctricos Midea Lume — 50 a 120 litros
             </h1>
             <p className="mt-4 text-lg text-steel-dark leading-relaxed">
-              Agua caliente eficiente para tu hogar. Termos Midea Lume con
-              acero esmaltado, termostato regulable y disponibles en 4
-              capacidades.
+              Agua caliente sin gas, segura y eficiente. Acero esmaltado, termostato regulable
+              y 4 capacidades. Todo incluido con instalación desde $249.990 en Santiago.
             </p>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-steel-dark">
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Instalación profesional incluida
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Garantía de fábrica
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Entrega en toda la RM
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -47,7 +60,7 @@ export default function TermosPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {termosGroup.models.map((producto) => (
+            {termosGroup.models.map((producto, idx) => (
               <div
                 key={producto.id}
                 className="relative rounded-2xl border border-gray-200 hover:border-cyan hover:shadow-lg p-6 flex flex-col transition-all bg-white"
@@ -66,6 +79,7 @@ export default function TermosPage() {
                       fill
                       className="object-contain"
                       sizes="(max-width: 768px) 100vw, 25vw"
+                      {...(idx < 4 ? { priority: true } : { loading: "lazy" })}
                     />
                   </div>
                 )}
