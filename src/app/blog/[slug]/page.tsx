@@ -122,14 +122,55 @@ function ArticleCuantoCuesta() {
       <h2>Factores que incrementan el costo de la instalación</h2>
 
       <ul>
-        <li>Distancia entre unidad interior y exterior mayor a 3–4 metros.</li>
         <li>
-          Necesidad de canaletas, soportes especiales, paso por losa/hormigón,
-          altura mayor a 2° piso sin ascensor.
+          <strong>Distancia entre unidades:</strong> cada metro adicional de cañería
+          sobre los 3-4 metros estándar suma entre $8.000 y $15.000. En departamentos
+          donde la unidad exterior queda lejos (balcón trasero vs habitación frontal),
+          esto puede sumar $50.000-$100.000 al costo total.
         </li>
         <li>
-          Instalación en departamento con fachada protegida o restricciones del
-          condominio.
+          <strong>Perforación en hormigón o losa:</strong> un muro de hormigón armado
+          requiere perforación diamantada ($30.000-$50.000 por perforación). Los muros
+          de tabiquería son mucho más simples y económicos.
+        </li>
+        <li>
+          <strong>Altura y acceso:</strong> instalaciones en pisos altos sin ascensor
+          de carga (común en edificios antiguos de Providencia y Ñuñoa) requieren más
+          mano de obra para subir el equipo exterior (~45 kg).
+        </li>
+        <li>
+          <strong>Canaletas y terminaciones estéticas:</strong> las canaletas ocultas
+          pintadas al tono de la pared cuestan entre $15.000 y $30.000 adicionales,
+          pero son obligatorias en muchos edificios post-2010.
+        </li>
+        <li>
+          <strong>Circuito eléctrico dedicado:</strong> si tu tablero no tiene un
+          automático libre, necesitarás uno nuevo ($40.000-$80.000). Los equipos de
+          18K BTU o más generalmente requieren circuito independiente.
+        </li>
+      </ul>
+
+      <h2>Comprar por separado vs todo incluido</h2>
+
+      <p>
+        La tentación de comprar el equipo en un retail grande y buscar un instalador
+        aparte es comprensible. Pero en la práctica, este enfoque suele salir más caro
+        y con más riesgo:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Precio real por separado:</strong> equipo Midea 9K BTU en retail
+          ($299.990-$329.990) + instalación independiente ($150.000-$200.000) = <strong>$449.990-$529.990</strong>.
+        </li>
+        <li>
+          <strong>Precio todo incluido Meser:</strong> mismo equipo + instalación estética +
+          garantía integral = <strong>$399.990</strong>. Ahorro inmediato de $50.000-$130.000.
+        </li>
+        <li>
+          <strong>Garantía dividida:</strong> si compras por separado, la garantía del equipo
+          es del fabricante y la de instalación del técnico. Si algo falla, cada uno culpa al
+          otro. Con todo incluido, un solo responsable.
         </li>
       </ul>
 
@@ -145,8 +186,15 @@ function ArticleCuantoCuesta() {
       <p>
         Hoy los grandes retailers ofrecen servicio de instalación y
         subcontratan técnicos que no siempre tienen la idoneidad y conocimientos
-        necesarios en caso de problemas.
+        necesarios en caso de problemas. Antes de contratar, verifica:
       </p>
+
+      <ul>
+        <li>Que entreguen <strong>precio cerrado</strong> por escrito (sin &ldquo;extras&rdquo; después).</li>
+        <li>Que la garantía cubra <strong>equipo e instalación</strong> de forma conjunta.</li>
+        <li>Que incluyan <strong>puesta en marcha y prueba de rendimiento</strong> documentada.</li>
+        <li>Que tengan <strong>oficina o contacto directo</strong>, no solo un número de celular.</li>
+      </ul>
 
       <div className="tip-box">
         <p>
@@ -467,6 +515,69 @@ function ArticleMideaVsSamsung() {
         si valoras durabilidad a largo plazo y servicio técnico sólido.
       </p>
 
+      <h2>Costo total a 10 años: ¿cuál sale más barato?</h2>
+
+      <p>
+        Más allá del precio de compra, el costo real de un aire acondicionado incluye
+        consumo eléctrico, mantenciones y eventual reemplazo de piezas. Hicimos el cálculo
+        para un equipo de 12K BTU usado 8 horas diarias en Santiago durante 6 meses al año:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Midea EcoMaster</th>
+            <th>Samsung Wind-Free</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Equipo + instalación</td>
+            <td>$449.990</td>
+            <td>$629.990</td>
+          </tr>
+          <tr>
+            <td>Consumo eléctrico anual</td>
+            <td>~$96.000</td>
+            <td>~$102.000</td>
+          </tr>
+          <tr>
+            <td>Mantención anual</td>
+            <td>$59.990</td>
+            <td>$59.990</td>
+          </tr>
+          <tr>
+            <td><strong>Costo total 10 años</strong></td>
+            <td><strong>$2.009.890</strong></td>
+            <td><strong>$2.249.890</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        La diferencia real a 10 años es de ~$240.000 — menos de lo que parece por la
+        brecha inicial de $180.000. Midea ahorra un poco más en electricidad gracias a su
+        SEER más alto (22.5 vs 21.7), pero la diferencia es marginal ($6.000/año). La
+        decisión final depende más de las funcionalidades que valoras que del ahorro económico.
+      </p>
+
+      <h2>Garantía y servicio técnico en Chile</h2>
+
+      <p>
+        Ambas marcas tienen representación oficial en Chile con repuestos disponibles.
+        Samsung ofrece 10 años de garantía en compresor y 3 años en producto completo.
+        Midea ofrece 5 años en compresor y 2 años en producto. En la práctica, las fallas
+        son poco frecuentes en ambas marcas cuando el equipo tiene mantención anual.
+      </p>
+
+      <p>
+        Un punto a considerar: Samsung tiene más centros de servicio autorizados en Santiago
+        (12 vs 8 de Midea al 2026). Sin embargo, cuando compras con instalación incluida
+        a través de un proveedor como Meser, la garantía de instalación y equipo la cubre
+        directamente el instalador, independiente de la marca.
+      </p>
+
       <h2>En resumen</h2>
 
       <ul>
@@ -477,6 +588,10 @@ function ArticleMideaVsSamsung() {
         <li>
           <strong>Samsung gana en experiencia premium y features</strong> → Si
           buscas lo mejor y puedes invertir más.
+        </li>
+        <li>
+          <strong>A 10 años la diferencia de costo es solo ~$240.000</strong> →
+          Si el presupuesto no es el factor principal, elige por funcionalidades.
         </li>
       </ul>
 
@@ -613,6 +728,106 @@ function ArticleBTU() {
           -10% si es muy sombreada, bien aislada o en clima más fresco.
         </li>
       </ul>
+
+      <h2>¿Qué pasa si eliges mal los BTU?</h2>
+
+      <p>
+        Elegir un equipo con los BTU incorrectos es uno de los errores más costosos
+        en climatización. Las consecuencias varían según si el equipo está
+        subdimensionado o sobredimensionado:
+      </p>
+
+      <h3>Equipo con pocos BTU (subdimensionado)</h3>
+
+      <ul>
+        <li>
+          <strong>Funciona al máximo constantemente</strong> — nunca alcanza la temperatura
+          deseada, especialmente en días de calor extremo (35°C+ en Santiago).
+        </li>
+        <li>
+          <strong>Consumo eléctrico hasta un 30% mayor</strong> — el compresor no para
+          de trabajar, elevando la boleta de luz entre $8.000 y $15.000 extra al mes.
+        </li>
+        <li>
+          <strong>Desgaste acelerado</strong> — vida útil se reduce de 12-15 años a 7-8 años
+          por sobrecarga del compresor.
+        </li>
+        <li>
+          <strong>Confort deficiente</strong> — el espacio nunca llega a la temperatura
+          configurada y se siente caluroso.
+        </li>
+      </ul>
+
+      <h3>Equipo con muchos BTU (sobredimensionado)</h3>
+
+      <ul>
+        <li>
+          <strong>Ciclos cortos</strong> — enfría rápido, se apaga, sube la temperatura,
+          vuelve a encender. Este &ldquo;cicleo&rdquo; genera variaciones de temperatura molestas.
+        </li>
+        <li>
+          <strong>Mala deshumidificación</strong> — no funciona suficiente tiempo para
+          extraer la humedad del aire, dejando el ambiente húmedo y pegajoso.
+        </li>
+        <li>
+          <strong>Mayor costo inicial innecesario</strong> — pagaste de más por un equipo
+          que no necesitas. La diferencia entre un 9K y un 18K BTU puede ser de $100.000+.
+        </li>
+      </ul>
+
+      <p>
+        <strong>Regla de oro:</strong> si dudas entre dos tamaños comerciales (por ejemplo,
+        tu cálculo da 13.500 BTU), elige el superior (18.000 BTU en este caso). Los equipos
+        Inverter ajustan su potencia automáticamente, así que un equipo ligeramente más grande
+        consume lo mismo pero tiene margen para días extremos.
+      </p>
+
+      <h2>BTU y consumo eléctrico: cuánto vas a pagar</h2>
+
+      <p>
+        El consumo eléctrico depende de los BTU, la eficiencia del equipo (SEER) y las
+        horas de uso. Acá va una estimación para equipos Inverter en Santiago, usando
+        tarifa eléctrica promedio de $220/kWh (2026):
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Equipo</th>
+            <th>Consumo promedio</th>
+            <th>Costo mensual (8h/día)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>9.000 BTU Inverter</td>
+            <td>0.7 kW</td>
+            <td>~$37.000</td>
+          </tr>
+          <tr>
+            <td>12.000 BTU Inverter</td>
+            <td>1.0 kW</td>
+            <td>~$53.000</td>
+          </tr>
+          <tr>
+            <td>18.000 BTU Inverter</td>
+            <td>1.5 kW</td>
+            <td>~$79.000</td>
+          </tr>
+          <tr>
+            <td>24.000 BTU Inverter</td>
+            <td>2.1 kW</td>
+            <td>~$111.000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Estos valores son aproximados para uso en verano (enero-febrero). En modo calefacción
+        (invierno), el consumo es similar pero las horas de uso suelen ser menores. Un equipo
+        bien dimensionado con tecnología Inverter puede reducir estos costos entre un 30% y 50%
+        comparado con equipos on/off tradicionales.
+      </p>
 
       <h2>Tabla de BTU recomendados (guía 2025-2026)</h2>
 
@@ -950,6 +1165,86 @@ function ArticleMultiSplit() {
           </strong>{" "}
           → Limpieza filtros en cada unidad + revisión anual del sistema
           completo.
+        </li>
+      </ul>
+
+      <h2>Multi Split vs splits individuales: comparación de costos</h2>
+
+      <p>
+        Una de las preguntas más frecuentes es si conviene más un Multi Split o
+        instalar splits individuales en cada habitación. La respuesta depende de
+        la cantidad de ambientes:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Configuración</th>
+            <th>Multi Split</th>
+            <th>Splits individuales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2 ambientes</td>
+            <td>~$850.000</td>
+            <td>~$800.000</td>
+          </tr>
+          <tr>
+            <td>3 ambientes</td>
+            <td>~$1.200.000</td>
+            <td>~$1.200.000</td>
+          </tr>
+          <tr>
+            <td>4 ambientes</td>
+            <td>~$1.500.000</td>
+            <td>~$1.600.000</td>
+          </tr>
+          <tr>
+            <td>5 ambientes</td>
+            <td>~$1.800.000</td>
+            <td>~$2.000.000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        A partir de 3 ambientes, el Multi Split empieza a ser más económico. Pero el
+        ahorro real está en otros factores: un solo espacio exterior ocupado (clave en
+        departamentos con restricciones), menos ruido exterior y una estética más limpia
+        en la fachada.
+      </p>
+
+      <p>
+        La desventaja principal del Multi Split es la dependencia de una sola unidad
+        exterior: si falla el compresor, todos los ambientes quedan sin climatización.
+        Con splits individuales, si falla uno los demás siguen funcionando. En la
+        práctica, las fallas de compresor son poco frecuentes (menos del 2% en los
+        primeros 5 años con mantención regular).
+      </p>
+
+      <h2>Errores frecuentes al elegir Multi Split</h2>
+
+      <ul>
+        <li>
+          <strong>No hacer diagnóstico previo:</strong> cada metro de cañería extra cuesta
+          dinero y reduce la eficiencia. Un diagnóstico profesional define las distancias
+          exactas y la ruta óptima antes de comprar.
+        </li>
+        <li>
+          <strong>Mezclar capacidades sin planificación:</strong> un Multi Split 3x1 no
+          significa &ldquo;cualquier combinación de interiores&rdquo;. La unidad exterior debe tener
+          capacidad suficiente para la suma de las interiores con un margen del 10-15%.
+        </li>
+        <li>
+          <strong>Ignorar las distancias máximas:</strong> cada marca tiene un límite de
+          metros de cañería entre exterior e interiores. Samsung permite hasta 25m por línea,
+          Midea hasta 20m. Superar estos límites reduce drásticamente el rendimiento.
+        </li>
+        <li>
+          <strong>Comprar el equipo sin instalador:</strong> la instalación de un Multi Split
+          requiere vacío del sistema, carga de gas precisa y prueba de hermeticidad. Un técnico
+          no certificado puede arruinar el equipo nuevo.
         </li>
       </ul>
 

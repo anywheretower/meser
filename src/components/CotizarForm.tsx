@@ -23,7 +23,7 @@ const COMUNAS = [
   "Otra",
 ];
 
-const TOTAL_STEPS = 5;
+const TOTAL_STEPS = 3;
 
 type FormData = {
   tipoEspacio: string;
@@ -121,14 +121,10 @@ export default function CotizarForm() {
   const canAdvance = () => {
     switch (step) {
       case 1:
-        return formData.tipoEspacio !== "";
+        return formData.tipoEspacio !== "" && formData.ambientes !== "";
       case 2:
-        return formData.ambientes !== "";
+        return formData.comuna !== "" && formData.necesidad !== "";
       case 3:
-        return formData.comuna !== "";
-      case 4:
-        return formData.necesidad !== "";
-      case 5:
         return formData.nombre.trim() !== "" && formData.telefono.trim() !== "";
       default:
         return false;
@@ -217,226 +213,199 @@ export default function CotizarForm() {
       </div>
 
       <div className="p-8" aria-live="polite">
-        {/* Step 1: Tipo de espacio */}
+        {/* Step 1: Tipo de espacio + Ambientes */}
         {step === 1 && (
-          <fieldset>
-            <legend className="text-xl font-semibold text-navy">
-              ¿Qué tipo de espacio quieres climatizar?
-            </legend>
-            <div className="mt-6 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Tipo de espacio">
-              {[
-                { value: "departamento", label: "Departamento", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2 22V6l10-4 10 4v16M2 22h20M6 10v2m4-2v2m4-2v2m-8 4v2m4-2v2m4-2v2" /></svg> },
-                { value: "casa", label: "Casa", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-8 9 8M5 10v10a1 1 0 001 1h3v-5h6v5h3a1 1 0 001-1V10" /></svg> },
-                { value: "oficina", label: "Oficina / Local", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7m16 0l-8 4m-8-4l8 4m0 0v10" /></svg> },
-                { value: "otro", label: "Otro", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg> },
-              ].map((option) => (
-                <label
-                  key={option.value}
-                  className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition-all cursor-pointer ${
-                    formData.tipoEspacio === option.value
-                      ? "border-cyan bg-cyan/5 text-cyan"
-                      : "border-gray-200 hover:border-gray-300 text-navy"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="tipoEspacio"
-                    value={option.value}
-                    checked={formData.tipoEspacio === option.value}
-                    onChange={() => {
-                      updateField("tipoEspacio", option.value);
-                      trackFormStep(1, "tipoEspacio", option.value);
-                      setStep(2);
-                    }}
-                    className="sr-only"
-                  />
-                  <span className="shrink-0">{option.icon}</span>
-                  <span className="text-sm font-medium text-navy">
-                    {option.label}
-                  </span>
-                </label>
-              ))}
-            </div>
-          </fieldset>
-        )}
-
-        {/* Step 2: Ambientes */}
-        {step === 2 && (
-          <fieldset>
-            <legend className="text-xl font-semibold text-navy">
-              ¿Cuántos ambientes?
-            </legend>
-            <div className="mt-6 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Cantidad de ambientes">
-              {[
-                { value: "1", label: "1 ambiente" },
-                { value: "2", label: "2 ambientes" },
-                { value: "3", label: "3 ambientes" },
-                { value: "4+", label: "4 o más" },
-              ].map((option) => (
-                <label
-                  key={option.value}
-                  className={`rounded-xl border-2 p-4 text-center transition-all cursor-pointer ${
-                    formData.ambientes === option.value
-                      ? "border-cyan bg-cyan/5"
-                      : "border-gray-200 hover:border-gray-300"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="ambientes"
-                    value={option.value}
-                    checked={formData.ambientes === option.value}
-                    onChange={() => {
-                      updateField("ambientes", option.value);
-                      trackFormStep(2, "ambientes", option.value);
-                      setStep(3);
-                    }}
-                    className="sr-only"
-                  />
-                  <span className="text-2xl font-bold text-navy">
-                    {option.value}
-                  </span>
-                  <span className="block mt-1 text-xs text-steel-dark">
-                    {option.label}
-                  </span>
-                </label>
-              ))}
-            </div>
-          </fieldset>
-        )}
-
-        {/* Step 3: Comuna */}
-        {step === 3 && (
-          <div>
-            <label htmlFor="cotizar-comuna" className="block text-xl font-semibold text-navy">
-              ¿En qué comuna estás?
-            </label>
-            <div className="mt-6">
-              <select
-                id="cotizar-comuna"
-                value={formData.comuna}
-                onChange={(e) => {
-                  updateField("comuna", e.target.value);
-                  if (e.target.value) {
-                    trackFormStep(3, "comuna", e.target.value);
-                    setStep(4);
-                  }
-                }}
-                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3.5 text-sm text-navy bg-white focus:border-cyan focus:outline-none transition-colors"
-              >
-                <option value="">Selecciona tu comuna</option>
-                {COMUNAS.map((comuna) => (
-                  <option key={comuna} value={comuna}>
-                    {comuna}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        )}
-
-        {/* Step 4: Necesidad */}
-        {step === 4 && (
-          <fieldset>
-            <legend className="text-xl font-semibold text-navy">
-              ¿Ya tienes equipo o necesitas uno?
-            </legend>
-            <div className="mt-6 space-y-3" role="radiogroup" aria-label="Tipo de necesidad">
-              {[
-                {
-                  value: "todo-incluido",
-                  label: "Necesito equipo + instalación",
-                  desc: "Todo incluido",
-                },
-                {
-                  value: "solo-instalacion",
-                  label: "Ya tengo equipo, solo necesito instalación",
-                  desc: "Solo servicio",
-                },
-                {
-                  value: "mantencion",
-                  label: "Solo mantención",
-                  desc: "Limpieza y revisión",
-                },
-                {
-                  value: "asesoria",
-                  label: "No estoy seguro — necesito asesoría",
-                  desc: "Te ayudamos a decidir",
-                },
-              ].map((option) => (
-                <label
-                  key={option.value}
-                  className={`w-full flex items-center justify-between rounded-xl border-2 p-4 text-left transition-all cursor-pointer ${
-                    formData.necesidad === option.value
-                      ? "border-cyan bg-cyan/5"
-                      : "border-gray-200 hover:border-gray-300"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="necesidad"
-                    value={option.value}
-                    checked={formData.necesidad === option.value}
-                    onChange={() => {
-                      updateField("necesidad", option.value);
-                      trackFormStep(4, "necesidad", option.value);
-                      setStep(5);
-                    }}
-                    className="sr-only"
-                  />
-                  <div>
+          <div className="space-y-8">
+            <fieldset>
+              <legend className="text-xl font-semibold text-navy">
+                ¿Qué tipo de espacio quieres climatizar?
+              </legend>
+              <div className="mt-4 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Tipo de espacio">
+                {[
+                  { value: "departamento", label: "Departamento", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2 22V6l10-4 10 4v16M2 22h20M6 10v2m4-2v2m4-2v2m-8 4v2m4-2v2m4-2v2" /></svg> },
+                  { value: "casa", label: "Casa", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-8 9 8M5 10v10a1 1 0 001 1h3v-5h6v5h3a1 1 0 001-1V10" /></svg> },
+                  { value: "oficina", label: "Oficina / Local", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7m16 0l-8 4m-8-4l8 4m0 0v10" /></svg> },
+                  { value: "otro", label: "Otro", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg> },
+                ].map((option) => (
+                  <label
+                    key={option.value}
+                    className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition-all cursor-pointer ${
+                      formData.tipoEspacio === option.value
+                        ? "border-cyan bg-cyan/5 text-cyan"
+                        : "border-gray-200 hover:border-gray-300 text-navy"
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="tipoEspacio"
+                      value={option.value}
+                      checked={formData.tipoEspacio === option.value}
+                      onChange={() => {
+                        updateField("tipoEspacio", option.value);
+                        trackFormStep(1, "tipoEspacio", option.value);
+                      }}
+                      className="sr-only"
+                    />
+                    <span className="shrink-0">{option.icon}</span>
                     <span className="text-sm font-medium text-navy">
                       {option.label}
                     </span>
-                    <span className="block mt-0.5 text-xs text-steel-dark">
-                      {option.desc}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend className="text-lg font-semibold text-navy">
+                ¿Cuántos ambientes?
+              </legend>
+              <div className="mt-4 grid grid-cols-4 gap-3" role="radiogroup" aria-label="Cantidad de ambientes">
+                {[
+                  { value: "1", label: "1" },
+                  { value: "2", label: "2" },
+                  { value: "3", label: "3" },
+                  { value: "4+", label: "4+" },
+                ].map((option) => (
+                  <label
+                    key={option.value}
+                    className={`rounded-xl border-2 p-3 text-center transition-all cursor-pointer ${
+                      formData.ambientes === option.value
+                        ? "border-cyan bg-cyan/5"
+                        : "border-gray-200 hover:border-gray-300"
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="ambientes"
+                      value={option.value}
+                      checked={formData.ambientes === option.value}
+                      onChange={() => {
+                        updateField("ambientes", option.value);
+                        trackFormStep(1, "ambientes", option.value);
+                      }}
+                      className="sr-only"
+                    />
+                    <span className="text-xl font-bold text-navy">
+                      {option.label}
                     </span>
-                  </div>
-                  <svg className="w-5 h-5 text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </label>
-              ))}
-            </div>
-          </fieldset>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          </div>
         )}
 
-        {/* Step 5: Datos */}
-        {step === 5 && (
+        {/* Step 2: Comuna + Necesidad */}
+        {step === 2 && (
+          <div className="space-y-8">
+            <div>
+              <label htmlFor="cotizar-comuna" className="block text-xl font-semibold text-navy">
+                ¿En qué comuna estás?
+              </label>
+              <div className="mt-4">
+                <select
+                  id="cotizar-comuna"
+                  value={formData.comuna}
+                  onChange={(e) => {
+                    updateField("comuna", e.target.value);
+                    if (e.target.value) {
+                      trackFormStep(2, "comuna", e.target.value);
+                    }
+                  }}
+                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3.5 text-sm text-navy bg-white focus:border-cyan focus:outline-none transition-colors"
+                >
+                  <option value="">Selecciona tu comuna</option>
+                  {COMUNAS.map((comuna) => (
+                    <option key={comuna} value={comuna}>
+                      {comuna}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <fieldset>
+              <legend className="text-lg font-semibold text-navy">
+                ¿Qué necesitas?
+              </legend>
+              <div className="mt-4 space-y-2" role="radiogroup" aria-label="Tipo de necesidad">
+                {[
+                  { value: "todo-incluido", label: "Equipo + instalación", desc: "Todo incluido" },
+                  { value: "solo-instalacion", label: "Solo instalación (tengo equipo)", desc: "Solo servicio" },
+                  { value: "mantencion", label: "Mantención", desc: "Limpieza y revisión" },
+                  { value: "asesoria", label: "No estoy seguro", desc: "Asesoría gratuita" },
+                ].map((option) => (
+                  <label
+                    key={option.value}
+                    className={`w-full flex items-center justify-between rounded-xl border-2 p-3.5 text-left transition-all cursor-pointer ${
+                      formData.necesidad === option.value
+                        ? "border-cyan bg-cyan/5"
+                        : "border-gray-200 hover:border-gray-300"
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="necesidad"
+                      value={option.value}
+                      checked={formData.necesidad === option.value}
+                      onChange={() => {
+                        updateField("necesidad", option.value);
+                        trackFormStep(2, "necesidad", option.value);
+                      }}
+                      className="sr-only"
+                    />
+                    <div>
+                      <span className="text-sm font-medium text-navy">{option.label}</span>
+                      <span className="block mt-0.5 text-xs text-steel-dark">{option.desc}</span>
+                    </div>
+                    <svg className="w-4 h-4 text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          </div>
+        )}
+
+        {/* Step 3: Datos de contacto */}
+        {step === 3 && (
           <div>
             <h2 className="text-xl font-semibold text-navy">Tus datos</h2>
             <p className="mt-1 text-sm text-steel-dark">
               Para contactarte con tu propuesta personalizada.
             </p>
             <div className="mt-6 space-y-4">
-              <div>
-                <label htmlFor="cotizar-nombre" className="block text-sm font-medium text-navy mb-1.5">
-                  Nombre *
-                </label>
-                <input
-                  id="cotizar-nombre"
-                  type="text"
-                  required
-                  value={formData.nombre}
-                  onChange={(e) => updateField("nombre", e.target.value)}
-                  placeholder="Tu nombre"
-                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="cotizar-telefono" className="block text-sm font-medium text-navy mb-1.5">
-                  Teléfono *
-                </label>
-                <input
-                  id="cotizar-telefono"
-                  type="tel"
-                  required
-                  pattern="\+?[0-9\s]{8,15}"
-                  value={formData.telefono}
-                  onChange={(e) => updateField("telefono", e.target.value)}
-                  placeholder="+569 XXXX XXXX"
-                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="cotizar-nombre" className="block text-sm font-medium text-navy mb-1.5">
+                    Nombre *
+                  </label>
+                  <input
+                    id="cotizar-nombre"
+                    type="text"
+                    required
+                    value={formData.nombre}
+                    onChange={(e) => updateField("nombre", e.target.value)}
+                    placeholder="Tu nombre"
+                    className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="cotizar-telefono" className="block text-sm font-medium text-navy mb-1.5">
+                    Teléfono *
+                  </label>
+                  <input
+                    id="cotizar-telefono"
+                    type="tel"
+                    required
+                    pattern="\+?[0-9\s]{8,15}"
+                    value={formData.telefono}
+                    onChange={(e) => updateField("telefono", e.target.value)}
+                    placeholder="+569 XXXX XXXX"
+                    className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                  />
+                </div>
               </div>
               <div>
                 <label htmlFor="cotizar-email" className="block text-sm font-medium text-navy mb-1.5">
@@ -462,7 +431,7 @@ export default function CotizarForm() {
                   value={formData.comentario}
                   onChange={(e) => updateField("comentario", e.target.value)}
                   placeholder="¿Algo que debamos saber sobre tu espacio?"
-                  rows={3}
+                  rows={2}
                   className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy placeholder:text-steel focus:border-cyan focus:outline-none transition-colors resize-none"
                 />
               </div>
@@ -511,10 +480,7 @@ export default function CotizarForm() {
               disabled={!canAdvance()}
               className="rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              {step === 1 && "Elegir ambientes"}
-              {step === 2 && "Seleccionar comuna"}
-              {step === 3 && "Elegir servicio"}
-              {step === 4 && "Completar datos"}
+              {step === 1 ? "Elegir servicio" : "Completar datos"}
             </button>
           )}
         </div>
