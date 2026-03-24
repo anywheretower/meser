@@ -21,7 +21,7 @@ export default function PoliticaDevolucionesPage() {
             Política de Devoluciones y Garantía
           </h1>
           <p className="mt-4 text-sm text-steel-dark">
-            Última actualización: 16 de marzo de 2026
+            Última actualización: 24 de marzo de 2026
           </p>
 
           <div className="mt-10 space-y-10 text-sm text-navy/80 leading-relaxed">
@@ -65,6 +65,11 @@ export default function PoliticaDevolucionesPage() {
                 Una vez que el equipo ha sido instalado, el derecho de
                 retracto no aplica dado que el servicio ya fue prestado.
               </p>
+              <p className="mt-3">
+                En caso de retracto, Meser devolverá el dinero íntegro del
+                producto, pero <strong>cobrará el valor del retiro y despacho
+                del equipo</strong>.
+              </p>
             </div>
 
             {/* 3 */}
@@ -92,9 +97,16 @@ export default function PoliticaDevolucionesPage() {
               </ul>
               <p className="mt-3">
                 Este derecho puede ejercerse dentro de los{" "}
-                <strong>3 meses</strong> siguientes a la recepción del
-                producto (garantía legal mínima). Si el fabricante ofrece
-                una garantía mayor, prevalece la de mayor plazo.
+                <strong>6 meses</strong> siguientes a la recepción del
+                producto (garantía legal ampliada desde 2022). Si el
+                fabricante ofrece una garantía mayor, prevalece la de mayor
+                plazo.
+              </p>
+              <p className="mt-3">
+                Para hacer efectiva la garantía legal, <strong>no se exigirá
+                el embalaje original</strong> del producto (conforme a lo
+                establecido por SERNAC). El retiro del equipo no tiene
+                costo para el consumidor.
               </p>
             </div>
 

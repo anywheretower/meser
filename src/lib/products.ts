@@ -1,4 +1,4 @@
-export type ProductCategory = "aire-acondicionado" | "termo-electrico";
+export type ProductCategory = "aire-acondicionado" | "termo-electrico" | "servicio";
 
 export interface ProductModel {
   id: string;
@@ -221,55 +221,6 @@ export const airesGroups: ProductGroup[] = [
       },
     ],
   },
-  {
-    brand: "Midea",
-    line: "Inverter Xtra",
-    category: "aire-acondicionado",
-    models: [
-      {
-        id: "midea-inverter-xtra-9k",
-        name: "Midea Inverter Xtra 9.000 BTU",
-        category: "aire-acondicionado",
-        brand: "Midea",
-        line: "Inverter Xtra",
-        image: "/images/productos/midea-inverter-xtra.webp",
-        fichaUrl: "/fichas/midea-inverter-xtra.pdf",
-        price: 299990,
-        originalPrice: 479990,
-        todoIncluidoPrice: 399990,
-        specs: ["Inverter frío/calor", "Clase A", "20 dB"],
-        coverage: "Hasta 17 m²",
-      },
-      {
-        id: "midea-inverter-xtra-12k",
-        name: "Midea Inverter Xtra 12.000 BTU",
-        category: "aire-acondicionado",
-        brand: "Midea",
-        line: "Inverter Xtra",
-        image: "/images/productos/midea-inverter-xtra.webp",
-        fichaUrl: "/fichas/midea-inverter-xtra.pdf",
-        price: 319990,
-        originalPrice: 549990,
-        todoIncluidoPrice: 419990,
-        specs: ["Inverter frío/calor", "Clase A", "22 dB"],
-        coverage: "Hasta 22 m²",
-      },
-      {
-        id: "midea-inverter-xtra-18k",
-        name: "Midea Inverter Xtra 18.000 BTU",
-        category: "aire-acondicionado",
-        brand: "Midea",
-        line: "Inverter Xtra",
-        image: "/images/productos/midea-inverter-xtra.webp",
-        fichaUrl: "/fichas/midea-inverter-xtra.pdf",
-        price: 499990,
-        originalPrice: 749990,
-        todoIncluidoPrice: 599990,
-        specs: ["Inverter frío/calor", "Clase A", "24 dB"],
-        coverage: "Hasta 32 m²",
-      },
-    ],
-  },
 ];
 
 /* ── Termos Eléctricos ── */
@@ -334,11 +285,43 @@ export const termosGroup: ProductGroup = {
   ],
 };
 
+/* ── Servicios ── */
+
+export const servicios: ProductModel[] = [
+  {
+    id: "mantencion-ac",
+    name: "Mantención Aire Acondicionado",
+    category: "servicio",
+    brand: "Meser",
+    line: "Servicios",
+    image: "/images/blog/mantencion.webp",
+    price: 59990,
+    originalPrice: 99990,
+    todoIncluidoPrice: 59990,
+    specs: ["Limpieza profunda", "Revisión técnica", "Informe de estado"],
+    coverage: "Toda la RM",
+  },
+  {
+    id: "instalacion-solo-servicio",
+    name: "Instalación Aire Acondicionado (solo servicio)",
+    category: "servicio",
+    brand: "Meser",
+    line: "Servicios",
+    image: "/images/blog/instalacion-estetica.webp",
+    price: 99990,
+    originalPrice: 150000,
+    todoIncluidoPrice: 99990,
+    specs: ["Montaje interior/exterior", "Cañerías", "Puesta en marcha"],
+    coverage: "Toda la RM",
+  },
+];
+
 /* ── Helpers ── */
 
 export const allProducts: ProductModel[] = [
   ...airesGroups.flatMap((g) => g.models),
   ...termosGroup.models,
+  ...servicios,
 ];
 
 export function getProductById(id: string): ProductModel | undefined {

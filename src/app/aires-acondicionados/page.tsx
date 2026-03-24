@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { airesGroups, formatPrice } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
+import AddPackageButton from "@/components/AddPackageButton";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -396,17 +397,18 @@ export default function AiresAcondicionadosPage() {
               </h3>
               <div className="mt-2">
                 <span className="text-sm text-steel line-through mr-2">$150.000</span>
-                <span className="text-xl font-bold text-navy">$100.000</span>
+                <span className="text-xl font-bold text-navy">$99.990</span>
               </div>
               <p className="mt-2 text-sm text-steel-dark">
                 Si ya tienes equipo. Incluye montaje, cañerías, puesta en marcha.
               </p>
-              <Link
-                href="/instalacion-aire-acondicionado"
-                className="mt-4 inline-flex text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
+              <AddPackageButton
+                productId="instalacion-solo-servicio"
+                price={99990}
+                className="mt-4 inline-flex text-sm font-semibold text-white bg-cyan rounded-full px-5 py-2 hover:bg-cyan-dark transition-colors cursor-pointer"
               >
-                Ver detalles &rarr;
-              </Link>
+                Comprar instalación $99.990
+              </AddPackageButton>
             </div>
             <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="text-base font-semibold text-navy">

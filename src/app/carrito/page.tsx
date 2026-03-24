@@ -175,12 +175,14 @@ export default function CarritoPage() {
                   <div className="flex items-center gap-2 mt-1">
                     <span
                       className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full ${
-                        item.withInstallation
+                        product.category === "servicio"
+                          ? "bg-green-50 text-green-700"
+                          : item.withInstallation
                           ? "bg-cyan/10 text-cyan"
                           : "bg-gray-100 text-steel-dark"
                       }`}
                     >
-                      {item.withInstallation ? "Con instalación" : "Solo equipo"}
+                      {product.category === "servicio" ? "Servicio" : item.withInstallation ? "Con instalación" : "Solo equipo"}
                     </span>
                   </div>
                   <p className="text-sm text-steel-dark mt-1">

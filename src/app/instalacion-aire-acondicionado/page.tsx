@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
+import AddPackageButton from "@/components/AddPackageButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 
@@ -296,6 +297,37 @@ export default function InstalacionPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solo servicio — promo */}
+      <section className="py-16 bg-cyan/5 border-y border-cyan/10">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center rounded-full bg-red-500 px-3 py-1 text-[11px] font-bold text-white uppercase tracking-wider mb-3">
+                Promo hasta 31/03
+              </div>
+              <h3 className="text-2xl font-bold text-navy">
+                ¿Ya tienes tu equipo? Solo instalación
+              </h3>
+              <p className="mt-2 text-sm text-steel-dark max-w-lg">
+                Montaje de unidad interior y exterior, cañerías con aislación,
+                conexión eléctrica, desagüe, puesta en marcha y prueba.
+              </p>
+              <div className="mt-3">
+                <span className="text-sm text-steel line-through mr-2">$150.000</span>
+                <span className="text-3xl font-bold text-navy">$99.990</span>
+              </div>
+            </div>
+            <AddPackageButton
+              productId="instalacion-solo-servicio"
+              price={99990}
+              className="shrink-0 inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
+            >
+              Comprar instalación $99.990
+            </AddPackageButton>
           </div>
         </div>
       </section>

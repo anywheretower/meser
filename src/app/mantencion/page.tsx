@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AddPackageButton from "@/components/AddPackageButton";
 
 
 export const metadata: Metadata = {
@@ -35,12 +36,19 @@ export default function MantencionPage() {
               verificación de gas refrigerante, limpieza de la unidad exterior
               y prueba de rendimiento.
             </p>
-            <div className="mt-10">
+            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+              <AddPackageButton
+                productId="mantencion-ac"
+                price={59990}
+                className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
+              >
+                Comprar mantención $59.990
+              </AddPackageButton>
               <Link
                 href="#agendar"
-                className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-colors"
               >
-                Agendar mantención
+                Consultar primero
               </Link>
             </div>
           </div>
@@ -106,12 +114,13 @@ export default function MantencionPage() {
                   Técnicos certificados
                 </li>
               </ul>
-              <Link
-                href="#agendar"
-                className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors"
+              <AddPackageButton
+                productId="mantencion-ac"
+                price={59990}
+                className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
               >
-                Agendar mantención
-              </Link>
+                Agregar mantención al carrito
+              </AddPackageButton>
             </div>
           </div>
         </div>

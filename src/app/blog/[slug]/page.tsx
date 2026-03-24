@@ -1474,6 +1474,198 @@ function ArticleInstalacionEstetica() {
   );
 }
 
+function ArticleComparativaCalefaccion() {
+  return (
+    <>
+      <p>
+        <strong>En Chile, calentar una habitación de 18 m² con aire acondicionado Inverter
+        cuesta $25.560 al mes — un 70% menos que con calefacción eléctrica convencional
+        y un 39% menos que con parafina (precios marzo 2026).</strong> Aunque la inversión
+        inicial es mayor, se recupera en aproximadamente 8 meses de uso.
+      </p>
+
+      <div className="tip-box">
+        <p><strong>Resumen:</strong> El aire acondicionado Inverter (bomba de calor) es la forma más barata de calentar una habitación en Chile: $25.560/mes vs $41.760 parafina, $69.120 gas y $84.960 eléctrica convencional. La inversión ($480.000 con instalación) se recupera en 7-8 meses. Además es el único que sirve en verano e invierno, dura 10-15 años y no emite gases.</p>
+      </div>
+
+      <h2>Cuadro comparativo de costos mensuales</h2>
+
+      <p>
+        Para una habitación de 18 m², considerando 6 horas diarias de uso durante 30 días:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Método</th>
+            <th>Consumo/hora</th>
+            <th>Costo/hora</th>
+            <th>Gasto mensual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Aire Acondicionado Inverter 9K</strong></td>
+            <td>~0,6 kWh</td>
+            <td>$142</td>
+            <td><strong>$25.560</strong></td>
+          </tr>
+          <tr>
+            <td>Estufa a Parafina (Láser)</td>
+            <td>~0,2 L</td>
+            <td>$232</td>
+            <td>$41.760</td>
+          </tr>
+          <tr>
+            <td>Estufa a Gas (Cilindro 15 kg)</td>
+            <td>~0,18 kg</td>
+            <td>$384</td>
+            <td>$69.120</td>
+          </tr>
+          <tr>
+            <td>Calefactor Eléctrico 2000W</td>
+            <td>2,0 kWh</td>
+            <td>$472</td>
+            <td>$84.960</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        <strong>¿Por qué el AC es tan barato?</strong> Porque no genera calor &ldquo;desde cero&rdquo;
+        como los otros métodos. La tecnología de <strong>bomba de calor</strong> extrae calor
+        del aire exterior y lo &ldquo;multiplica&rdquo; dentro de la habitación. Por cada 1 kWh de
+        electricidad que consume, produce entre 3 y 4 kWh de calor. Es como si cada peso
+        que gastas en luz te diera 3 pesos de calor.
+      </p>
+
+      <h2>¿Cuánto cuesta cada equipo?</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Equipo</th>
+            <th>Precio equipo</th>
+            <th>Instalación</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Aire Acondicionado 9K BTU</strong></td>
+            <td>$330.000</td>
+            <td>$150.000</td>
+            <td><strong>$480.000</strong></td>
+          </tr>
+          <tr>
+            <td>Estufa Parafina (Láser)</td>
+            <td>$350.000</td>
+            <td>$0</td>
+            <td>$350.000</td>
+          </tr>
+          <tr>
+            <td>Estufa a Gas (Cilindro 15 kg)</td>
+            <td>$120.000</td>
+            <td>$0</td>
+            <td>$120.000</td>
+          </tr>
+          <tr>
+            <td>Calefactor Convencional</td>
+            <td>$35.000</td>
+            <td>$0</td>
+            <td>$35.000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Sí, el aire acondicionado es el más caro de comprar. Pero la pregunta correcta no es
+        cuánto cuesta comprarlo, sino <strong>cuánto cuesta usarlo</strong>. Y ahí la ecuación cambia
+        completamente.
+      </p>
+
+      <h2>Retorno de inversión: ¿en cuánto tiempo recuperas la plata?</h2>
+
+      <h3>AC vs Calefactor Eléctrico (el más ineficiente)</h3>
+      <ul>
+        <li><strong>Ahorro mensual:</strong> $59.400</li>
+        <li><strong>Diferencia de inversión:</strong> $445.000</li>
+        <li><strong>Recuperas en:</strong> 7,5 meses de uso (~2 inviernos)</li>
+      </ul>
+
+      <h3>AC vs Estufa a Gas</h3>
+      <ul>
+        <li><strong>Ahorro mensual:</strong> $43.560</li>
+        <li><strong>Diferencia de inversión:</strong> $360.000</li>
+        <li><strong>Recuperas en:</strong> 8 meses de uso (~2 inviernos)</li>
+      </ul>
+
+      <h3>AC vs Parafina (Láser)</h3>
+      <ul>
+        <li><strong>Ahorro mensual:</strong> $16.200</li>
+        <li><strong>Diferencia de inversión:</strong> $130.000</li>
+        <li><strong>Recuperas en:</strong> 8 meses de uso</li>
+      </ul>
+
+      <h2>¿Por qué el aire acondicionado gana a largo plazo?</h2>
+
+      <ol>
+        <li>
+          <strong>Multitemporada:</strong> Es el único equipo que sirve en verano (frío) e
+          invierno (calor). La inversión se aprovecha todo el año, no solo 4 meses.
+        </li>
+        <li>
+          <strong>Vida útil 10-15 años:</strong> Con mantenciones básicas, un AC bien instalado
+          dura entre 10 y 15 años. Un calefactor eléctrico barato dura 2-3 temporadas.
+        </li>
+        <li>
+          <strong>Seguridad:</strong> Sin riesgo de quemaduras, sin emanación de CO2, sin humedad
+          excesiva. Mejor calidad del aire para dormir — especialmente importante en dormitorios
+          de niños.
+        </li>
+        <li>
+          <strong>Precio de la parafina es volátil:</strong> El informe ENAP del 18 de marzo 2026
+          confirmó un alza de $107,4 por litro. El precio de la electricidad es más estable y
+          predecible.
+        </li>
+      </ol>
+
+      <h2>¿Cuándo NO conviene el AC para calefacción?</h2>
+
+      <ul>
+        <li>
+          Si necesitas calentar una habitación solo 15-30 minutos al día: un calefactor
+          eléctrico de $35.000 es suficiente.
+        </li>
+        <li>
+          Zonas con temperaturas bajo -5°C sostenidas: la bomba de calor pierde eficiencia
+          (aunque los modelos Inverter modernos funcionan hasta -15°C).
+        </li>
+      </ul>
+
+      <h2>En resumen</h2>
+
+      <p>
+        Si usas calefacción más de 3-4 horas al día durante el invierno, el aire acondicionado
+        Inverter es la inversión más inteligente. Pagas más al principio, pero recuperas la
+        diferencia en menos de 2 inviernos. Y después de eso, ahorras entre $16.000 y $59.000
+        cada mes — por los próximos 10 a 15 años.
+      </p>
+
+      <p>
+        Revisa nuestra{" "}
+        <Link href="/comparativa-calefaccion" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+          comparativa completa con tablas y gráficos
+        </Link>{" "}
+        o consulta los{" "}
+        <Link href="/todo-incluido" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+          paquetes todo incluido desde $399.990
+        </Link>.
+      </p>
+    </>
+  );
+}
+
 /* ─── Slug → Component mapping ─── */
 
 const articleComponents: Record<string, () => React.JSX.Element> = {
@@ -1484,6 +1676,7 @@ const articleComponents: Record<string, () => React.JSX.Element> = {
   "mantencion-aire-acondicionado": ArticleMantencion,
   "multi-split-departamento": ArticleMultiSplit,
   "instalacion-estetica": ArticleInstalacionEstetica,
+  "comparativa-calefaccion-chile": ArticleComparativaCalefaccion,
 };
 
 export default async function BlogPostPage({ params }: Props) {

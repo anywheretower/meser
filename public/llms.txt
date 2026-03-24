@@ -15,7 +15,7 @@
 ## Marcas
 
 - Samsung (línea Wind-Free)
-- Midea (líneas EcoMaster e Inverter Xtra)
+- Midea (línea EcoMaster)
 - Anwo (línea Ecoflow)
 
 ## Productos — Aires Acondicionados (precios en CLP)
@@ -34,10 +34,6 @@
 | Samsung Wind-Free 12K | 12.000 | $529.990 | $629.990 |
 | Samsung Wind-Free 18K | 18.000 | $699.990 | $799.990 |
 | Samsung Wind-Free 24K | 24.000 | $849.990 | $949.990 |
-| Midea Inverter Xtra 9K | 9.000 | $299.990 | $399.990 |
-| Midea Inverter Xtra 12K | 12.000 | $319.990 | $419.990 |
-| Midea Inverter Xtra 18K | 18.000 | $499.990 | $599.990 |
-
 Todos los equipos son Inverter, frío/calor, eficiencia clase A.
 
 ## Productos — Termos Eléctricos

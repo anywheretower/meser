@@ -86,6 +86,18 @@ export const blogPosts: BlogPost[] = [
     imageAlt: "Equipo Midea con flujos de aire frío y calor para múltiples ambientes",
   },
   {
+    slug: "comparativa-calefaccion-chile",
+    titulo: "Parafina vs Gas vs Eléctrica vs Aire Acondicionado: cuál conviene en Chile (2026)",
+    descripcion:
+      "Comparativa de costos de calefacción actualizados a marzo 2026. El aire acondicionado Inverter cuesta $25.560/mes — 70% menos que calefacción eléctrica. Incluye tabla de retorno de inversión.",
+    keywords: "comparativa calefacción Chile costo parafina gas aire acondicionado",
+    categoria: "Comparativas",
+    fecha: "2026-03-24",
+    readTime: "6 min",
+    image: "/images/blog/instalacion-estetica.webp",
+    imageAlt: "Habitación calefaccionada con aire acondicionado Inverter",
+  },
+  {
     slug: "instalacion-estetica",
     titulo:
       "Instalación estética de aire acondicionado: el nuevo estándar",
