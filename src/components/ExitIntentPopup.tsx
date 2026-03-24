@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { pushEvent } from "@/lib/gtm";
+import { pushEvent, trackWhatsAppClick } from "@/lib/gtm";
 
 export default function ExitIntentPopup() {
   const [show, setShow] = useState(false);
@@ -113,11 +113,12 @@ export default function ExitIntentPopup() {
     pushEvent({ event: "exit_intent_dismissed" });
   };
 
-  const handleCTA = () => {
+  const handleCTA = (type: "whatsapp" | "form") => {
     setShow(false);
     setDismissed(true);
     sessionStorage.setItem("meser_exit_dismissed", "1");
-    pushEvent({ event: "exit_intent_cta_click" });
+    pushEvent({ event: "exit_intent_cta_click", cta_type: type });
+    if (type === "whatsapp") trackWhatsAppClick("exit_intent");
   };
 
   if (!show) return null;
@@ -174,7 +175,7 @@ export default function ExitIntentPopup() {
             href="https://wa.me/56982351110?text=Hola%2C%20quiero%20cotizar%20un%20aire%20acondicionado"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={handleCTA}
+            onClick={() => handleCTA("whatsapp")}
             className="mt-5 flex items-center justify-center gap-2 w-full rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white hover:bg-[#1ebe57] transition-colors"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -185,7 +186,7 @@ export default function ExitIntentPopup() {
 
           <Link
             href="#agendar"
-            onClick={handleCTA}
+            onClick={() => handleCTA("form")}
             className="mt-3 block w-full text-center rounded-full border border-gray-200 px-6 py-3 text-sm font-medium text-navy hover:bg-gray-50 transition-colors"
           >
             Prefiero llenar el formulario

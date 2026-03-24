@@ -84,7 +84,7 @@ export default function Footer() {
                 </svg>
               </a>
               <WhatsAppLink
-                href="https://wa.me/56982351110"
+                href="https://wa.me/56982351110?text=Hola%2C%20quiero%20cotizar"
                 location="footer"
                 className="text-steel-light hover:text-cyan transition-colors"
                 aria-label="WhatsApp"

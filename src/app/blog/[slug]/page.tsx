@@ -29,6 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.fecha,
       authors: ["Meser"],
+      ...(post.image && {
+        images: [{ url: post.image, width: 1200, height: 600, alt: post.imageAlt || post.titulo }],
+      }),
     },
   };
 }

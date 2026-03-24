@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogPosts } from "@/lib/blog-posts";
 
@@ -49,10 +50,21 @@ export default function BlogPage() {
                 href={`/blog/${articulo.slug}`}
                 className="group rounded-2xl border border-gray-200 overflow-hidden hover:border-cyan hover:shadow-lg transition-all"
               >
-                <div className="h-40 bg-gradient-to-br from-navy to-navy-light flex items-center justify-center">
-                  <span className="text-xs font-medium text-cyan bg-cyan/10 px-3 py-1 rounded-full">
-                    {articulo.categoria}
-                  </span>
+                <div className="relative h-44 bg-gradient-to-br from-navy to-navy-light overflow-hidden">
+                  {articulo.image ? (
+                    <Image
+                      src={articulo.image}
+                      alt={articulo.imageAlt || articulo.titulo}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  ) : null}
+                  <div className="absolute bottom-3 left-3">
+                    <span className="text-xs font-medium text-white bg-navy/70 backdrop-blur-sm px-3 py-1 rounded-full">
+                      {articulo.categoria}
+                    </span>
+                  </div>
                 </div>
                 <div className="p-6">
                   <h2 className="text-base font-semibold text-navy leading-snug group-hover:text-cyan transition-colors">

@@ -54,7 +54,7 @@ export default function CTASection({
           </Link>
           {whatsapp && (
             <WhatsAppLink
-              href="https://wa.me/56982351110"
+              href="https://wa.me/56982351110?text=Hola%2C%20quiero%20cotizar"
               location="cta_section"
               className="text-sm font-medium text-steel-light/70 hover:text-cyan transition-colors"
             >

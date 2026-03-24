@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import type { BlogPost } from "@/lib/blog-posts";
 
@@ -41,6 +42,14 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
         url: "https://www.meser.cl/images/og-image.png",
       },
     },
+    ...(post.image && {
+      image: {
+        "@type": "ImageObject",
+        url: `https://www.meser.cl${post.image}`,
+        width: 1200,
+        height: 600,
+      },
+    }),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://www.meser.cl/blog/${post.slug}`,
@@ -72,8 +81,18 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
       />
 
       {/* Hero */}
-      <section className="bg-navy">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <section className="relative bg-navy overflow-hidden">
+        {post.image && (
+          <Image
+            src={post.image}
+            alt={post.imageAlt || post.titulo}
+            fill
+            priority
+            className="object-cover opacity-20"
+            sizes="100vw"
+          />
+        )}
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="max-w-3xl">
             <span className="inline-flex items-center rounded-full bg-cyan/10 border border-cyan/20 px-3 py-1 text-xs font-semibold text-cyan">
               {post.categoria}
@@ -95,6 +114,22 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
           </div>
         </div>
       </section>
+
+      {/* Featured image */}
+      {post.image && (
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
+          <div className="relative aspect-[2/1] rounded-2xl overflow-hidden shadow-xl">
+            <Image
+              src={post.image}
+              alt={post.imageAlt || post.titulo}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Article body */}
       <article className="py-12 sm:py-16 bg-white">

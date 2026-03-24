@@ -9,7 +9,7 @@ export default function WhatsAppWidget() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackWhatsAppClick("floating_widget")}
-      className="fixed bottom-6 right-6 z-40 hidden lg:flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors hover:scale-105 active:scale-95"
+      className="fixed bottom-6 right-6 z-40 hidden lg:flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#1ebe57] transition-colors hover:scale-105 active:scale-95"
       aria-label="Escríbenos por WhatsApp"
     >
       <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">

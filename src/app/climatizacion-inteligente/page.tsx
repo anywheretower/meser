@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -17,7 +18,8 @@ export default function ClimatizacionInteligentePage() {
       <Breadcrumbs items={[{ label: "Servicios", href: "/climatizacion-integral" }, { label: "Climatización Inteligente" }]} />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90" />
+        <Image src="/images/blog/climatizacion-inteligente.webp" alt="Hombre controlando aire acondicionado inteligente desde su escritorio" fill className="object-cover opacity-25" sizes="100vw" priority />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy from-40% to-transparent" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-cyan/10 border border-cyan/20 px-4 py-1.5 text-sm font-medium text-cyan mb-6">

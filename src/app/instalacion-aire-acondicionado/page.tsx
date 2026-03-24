@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import TrustBar from "@/components/TrustBar";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -17,7 +18,8 @@ export default function InstalacionPage() {
       <Breadcrumbs items={[{ label: "Servicios", href: "/climatizacion-integral" }, { label: "Instalación" }]} />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90" />
+        <Image src="/images/blog/instalacion-estetica.webp" alt="Instalación estética de aire acondicionado en dormitorio" fill className="object-cover opacity-25" sizes="100vw" priority />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy from-40% to-transparent" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">

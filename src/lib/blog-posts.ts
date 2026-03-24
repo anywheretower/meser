@@ -6,6 +6,8 @@ export interface BlogPost {
   categoria: string;
   fecha: string;
   readTime: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -19,6 +21,8 @@ export const blogPosts: BlogPost[] = [
     categoria: "Precios",
     fecha: "2026-03-16",
     readTime: "6 min",
+    image: "/images/blog/cuanto-cuesta-instalar.webp",
+    imageAlt: "Aire acondicionado Midea con escudo de garantía — inversión protegida",
   },
   {
     slug: "aire-acondicionado-departamento-santiago",
@@ -30,6 +34,8 @@ export const blogPosts: BlogPost[] = [
     categoria: "Guías",
     fecha: "2026-03-16",
     readTime: "8 min",
+    image: "/images/blog/departamento-santiago.webp",
+    imageAlt: "Living de departamento moderno con aire acondicionado y control por tablet",
   },
   {
     slug: "midea-vs-samsung",
@@ -40,6 +46,8 @@ export const blogPosts: BlogPost[] = [
     categoria: "Comparativas",
     fecha: "2026-03-16",
     readTime: "7 min",
+    image: "/images/blog/midea-vs-samsung.webp",
+    imageAlt: "Pareja evaluando opciones de aire acondicionado Midea en tablet",
   },
   {
     slug: "que-son-los-btu",
@@ -50,6 +58,8 @@ export const blogPosts: BlogPost[] = [
     categoria: "Guías",
     fecha: "2026-03-16",
     readTime: "5 min",
+    image: "/images/blog/que-son-los-btu.webp",
+    imageAlt: "Equipo Midea con flujos de aire frío y calor representando capacidad en BTU",
   },
   {
     slug: "mantencion-aire-acondicionado",
@@ -60,6 +70,8 @@ export const blogPosts: BlogPost[] = [
     categoria: "Mantención",
     fecha: "2026-03-16",
     readTime: "8 min",
+    image: "/images/blog/mantencion.webp",
+    imageAlt: "Mujer coordinando mantención de unidad exterior de aire acondicionado",
   },
   {
     slug: "multi-split-departamento",
@@ -70,6 +82,8 @@ export const blogPosts: BlogPost[] = [
     categoria: "Soluciones",
     fecha: "2026-03-16",
     readTime: "7 min",
+    image: "/images/blog/multi-split.webp",
+    imageAlt: "Equipo Midea con flujos de aire frío y calor para múltiples ambientes",
   },
   {
     slug: "instalacion-estetica",
@@ -81,6 +95,8 @@ export const blogPosts: BlogPost[] = [
     categoria: "Instalación",
     fecha: "2026-03-16",
     readTime: "6 min",
+    image: "/images/blog/instalacion-estetica.webp",
+    imageAlt: "Dormitorio con aire acondicionado instalado estéticamente sin cables visibles",
   },
 ];
 

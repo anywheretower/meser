@@ -34,7 +34,7 @@ export default function SocialSidebar() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackWhatsAppClick("social_sidebar")}
-        className="w-11 h-11 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors shadow-lg"
+        className="w-11 h-11 bg-[#25D366] rounded-full flex items-center justify-center hover:bg-[#1ebe57] transition-colors shadow-lg"
         aria-label="WhatsApp"
       >
         <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
