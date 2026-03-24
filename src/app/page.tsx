@@ -65,8 +65,59 @@ export default function Home() {
 
       <TrustBar />
 
+      {/* ── W2: Quick navigation — reduce bounce, direct users to converting pages ── */}
+      <section className="py-10 bg-white border-b border-gray-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Link
+              href="/aires-acondicionados"
+              className="group flex items-center gap-4 rounded-2xl border border-gray-200 p-5 hover:border-cyan hover:shadow-lg transition-all"
+            >
+              <div className="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h14.25c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125H4.875A1.125 1.125 0 013.75 9.375v-4.5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 13.5v6m-3-3h6" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Aires Acondicionados</h3>
+                <p className="text-xs text-steel-dark mt-0.5">Samsung, Midea y Anwo desde $299.990</p>
+              </div>
+            </Link>
+            <Link
+              href="/termos"
+              className="group flex items-center gap-4 rounded-2xl border border-gray-200 p-5 hover:border-cyan hover:shadow-lg transition-all"
+            >
+              <div className="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Termos Eléctricos</h3>
+                <p className="text-xs text-steel-dark mt-0.5">Midea Lume 50 a 120L desde $149.990</p>
+              </div>
+            </Link>
+            <Link
+              href="/todo-incluido"
+              className="group flex items-center gap-4 rounded-2xl border-2 border-cyan p-5 hover:shadow-lg transition-all bg-cyan/5"
+            >
+              <div className="w-12 h-12 rounded-xl bg-cyan flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Todo Incluido</h3>
+                <p className="text-xs text-steel-dark mt-0.5">Equipo + instalación desde $399.990</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Paquetes destacados ── */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white" data-track-section="packages">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <RevealOnScroll className="text-center">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy">
@@ -465,7 +516,7 @@ export default function Home() {
       </section>
 
       {/* ── Preguntas frecuentes ── */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50" data-track-section="faq">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center">
@@ -573,7 +624,7 @@ export default function Home() {
       />
 
       {/* ── Testimonios ── */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white" data-track-section="testimonials">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center">

@@ -99,3 +99,23 @@ export function trackCTAView(ctaName: string) {
     cta_name: ctaName,
   });
 }
+
+// ── W10: Section visibility tracking ──
+
+export function trackSectionView(sectionName: string, pagePath: string) {
+  pushEvent({
+    event: "section_view",
+    section_name: sectionName,
+    page_path: pagePath,
+  });
+}
+
+// ── W5: Remarketing audience signals ──
+
+export function trackPageCategory(category: string, pagePath: string) {
+  pushEvent({
+    event: "page_category",
+    page_category: category,
+    page_path: pagePath,
+  });
+}

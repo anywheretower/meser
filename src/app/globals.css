@@ -85,6 +85,19 @@ summary:focus-visible {
   50% { opacity: 0.5; transform: scale(1.12); }
 }
 
+@keyframes subtle-pulse {
+  0%, 100% { box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2); }
+  50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-subtle-pulse { animation: none; }
+}
+
 @keyframes slide-in-right {
   from {
     opacity: 0;
