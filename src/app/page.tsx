@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import TrustBar from "@/components/TrustBar";
 import RevealOnScroll from "@/components/RevealOnScroll";
-// AddPackageButton removed — packages now link to consultation
+import AddPackageButton from "@/components/AddPackageButton";
 
 
 export default function Home() {
@@ -174,12 +174,13 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="#agendar"
-                  className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
+                <AddPackageButton
+                  productId="midea-ecomaster-9k"
+                  price={399990}
+                  className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
                 >
                   Quiero este paquete
-                </Link>
+                </AddPackageButton>
               </div>
             </RevealOnScroll>
 
@@ -230,12 +231,13 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="#agendar"
-                  className="mt-8 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow"
+                <AddPackageButton
+                  productId="midea-ecomaster-12k"
+                  price={449990}
+                  className="mt-8 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow cursor-pointer"
                 >
                   Quiero este paquete
-                </Link>
+                </AddPackageButton>
               </div>
             </RevealOnScroll>
 
