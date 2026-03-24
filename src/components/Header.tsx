@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import CartButton from "@/components/CartButton";
 import { trackPhoneClick } from "@/lib/gtm";
 
@@ -79,7 +80,7 @@ const nav: NavEntry[] = [
 
 /* ── Desktop Dropdown ── */
 
-function DesktopDropdown({ entry }: { entry: NavDropdown }) {
+function DesktopDropdown({ entry, pathname }: { entry: NavDropdown; pathname: string }) {
   const [open, setOpen] = useState(false);
   const timeout = useRef<ReturnType<typeof setTimeout>>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -140,6 +141,7 @@ function DesktopDropdown({ entry }: { entry: NavDropdown }) {
                 key={item.href}
                 href={item.href}
                 role="menuitem"
+                aria-current={pathname === item.href ? "page" : undefined}
                 onClick={() => setOpen(false)}
                 onKeyDown={(e) => { if (e.key === "Escape") setOpen(false); }}
                 className="block rounded-lg px-3 py-2.5 hover:bg-gray-50 transition-colors group"
@@ -166,9 +168,11 @@ function DesktopDropdown({ entry }: { entry: NavDropdown }) {
 function MobileAccordion({
   entry,
   onNavigate,
+  pathname,
 }: {
   entry: NavDropdown;
   onNavigate: () => void;
+  pathname: string;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -200,6 +204,7 @@ function MobileAccordion({
               key={item.href}
               href={item.href}
               onClick={onNavigate}
+              aria-current={pathname === item.href ? "page" : undefined}
               className="block rounded-lg px-3 py-2 text-sm text-navy/75 hover:text-navy hover:bg-gray-50 transition-colors"
             >
               {item.label}
@@ -216,6 +221,7 @@ function MobileAccordion({
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -263,11 +269,12 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-7">
             {nav.map((entry) =>
               isDropdown(entry) ? (
-                <DesktopDropdown key={entry.label} entry={entry} />
+                <DesktopDropdown key={entry.label} entry={entry} pathname={pathname} />
               ) : (
                 <Link
                   key={entry.href}
                   href={entry.href}
+                  aria-current={pathname === entry.href ? "page" : undefined}
                   className="text-[13px] font-medium text-navy/75 hover:text-navy transition-colors duration-200"
                 >
                   {entry.label}
@@ -347,12 +354,14 @@ export default function Header() {
                   key={entry.label}
                   entry={entry}
                   onNavigate={closeMobile}
+                  pathname={pathname}
                 />
               ) : (
                 <Link
                   key={entry.href}
                   href={entry.href}
                   onClick={closeMobile}
+                  aria-current={pathname === entry.href ? "page" : undefined}
                   className="block text-sm font-medium text-navy/70 hover:text-navy hover:bg-gray-50 rounded-lg px-3 py-2.5 transition-colors"
                 >
                   {entry.label}

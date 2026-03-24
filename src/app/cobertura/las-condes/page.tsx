@@ -32,6 +32,30 @@ export default function LasCondesPage() {
         desafio: "Los edificios de Las Condes tienen regulaciones estrictas de fachada. Muchas administraciones exigen aprobación del comité y requieren que la instalación sea invisible desde el exterior.",
         solucion: "Instalación estética con canaletas ocultas que cumple con los reglamentos de copropiedad. Coordinamos directamente con la administración de tu edificio y gestionamos los permisos necesarios.",
       }}
+      stats={[
+        { label: "Instalaciones en la comuna", value: "45+" },
+        { label: "Edificios atendidos", value: "28" },
+        { label: "Nota promedio clientes", value: "4.9" },
+        { label: "Tiempo promedio instalación", value: "4h" },
+      ]}
+      faqs={[
+        {
+          q: "¿Necesito permiso de la administración del edificio en Las Condes?",
+          a: "Sí, la mayoría de los edificios en Las Condes (Apoquindo, Kennedy, Isidora Goyenechea) requieren aprobación del comité de administración. En Meser coordinamos directamente con tu administración y preparamos la documentación técnica necesaria para agilizar la aprobación.",
+        },
+        {
+          q: "¿Cuánto cuesta instalar un aire acondicionado en Las Condes?",
+          a: "Nuestros paquetes todo incluido parten desde $399.990 (equipo 9K BTU + instalación estética + garantía). Para departamentos más grandes o multi split, el precio varía según la cantidad de ambientes. Te lo detallamos en el diagnóstico gratuito por Zoom.",
+        },
+        {
+          q: "¿Hacen instalaciones en casas de San Carlos de Apoquindo?",
+          a: "Sí, tenemos amplia experiencia en casas del sector oriente de Las Condes, incluyendo San Carlos de Apoquindo y La Dehesa baja. Para casas grandes recomendamos sistemas Multi Split que climatizan varios ambientes con un solo equipo exterior.",
+        },
+        {
+          q: "¿Cuánto demora coordinar la instalación en un edificio de Las Condes?",
+          a: "Desde que apruebas la propuesta, el equipo está instalado en 3-7 días hábiles. Si tu edificio requiere aprobación del comité, el proceso puede tomar 1-2 semanas adicionales dependiendo de la frecuencia de reuniones del comité.",
+        },
+      ]}
     />
   );
 }

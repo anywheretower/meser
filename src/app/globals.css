@@ -134,6 +134,29 @@ summary:focus-visible {
   transform: translateY(0);
 }
 
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-breathe,
+  .animate-breathe-slow,
+  .animate-slide-in-right {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Stagger delays */
 .stagger-1 { animation-delay: 0ms; }
 .stagger-2 { animation-delay: 120ms; }

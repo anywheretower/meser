@@ -55,6 +55,25 @@ export default function MultisplitPage() {
         },
       ]}
       ctaTitle="¿Necesitas climatizar varios ambientes?"
+      casoReal={{
+        titulo: "Departamento 95 m² en Las Condes — 3 ambientes",
+        texto: "Departamento con living-comedor, dormitorio principal y dormitorio de niños. El edificio permitía solo 1 unidad exterior. Con un Multi Split 3x1 instalamos: 18K BTU en el living, 9K BTU en cada dormitorio, con una sola unidad exterior compacta en el balcón.",
+        resultado: "Resultado: cada habitación con su temperatura independiente (living 24°C, dormitorios 22°C por la noche), un solo equipo exterior, ahorro del 35% vs 3 splits individuales.",
+      }}
+      faqs={[
+        {
+          q: "¿Cuál es la diferencia entre Multi Split y varios splits individuales?",
+          a: "El Multi Split usa una sola unidad exterior potente para alimentar múltiples unidades interiores. Ventajas: menos impacto visual (1 equipo afuera vs 3), menos ruido exterior, y generalmente más económico. La desventaja: si falla la unidad exterior, se afectan todos los ambientes.",
+        },
+        {
+          q: "¿Puedo controlar cada habitación por separado con Multi Split?",
+          a: "Sí, cada unidad interior tiene su propio control remoto y termostato. Puedes tener el living a 24°C mientras el dormitorio está a 22°C, o apagar los ambientes que no usas para ahorrar energía.",
+        },
+        {
+          q: "¿Hasta cuántos ambientes puede cubrir un Multi Split?",
+          a: "Los sistemas que instalamos cubren hasta 5 unidades interiores con una sola exterior. Para una casa de 5+ ambientes, usamos 2 unidades exteriores o un sistema VRF. Lo diseñamos según tu caso específico en el diagnóstico por Zoom.",
+        },
+      ]}
     />
   );
 }

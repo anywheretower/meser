@@ -1,12 +1,41 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { pushEvent } from "@/lib/gtm";
 
 export default function ExitIntentPopup() {
   const [show, setShow] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  const trapFocus = useCallback((e: KeyboardEvent) => {
+    if (e.key !== "Tab" || !dialogRef.current) return;
+    const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
+      'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!show) return;
+    document.addEventListener("keydown", trapFocus);
+    // Focus the dialog on open
+    const timer = setTimeout(() => {
+      dialogRef.current?.querySelector<HTMLElement>("a, button")?.focus();
+    }, 100);
+    return () => {
+      document.removeEventListener("keydown", trapFocus);
+      clearTimeout(timer);
+    };
+  }, [show, trapFocus]);
 
   useEffect(() => {
     // Only show on desktop (exit intent doesn't work well on mobile)
@@ -58,6 +87,10 @@ export default function ExitIntentPopup() {
       onClick={handleDismiss}
     >
       <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="¿Te vas sin cotizar?"
         className="relative w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl animate-fade-in"
         onClick={(e) => e.stopPropagation()}
       >

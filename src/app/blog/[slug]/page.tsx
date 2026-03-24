@@ -52,6 +52,10 @@ function ArticleCuantoCuesta() {
         para empresas formales que entregan garantía por su trabajo.
       </p>
 
+      <div className="tip-box">
+        <p><strong>Resumen:</strong> La instalación sola de un aire acondicionado split en Chile cuesta entre $120.000 y $200.000 CLP para un equipo estándar de hasta 12.000 BTU. Si necesitas equipo incluido, los paquetes todo incluido (equipo + instalación + garantía) van desde $399.990 para un 9K BTU hasta $949.990 para un 24K BTU con Samsung Wind-Free. El factor que más impacta el precio es la complejidad de la instalación: distancia entre unidades, perforaciones adicionales, pisos altos o instalaciones multi split. Comprar por separado (equipo en retail + instalador independiente) suele costar entre $130.000 y $222.000 más que un paquete integrado, según datos de Meser basados en más de 150 instalaciones en Santiago.</p>
+      </div>
+
       <h2>Instalación sola (sin incluir el equipo)</h2>
 
       <ul>
@@ -174,6 +178,10 @@ function ArticleDepartamentoSantiago() {
         <strong>split inverter frío/calor</strong> por eficiencia, bajo ruido y
         ahorro en electricidad.
       </p>
+
+      <div className="tip-box">
+        <p><strong>Guía rápida:</strong> Para elegir el aire acondicionado ideal para un departamento en Santiago, calcula 600-800 BTU por metro cuadrado. Un dormitorio de 15 m² necesita 9.000 BTU, un living de 24 m² necesita 12.000 BTU. Prioriza equipos Inverter frío/calor por el clima extremo de Santiago (38°C en verano, cerca de 0°C en invierno). En ruido, busca menos de 22 dB para dormitorios. Samsung Wind-Free y Midea EcoMaster son las marcas más instaladas en departamentos de la RM. Si tu departamento recibe sol directo en la tarde (orientación poniente), sube un 15-20% la capacidad calculada.</p>
+      </div>
 
       <h2>1. Calcula los BTU necesarios</h2>
 
@@ -376,6 +384,10 @@ function ArticleMideaVsSamsung() {
         comparativas y opiniones recientes (2025-2026).
       </p>
 
+      <div className="tip-box">
+        <p><strong>Veredicto:</strong> Midea EcoMaster gana en relación calidad-precio y eficiencia energética (SEER 22.5 vs 21.7 de Samsung). Samsung Wind-Free gana en silencio (19 dB vs 22 dB), tecnología smart (SmartThings + IA) y diseño minimalista. Ambas marcas ofrecen Inverter frío/calor, conectividad WiFi y garantía del fabricante. En el mercado chileno 2026, Midea cuesta entre $399.990-$629.990 todo incluido y Samsung entre $629.990-$949.990. Si tu presupuesto es limitado, Midea. Si priorizas tecnología y silencio absoluto, Samsung. En ambos casos, la instalación profesional es idéntica.</p>
+      </div>
+
       <h2>Comparación rápida: Midea vs Samsung</h2>
 
       <table>
@@ -520,6 +532,10 @@ function ArticleBTU() {
         </li>
       </ul>
 
+      <div className="tip-box">
+        <p><strong>Cálculo rápido:</strong> Multiplica los metros cuadrados de tu espacio por 600 BTU para obtener la capacidad mínima. Un dormitorio de 15 m² necesita 9.000 BTU, un living de 20 m² necesita 12.000 BTU, y un espacio de 30 m² necesita 18.000 BTU. Ajusta hacia arriba si tienes mucho sol directo (+15%), ventanales grandes (+10%), piso alto (+10%) o muchas personas (+400 BTU por persona adicional). Los tamaños comerciales más comunes en Chile son 9.000, 12.000, 18.000 y 24.000 BTU. Siempre es mejor elegir el tamaño comercial inmediatamente superior a tu cálculo.</p>
+      </div>
+
       <h2>Ejemplos comunes</h2>
 
       <ul>
@@ -661,6 +677,10 @@ function ArticleMantencion() {
         , enfría menos, genera malos olores por moho/bacterias, y puede fallar
         prematuramente.
       </p>
+
+      <div className="tip-box">
+        <p><strong>Lo esencial:</strong> La mantención de un aire acondicionado split en Chile debe hacerse al menos una vez al año con un técnico profesional, idealmente antes de la temporada de mayor uso (noviembre para verano, abril para invierno). La limpieza de filtros la puedes hacer tú mismo cada 15-30 días. Un equipo sin mantención consume entre un 5% y 15% más de electricidad, equivalente a $5.000-$15.000 extra al mes en verano con tarifas chilenas de 2026. Además, un equipo sucio puede generar malos olores, hongos y bacterias perjudiciales para la salud. Con mantención regular, un equipo Inverter dura 10-15 años; sin ella, las fallas aparecen entre los 5 y 7 años.</p>
+      </div>
 
       <h2>¿Por qué es importante en Chile?</h2>
 
@@ -841,6 +861,10 @@ function ArticleMultiSplit() {
         compresores.
       </p>
 
+      <div className="tip-box">
+        <p><strong>En resumen:</strong> Un sistema Multi Split conecta una sola unidad exterior a 2-5 unidades interiores, cada una con control independiente de temperatura. Es la solución más eficiente para departamentos de 80-150 m² con 3-5 ambientes en Santiago, porque usa un solo espacio exterior, genera menos ruido que múltiples splits individuales, y permite climatizar cada habitación de forma independiente. Las marcas más instaladas en Chile son Samsung y Midea, ambas con tecnología Inverter frío/calor. La principal desventaja es que si falla la unidad exterior, todos los ambientes se ven afectados. El costo es generalmente un 30-40% menor que instalar splits individuales en cada habitación.</p>
+      </div>
+
       <h2>¿Qué es exactamente un multi split?</h2>
 
       <ul>
@@ -995,6 +1019,10 @@ function ArticleInstalacionEstetica() {
         evitar problemas legales, sanciones, rechazos de la comunidad y hasta
         pérdida de valor inmobiliario.
       </p>
+
+      <div className="tip-box">
+        <p><strong>Por qué importa:</strong> Desde la entrada en vigencia de la nueva Ley de Copropiedad Inmobiliaria (21.442) en Chile, instalar un aire acondicionado en un departamento o condominio sin cumplir las normas estéticas puede resultar en multas, obligación de retiro del equipo y conflictos con la comunidad. La instalación estética — con canaletas ocultas, cables invisibles y ubicación aprobada del equipo exterior — ya no es un lujo sino un requisito legal en la mayoría de los edificios. Además, una instalación mal hecha puede reducir el valor de tu propiedad entre un 2% y 5% según corredoras de Santiago. El estándar actual exige coordinación con la administración del edificio antes de cualquier intervención.</p>
+      </div>
 
       <h2>
         1. Restricciones de los reglamentos de copropiedad (Ley 21.442)

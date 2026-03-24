@@ -28,6 +28,14 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "Bytespider",
         allow: "/",
       },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+      },
+      {
+        userAgent: "ChatGPT-User",
+        allow: "/",
+      },
     ],
     sitemap: "https://www.meser.cl/sitemap.xml",
   };

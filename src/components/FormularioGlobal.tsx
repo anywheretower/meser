@@ -52,7 +52,15 @@ export default function FormularioGlobal() {
           ))}
         </div>
 
-        <div className="mt-8 max-w-lg">
+        <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-red-500/90 px-4 py-1.5">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-ping" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
+          </span>
+          <span className="text-xs font-semibold text-white">Precios válidos hasta el 31 de marzo</span>
+        </div>
+
+        <div className="mt-4 max-w-lg">
           <CotizarForm />
         </div>
 

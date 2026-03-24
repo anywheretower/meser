@@ -55,6 +55,25 @@ export default function OficinaPage() {
         },
       ]}
       ctaTitle="¿Quieres climatizar tu oficina?"
+      casoReal={{
+        titulo: "Oficina 90 m² en Providencia — 3 espacios",
+        texto: "Oficina de una consultora con sala de reuniones, open space y oficina del gerente. Necesitaban climatización silenciosa para no interferir con videollamadas y que se pudiera instalar un sábado para no parar la operación. Multi Split 3x1 con instalación completa en un día.",
+        resultado: "Resultado: temperatura controlada por zona, reuniones sin ruido de fondo, instalación completada en sábado sin interrumpir la operación del lunes.",
+      }}
+      faqs={[
+        {
+          q: "¿Se puede instalar sin interrumpir la jornada laboral?",
+          a: "Sí, coordinamos la instalación fuera del horario de oficina: tardes, fines de semana o feriados. Una instalación típica toma 4-6 horas. Dejamos el espacio limpio y listo para trabajar al día siguiente.",
+        },
+        {
+          q: "¿Cuánto consume un aire acondicionado en una oficina?",
+          a: "Los equipos Inverter que instalamos consumen entre $8.000 y $25.000 mensuales en electricidad según el uso. Eso es hasta un 70% menos que equipos convencionales. Se pagan solos con el ahorro en productividad y bienestar del equipo.",
+        },
+        {
+          q: "¿Necesito permiso del edificio de oficinas?",
+          a: "En la mayoría de los casos sí. Coordinamos con la administración del edificio y preparamos la documentación técnica. Muchos edificios de oficinas ya tienen espacios prediseñados para unidades exteriores.",
+        },
+      ]}
     />
   );
 }

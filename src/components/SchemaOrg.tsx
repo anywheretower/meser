@@ -4,7 +4,7 @@ export default function SchemaOrg() {
     "@type": "Organization",
     name: "Meser",
     url: "https://www.meser.cl",
-    logo: "https://www.meser.cl/favicon.ico",
+    logo: "https://www.meser.cl/images/og-image.png",
     description:
       "Climatización integral para hogares en Santiago. Diagnóstico gratuito, precio cerrado, instalación estética.",
     telephone: "+56982351110",

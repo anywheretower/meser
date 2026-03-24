@@ -32,6 +32,26 @@ export default function ProvidenciaPage() {
         desafio: "Departamentos antiguos con muros gruesos y sin preparación para AC requieren adaptación especial. Los edificios nuevos tienen espacios prediseñados pero muchas veces con distancias cortas al vecino.",
         solucion: "Equipos Inverter ultra-silenciosos (20 dB) para convivencia en departamentos. Instalación con perforación y sellado profesional que minimiza intervención en muros antiguos.",
       }}
+      stats={[
+        { label: "Instalaciones en la comuna", value: "38+" },
+        { label: "Edificios y oficinas", value: "22" },
+        { label: "Nota promedio clientes", value: "5.0" },
+        { label: "Años en la zona", value: "3+" },
+      ]}
+      faqs={[
+        {
+          q: "¿Pueden instalar en departamentos antiguos de Providencia?",
+          a: "Sí, tenemos amplia experiencia en edificios de Pedro de Valdivia, Manuel Montt y Suecia. Los departamentos antiguos con muros gruesos requieren perforación y sellado profesional que minimiza la intervención. Lo evaluamos todo en el diagnóstico por Zoom.",
+        },
+        {
+          q: "¿Los equipos Inverter son realmente silenciosos para un departamento en Providencia?",
+          a: "Sí. Los equipos Samsung Wind-Free y Midea que instalamos operan desde 19-20 dB en modo silencioso, más bajo que una conversación susurrada. Ideal para edificios de Providencia donde la distancia entre vecinos es corta.",
+        },
+        {
+          q: "¿Instalan aires acondicionados en oficinas de Nueva Providencia?",
+          a: "Sí, atendemos oficinas en todo el eje Providencia. Coordinamos la instalación fuera del horario laboral o fines de semana para no interrumpir la operación. Los equipos Inverter consumen hasta un 70% menos que los convencionales.",
+        },
+      ]}
     />
   );
 }

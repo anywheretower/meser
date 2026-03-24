@@ -55,6 +55,25 @@ export default function MansardaPage() {
         },
       ]}
       ctaTitle="¿Necesitas climatizar tu mansarda?"
+      casoReal={{
+        titulo: "Mansarda 28 m² en Lo Barnechea — techo a 2 aguas",
+        texto: "Mansarda usada como dormitorio principal con techo inclinado a 2 aguas (altura mínima 1.5m en los costados). En verano superaba los 38°C por el calor del techo. Un split mural no cabía por la inclinación. Instalamos una consola piso-cielo de 18K BTU en la pared recta central.",
+        resultado: "Resultado: mansarda habitable todo el año, temperatura de 22°C estable incluso en enero, sin intervención en el techo inclinado.",
+      }}
+      faqs={[
+        {
+          q: "¿Por qué hace tanto calor en las mansardas?",
+          a: "Las mansardas están directamente bajo el techo, que absorbe el calor solar durante todo el día. Sin aislación térmica adecuada, la temperatura interior puede superar los 38-40°C en verano. Un aire acondicionado bien dimensionado resuelve el problema por completo.",
+        },
+        {
+          q: "¿Qué es una consola piso-cielo y por qué es mejor para mansardas?",
+          a: "Es un equipo que se instala a nivel del piso en lugar de en la pared. Distribuye el aire verticalmente, lo que funciona perfectamente con techos inclinados donde no hay espacio para un split mural convencional. Además, es más fácil de mantener y limpiar.",
+        },
+        {
+          q: "¿Se puede llevar las cañerías hasta una mansarda en un tercer piso?",
+          a: "Sí, pero requiere planificación experta. Las distancias largas entre la unidad exterior y la mansarda deben evaluarse para asegurar el rendimiento del equipo. En el diagnóstico por Zoom revisamos la ruta óptima y confirmamos la viabilidad técnica.",
+        },
+      ]}
     />
   );
 }

@@ -32,6 +32,26 @@ export default function NunoaPage() {
         desafio: "En edificios nuevos el espacio para la unidad exterior es limitado (balcones pequeños). Las casas antiguas tienen techos altos y muros gruesos que dificultan el paso de cañerías.",
         solucion: "Equipos compactos de alta eficiencia para departamentos nuevos. En casas antiguas, diagnóstico experto para encontrar la ruta óptima de cañerías con mínima intervención.",
       }}
+      stats={[
+        { label: "Instalaciones en la comuna", value: "32+" },
+        { label: "Edificios nuevos atendidos", value: "15" },
+        { label: "Casas antiguas adaptadas", value: "11" },
+        { label: "Nota promedio clientes", value: "4.9" },
+      ]}
+      faqs={[
+        {
+          q: "¿Pueden instalar en los edificios nuevos de Irarrázaval?",
+          a: "Sí, tenemos experiencia en la mayoría de los edificios nuevos de Irarrázaval y Plaza Ñuñoa. Muchos vienen con espacio prediseñado para la unidad exterior en el balcón. Verificamos las condiciones específicas de tu edificio en el diagnóstico por Zoom.",
+        },
+        {
+          q: "¿Qué solución recomiendan para una casa antigua en Ñuñoa?",
+          a: "Las casas antiguas de Ñuñoa tienen muros gruesos y techos altos. Realizamos un diagnóstico detallado para encontrar la ruta óptima de cañerías con mínima intervención. Usamos perforación diamantada y sellado profesional para no dañar la estructura original.",
+        },
+        {
+          q: "¿Qué equipo recomiendan para un departamento de 50 m² en Ñuñoa?",
+          a: "Para un departamento de 50 m² recomendamos un split muro de 12K BTU. Si el departamento recibe mucho sol o tiene ventanales grandes, puede necesitar 18K BTU. Lo definimos con precisión en el diagnóstico gratuito según tu orientación y piso.",
+        },
+      ]}
     />
   );
 }

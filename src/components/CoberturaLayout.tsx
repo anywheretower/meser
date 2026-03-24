@@ -10,6 +10,8 @@ const todasComunas = [
   { name: "Lo Barnechea", slug: "lo-barnechea" },
 ];
 
+type FAQ = { q: string; a: string };
+
 interface CoberturaLayoutProps {
   comuna: string;
   h1: string;
@@ -26,6 +28,8 @@ interface CoberturaLayoutProps {
     desafio: string;
     solucion: string;
   };
+  faqs?: FAQ[];
+  stats?: { label: string; value: string }[];
 }
 
 export default function CoberturaLayout({
@@ -36,6 +40,8 @@ export default function CoberturaLayout({
   experiencia,
   testimonio,
   localInfo,
+  faqs,
+  stats,
 }: CoberturaLayoutProps) {
   const otrasComunas = todasComunas.filter((c) => c.name !== comuna);
 
@@ -197,6 +203,68 @@ export default function CoberturaLayout({
           </div>
         </div>
       </section>
+
+      {/* Datos de la zona */}
+      {stats && stats.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-navy text-center mb-10">
+              {comuna} en números
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {stats.map((stat) => (
+                <div key={stat.label} className="rounded-xl bg-white border border-gray-200 p-5 text-center">
+                  <div className="text-2xl font-bold text-cyan">{stat.value}</div>
+                  <div className="mt-1 text-xs text-steel-dark">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Preguntas frecuentes */}
+      {faqs && faqs.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-navy text-center">
+              Preguntas frecuentes en {comuna}
+            </h2>
+            <div className="mt-10 space-y-4">
+              {faqs.map((faq) => (
+                <details
+                  key={faq.q}
+                  className="group rounded-xl border border-gray-200 bg-gray-50 open:bg-white open:shadow-sm transition-all"
+                >
+                  <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-semibold text-navy">
+                    {faq.q}
+                    <svg className="w-5 h-5 text-steel shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <p className="px-6 pb-4 text-sm text-steel-dark leading-relaxed">
+                    {faq.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: faqs.map((faq) => ({
+                  "@type": "Question",
+                  name: faq.q,
+                  acceptedAnswer: { "@type": "Answer", text: faq.a },
+                })),
+              }),
+            }}
+          />
+        </section>
+      )}
 
       {/* Otras comunas */}
       <section className="py-12 bg-gray-50">

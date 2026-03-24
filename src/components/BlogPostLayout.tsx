@@ -15,18 +15,30 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
     description: post.descripcion,
     datePublished: post.fecha,
     dateModified: post.fecha,
-    author: {
-      "@type": "Organization",
-      name: "Meser",
-      url: "https://www.meser.cl",
-    },
+    author: [
+      {
+        "@type": "Organization",
+        name: "Meser",
+        url: "https://www.meser.cl",
+      },
+      {
+        "@type": "Person",
+        name: "Equipo Meser",
+        url: "https://www.meser.cl/nosotros",
+        worksFor: {
+          "@type": "Organization",
+          name: "Meser",
+        },
+        jobTitle: "Especialista en climatización",
+      },
+    ],
     publisher: {
       "@type": "Organization",
       name: "Meser",
       url: "https://www.meser.cl",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.meser.cl/og-image.jpg",
+        url: "https://www.meser.cl/images/og-image.png",
       },
     },
     mainEntityOfPage: {

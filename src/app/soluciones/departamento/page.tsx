@@ -55,6 +55,25 @@ export default function DepartamentoPage() {
         },
       ]}
       ctaTitle="¿Quieres climatizar tu departamento?"
+      casoReal={{
+        titulo: "Departamento 65 m² en Providencia — 2 ambientes",
+        texto: "Departamento en piso 12 con living-comedor orientado al poniente (mucho calor en verano) y un dormitorio. El edificio permitía solo 1 unidad exterior en el balcón. Instalamos un Multi Split 2x1: 12K BTU para el living y 9K BTU para el dormitorio, con una sola unidad exterior compacta.",
+        resultado: "Resultado: temperatura estable en ambos ambientes, cuenta de luz solo $15.000/mes más en verano, canaletas invisibles y aprobación del comité en 5 días.",
+      }}
+      faqs={[
+        {
+          q: "¿Mi edificio permite instalar aire acondicionado?",
+          a: "La mayoría de los edificios en Santiago lo permiten con autorización del comité de administración. En Meser preparamos la documentación técnica y coordinamos con tu administración para facilitar la aprobación. En el diagnóstico por Zoom verificamos las condiciones de tu edificio.",
+        },
+        {
+          q: "¿Cuántos BTU necesito para mi departamento?",
+          a: "La regla general es 600-800 BTU por m². Un dormitorio de 15 m² necesita 9K BTU, un living de 24 m² necesita 12K BTU. Si tu departamento recibe mucho sol o está en un piso alto, puede necesitar más. Lo calculamos con precisión en el diagnóstico.",
+        },
+        {
+          q: "¿El aire acondicionado se escucha mucho en un departamento?",
+          a: "Los equipos Inverter que instalamos operan desde 19 dB en modo silencioso — más bajo que el ruido de una biblioteca. Samsung Wind-Free dispersa el aire sin flujo directo, evitando la sensación de viento. Tus vecinos no notarán diferencia.",
+        },
+      ]}
     />
   );
 }

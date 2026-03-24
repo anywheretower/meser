@@ -32,6 +32,30 @@ export default function LoBarnecheaPage() {
         desafio: "Las casas grandes requieren múltiples equipos. Las mansardas con techos inclinados necesitan soluciones especiales. Los condominios tienen horarios de acceso para trabajos de instalación.",
         solucion: "Proyectos integrales Multi Split: una sola unidad exterior potente para 3-5 ambientes. Consolas piso-cielo para mansardas. Coordinamos instalación respetando horarios y normas del condominio.",
       }}
+      stats={[
+        { label: "Casas climatizadas", value: "30+" },
+        { label: "Mansardas resueltas", value: "18" },
+        { label: "Ambientes promedio/casa", value: "4.1" },
+        { label: "Sector más atendido", value: "La Dehesa" },
+      ]}
+      faqs={[
+        {
+          q: "¿Cuántos equipos necesito para mi casa en Lo Barnechea?",
+          a: "Depende de los ambientes y el tamaño. Una casa típica de La Dehesa con 3-4 ambientes principales usa un sistema Multi Split con una unidad exterior y 3-4 unidades interiores. En el diagnóstico por Zoom evaluamos tu plano y te damos la cantidad exacta.",
+        },
+        {
+          q: "¿Funcionan bien los aires acondicionados con las heladas de Lo Barnechea?",
+          a: "Sí. Los equipos Inverter que instalamos tienen modo calefacción eficiente que funciona hasta -15°C. En invierno calientan usando bomba de calor, consumiendo hasta un 70% menos que un calefactor eléctrico convencional.",
+        },
+        {
+          q: "¿Cómo resuelven la instalación en condominios cerrados?",
+          a: "Coordinamos con la administración del condominio: horarios de acceso, permisos de trabajo, normas de ruido y ubicación de equipos exteriores. Preparamos toda la documentación técnica necesaria para la aprobación.",
+        },
+        {
+          q: "¿Instalan en El Arrayán y Valle Escondido?",
+          a: "Sí, cubrimos toda Lo Barnechea incluyendo La Dehesa, El Arrayán, Valle Escondido y Lo Curro. En zonas más alejadas mantenemos los mismos precios y plazos de instalación.",
+        },
+      ]}
     />
   );
 }

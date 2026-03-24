@@ -40,6 +40,7 @@ export function QuickCapture() {
   const [phone, setPhone] = useState("");
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleQuickSubmit = async () => {
     if (!phone.trim() || phone.trim().length < 8) return;
@@ -52,7 +53,10 @@ export function QuickCapture() {
       });
       trackFormSubmit({ telefono: phone, nombre: "Captura rápida", tipoEspacio: "", ambientes: "", comuna: "", necesidad: "", email: "", comentario: "" });
       setSent(true);
-    } catch { /* silently fail */ } finally {
+    } catch {
+      setSent(false);
+      setError(true);
+    } finally {
       setSending(false);
     }
   };
@@ -61,6 +65,15 @@ export function QuickCapture() {
     return (
       <p className="text-sm text-green-400 font-medium">
         ¡Listo! Te llamamos en menos de 2 horas.
+      </p>
+    );
+  }
+
+  if (error) {
+    return (
+      <p className="text-sm text-red-400 font-medium">
+        Error al enviar. Intenta de nuevo o escríbenos al{" "}
+        <a href="https://wa.me/56982351110" target="_blank" rel="noopener noreferrer" className="underline text-cyan">+569 8235 1110</a>.
       </p>
     );
   }
@@ -217,26 +230,31 @@ export default function CotizarForm() {
                 { value: "oficina", label: "Oficina / Local", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7m16 0l-8 4m-8-4l8 4m0 0v10" /></svg> },
                 { value: "otro", label: "Otro", icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg> },
               ].map((option) => (
-                <button
+                <label
                   key={option.value}
-                  role="radio"
-                  aria-checked={formData.tipoEspacio === option.value}
-                  onClick={() => {
-                    updateField("tipoEspacio", option.value);
-                    trackFormStep(1, "tipoEspacio", option.value);
-                    setStep(2);
-                  }}
-                  className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition-all ${
+                  className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition-all cursor-pointer ${
                     formData.tipoEspacio === option.value
                       ? "border-cyan bg-cyan/5 text-cyan"
                       : "border-gray-200 hover:border-gray-300 text-navy"
                   }`}
                 >
+                  <input
+                    type="radio"
+                    name="tipoEspacio"
+                    value={option.value}
+                    checked={formData.tipoEspacio === option.value}
+                    onChange={() => {
+                      updateField("tipoEspacio", option.value);
+                      trackFormStep(1, "tipoEspacio", option.value);
+                      setStep(2);
+                    }}
+                    className="sr-only"
+                  />
                   <span className="shrink-0">{option.icon}</span>
                   <span className="text-sm font-medium text-navy">
                     {option.label}
                   </span>
-                </button>
+                </label>
               ))}
             </div>
           </fieldset>
@@ -255,28 +273,33 @@ export default function CotizarForm() {
                 { value: "3", label: "3 ambientes" },
                 { value: "4+", label: "4 o más" },
               ].map((option) => (
-                <button
+                <label
                   key={option.value}
-                  role="radio"
-                  aria-checked={formData.ambientes === option.value}
-                  onClick={() => {
-                    updateField("ambientes", option.value);
-                    trackFormStep(2, "ambientes", option.value);
-                    setStep(3);
-                  }}
-                  className={`rounded-xl border-2 p-4 text-center transition-all ${
+                  className={`rounded-xl border-2 p-4 text-center transition-all cursor-pointer ${
                     formData.ambientes === option.value
                       ? "border-cyan bg-cyan/5"
                       : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
+                  <input
+                    type="radio"
+                    name="ambientes"
+                    value={option.value}
+                    checked={formData.ambientes === option.value}
+                    onChange={() => {
+                      updateField("ambientes", option.value);
+                      trackFormStep(2, "ambientes", option.value);
+                      setStep(3);
+                    }}
+                    className="sr-only"
+                  />
                   <span className="text-2xl font-bold text-navy">
                     {option.value}
                   </span>
                   <span className="block mt-1 text-xs text-steel-dark">
                     {option.label}
                   </span>
-                </button>
+                </label>
               ))}
             </div>
           </fieldset>
@@ -341,21 +364,26 @@ export default function CotizarForm() {
                   desc: "Te ayudamos a decidir",
                 },
               ].map((option) => (
-                <button
+                <label
                   key={option.value}
-                  role="radio"
-                  aria-checked={formData.necesidad === option.value}
-                  onClick={() => {
-                    updateField("necesidad", option.value);
-                    trackFormStep(4, "necesidad", option.value);
-                    setStep(5);
-                  }}
-                  className={`w-full flex items-center justify-between rounded-xl border-2 p-4 text-left transition-all ${
+                  className={`w-full flex items-center justify-between rounded-xl border-2 p-4 text-left transition-all cursor-pointer ${
                     formData.necesidad === option.value
                       ? "border-cyan bg-cyan/5"
                       : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
+                  <input
+                    type="radio"
+                    name="necesidad"
+                    value={option.value}
+                    checked={formData.necesidad === option.value}
+                    onChange={() => {
+                      updateField("necesidad", option.value);
+                      trackFormStep(4, "necesidad", option.value);
+                      setStep(5);
+                    }}
+                    className="sr-only"
+                  />
                   <div>
                     <span className="text-sm font-medium text-navy">
                       {option.label}
@@ -367,7 +395,7 @@ export default function CotizarForm() {
                   <svg className="w-5 h-5 text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </button>
+                </label>
               ))}
             </div>
           </fieldset>
@@ -483,7 +511,10 @@ export default function CotizarForm() {
               disabled={!canAdvance()}
               className="rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              Siguiente
+              {step === 1 && "Elegir ambientes"}
+              {step === 2 && "Seleccionar comuna"}
+              {step === 3 && "Elegir servicio"}
+              {step === 4 && "Completar datos"}
             </button>
           )}
         </div>
