@@ -43,6 +43,16 @@ export default function TermosPage() {
                 Entrega en toda la RM
               </span>
             </div>
+
+            {/* C27: Social proof específico termos */}
+            <div className="mt-6 flex items-center gap-4 text-sm">
+              <div className="flex items-center gap-1 text-amber-500">★★★★★</div>
+              <span className="text-steel-dark">
+                <span className="font-semibold text-navy">5.0</span> — 150+ hogares climatizados
+              </span>
+              <span className="text-steel">|</span>
+              <span className="text-steel-dark">Consumo mensual desde <span className="font-semibold text-navy">$8.000</span></span>
+            </div>
           </div>
         </div>
       </section>

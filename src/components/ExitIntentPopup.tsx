@@ -60,22 +60,26 @@ export default function ExitIntentPopup() {
       const threshold = 300; // px of rapid upward scroll
       let activated = false;
 
+      let ticking = false;
       const handleScroll = () => {
-        if (activated) return;
-        const currentY = window.scrollY;
-        const delta = lastScrollY - currentY;
+        if (activated || ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const currentY = window.scrollY;
+          const delta = lastScrollY - currentY;
 
-        if (delta > 0) {
-          // Scrolling up
-          scrollUpDistance += delta;
-          if (scrollUpDistance >= threshold && currentY > 200) {
-            activated = true;
-            triggerPopup();
+          if (delta > 0) {
+            scrollUpDistance += delta;
+            if (scrollUpDistance >= threshold && currentY > 200) {
+              activated = true;
+              triggerPopup();
+            }
+          } else {
+            scrollUpDistance = 0;
           }
-        } else {
-          scrollUpDistance = 0;
-        }
-        lastScrollY = currentY;
+          lastScrollY = currentY;
+          ticking = false;
+        });
       };
 
       // Delay activation by 15 seconds on mobile

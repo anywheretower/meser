@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioGlobal from "@/components/FormularioGlobal";
 import StickyCTA from "@/components/StickyCTA";
-import SocialSidebar from "@/components/SocialSidebar";
-import ScrollDepthTracker from "@/components/ScrollDepthTracker";
 import RouteChangeTracker from "@/components/RouteChangeTracker";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { CartProvider } from "@/lib/cart-context";
 import { GTM_ID } from "@/lib/gtm";
 import SchemaOrg from "@/components/SchemaOrg";
+
+// R17: Code splitting — lazy load non-critical client components
+const SocialSidebar = dynamic(() => import("@/components/SocialSidebar"));
+const ScrollDepthTracker = dynamic(() => import("@/components/ScrollDepthTracker"));
+const ExitIntentPopup = dynamic(() => import("@/components/ExitIntentPopup"));
 
 const geist = Geist({
   variable: "--font-body",
@@ -58,6 +61,9 @@ export default function RootLayout({
       <head>
         <SchemaOrg />
         <link rel="preload" as="image" href="/images/hero-home.webp" type="image/webp" fetchPriority="high" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="dns-prefetch" href="https://api.whatsapp.com" />
         <link rel="llms-txt" href="/llms.txt" />
         <meta name="google-site-verification" content="CpYswW3k5lPNH4Cn5OkRIaX_yatm8PZz_gwfL85M2IA" />
       </head>

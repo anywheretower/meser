@@ -101,6 +101,14 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
               {post.titulo}
             </h1>
             <div className="mt-4 flex items-center gap-4 text-sm text-steel-light">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-cyan/20 flex items-center justify-center text-xs font-bold text-cyan">M</div>
+                <span className="font-medium text-white">Equipo Meser</span>
+                <span className="text-steel-light/40">·</span>
+                <span className="text-steel-light">Especialistas en climatización</span>
+              </div>
+            </div>
+            <div className="mt-2 flex items-center gap-4 text-sm text-steel-light">
               <time dateTime={post.fecha}>
                 {new Date(post.fecha).toLocaleDateString("es-CL", {
                   year: "numeric",

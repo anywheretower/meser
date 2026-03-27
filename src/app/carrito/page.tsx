@@ -128,22 +128,46 @@ export default function CarritoPage() {
             Tu carrito está vacío
           </h1>
           <p className="mt-2 text-steel-dark">
-            Agrega productos desde nuestro catálogo.
+            Elige una de nuestras opciones más populares para empezar:
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+
+          {/* Paquetes sugeridos */}
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+            <Link
+              href="/todo-incluido"
+              className="rounded-2xl border border-gray-200 p-5 hover:border-cyan hover:shadow-md transition-all group"
+            >
+              <div className="text-xs font-semibold text-cyan uppercase tracking-wide">Más popular</div>
+              <div className="mt-2 text-base font-bold text-navy group-hover:text-cyan transition-colors">Paquete Todo Incluido</div>
+              <div className="mt-1 text-sm text-steel-dark">Aire + instalación + garantía</div>
+              <div className="mt-3 text-lg font-bold text-navy">Desde $399.990</div>
+            </Link>
             <Link
               href="/aires-acondicionados"
-              className="rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
+              className="rounded-2xl border border-gray-200 p-5 hover:border-cyan hover:shadow-md transition-all group"
             >
-              Ver aires acondicionados
+              <div className="text-xs font-semibold text-steel uppercase tracking-wide">Solo equipo</div>
+              <div className="mt-2 text-base font-bold text-navy group-hover:text-cyan transition-colors">Aires Acondicionados</div>
+              <div className="mt-1 text-sm text-steel-dark">Samsung, Midea y Anwo Inverter</div>
+              <div className="mt-3 text-lg font-bold text-navy">Desde $319.990</div>
             </Link>
             <Link
               href="/termos"
-              className="rounded-full border border-navy px-6 py-3 text-sm font-semibold text-navy hover:bg-gray-50 transition-colors"
+              className="rounded-2xl border border-gray-200 p-5 hover:border-cyan hover:shadow-md transition-all group"
             >
-              Ver termos eléctricos
+              <div className="text-xs font-semibold text-steel uppercase tracking-wide">Agua caliente</div>
+              <div className="mt-2 text-base font-bold text-navy group-hover:text-cyan transition-colors">Termos Eléctricos</div>
+              <div className="mt-1 text-sm text-steel-dark">Midea Lume 50 a 120 litros</div>
+              <div className="mt-3 text-lg font-bold text-navy">Desde $149.990</div>
             </Link>
           </div>
+
+          <p className="mt-8 text-sm text-steel">
+            ¿No sabes por dónde empezar?{" "}
+            <Link href="#agendar" className="text-cyan font-semibold hover:text-cyan-dark transition-colors">
+              Agenda una asesoría gratuita por Zoom
+            </Link>
+          </p>
         </div>
       </section>
     );

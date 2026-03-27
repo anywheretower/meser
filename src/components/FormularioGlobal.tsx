@@ -81,6 +81,17 @@ export default function FormularioGlobal() {
             +569 8235 1110
           </WhatsAppLink>
         </p>
+
+        {/* C11: Testimonial near form */}
+        <div className="mt-8 max-w-lg rounded-xl bg-white/5 border border-white/10 p-4">
+          <div className="flex items-center gap-1 text-cyan text-sm">★★★★★</div>
+          <p className="mt-2 text-sm text-steel-light/90 italic leading-relaxed">
+            &ldquo;Agendar fue súper fácil y en la videollamada me explicaron todo claro. Al día siguiente ya tenía la cotización y en 3 días el aire instalado.&rdquo;
+          </p>
+          <p className="mt-2 text-xs text-steel-light/60">
+            — María González, Las Condes
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -5,9 +5,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.meser.cl";
 
   // Fechas reales de última modificación significativa
-  const lastUpdate = new Date("2026-03-16");
-  const contentUpdate = new Date("2026-03-15");
-  const initialLaunch = new Date("2026-03-01");
+  const lastUpdate = new Date("2026-03-27");
+  const contentUpdate = new Date("2026-03-24");
+  const initialLaunch = new Date("2026-03-15");
 
   const staticPages: MetadataRoute.Sitemap = [
     {

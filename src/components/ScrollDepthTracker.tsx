@@ -15,19 +15,25 @@ export default function ScrollDepthTracker() {
     tracked.current.clear();
   }, [pathname]);
 
-  // W10: Scroll depth milestones
+  // W10: Scroll depth milestones (throttled)
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const scrollPercent = Math.round(
-        (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
-      );
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollPercent = Math.round(
+          (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+        );
 
-      for (const milestone of milestones) {
-        if (scrollPercent >= milestone && !tracked.current.has(milestone)) {
-          tracked.current.add(milestone);
-          trackScrollDepth(milestone);
+        for (const milestone of milestones) {
+          if (scrollPercent >= milestone && !tracked.current.has(milestone)) {
+            tracked.current.add(milestone);
+            trackScrollDepth(milestone);
+          }
         }
-      }
+        ticking = false;
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
