@@ -8,9 +8,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Termo Eléctrico 80 Litros Precio · Midea Lume con Instalación Santiago",
+  title: "Termo Eléctrico 80 Litros Precio · Desde $179.990 con Instalación Santiago",
   description:
-    "Compra termo eléctrico Midea Lume 80 litros desde $179.990 o todo incluido con instalación desde $249.990 en Santiago. 50, 80, 100 y 120 litros. Agua caliente sin gas, seguro y eficiente.",
+    "Termo eléctrico 80 litros Midea Lume desde $179.990. Con instalación todo incluido desde $279.990 en Santiago. También 50, 100 y 120 litros. El más vendido: 80L ideal para 2-3 personas. Agua caliente sin gas.",
   alternates: { canonical: "/termos" },
 };
 
@@ -23,11 +23,12 @@ export default function TermosPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-navy">
-              Termos eléctricos Midea Lume — 50 a 120 litros
+              Termo eléctrico 80 litros y más — Midea Lume desde $149.990
             </h1>
             <p className="mt-4 text-lg text-steel-dark leading-relaxed">
-              Agua caliente sin gas, segura y eficiente. Acero esmaltado, termostato regulable
-              y 4 capacidades. Todo incluido con instalación desde $249.990 en Santiago.
+              Termo eléctrico de 50, 80, 100 y 120 litros. Agua caliente sin gas, segura y eficiente.
+              Acero esmaltado, termostato regulable. El termo eléctrico 80 litros es el más vendido:
+              ideal para 2-3 personas desde $179.990 o con instalación desde $279.990 en Santiago.
             </p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-steel-dark">
               <span className="flex items-center gap-1.5">
@@ -53,12 +54,32 @@ export default function TermosPage() {
               <span className="text-steel">|</span>
               <span className="text-steel-dark">Consumo mensual desde <span className="font-semibold text-navy">$8.000</span></span>
             </div>
+
+            {/* CTAs directos */}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#productos"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-white hover:bg-cyan-dark transition-colors shadow-md shadow-cyan/15"
+              >
+                Ver termos y precios &darr;
+              </a>
+              <WhatsAppLink
+                href="https://wa.me/56982351110?text=Hola%2C%20me%20interesa%20un%20termo%20el%C3%A9ctrico%2080%20litros.%20%C2%BFCu%C3%A1nto%20sale%20con%20instalaci%C3%B3n%3F"
+                location="termos_hero"
+                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1ebe57] px-6 py-3 text-sm font-semibold text-white transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                </svg>
+                Cotiza por WhatsApp
+              </WhatsAppLink>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Catálogo */}
-      <section className="py-16 bg-gray-50" data-track-section="products">
+      <section id="productos" className="py-16 bg-gray-50" data-track-section="products">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <h2 className="text-2xl font-bold text-navy">
@@ -73,8 +94,17 @@ export default function TermosPage() {
             {termosGroup.models.map((producto, idx) => (
               <div
                 key={producto.id}
-                className="relative rounded-2xl border border-gray-200 hover:border-cyan hover:shadow-lg p-6 flex flex-col transition-all bg-white"
+                className={`relative rounded-2xl border p-6 flex flex-col transition-all bg-white ${
+                  producto.popular
+                    ? "border-2 border-cyan shadow-lg"
+                    : "border-gray-200 hover:border-cyan hover:shadow-lg"
+                }`}
               >
+                {producto.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-cyan px-3 py-0.5 text-xs font-semibold text-navy">
+                    Más vendido
+                  </div>
+                )}
                 {producto.originalPrice > 0 && producto.price > 0 && (
                   <div className="absolute -top-3 -right-3 w-14 h-14 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-bold shadow-md z-10">
                     -{Math.round(((producto.originalPrice - producto.price) / producto.originalPrice) * 100)}%

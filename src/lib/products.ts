@@ -255,6 +255,7 @@ export const termosGroup: ProductGroup = {
       originalPrice: 249990,
       todoIncluidoPrice: 279990,
       specs: ["80 litros", "Eléctrico", "Acero esmaltado", "Termostato regulable"],
+      popular: true,
     },
     {
       id: "midea-lume-100l",
