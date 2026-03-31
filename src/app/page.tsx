@@ -80,7 +80,7 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Aires Acondicionados</h3>
+                <p className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Aires Acondicionados</p>
                 <p className="text-xs text-steel-dark mt-0.5">Samsung, Midea y Anwo desde $299.990</p>
               </div>
             </Link>
@@ -94,7 +94,7 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Termos Eléctricos</h3>
+                <p className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Termos Eléctricos</p>
                 <p className="text-xs text-steel-dark mt-0.5">Midea Lume 50 a 120L desde $149.990</p>
               </div>
             </Link>
@@ -108,7 +108,7 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Todo Incluido</h3>
+                <p className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Todo Incluido</p>
                 <p className="text-xs text-steel-dark mt-0.5">Equipo + instalación desde $399.990</p>
               </div>
             </Link>

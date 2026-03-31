@@ -104,7 +104,7 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 rounded-full bg-cyan/20 flex items-center justify-center text-xs font-bold text-cyan">M</div>
                 <span className="font-medium text-white">Equipo Meser</span>
-                <span className="text-steel-light/40">·</span>
+                <span className="text-steel-light/70">·</span>
                 <span className="text-steel-light">Especialistas en climatización</span>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
                   day: "numeric",
                 })}
               </time>
-              <span className="text-steel-light/40">|</span>
+              <span className="text-steel-light/70">|</span>
               <span>{post.readTime} de lectura</span>
             </div>
           </div>

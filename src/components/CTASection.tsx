@@ -56,7 +56,7 @@ export default function CTASection({
             <WhatsAppLink
               href="https://wa.me/56982351110?text=Hola%2C%20quiero%20cotizar"
               location="cta_section"
-              className="text-sm font-medium text-steel-light/70 hover:text-cyan transition-colors"
+              className="text-sm font-medium text-steel-light/90 hover:text-cyan transition-colors"
             >
               Prefiero WhatsApp &rarr; +569 8235 1110
             </WhatsAppLink>

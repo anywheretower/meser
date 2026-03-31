@@ -71,7 +71,7 @@ export default function FormularioGlobal() {
           <QuickCapture />
         </div>
 
-        <p className="mt-6 text-sm text-steel-light/60">
+        <p className="mt-6 text-sm text-steel-light/80">
           ¿Prefieres hablar ahora?{" "}
           <WhatsAppLink
             href="https://wa.me/56982351110"
@@ -88,7 +88,7 @@ export default function FormularioGlobal() {
           <p className="mt-2 text-sm text-steel-light/90 italic leading-relaxed">
             &ldquo;Agendar fue súper fácil y en la videollamada me explicaron todo claro. Al día siguiente ya tenía la cotización y en 3 días el aire instalado.&rdquo;
           </p>
-          <p className="mt-2 text-xs text-steel-light/60">
+          <p className="mt-2 text-xs text-steel-light/80">
             — María González, Las Condes
           </p>
         </div>

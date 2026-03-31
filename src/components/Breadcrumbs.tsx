@@ -42,7 +42,7 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
           </li>
           {items.map((item, i) => (
             <li key={i} className="flex items-center gap-1.5">
-              <span className="text-steel/50">/</span>
+              <span className="text-steel/70">/</span>
               {item.href && i < items.length - 1 ? (
                 <Link href={item.href} className="hover:text-cyan transition-colors">
                   {item.label}
