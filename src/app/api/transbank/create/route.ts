@@ -108,8 +108,9 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Transbank create error:", error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
-      { error: "Error al crear transacción" },
+      { error: "Error al crear transacción", detail: errorMessage },
       { status: 500 }
     );
   }
