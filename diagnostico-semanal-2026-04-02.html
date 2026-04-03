@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Semanal de Analytics — Meser | 2 Abril 2026</title>
+<style>
+  :root {
+    --nora-red: #cc0033;
+    --nora-dark: #333333;
+    --nora-white: #ffffff;
+    --green: #16a34a;
+    --green-bg: #dcfce7;
+    --yellow: #ca8a04;
+    --yellow-bg: #fef9c3;
+    --red: #dc2626;
+    --red-bg: #fee2e2;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--nora-white); color: var(--gray-900); line-height: 1.6; }
+
+  .header { background: var(--nora-dark); color: var(--nora-white); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .header img { height: 40px; }
+  .header h1 { font-size: 1.3rem; font-weight: 600; }
+  .header .subtitle { font-size: 0.85rem; color: #aaa; }
+  .header-right { text-align: right; }
+  .header-right .date { font-size: 1rem; font-weight: 600; }
+  .header-right .period { font-size: 0.8rem; color: #aaa; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+
+  /* KPI Cards */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .kpi-card { background: var(--nora-white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .kpi-card .label { font-size: 0.78rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .kpi-card .value { font-size: 2rem; font-weight: 700; }
+  .kpi-card .delta { font-size: 0.85rem; font-weight: 600; margin-top: 4px; }
+  .kpi-card .delta.positive { color: var(--green); }
+  .kpi-card .delta.negative { color: var(--red); }
+  .kpi-card .delta.neutral { color: var(--yellow); }
+
+  /* Badge */
+  .badge { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-yellow { background: var(--yellow-bg); color: var(--yellow); border: 1px solid #fbbf24; }
+  .badge-red { background: var(--red-bg); color: var(--red); border: 1px solid #f87171; }
+  .badge-green { background: var(--green-bg); color: var(--green); border: 1px solid #4ade80; }
+
+  /* Collapsible sections */
+  .section { margin-bottom: 16px; border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; background: var(--nora-white); }
+  .section-header { background: var(--gray-50); padding: 16px 20px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; border-bottom: 1px solid var(--gray-200); }
+  .section-header:hover { background: var(--gray-100); }
+  .section-header h2 { font-size: 1.05rem; color: var(--nora-dark); display: flex; align-items: center; gap: 8px; }
+  .section-header .num { background: var(--nora-red); color: white; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .section-header .arrow { transition: transform 0.3s; font-size: 1.2rem; color: var(--gray-500); }
+  .section-header.collapsed .arrow { transform: rotate(-90deg); }
+  .section-content { padding: 20px; }
+  .section-content.collapsed { display: none; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 16px; }
+  th { background: var(--nora-dark); color: var(--nora-white); padding: 10px 12px; text-align: left; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3px; }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--gray-200); }
+  tr:nth-child(even) td { background: var(--gray-50); }
+  tr:hover td { background: #f0f4ff; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+
+  /* Conditional colors */
+  .cell-green { background: var(--green-bg) !important; color: var(--green); font-weight: 600; }
+  .cell-yellow { background: var(--yellow-bg) !important; color: var(--yellow); font-weight: 600; }
+  .cell-red { background: var(--red-bg) !important; color: var(--red); font-weight: 600; }
+
+  /* CSS Bar charts */
+  .bar-container { display: flex; align-items: center; gap: 8px; }
+  .bar { height: 22px; border-radius: 4px; min-width: 2px; transition: width 0.3s; }
+  .bar-green { background: linear-gradient(90deg, #22c55e, #16a34a); }
+  .bar-yellow { background: linear-gradient(90deg, #facc15, #eab308); }
+  .bar-red { background: linear-gradient(90deg, #f87171, #dc2626); }
+  .bar-blue { background: linear-gradient(90deg, #60a5fa, #3b82f6); }
+  .bar-label { font-size: 0.78rem; color: var(--gray-700); white-space: nowrap; min-width: 40px; }
+
+  /* Subsection */
+  .subsection { margin-bottom: 20px; }
+  .subsection h3 { font-size: 0.95rem; color: var(--nora-red); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--gray-100); }
+  .subsection h4 { font-size: 0.85rem; color: var(--gray-700); margin-bottom: 8px; }
+
+  /* Diagnosis bullets */
+  .diagnosis-list { list-style: none; padding: 0; }
+  .diagnosis-list li { padding: 12px 16px; margin-bottom: 8px; border-radius: 8px; border-left: 4px solid; font-size: 0.9rem; }
+  .diagnosis-list li.high { border-color: var(--red); background: var(--red-bg); }
+  .diagnosis-list li.medium { border-color: var(--yellow); background: var(--yellow-bg); }
+  .diagnosis-list li.low { border-color: var(--green); background: var(--green-bg); }
+  .diagnosis-list li strong { display: block; margin-bottom: 2px; }
+
+  /* Notes */
+  .note { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 16px; font-size: 0.85rem; color: #1e40af; margin-bottom: 16px; }
+
+  /* Footer */
+  .footer { background: var(--nora-dark); color: #aaa; padding: 20px 32px; text-align: center; font-size: 0.8rem; margin-top: 32px; }
+  .footer strong { color: var(--nora-white); }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .header { padding: 16px; }
+    .header h1 { font-size: 1.1rem; }
+    .container { padding: 12px 8px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .kpi-card .value { font-size: 1.5rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 6px 8px; }
+    .section-content { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div>
+      <h1>Diagnóstico Semanal de Analytics</h1>
+      <div class="subtitle">meser.cl — Reporte automatizado NORA</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="date">2 de Abril, 2026</div>
+    <div class="period">Período analizado: 3 Mar — 1 Abr 2026</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="label">Bounce Rate Semanal</div>
+      <div class="value" style="color: var(--green);">44.6%</div>
+      <div class="delta positive">-10.1pp vs semana anterior</div>
+      <span class="badge badge-yellow">Bajo Promedio</span>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Sesiones Lun-Mié</div>
+      <div class="value">65</div>
+      <div class="delta positive">+1.6% vs sem. anterior</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Engagement Rate</div>
+      <div class="value" style="color: var(--green);">55.4%</div>
+      <div class="delta positive">+10.1pp vs sem. anterior</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Usuarios</div>
+      <div class="value">59</div>
+      <div class="delta positive">+11.3% vs sem. anterior</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: Comparación Semanal -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2><span class="num">1</span> Comparación Semanal (Lun-Mié)</h2>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-content">
+
+      <div class="subsection">
+        <h3>Resumen: Semana Actual vs Anterior</h3>
+        <table>
+          <tr>
+            <th>Métrica</th>
+            <th class="text-right">Sem. Anterior<br>(23-25 Mar)</th>
+            <th class="text-right">Sem. Actual<br>(30 Mar - 1 Abr)</th>
+            <th class="text-right">Cambio</th>
+          </tr>
+          <tr>
+            <td>Usuarios</td>
+            <td class="text-right">53</td>
+            <td class="text-right">59</td>
+            <td class="text-right cell-green">+11.3%</td>
+          </tr>
+          <tr>
+            <td>Nuevos usuarios</td>
+            <td class="text-right">42</td>
+            <td class="text-right">50</td>
+            <td class="text-right cell-green">+19.0%</td>
+          </tr>
+          <tr>
+            <td>Sesiones</td>
+            <td class="text-right">64</td>
+            <td class="text-right">65</td>
+            <td class="text-right cell-yellow">+1.6%</td>
+          </tr>
+          <tr>
+            <td>Pageviews</td>
+            <td class="text-right">152</td>
+            <td class="text-right">75</td>
+            <td class="text-right cell-red">-50.7%</td>
+          </tr>
+          <tr>
+            <td>Bounce Rate</td>
+            <td class="text-right">54.7%</td>
+            <td class="text-right">44.6%</td>
+            <td class="text-right cell-green">-10.1pp</td>
+          </tr>
+          <tr>
+            <td>Sesiones Engaged</td>
+            <td class="text-right">29</td>
+            <td class="text-right">36</td>
+            <td class="text-right cell-green">+24.1%</td>
+          </tr>
+          <tr>
+            <td>Engagement Rate</td>
+            <td class="text-right">45.3%</td>
+            <td class="text-right">55.4%</td>
+            <td class="text-right cell-green">+10.1pp</td>
+          </tr>
+        </table>
+        <div class="note">
+          <strong>Nota sobre Pageviews:</strong> La caída de -50.7% en pageviews es un artefacto. La semana anterior incluyó una sesión de Referral con 82 pageviews en Home (probablemente bot/crawler). Excluyendo esa anomalía, el volumen de pageviews es comparable.
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Desglose por Día</h3>
+        <table>
+          <tr>
+            <th>Día</th>
+            <th class="text-right">Usuarios</th>
+            <th class="text-right">Sesiones</th>
+            <th class="text-right">Pageviews</th>
+            <th class="text-right">Bounce</th>
+            <th class="text-right">Engagement</th>
+          </tr>
+          <tr><td colspan="6" style="background:var(--gray-100); font-weight:600; color:var(--gray-500); font-size:0.78rem;">SEMANA ANTERIOR</td></tr>
+          <tr>
+            <td>Lun 23 Mar</td>
+            <td class="text-right">11</td>
+            <td class="text-right">12</td>
+            <td class="text-right">26</td>
+            <td class="text-right cell-red">75.0%</td>
+            <td class="text-right">25.0%</td>
+          </tr>
+          <tr>
+            <td>Mar 24 Mar</td>
+            <td class="text-right">22</td>
+            <td class="text-right">29</td>
+            <td class="text-right">98</td>
+            <td class="text-right cell-yellow">48.3%</td>
+            <td class="text-right">51.7%</td>
+          </tr>
+          <tr>
+            <td>Mié 25 Mar</td>
+            <td class="text-right">20</td>
+            <td class="text-right">23</td>
+            <td class="text-right">28</td>
+            <td class="text-right cell-yellow">52.2%</td>
+            <td class="text-right">47.8%</td>
+          </tr>
+          <tr><td colspan="6" style="background:var(--gray-100); font-weight:600; color:var(--gray-500); font-size:0.78rem;">SEMANA ACTUAL</td></tr>
+          <tr>
+            <td>Lun 30 Mar</td>
+            <td class="text-right">25</td>
+            <td class="text-right">30</td>
+            <td class="text-right">32</td>
+            <td class="text-right cell-green">36.7%</td>
+            <td class="text-right">63.3%</td>
+          </tr>
+          <tr>
+            <td>Mar 31 Mar</td>
+            <td class="text-right">21</td>
+            <td class="text-right">21</td>
+            <td class="text-right">27</td>
+            <td class="text-right cell-yellow">47.6%</td>
+            <td class="text-right">52.4%</td>
+          </tr>
+          <tr>
+            <td>Mié 1 Abr</td>
+            <td class="text-right">13</td>
+            <td class="text-right">14</td>
+            <td class="text-right">16</td>
+            <td class="text-right cell-yellow">57.1%</td>
+            <td class="text-right">42.9%</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3>Desglose por Canal</h3>
+        <table>
+          <tr>
+            <th>Canal</th>
+            <th class="text-right">Sesiones<br>Anterior</th>
+            <th class="text-right">Sesiones<br>Actual</th>
+            <th class="text-right">Bounce<br>Anterior</th>
+            <th class="text-right">Bounce<br>Actual</th>
+            <th class="text-right">Cambio</th>
+          </tr>
+          <tr>
+            <td><strong>Paid Search</strong></td>
+            <td class="text-right">26</td>
+            <td class="text-right">39</td>
+            <td class="text-right">53.8%</td>
+            <td class="text-right">35.9%</td>
+            <td class="text-right cell-green">-17.9pp</td>
+          </tr>
+          <tr>
+            <td>Organic Search</td>
+            <td class="text-right">6</td>
+            <td class="text-right">11</td>
+            <td class="text-right">33.3%</td>
+            <td class="text-right">36.4%</td>
+            <td class="text-right cell-yellow">+3.1pp</td>
+          </tr>
+          <tr>
+            <td>Direct</td>
+            <td class="text-right">18</td>
+            <td class="text-right">9</td>
+            <td class="text-right">77.8%</td>
+            <td class="text-right">77.8%</td>
+            <td class="text-right cell-red">0pp</td>
+          </tr>
+          <tr>
+            <td>Organic Social</td>
+            <td class="text-right">3</td>
+            <td class="text-right">3</td>
+            <td class="text-right">33.3%</td>
+            <td class="text-right">66.7%</td>
+            <td class="text-right cell-red">+33.4pp</td>
+          </tr>
+          <tr>
+            <td>Referral</td>
+            <td class="text-right">9</td>
+            <td class="text-right">3</td>
+            <td class="text-right">33.3%</td>
+            <td class="text-right">66.7%</td>
+            <td class="text-right cell-red">+33.4pp</td>
+          </tr>
+        </table>
+        <div class="note">
+          <strong>Hallazgo clave:</strong> Paid Search mejoró drásticamente (-17.9pp en bounce) con +50% más sesiones. Las optimizaciones CRO en landings Ads (aires + termos) del 31 Mar están dando resultados. Direct mantiene 77.8% bounce — probable tráfico bot/interno.
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Top 10 Landing Pages — Semana Actual</h3>
+        <table>
+          <tr>
+            <th>Landing Page</th>
+            <th class="text-right">Sesiones</th>
+            <th class="text-right">Bounce</th>
+            <th class="text-right">Engagement</th>
+          </tr>
+          <tr>
+            <td>/todo-incluido</td>
+            <td class="text-right">20</td>
+            <td class="text-right cell-green">20.0%</td>
+            <td class="text-right">80.0%</td>
+          </tr>
+          <tr>
+            <td>/termos</td>
+            <td class="text-right">17</td>
+            <td class="text-right cell-red">64.7%</td>
+            <td class="text-right">35.3%</td>
+          </tr>
+          <tr>
+            <td>/aires-acondicionados</td>
+            <td class="text-right">10</td>
+            <td class="text-right cell-yellow">50.0%</td>
+            <td class="text-right">50.0%</td>
+          </tr>
+          <tr>
+            <td>/</td>
+            <td class="text-right">9</td>
+            <td class="text-right cell-yellow">55.6%</td>
+            <td class="text-right">44.4%</td>
+          </tr>
+          <tr>
+            <td>/blog/comparativa-calefaccion</td>
+            <td class="text-right">1</td>
+            <td class="text-right cell-green">0%</td>
+            <td class="text-right">100%</td>
+          </tr>
+          <tr>
+            <td>/blog/cuanto-cuesta-instalar-ac</td>
+            <td class="text-right">1</td>
+            <td class="text-right cell-green">0%</td>
+            <td class="text-right">100%</td>
+          </tr>
+        </table>
+        <div class="note">
+          <strong>Comparación vs semana anterior:</strong> /todo-incluido mejoró de 55% a 20% bounce (excelente). /aires bajó de 85.7% a 50% (-35.7pp). /termos bajó de 80% a 64.7% (-15.3pp). Las mejoras CRO están funcionando, especialmente en /todo-incluido y /aires.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 2: Evolución Bounce Rate -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2><span class="num">2</span> Evolución Bounce Rate (Últimos 30 Días)</h2>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-content">
+
+      <div class="subsection">
+        <h3>Bounce Rate Diario</h3>
+        <table>
+          <tr>
+            <th>Fecha</th>
+            <th class="text-right">Sesiones</th>
+            <th class="text-right">Bounce</th>
+            <th>Visualización</th>
+          </tr>
+          <tr><td>Mar 3</td><td class="text-right">21</td><td class="text-right cell-green">33.3%</td><td><div class="bar-container"><div class="bar bar-green" style="width:33.3%"></div></div></td></tr>
+          <tr><td>Mar 4</td><td class="text-right">25</td><td class="text-right cell-red">68.0%</td><td><div class="bar-container"><div class="bar bar-red" style="width:68%"></div></div></td></tr>
+          <tr><td>Mar 5</td><td class="text-right">10</td><td class="text-right cell-yellow">50.0%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:50%"></div></div></td></tr>
+          <tr><td>Mar 6</td><td class="text-right">24</td><td class="text-right cell-red">70.8%</td><td><div class="bar-container"><div class="bar bar-red" style="width:70.8%"></div></div></td></tr>
+          <tr><td>Mar 7</td><td class="text-right">17</td><td class="text-right cell-red">76.5%</td><td><div class="bar-container"><div class="bar bar-red" style="width:76.5%"></div></div></td></tr>
+          <tr><td>Mar 8</td><td class="text-right">8</td><td class="text-right cell-red">62.5%</td><td><div class="bar-container"><div class="bar bar-red" style="width:62.5%"></div></div></td></tr>
+          <tr><td>Mar 9</td><td class="text-right">18</td><td class="text-right cell-red">72.2%</td><td><div class="bar-container"><div class="bar bar-red" style="width:72.2%"></div></div></td></tr>
+          <tr><td>Mar 10</td><td class="text-right">34</td><td class="text-right cell-yellow">50.0%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:50%"></div></div></td></tr>
+          <tr><td>Mar 11</td><td class="text-right">18</td><td class="text-right cell-red">66.7%</td><td><div class="bar-container"><div class="bar bar-red" style="width:66.7%"></div></div></td></tr>
+          <tr><td>Mar 12</td><td class="text-right">19</td><td class="text-right cell-yellow">57.9%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:57.9%"></div></div></td></tr>
+          <tr><td>Mar 13</td><td class="text-right">12</td><td class="text-right cell-green">33.3%</td><td><div class="bar-container"><div class="bar bar-green" style="width:33.3%"></div></div></td></tr>
+          <tr><td>Mar 14</td><td class="text-right">18</td><td class="text-right cell-yellow">55.6%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:55.6%"></div></div></td></tr>
+          <tr><td>Mar 15</td><td class="text-right">9</td><td class="text-right cell-red">66.7%</td><td><div class="bar-container"><div class="bar bar-red" style="width:66.7%"></div></div></td></tr>
+          <tr><td>Mar 16</td><td class="text-right">23</td><td class="text-right cell-yellow">43.5%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:43.5%"></div></div></td></tr>
+          <tr><td>Mar 17</td><td class="text-right">29</td><td class="text-right cell-red">65.5%</td><td><div class="bar-container"><div class="bar bar-red" style="width:65.5%"></div></div></td></tr>
+          <tr><td>Mar 18</td><td class="text-right">21</td><td class="text-right cell-yellow">57.1%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:57.1%"></div></div></td></tr>
+          <tr><td>Mar 19</td><td class="text-right">21</td><td class="text-right cell-green">38.1%</td><td><div class="bar-container"><div class="bar bar-green" style="width:38.1%"></div></div></td></tr>
+          <tr><td>Mar 20</td><td class="text-right">21</td><td class="text-right cell-yellow">52.4%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:52.4%"></div></div></td></tr>
+          <tr><td>Mar 21</td><td class="text-right">16</td><td class="text-right cell-green">37.5%</td><td><div class="bar-container"><div class="bar bar-green" style="width:37.5%"></div></div></td></tr>
+          <tr><td>Mar 22</td><td class="text-right">2</td><td class="text-right cell-yellow">50.0%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:50%"></div></div></td></tr>
+          <tr><td>Mar 23</td><td class="text-right">12</td><td class="text-right cell-red">75.0%</td><td><div class="bar-container"><div class="bar bar-red" style="width:75%"></div></div></td></tr>
+          <tr><td>Mar 24</td><td class="text-right">29</td><td class="text-right cell-yellow">48.3%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:48.3%"></div></div></td></tr>
+          <tr><td>Mar 25</td><td class="text-right">23</td><td class="text-right cell-yellow">52.2%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:52.2%"></div></div></td></tr>
+          <tr><td>Mar 26</td><td class="text-right">19</td><td class="text-right cell-yellow">57.9%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:57.9%"></div></div></td></tr>
+          <tr><td>Mar 27</td><td class="text-right">18</td><td class="text-right cell-yellow">44.4%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:44.4%"></div></div></td></tr>
+          <tr><td>Mar 28</td><td class="text-right">20</td><td class="text-right cell-green">40.0%</td><td><div class="bar-container"><div class="bar bar-green" style="width:40%"></div></div></td></tr>
+          <tr><td>Mar 29</td><td class="text-right">9</td><td class="text-right cell-yellow">55.6%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:55.6%"></div></div></td></tr>
+          <tr><td>Mar 30</td><td class="text-right">30</td><td class="text-right cell-green">36.7%</td><td><div class="bar-container"><div class="bar bar-green" style="width:36.7%"></div></div></td></tr>
+          <tr><td>Mar 31</td><td class="text-right">21</td><td class="text-right cell-yellow">47.6%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:47.6%"></div></div></td></tr>
+          <tr><td>Abr 1</td><td class="text-right">14</td><td class="text-right cell-yellow">57.1%</td><td><div class="bar-container"><div class="bar bar-yellow" style="width:57.1%"></div></div></td></tr>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3>Promedio Semanal (Tendencia)</h3>
+        <table>
+          <tr>
+            <th>Semana</th>
+            <th class="text-right">Sesiones</th>
+            <th class="text-right">Bounce Promedio</th>
+            <th>Tendencia</th>
+          </tr>
+          <tr>
+            <td>3-8 Mar</td>
+            <td class="text-right">105</td>
+            <td class="text-right cell-red">60.2%</td>
+            <td><div class="bar-container"><div class="bar bar-red" style="width:60.2%"></div></div></td>
+          </tr>
+          <tr>
+            <td>9-15 Mar</td>
+            <td class="text-right">128</td>
+            <td class="text-right cell-yellow">57.5%</td>
+            <td><div class="bar-container"><div class="bar bar-red" style="width:57.5%"></div></div></td>
+          </tr>
+          <tr>
+            <td>16-22 Mar</td>
+            <td class="text-right">133</td>
+            <td class="text-right cell-yellow">49.2%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:49.2%"></div></div></td>
+          </tr>
+          <tr>
+            <td>23-29 Mar</td>
+            <td class="text-right">130</td>
+            <td class="text-right cell-yellow">53.3%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:53.3%"></div></div></td>
+          </tr>
+          <tr>
+            <td>30 Mar - 1 Abr</td>
+            <td class="text-right">65</td>
+            <td class="text-right cell-yellow">47.1%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:47.1%"></div></div></td>
+          </tr>
+        </table>
+        <div class="note">
+          <strong>Tendencia:</strong> Mejora gradual de 60.2% → 47.1% con un repunte en semana del 23 Mar (+4.1pp) que se corrigió esta semana. Dirección general: bajando.
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Bounce por Canal (30 días agregado)</h3>
+        <table>
+          <tr>
+            <th>Canal</th>
+            <th class="text-right">Sesiones</th>
+            <th class="text-right">Bounce</th>
+            <th class="text-right">Engagement</th>
+            <th>Visualización</th>
+          </tr>
+          <tr>
+            <td>Organic Search</td>
+            <td class="text-right">38</td>
+            <td class="text-right cell-green">34.2%</td>
+            <td class="text-right">65.8%</td>
+            <td><div class="bar-container"><div class="bar bar-green" style="width:34.2%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Paid Search</td>
+            <td class="text-right">256</td>
+            <td class="text-right cell-yellow">44.9%</td>
+            <td class="text-right">55.1%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:44.9%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Organic Social</td>
+            <td class="text-right">18</td>
+            <td class="text-right cell-yellow">50.0%</td>
+            <td class="text-right">50.0%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:50%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Referral</td>
+            <td class="text-right">54</td>
+            <td class="text-right cell-yellow">53.7%</td>
+            <td class="text-right">46.3%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:53.7%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Cross-network</td>
+            <td class="text-right">5</td>
+            <td class="text-right cell-red">60.0%</td>
+            <td class="text-right">40.0%</td>
+            <td><div class="bar-container"><div class="bar bar-red" style="width:60%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Direct</td>
+            <td class="text-right">170</td>
+            <td class="text-right cell-red">68.8%</td>
+            <td class="text-right">31.2%</td>
+            <td><div class="bar-container"><div class="bar bar-red" style="width:68.8%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Unassigned</td>
+            <td class="text-right">19</td>
+            <td class="text-right cell-red">73.7%</td>
+            <td class="text-right">26.3%</td>
+            <td><div class="bar-container"><div class="bar bar-red" style="width:73.7%"></div></div></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3>Bounce por Landing Page (Top 20 por sesiones)</h3>
+        <table>
+          <tr>
+            <th>Landing Page</th>
+            <th class="text-right">Sesiones</th>
+            <th class="text-right">Bounce</th>
+            <th class="text-right">Engagement</th>
+            <th>Visualización</th>
+          </tr>
+          <tr>
+            <td>/</td>
+            <td class="text-right">181</td>
+            <td class="text-right cell-yellow">54.7%</td>
+            <td class="text-right">45.3%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:54.7%"></div></div></td>
+          </tr>
+          <tr>
+            <td>/aires-acondicionados</td>
+            <td class="text-right">122</td>
+            <td class="text-right cell-yellow">58.2%</td>
+            <td class="text-right">41.8%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:58.2%"></div></div></td>
+          </tr>
+          <tr>
+            <td>/todo-incluido</td>
+            <td class="text-right">94</td>
+            <td class="text-right cell-green">38.3%</td>
+            <td class="text-right">61.7%</td>
+            <td><div class="bar-container"><div class="bar bar-green" style="width:38.3%"></div></div></td>
+          </tr>
+          <tr>
+            <td>/termos</td>
+            <td class="text-right">70</td>
+            <td class="text-right cell-yellow">55.7%</td>
+            <td class="text-right">44.3%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:55.7%"></div></div></td>
+          </tr>
+          <tr>
+            <td>(not set)</td>
+            <td class="text-right">23</td>
+            <td class="text-right cell-red">95.7%</td>
+            <td class="text-right">4.3%</td>
+            <td><div class="bar-container"><div class="bar bar-red" style="width:95.7%"></div></div></td>
+          </tr>
+          <tr>
+            <td>/climatizacion-integral</td>
+            <td class="text-right">13</td>
+            <td class="text-right cell-green">30.8%</td>
+            <td class="text-right">69.2%</td>
+            <td><div class="bar-container"><div class="bar bar-green" style="width:30.8%"></div></div></td>
+          </tr>
+          <tr>
+            <td>/carrito</td>
+            <td class="text-right">6</td>
+            <td class="text-right cell-red">66.7%</td>
+            <td class="text-right">33.3%</td>
+            <td><div class="bar-container"><div class="bar bar-red" style="width:66.7%"></div></div></td>
+          </tr>
+          <tr>
+            <td>/instalacion-aire-acondicionado</td>
+            <td class="text-right">5</td>
+            <td class="text-right cell-green">20.0%</td>
+            <td class="text-right">80.0%</td>
+            <td><div class="bar-container"><div class="bar bar-green" style="width:20%"></div></div></td>
+          </tr>
+          <tr>
+            <td>/producto/ac-midea-18000btu</td>
+            <td class="text-right">4</td>
+            <td class="text-right cell-red">100%</td>
+            <td class="text-right">0%</td>
+            <td><div class="bar-container"><div class="bar bar-red" style="width:100%"></div></div></td>
+          </tr>
+          <tr>
+            <td>/mantencion</td>
+            <td class="text-right">3</td>
+            <td class="text-right cell-green">33.3%</td>
+            <td class="text-right">66.7%</td>
+            <td><div class="bar-container"><div class="bar bar-green" style="width:33.3%"></div></div></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3>Bounce por Dispositivo (30 días)</h3>
+        <table>
+          <tr>
+            <th>Dispositivo</th>
+            <th class="text-right">Sesiones</th>
+            <th class="text-right">Bounce</th>
+            <th class="text-right">Engagement</th>
+            <th>Visualización</th>
+          </tr>
+          <tr>
+            <td>Desktop</td>
+            <td class="text-right">274</td>
+            <td class="text-right cell-yellow">48.5%</td>
+            <td class="text-right">51.5%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:48.5%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Mobile</td>
+            <td class="text-right">285</td>
+            <td class="text-right cell-yellow">58.6%</td>
+            <td class="text-right">41.4%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:58.6%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Tablet</td>
+            <td class="text-right">1</td>
+            <td class="text-right cell-green">0%</td>
+            <td class="text-right">100%</td>
+            <td><div class="bar-container"><div class="bar bar-green" style="width:1%"></div></div></td>
+          </tr>
+        </table>
+        <div class="note">
+          <strong>Brecha mobile vs desktop: 10.1pp.</strong> Mobile tiene el 51% del tráfico pero bounce 10 puntos más alto. Indica fricción UX en pantalla pequeña — revisar velocidad de carga, CTAs visibles y hero en mobile.
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Páginas con Bounce >90% y volumen significativo</h3>
+        <ul class="diagnosis-list">
+          <li class="high">
+            <strong>(not set) — 95.7% bounce, 23 sesiones</strong>
+            Tráfico sin landing page identificada. Probablemente bots, previews de redes sociales, o problema de tracking con GTM. Acción: investigar en Real-time si coincide con eventos GTM vacíos.
+          </li>
+          <li class="high">
+            <strong>/producto/ac-midea-18000btu — 100% bounce, 4 sesiones</strong>
+            Página de producto individual como landing directa. El usuario llega y no encuentra path de conversión claro. Acción: agregar CTA prominente y enlace a /todo-incluido.
+          </li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3>Páginas con Bounce &lt;40% (modelo a replicar)</h3>
+        <ul class="diagnosis-list">
+          <li class="low">
+            <strong>/instalacion-aire-acondicionado — 20% bounce (5 sesiones)</strong>
+            Excelente engagement. Página de servicio con propuesta de valor clara.
+          </li>
+          <li class="low">
+            <strong>/climatizacion-integral — 30.8% bounce (13 sesiones)</strong>
+            Paquete completo, alta retención. Modelo de landing con contexto + CTA.
+          </li>
+          <li class="low">
+            <strong>/mantencion — 33.3% bounce (3 sesiones)</strong>
+            Servicio concreto, usuario con intención clara.
+          </li>
+          <li class="low">
+            <strong>/todo-incluido — 38.3% bounce (94 sesiones)</strong>
+            La estrella: alto volumen + bajo bounce. Combina paquetes con precio, social proof y CTAs múltiples.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 3: Benchmark Industria -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2><span class="num">3</span> Benchmark Industria</h2>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-content">
+
+      <div class="subsection">
+        <h3>Meser vs Benchmark HVAC/Servicios Hogar</h3>
+        <table>
+          <tr>
+            <th>Métrica</th>
+            <th class="text-right">Meser (30d)</th>
+            <th class="text-right">Benchmark Industria</th>
+            <th class="text-right">Diferencia</th>
+            <th>Evaluación</th>
+          </tr>
+          <tr>
+            <td>Bounce Rate General</td>
+            <td class="text-right">53.6%</td>
+            <td class="text-right">~46%</td>
+            <td class="text-right cell-red">+7.6pp</td>
+            <td><span class="badge badge-yellow">Bajo Promedio</span></td>
+          </tr>
+          <tr>
+            <td>Engagement Rate</td>
+            <td class="text-right">46.4%</td>
+            <td class="text-right">54-70%</td>
+            <td class="text-right cell-red">-7.6pp</td>
+            <td><span class="badge badge-yellow">Bajo Promedio</span></td>
+          </tr>
+          <tr>
+            <td>Bounce Semana Actual</td>
+            <td class="text-right">44.6%</td>
+            <td class="text-right">~46%</td>
+            <td class="text-right cell-green">-1.4pp</td>
+            <td><span class="badge badge-green">En Benchmark</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3>Bounce por Canal vs Benchmark</h3>
+        <table>
+          <tr>
+            <th>Canal</th>
+            <th class="text-right">Meser</th>
+            <th class="text-right">Benchmark</th>
+            <th>Evaluación</th>
+          </tr>
+          <tr>
+            <td>Organic Search</td>
+            <td class="text-right">34.2%</td>
+            <td class="text-right">~40-45%</td>
+            <td><span class="badge badge-green">Excelente</span></td>
+          </tr>
+          <tr>
+            <td>Paid Search</td>
+            <td class="text-right">44.9%</td>
+            <td class="text-right">~45-55%</td>
+            <td><span class="badge badge-green">Bueno</span></td>
+          </tr>
+          <tr>
+            <td>Social</td>
+            <td class="text-right">50.0%</td>
+            <td class="text-right">~55-65%</td>
+            <td><span class="badge badge-green">Bueno</span></td>
+          </tr>
+          <tr>
+            <td>Referral</td>
+            <td class="text-right">53.7%</td>
+            <td class="text-right">~40-50%</td>
+            <td><span class="badge badge-yellow">Bajo Promedio</span></td>
+          </tr>
+          <tr>
+            <td>Direct</td>
+            <td class="text-right">68.8%</td>
+            <td class="text-right">~35-45%</td>
+            <td><span class="badge badge-red">Crítico</span></td>
+          </tr>
+        </table>
+        <div class="note">
+          <strong>Direct es el problema #1.</strong> Con 170 sesiones (30% del tráfico) y 68.8% bounce, es el mayor lastre. El benchmark de Direct suele ser 35-45% porque incluye usuarios que ya conocen la marca. Un 68.8% sugiere tráfico no humano o mala atribución UTM.
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Escala de Evaluación (Bounce Rate GA4)</h3>
+        <table>
+          <tr>
+            <th>Categoría</th>
+            <th>Rango</th>
+            <th>Estado Meser</th>
+          </tr>
+          <tr><td style="color:var(--green); font-weight:600;">Excelente</td><td>&lt;30%</td><td></td></tr>
+          <tr><td style="color:var(--green);">Bueno</td><td>30-45%</td><td></td></tr>
+          <tr><td style="color:var(--yellow);">Promedio Industria</td><td>~46%</td><td></td></tr>
+          <tr><td style="font-weight:600; background:var(--yellow-bg);">Bajo Promedio</td><td>46-60%</td><td style="font-weight:700;">← Meser 30d: 53.6%</td></tr>
+          <tr><td style="color:var(--red);">Pobre</td><td>60-70%</td><td></td></tr>
+          <tr><td style="color:var(--red); font-weight:600;">Crítico</td><td>&gt;70%</td><td></td></tr>
+        </table>
+        <div class="note">
+          <strong>Buena noticia:</strong> La semana actual (44.6%) ya está <em>dentro del benchmark</em>. Si se mantiene esta tendencia, el promedio mensual debería converger al rango "Bueno" en abril.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 4: Comparación Interanual -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2><span class="num">4</span> Comparación Interanual (Q1 2026)</h2>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-content">
+
+      <div class="note">
+        <strong>Sin datos Q1 2025 disponibles.</strong> La propiedad GA4 de Meser comenzó a registrar datos desde octubre 2025. No existe data interanual para comparar. Se presenta la evolución Q1 2026 como baseline para futuras comparaciones.
+      </div>
+
+      <div class="subsection">
+        <h3>Q1 2026 — Evolución Mensual</h3>
+        <table>
+          <tr>
+            <th>Mes</th>
+            <th class="text-right">Usuarios</th>
+            <th class="text-right">Sesiones</th>
+            <th class="text-right">Bounce</th>
+            <th class="text-right">Engagement</th>
+            <th>Tendencia Bounce</th>
+          </tr>
+          <tr>
+            <td>Enero 2026</td>
+            <td class="text-right">137</td>
+            <td class="text-right">196</td>
+            <td class="text-right cell-green">36.7%</td>
+            <td class="text-right">63.3%</td>
+            <td><div class="bar-container"><div class="bar bar-green" style="width:36.7%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Febrero 2026</td>
+            <td class="text-right">139</td>
+            <td class="text-right">201</td>
+            <td class="text-right cell-green">40.8%</td>
+            <td class="text-right">59.2%</td>
+            <td><div class="bar-container"><div class="bar bar-green" style="width:40.8%"></div></div></td>
+          </tr>
+          <tr>
+            <td>Marzo 2026</td>
+            <td class="text-right">388</td>
+            <td class="text-right">562</td>
+            <td class="text-right cell-yellow">53.6%</td>
+            <td class="text-right">46.4%</td>
+            <td><div class="bar-container"><div class="bar bar-yellow" style="width:53.6%"></div></div></td>
+          </tr>
+        </table>
+        <div class="note">
+          <strong>Observación:</strong> El bounce subió +16.9pp de Ene a Mar, pero esto coincide con el escalamiento de Ads (sesiones +187%). Más volumen de Paid Search → más tráfico frío → bounce más alto. Es un trade-off esperado. Lo importante es que el bounce de Paid Search está bajando semana a semana (53.8% → 35.9% esta semana).
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 5: Visión General de Tráfico -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2><span class="num">5</span> Visión General de Tráfico (Histórico)</h2>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-content">
+
+      <div class="subsection">
+        <h3>Tráfico Mensual</h3>
+        <table>
+          <tr>
+            <th>Mes</th>
+            <th class="text-right">Usuarios</th>
+            <th class="text-right">Sesiones</th>
+            <th class="text-right">Pageviews</th>
+            <th class="text-right">Bounce</th>
+            <th>Volumen Sesiones</th>
+          </tr>
+          <tr>
+            <td>Oct 2025</td>
+            <td class="text-right">271</td>
+            <td class="text-right">306</td>
+            <td class="text-right">411</td>
+            <td class="text-right cell-red">70.3%</td>
+            <td><div class="bar-container"><div class="bar bar-blue" style="width:54.4%"></div><span class="bar-label">306</span></div></td>
+          </tr>
+          <tr>
+            <td>Nov 2025</td>
+            <td class="text-right">425</td>
+            <td class="text-right">528</td>
+            <td class="text-right">796</td>
+            <td class="text-right cell-yellow">57.0%</td>
+            <td><div class="bar-container"><div class="bar bar-blue" style="width:94%"></div><span class="bar-label">528</span></div></td>
+          </tr>
+          <tr>
+            <td>Dic 2025</td>
+            <td class="text-right">149</td>
+            <td class="text-right">277</td>
+            <td class="text-right">442</td>
+            <td class="text-right cell-yellow">48.0%</td>
+            <td><div class="bar-container"><div class="bar bar-blue" style="width:49.3%"></div><span class="bar-label">277</span></div></td>
+          </tr>
+          <tr>
+            <td>Ene 2026</td>
+            <td class="text-right">137</td>
+            <td class="text-right">196</td>
+            <td class="text-right">361</td>
+            <td class="text-right cell-green">36.7%</td>
+            <td><div class="bar-container"><div class="bar bar-blue" style="width:34.9%"></div><span class="bar-label">196</span></div></td>
+          </tr>
+          <tr>
+            <td>Feb 2026</td>
+            <td class="text-right">139</td>
+            <td class="text-right">201</td>
+            <td class="text-right">456</td>
+            <td class="text-right cell-green">40.8%</td>
+            <td><div class="bar-container"><div class="bar bar-blue" style="width:35.8%"></div><span class="bar-label">201</span></div></td>
+          </tr>
+          <tr style="font-weight:700; background: #f0f4ff;">
+            <td>Mar 2026</td>
+            <td class="text-right">388</td>
+            <td class="text-right">562</td>
+            <td class="text-right">964</td>
+            <td class="text-right cell-yellow">53.6%</td>
+            <td><div class="bar-container"><div class="bar bar-blue" style="width:100%"></div><span class="bar-label">562</span></div></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3>Resumen</h3>
+        <table>
+          <tr>
+            <th>Indicador</th>
+            <th>Valor</th>
+          </tr>
+          <tr><td>Promedio mensual (usuarios)</td><td><strong>252</strong></td></tr>
+          <tr><td>Promedio mensual (sesiones)</td><td><strong>345</strong></td></tr>
+          <tr><td>Peak sesiones</td><td><strong>Mar 2026 — 562 sesiones</strong> (máximo histórico)</td></tr>
+          <tr><td>Valle sesiones</td><td><strong>Ene 2026 — 196 sesiones</strong></td></tr>
+          <tr><td>Peak usuarios</td><td><strong>Nov 2025 — 425 usuarios</strong></td></tr>
+          <tr><td>Valle usuarios</td><td><strong>Ene 2026 — 137 usuarios</strong></td></tr>
+          <tr><td>Tendencia</td><td><strong style="color:var(--green);">Crecimiento fuerte</strong> — recuperación en V desde Ene, Mar +179% vs Ene</td></tr>
+        </table>
+        <div class="note">
+          <strong>Patrón:</strong> Nov 2025 fue alto por tráfico orgánico estacional. Dic-Ene bajón típico. Feb-Mar fuerte crecimiento impulsado por campañas Ads. Mar 2026 es el mes con más sesiones de toda la historia del sitio.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 6: Diagnóstico Final -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2><span class="num">6</span> Diagnóstico Final</h2>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="section-content">
+
+      <div class="subsection">
+        <h3>Las 3 Causas Principales del Bounce Alto</h3>
+        <ul class="diagnosis-list">
+          <li class="high">
+            <strong>1. Tráfico Direct contaminado — 68.8% bounce, 30% del tráfico total</strong>
+            170 sesiones directas con bounce casi el doble del benchmark (68.8% vs ~40%). Indica probable tráfico bot/crawler, visitas internas sin filtrar, o mala atribución UTM (campañas sin parámetros). Este canal solo arrastra el promedio global +7pp hacia arriba.
+          </li>
+          <li class="high">
+            <strong>2. Landings Ads de alto volumen aún sobre benchmark (/aires 58.2%, /termos 55.7%)</strong>
+            Las dos landings principales de Ads concentran 192 sesiones (34% del tráfico) con bounce sobre 55%. Las mejoras CRO del 31 Mar muestran efecto esta semana (/aires bajó a 50%, /termos a 64.7%), pero el acumulado de 30 días aún pesa.
+          </li>
+          <li class="medium">
+            <strong>3. Brecha mobile — 58.6% bounce vs 48.5% desktop (+10.1pp)</strong>
+            Mobile es 51% del tráfico pero tiene engagement significativamente menor. Probables causas: hero/CTAs no optimizados para pantalla pequeña, velocidad de carga en 3G/4G, formularios difíciles de completar en mobile.
+          </li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3>Qué Está Funcionando</h3>
+        <ul class="diagnosis-list">
+          <li class="low">
+            <strong>CRO en landings Ads — efecto inmediato</strong>
+            Las optimizaciones del 31 Mar en /aires (social proof + 2 CTAs + H1 optimizado) y /termos (H1 keyword + 80L popular + CTAs hero) ya muestran mejora: /aires -35.7pp y /todo-incluido -35pp esta semana vs anterior.
+          </li>
+          <li class="low">
+            <strong>/todo-incluido es la landing estrella</strong>
+            38.3% bounce con 94 sesiones (30 días). Esta semana bajó a 20%. Modelo a replicar: paquetes con precio visible, social proof, múltiples CTAs.
+          </li>
+          <li class="low">
+            <strong>Organic Search — excelente calidad</strong>
+            34.2% bounce, 65.8% engagement. El trabajo SEO (blog, schema, contenido) trae tráfico de alta intención. Escalar este canal reduciría el bounce global.
+          </li>
+          <li class="low">
+            <strong>Paid Search mejorando rápidamente</strong>
+            Bounce de Paid Search bajó de 53.8% → 35.9% esta semana (-17.9pp). Las optimizaciones de negativos, ad schedule y CRO están convergiendo.
+          </li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3>Acciones Priorizadas por Impacto/Esfuerzo</h3>
+        <table>
+          <tr>
+            <th style="width:60px;">Prior.</th>
+            <th>Acción</th>
+            <th style="width:80px;">Impacto</th>
+            <th style="width:80px;">Esfuerzo</th>
+          </tr>
+          <tr>
+            <td class="text-center"><span style="background:var(--red);color:white;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">P1</span></td>
+            <td><strong>Investigar y filtrar tráfico Direct.</strong> Crear filtro GA4 para excluir tráfico interno (IP/hostname). Revisar si hay bots en Realtime. Validar que todas las campañas (email, social) tengan UTMs.</td>
+            <td class="cell-green text-center">Alto</td>
+            <td class="cell-green text-center">Bajo</td>
+          </tr>
+          <tr>
+            <td class="text-center"><span style="background:var(--red);color:white;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">P1</span></td>
+            <td><strong>Continuar CRO en /termos.</strong> Bounce 64.7% esta semana aún alto. Aplicar mismo patrón de /todo-incluido: paquetes con precio, social proof, CTAs múltiples. Considerar A/B test con popup de intención de salida.</td>
+            <td class="cell-green text-center">Alto</td>
+            <td class="cell-yellow text-center">Medio</td>
+          </tr>
+          <tr>
+            <td class="text-center"><span style="background:var(--yellow);color:white;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">P2</span></td>
+            <td><strong>Optimizar experiencia mobile.</strong> Auditar hero/CTAs en /aires y /termos en viewport 375px. Verificar LCP mobile < 2.5s. Asegurar que WA sticky y quick-nav sean funcionales en mobile.</td>
+            <td class="cell-yellow text-center">Medio</td>
+            <td class="cell-yellow text-center">Medio</td>
+          </tr>
+          <tr>
+            <td class="text-center"><span style="background:var(--yellow);color:white;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">P2</span></td>
+            <td><strong>Fix tracking "(not set)".</strong> 23 sesiones sin landing page = dato perdido. Revisar configuración GTM y si hay páginas que no cargan el snippet de GA4.</td>
+            <td class="cell-yellow text-center">Medio</td>
+            <td class="cell-green text-center">Bajo</td>
+          </tr>
+          <tr>
+            <td class="text-center"><span style="background:var(--green);color:white;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">P3</span></td>
+            <td><strong>Escalar Organic Search.</strong> Con 34.2% bounce y solo 38 sesiones (7% del tráfico), hay mucho upside. Priorizar contenido blog orientado a keywords transaccionales (ej: "mejor aire acondicionado Chile 2026").</td>
+            <td class="cell-green text-center">Alto</td>
+            <td class="cell-red text-center">Alto</td>
+          </tr>
+          <tr>
+            <td class="text-center"><span style="background:var(--green);color:white;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">P3</span></td>
+            <td><strong>CRO en páginas de producto individuales.</strong> /producto/ac-midea-18000btu tiene 100% bounce (4 sesiones). Agregar breadcrumbs, productos relacionados, y CTA a /todo-incluido.</td>
+            <td class="cell-yellow text-center">Medio</td>
+            <td class="cell-yellow text-center">Medio</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3>Proyección Abril</h3>
+        <div class="note">
+          Si se mantiene el bounce de la semana actual (44.6%) y se ejecutan P1+P2, el bounce mensual de abril podría converger al rango <strong>40-45%</strong>, situando a Meser en categoría <strong>"Bueno"</strong> y dentro del benchmark industria. Meta realista: <strong>bounce &lt;45% a cierre de abril</strong>.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Generado el <strong>2 de abril de 2026</strong> | Período: 3 Mar — 1 Abr 2026 | Datos: Google Analytics 4<br>
+  Reporte automatizado <strong>NORA</strong> — Diagnóstico Semanal de Analytics v1.0
+</div>
+
+<script>
+function toggleSection(header) {
+  header.classList.toggle('collapsed');
+  const content = header.nextElementSibling;
+  content.classList.toggle('collapsed');
+}
+</script>
+
+</body>
+</html>
