@@ -11,7 +11,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Aire Acondicionado Midea y Samsung con Instalación Santiago · Desde $299.990",
   description:
-    "Compra aire acondicionado Midea EcoMaster, Samsung Wind-Free y Anwo Inverter con instalación en Santiago. Solo equipo desde $299.990 o todo incluido desde $399.990. +150 hogares climatizados.",
+    "Compra aire acondicionado Midea EcoMaster, Samsung Wind-Free y Anwo Inverter con instalación en Santiago. Solo equipo desde $299.990 o todo incluido desde $449.990. +150 hogares climatizados.",
   alternates: { canonical: "/aires-acondicionados" },
 };
 
@@ -85,7 +85,7 @@ export default function AiresAcondicionadosPage() {
             </h1>
             <p className="mt-4 text-lg text-steel-dark leading-relaxed">
               Aire acondicionado Inverter frío/calor con WiFi y eficiencia clase A.
-              Solo equipo desde $299.990 o todo incluido con instalación estética desde $399.990.
+              Solo equipo desde $299.990 o todo incluido con instalación estética desde $449.990.
             </p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-steel-dark">
               <span className="flex items-center gap-1.5">
@@ -297,7 +297,7 @@ export default function AiresAcondicionadosPage() {
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {[
-                  ["Precio (12K BTU con instalación)", "$629.990", "$449.990", "$449.990"],
+                  ["Precio (12K BTU con instalación)", "$729.990", "$479.990", "$479.990"],
                   ["Tecnología destacada", "Wind-Free (sin corriente directa)", "IA EcoMaster (aprende hábitos)", "Refrigerante R32 (ecológico)"],
                   ["Eficiencia energética", "Clase A", "Clase A", "Clase A"],
                   ["Nivel de ruido interior", "~19 dB (ultra silencioso)", "~22 dB (muy silencioso)", "~24 dB (silencioso)"],
@@ -406,7 +406,7 @@ export default function AiresAcondicionadosPage() {
               </h3>
               <div className="mt-2">
                 <span className="text-sm text-steel line-through">$99.990</span>
-                <span className="ml-2 text-xl font-bold text-navy">$59.990</span>
+                <span className="ml-2 text-xl font-bold text-navy">$64.990</span>
               </div>
               <p className="mt-2 text-sm text-steel-dark">
                 Limpieza profunda + revisión técnica + optimización.
@@ -427,17 +427,17 @@ export default function AiresAcondicionadosPage() {
               </h3>
               <div className="mt-2">
                 <span className="text-sm text-steel line-through mr-2">$150.000</span>
-                <span className="text-xl font-bold text-navy">$99.990</span>
+                <span className="text-xl font-bold text-navy">$130.000</span>
               </div>
               <p className="mt-2 text-sm text-steel-dark">
                 Si ya tienes equipo. Incluye montaje, cañerías, puesta en marcha.
               </p>
               <AddPackageButton
                 productId="instalacion-solo-servicio"
-                price={99990}
+                price={130000}
                 className="mt-4 inline-flex text-sm font-semibold text-white bg-cyan rounded-full px-5 py-2 hover:bg-cyan-dark transition-colors cursor-pointer"
               >
-                Comprar instalación $99.990
+                Comprar instalación $130.000
               </AddPackageButton>
             </div>
             <div className="rounded-2xl border border-gray-200 p-6">

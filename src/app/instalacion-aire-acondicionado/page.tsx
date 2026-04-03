@@ -105,7 +105,7 @@ export default function InstalacionPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel">Desde</span>
                 <span className="ml-1 text-xl font-bold text-navy">
-                  $399.990
+                  $449.990
                 </span>
                 <span className="text-sm text-steel-dark ml-1">
                   todo incluido
@@ -280,7 +280,7 @@ export default function InstalacionPage() {
                   <span className="text-steel-dark">
                     Equipo + instalación + garantía
                   </span>
-                  <span className="font-bold text-cyan text-lg">$399.990</span>
+                  <span className="font-bold text-cyan text-lg">$449.990</span>
                 </li>
                 <li className="flex justify-between text-sm">
                   <span className="text-steel-dark">Extras</span>
@@ -318,15 +318,15 @@ export default function InstalacionPage() {
               </p>
               <div className="mt-3">
                 <span className="text-sm text-steel line-through mr-2">$150.000</span>
-                <span className="text-3xl font-bold text-navy">$99.990</span>
+                <span className="text-3xl font-bold text-navy">$130.000</span>
               </div>
             </div>
             <AddPackageButton
               productId="instalacion-solo-servicio"
-              price={99990}
+              price={130000}
               className="shrink-0 inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
             >
-              Comprar instalación $99.990
+              Comprar instalación $130.000
             </AddPackageButton>
           </div>
         </div>
@@ -480,9 +480,9 @@ export default function InstalacionPage() {
             areaServed: { "@type": "State", name: "Región Metropolitana de Santiago" },
             offers: {
               "@type": "Offer",
-              price: "399990",
+              price: "449990",
               priceCurrency: "CLP",
-              description: "Desde $399.990 todo incluido (equipo + instalación + garantía)",
+              description: "Desde $449.990 todo incluido (equipo + instalación + garantía)",
             },
           }),
         }}

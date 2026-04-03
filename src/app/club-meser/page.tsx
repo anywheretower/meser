@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 };
 
 const descuentos = [
-  { referidos: 0, porcentaje: 0, precio: "$59.990" },
-  { referidos: 1, porcentaje: 25, precio: "$44.990" },
-  { referidos: 2, porcentaje: 50, precio: "$29.990" },
-  { referidos: 3, porcentaje: 75, precio: "$14.990" },
+  { referidos: 0, porcentaje: 0, precio: "$64.990" },
+  { referidos: 1, porcentaje: 25, precio: "$48.740" },
+  { referidos: 2, porcentaje: 50, precio: "$32.490" },
+  { referidos: 3, porcentaje: 75, precio: "$16.250" },
   { referidos: 4, porcentaje: 100, precio: "Gratis" },
 ];
 
@@ -97,7 +97,7 @@ export default function ClubMeserPage() {
           </h2>
           <p className="text-sm text-steel-dark mb-8">
             Mantención preventiva: precio base{" "}
-            <span className="font-semibold text-navy">$59.990</span>
+            <span className="font-semibold text-navy">$64.990</span>
           </p>
 
           {/* Desktop table */}
@@ -242,7 +242,7 @@ export default function ClubMeserPage() {
                 />
               </svg>
               <p className="text-sm text-steel-dark">
-                Aplica exclusivamente a mantención preventiva ($59.990).
+                Aplica exclusivamente a mantención preventiva ($64.990).
               </p>
             </div>
             <div className="flex gap-3">

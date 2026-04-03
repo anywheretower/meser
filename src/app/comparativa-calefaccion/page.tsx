@@ -201,7 +201,7 @@ export default function ComparativaCalefaccionPage() {
 
           <p className="mt-4 text-center text-xs text-steel-dark">
             En Meser, el paquete todo incluido (equipo + instalación + garantía) parte en{" "}
-            <Link href="/todo-incluido" className="font-semibold text-cyan hover:text-cyan-dark">$399.990</Link>.
+            <Link href="/todo-incluido" className="font-semibold text-cyan hover:text-cyan-dark">$449.990</Link>.
           </p>
         </div>
       </section>
@@ -287,7 +287,7 @@ export default function ComparativaCalefaccionPage() {
             Empieza a ahorrar desde este invierno
           </h2>
           <p className="mt-4 text-steel-light leading-relaxed">
-            Paquetes todo incluido desde $399.990: equipo Inverter + instalación
+            Paquetes todo incluido desde $449.990: equipo Inverter + instalación
             estética + garantía total. Diagnóstico gratuito por Zoom.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">

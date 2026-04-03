@@ -45,7 +45,7 @@ export default function LasCondesPage() {
         },
         {
           q: "¿Cuánto cuesta instalar un aire acondicionado en Las Condes?",
-          a: "Nuestros paquetes todo incluido parten desde $399.990 (equipo 9K BTU + instalación estética + garantía). Para departamentos más grandes o multi split, el precio varía según la cantidad de ambientes. Te lo detallamos en el diagnóstico gratuito por Zoom.",
+          a: "Nuestros paquetes todo incluido parten desde $449.990 (equipo 9K BTU + instalación estética + garantía). Para departamentos más grandes o multi split, el precio varía según la cantidad de ambientes. Te lo detallamos en el diagnóstico gratuito por Zoom.",
         },
         {
           q: "¿Hacen instalaciones en casas de San Carlos de Apoquindo?",

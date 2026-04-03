@@ -8,10 +8,10 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Todo Incluido desde $399.990",
+  title: "Aire Acondicionado Todo Incluido desde $449.990",
   alternates: { canonical: "/todo-incluido" },
   description:
-    "Aire acondicionado Inverter frío/calor + instalación + garantía desde $399.990. Precio cerrado, cero sorpresas. Ahorra hasta $222.000 vs comprar por separado.",
+    "Aire acondicionado Inverter frío/calor + instalación + garantía desde $449.990. Precio cerrado, cero sorpresas. Ahorra hasta $172.000 vs comprar por separado.",
 };
 
 export default function TodoIncluidoPage() {
@@ -31,7 +31,7 @@ export default function TodoIncluidoPage() {
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Aire acondicionado con instalación incluida desde{" "}
-              <span className="text-cyan">$399.990</span>
+              <span className="text-cyan">$449.990</span>
             </h1>
             <p className="mt-4 text-lg text-cyan font-medium">
               Equipo Inverter frío/calor + instalación estética + garantía
@@ -86,7 +86,7 @@ export default function TodoIncluidoPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel line-through">$549.990</span>
                 <span className="ml-2 text-3xl font-bold text-navy">
-                  $399.990
+                  $449.990
                 </span>
               </div>
               <ul className="mt-6 space-y-2.5">
@@ -110,7 +110,7 @@ export default function TodoIncluidoPage() {
               </p>
               <AddPackageButton
                 productId="midea-ecomaster-9k"
-                price={399990}
+                price={449990}
                 className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
               >
                 Quiero este paquete
@@ -129,7 +129,7 @@ export default function TodoIncluidoPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel line-through">$629.990</span>
                 <span className="ml-2 text-3xl font-bold text-navy">
-                  $449.990
+                  $479.990
                 </span>
               </div>
               <ul className="mt-6 space-y-2.5">
@@ -153,7 +153,7 @@ export default function TodoIncluidoPage() {
               </p>
               <AddPackageButton
                 productId="midea-ecomaster-12k"
-                price={449990}
+                price={479990}
                 className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
               >
                 Quiero este paquete
@@ -169,7 +169,7 @@ export default function TodoIncluidoPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel line-through">$899.990</span>
                 <span className="ml-2 text-3xl font-bold text-navy">
-                  $629.990
+                  $659.990
                 </span>
               </div>
               <ul className="mt-6 space-y-2.5">
@@ -193,7 +193,7 @@ export default function TodoIncluidoPage() {
               </p>
               <AddPackageButton
                 productId="midea-ecomaster-18k"
-                price={629990}
+                price={659990}
                 className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
               >
                 Quiero este paquete
@@ -346,7 +346,7 @@ export default function TodoIncluidoPage() {
                     $530.000 - $622.000
                   </td>
                   <td className="px-6 py-4 text-sm text-center bg-navy/5">
-                    <span className="text-lg text-cyan">$399.990</span>
+                    <span className="text-lg text-cyan">$449.990</span>
                   </td>
                 </tr>
                 <tr className="bg-cyan/5">
@@ -488,7 +488,7 @@ export default function TodoIncluidoPage() {
             areaServed: { "@type": "State", name: "Región Metropolitana de Santiago" },
             offers: {
               "@type": "AggregateOffer",
-              lowPrice: "399990",
+              lowPrice: "449990",
               highPrice: "999990",
               priceCurrency: "CLP",
               offerCount: 3,

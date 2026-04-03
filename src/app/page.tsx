@@ -30,7 +30,7 @@ export default function Home() {
             </div>
 
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.9] animate-fade-in-up stagger-2">
-              Aire acondicionado con instalación desde $399.990
+              Aire acondicionado con instalación desde $449.990
             </h1>
 
             <p className="mt-8 text-lg sm:text-xl text-steel-light leading-relaxed max-w-xl animate-fade-in-up stagger-3">
@@ -109,7 +109,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Todo Incluido</p>
-                <p className="text-xs text-steel-dark mt-0.5">Equipo + instalación desde $399.990</p>
+                <p className="text-xs text-steel-dark mt-0.5">Equipo + instalación desde $449.990</p>
               </div>
             </Link>
           </div>
@@ -142,7 +142,7 @@ export default function Home() {
                 <div className="mt-5">
                   <span className="text-sm text-steel line-through mr-2">$549.990</span>
                   <span className="text-3xl font-bold text-navy tracking-tight">
-                    $399.990
+                    $449.990
                   </span>
                 </div>
                 <ul className="mt-6 space-y-3">
@@ -176,7 +176,7 @@ export default function Home() {
                 </ul>
                 <AddPackageButton
                   productId="midea-ecomaster-9k"
-                  price={399990}
+                  price={449990}
                   className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
                 >
                   Quiero este paquete
@@ -199,7 +199,7 @@ export default function Home() {
                 <div className="mt-5">
                   <span className="text-sm text-steel line-through mr-2">$629.990</span>
                   <span className="text-3xl font-bold text-navy tracking-tight">
-                    $449.990
+                    $479.990
                   </span>
                 </div>
                 <ul className="mt-6 space-y-3">
@@ -233,7 +233,7 @@ export default function Home() {
                 </ul>
                 <AddPackageButton
                   productId="midea-ecomaster-12k"
-                  price={449990}
+                  price={479990}
                   className="mt-8 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow cursor-pointer"
                 >
                   Quiero este paquete

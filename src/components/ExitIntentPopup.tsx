@@ -167,7 +167,7 @@ export default function ExitIntentPopup() {
 
           <div className="mt-4 rounded-xl bg-cyan/5 border border-cyan/20 px-4 py-3">
             <p className="text-sm font-semibold text-navy">
-              Paquetes desde <span className="text-cyan">$399.990</span> todo incluido
+              Paquetes desde <span className="text-cyan">$449.990</span> todo incluido
             </p>
             <p className="text-xs text-steel-dark mt-1">
               Equipo + instalación estética + garantía total

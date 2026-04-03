@@ -170,13 +170,13 @@ export default function CoberturaLayout({
               {
                 title: "Instalación",
                 desc: "Equipo + instalación estética todo incluido",
-                precio: "Desde $399.990",
+                precio: "Desde $449.990",
                 href: "/instalacion-aire-acondicionado",
               },
               {
                 title: "Mantención",
                 desc: "Limpieza profunda + revisión técnica",
-                precio: "Desde $59.990",
+                precio: "Desde $64.990",
                 href: "/mantencion",
               },
               {

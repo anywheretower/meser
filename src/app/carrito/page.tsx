@@ -140,7 +140,7 @@ export default function CarritoPage() {
               <div className="text-xs font-semibold text-cyan uppercase tracking-wide">Más popular</div>
               <div className="mt-2 text-base font-bold text-navy group-hover:text-cyan transition-colors">Paquete Todo Incluido</div>
               <div className="mt-1 text-sm text-steel-dark">Aire + instalación + garantía</div>
-              <div className="mt-3 text-lg font-bold text-navy">Desde $399.990</div>
+              <div className="mt-3 text-lg font-bold text-navy">Desde $449.990</div>
             </Link>
             <Link
               href="/aires-acondicionados"

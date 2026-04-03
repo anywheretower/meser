@@ -6,9 +6,9 @@ import AddPackageButton from "@/components/AddPackageButton";
 
 
 export const metadata: Metadata = {
-  title: "Mantención Aire Acondicionado Santiago · $59.990",
+  title: "Mantención Aire Acondicionado Santiago · $64.990",
   description:
-    "Mantención de aire acondicionado en Santiago desde $59.990. Limpieza profunda, revisión técnica, optimización de rendimiento. Toda la RM.",
+    "Mantención de aire acondicionado en Santiago desde $64.990. Limpieza profunda, revisión técnica, optimización de rendimiento. Toda la RM.",
   alternates: { canonical: "/mantencion" },
 };
 
@@ -27,7 +27,7 @@ export default function MantencionPage() {
             </h1>
             <p className="mt-4 text-lg text-cyan font-medium">
               Limpieza profunda + revisión técnica + optimización de
-              rendimiento. Desde $59.990.
+              rendimiento. Desde $64.990.
             </p>
             <p className="mt-6 text-lg text-steel-light leading-relaxed max-w-2xl">
               Un aire acondicionado sin mantención consume más energía, enfría
@@ -39,10 +39,10 @@ export default function MantencionPage() {
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <AddPackageButton
                 productId="mantencion-ac"
-                price={59990}
+                price={64990}
                 className="inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
               >
-                Comprar mantención $59.990
+                Comprar mantención $64.990
               </AddPackageButton>
               <Link
                 href="#agendar"
@@ -91,7 +91,7 @@ export default function MantencionPage() {
               <div className="mt-3">
                 <span className="text-lg text-steel line-through">$99.990</span>
                 <span className="ml-2 text-4xl font-bold text-navy">
-                  $59.990
+                  $64.990
                 </span>
               </div>
               <ul className="mt-6 space-y-2 text-sm text-steel-dark">
@@ -116,7 +116,7 @@ export default function MantencionPage() {
               </ul>
               <AddPackageButton
                 productId="mantencion-ac"
-                price={59990}
+                price={64990}
                 className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
               >
                 Agregar mantención al carrito
@@ -183,7 +183,7 @@ export default function MantencionPage() {
               },
               {
                 q: "¿Qué pasa si mi equipo necesita gas refrigerante?",
-                a: "Durante la mantención revisamos la presión del gas. Si está bajo, te informamos el costo de la recarga antes de proceder. La recarga no está incluida en el precio base de $59.990.",
+                a: "Durante la mantención revisamos la presión del gas. Si está bajo, te informamos el costo de la recarga antes de proceder. La recarga no está incluida en el precio base de $64.990.",
               },
               {
                 q: "¿Hacen mantención de todas las marcas?",
@@ -228,7 +228,7 @@ export default function MantencionPage() {
             name: "Cómo se realiza la mantención de un aire acondicionado",
             description: "Proceso profesional de mantención de aire acondicionado split en Santiago, Chile.",
             totalTime: "PT1H",
-            estimatedCost: { "@type": "MonetaryAmount", currency: "CLP", value: "59990" },
+            estimatedCost: { "@type": "MonetaryAmount", currency: "CLP", value: "64990" },
             step: [
               { "@type": "HowToStep", position: 1, name: "Desconexión y protección", text: "Se desconecta el equipo y se protege el piso y muebles cercanos." },
               { "@type": "HowToStep", position: 2, name: "Limpieza de filtros internos", text: "Se extraen y lavan los filtros de la unidad interior con agua y jabón neutro." },
@@ -272,7 +272,7 @@ export default function MantencionPage() {
                 name: "¿Qué pasa si mi equipo necesita gas refrigerante?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Durante la mantención revisamos la presión del gas. Si está bajo, te informamos el costo de la recarga antes de proceder. La recarga no está incluida en el precio base de $59.990.",
+                  text: "Durante la mantención revisamos la presión del gas. Si está bajo, te informamos el costo de la recarga antes de proceder. La recarga no está incluida en el precio base de $64.990.",
                 },
               },
               {
@@ -313,9 +313,9 @@ export default function MantencionPage() {
             areaServed: { "@type": "State", name: "Región Metropolitana de Santiago" },
             offers: {
               "@type": "Offer",
-              price: "59990",
+              price: "64990",
               priceCurrency: "CLP",
-              description: "Mantención completa desde $59.990",
+              description: "Mantención completa desde $64.990",
             },
           }),
         }}
