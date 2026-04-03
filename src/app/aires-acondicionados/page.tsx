@@ -442,7 +442,7 @@ export default function AiresAcondicionadosPage() {
             </div>
             <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="text-base font-semibold text-navy">
-                Electricista
+                Circuito Electricista
               </h3>
               <div className="mt-2">
                 <span className="text-xl font-bold text-navy">$49.990</span>
@@ -450,12 +450,13 @@ export default function AiresAcondicionadosPage() {
               <p className="mt-2 text-sm text-steel-dark">
                 Circuito eléctrico dedicado para tu equipo de climatización.
               </p>
-              <Link
-                href="#agendar"
-                className="mt-4 inline-flex text-sm font-medium text-cyan hover:text-cyan-dark transition-colors"
+              <AddPackageButton
+                productId="circuito-electricista"
+                price={49990}
+                className="mt-4 inline-flex text-sm font-semibold text-white bg-cyan rounded-full px-5 py-2 hover:bg-cyan-dark transition-colors cursor-pointer"
               >
-                Consultar &rarr;
-              </Link>
+                Comprar circuito $49.990
+              </AddPackageButton>
             </div>
           </div>
         </div>

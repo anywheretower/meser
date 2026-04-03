@@ -315,6 +315,19 @@ export const servicios: ProductModel[] = [
     specs: ["Montaje interior/exterior", "Cañerías", "Puesta en marcha"],
     coverage: "Toda la RM",
   },
+  {
+    id: "circuito-electricista",
+    name: "Circuito Electricista",
+    category: "servicio",
+    brand: "Meser",
+    line: "Servicios",
+    image: "/images/blog/instalacion-estetica.webp",
+    price: 49990,
+    originalPrice: 49990,
+    todoIncluidoPrice: 49990,
+    specs: ["Circuito eléctrico dedicado", "Automático en tablero", "Cableado normado"],
+    coverage: "Toda la RM",
+  },
 ];
 
 /* ── Helpers ── */
