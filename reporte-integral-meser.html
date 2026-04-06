@@ -161,7 +161,7 @@
     <div class="summary-label">GEO / AI</div>
   </div>
   <div class="summary-card cro">
-    <div class="summary-value" style="color:var(--cat-cro)">34<span style="font-size:14px;color:#94a3b8">/52</span></div>
+    <div class="summary-value" style="color:var(--cat-cro)">42<span style="font-size:14px;color:#94a3b8">/52</span></div>
     <div class="summary-label">CRO</div>
   </div>
   <div class="summary-card perf">
@@ -377,10 +377,10 @@
     <tr><td>C32</td><td>Badge hero /todo-incluido actualizado<div class="detail">Cambiado de jargon Ads a "Precio cerrado — cero sorpresas".</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>C33</td><td>Fechas de urgencia actualizadas<div class="detail">Removidas fechas fijas. Ahora: "por tiempo limitado" y "hasta agotar stock".</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>C34</td><td>3 conversion paths compitiendo<div class="detail">WhatsApp, formulario, agregar al carrito &mdash; todos con peso visual similar. Decisi&oacute;n paral&iacute;tica.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>C35</td><td>AddToCart de 2 clicks (popover innecesario)<div class="detail">Click &rarr; elegir "solo equipo" o "con instalaci&oacute;n". Fricci&oacute;n adicional.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>C36</td><td>Homepage hero sin WhatsApp CTA<div class="detail">69% de conversiones son WhatsApp, pero el hero tiene form + link, no WA.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>C37</td><td>"Quiero este paquete" CTA gen&eacute;rico<div class="detail">No dice precio ni producto. Deber&iacute;a ser "Comprar $449.990".</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>C38</td><td>Timeframe instalaci&oacute;n inconsistente<div class="detail">/aires: "24-48 hrs", homepage/todo-incluido: "3-7 d&iacute;as h&aacute;biles".</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>C35</td><td>AddToCart de 1 click<div class="detail">Click principal = "Con instalaci&oacute;n" (default). Link secundario "Solo equipo". Sin popover.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>C36</td><td>Homepage hero con WhatsApp CTA principal<div class="detail">WA como primer CTA (verde, icono). Asesor&iacute;a y paquetes como secundarios.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>C37</td><td>CTAs paquetes con precio expl&iacute;cito<div class="detail">"Comprar — $449.990" en homepage y /todo-incluido. Precio visible en el bot&oacute;n.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>C38</td><td>Timeframe instalaci&oacute;n unificado<div class="detail">Todo el sitio usa "3-7 d&iacute;as h&aacute;biles". Corregido en /aires.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
 </div>
 
@@ -392,11 +392,11 @@
     <tr><td>C7</td><td>Exit intent popup<div class="detail">Desktop: mouseleave. Mobile: scroll-up r&aacute;pido. Supresi&oacute;n por sesi&oacute;n. WhatsApp como CTA primario.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>C8</td><td>GTM tracking en formulario<div class="detail">trackFormStep por paso y por campo.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>C39</td><td>QuickCapture funcional<div class="detail">API /api/contacto ahora acepta env&iacute;os de "Captura r&aacute;pida" con solo tel&eacute;fono.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>C40</td><td>Formulario sin elemento &lt;form&gt; nativo<div class="detail">No Enter-to-submit, no autofill grouping, no validaci&oacute;n nativa.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>C41</td><td>Sin validaci&oacute;n inline en campos<div class="detail">Bot&oacute;n se deshabilita sin explicar por qu&eacute;. Sin mensajes de error por campo.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>C40</td><td>Formulario con &lt;form&gt; nativo<div class="detail">Wrap en &lt;form&gt; con onSubmit. Enter-to-submit funcional. type="submit"/"button" correctos.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>C41</td><td>Validaci&oacute;n inline en paso 3<div class="detail">Mensajes "Nombre es obligatorio" / "Tel&eacute;fono es obligatorio" con role="alert".</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>C42</td><td>No env&iacute;a email de confirmaci&oacute;n al lead<div class="detail">Solo notifica al negocio. El usuario queda sin feedback por email.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>C43</td><td>Z-index overlap desktop: WhatsApp widget y StickyCTA<div class="detail">Ambos en bottom-6 right-6. StickyCTA (z-50) cubre WhatsApp (z-40).</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>C44</td><td>Popup sin tecla Escape para cerrar<div class="detail">Focus trap existe pero Escape no llama handleDismiss.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>C43</td><td>Z-index overlap resuelto<div class="detail">StickyCTA desktop movido a right-20. SocialSidebar en right-6 sin colisi&oacute;n.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>C44</td><td>Popup cierra con Escape<div class="detail">Resuelto en A21. Escape dispara handleDismiss.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
 </div>
 
@@ -559,13 +559,13 @@
   <div class="footer-grid">
     <div class="footer-item"><div class="footer-num" style="color:var(--nora)">173</div><div class="footer-label">Total medidas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#16a34a">110</div><div class="footer-label">Aplicadas</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#16a34a">118</div><div class="footer-label">Aplicadas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#ea580c">48</div><div class="footer-label">Pendientes</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#ea580c">41</div><div class="footer-label">Pendientes</div></div>
     <div class="footer-divider"></div>
     <div class="footer-item"><div class="footer-num" style="color:#dc2626">13</div><div class="footer-label">Cr&iacute;ticos</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">64%</div><div class="footer-label">Completado</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">68%</div><div class="footer-label">Completado</div></div>
   </div>
   <div class="note note-red" style="margin-top:16px">
     <strong>13 medidas cr&iacute;ticas requieren acci&oacute;n inmediata:</strong> llms.txt precios errados, QuickCapture roto, 3 fechas expiradas, "Quality Score" visible, AggregateRating sin GBP, sin privacidad/RUT, 5 CVEs Next.js, sin rate limiting, sin CSP, GSC sin verificar, homepage sin metadata, keyword cannibalization, SearchAction falso.

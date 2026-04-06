@@ -94,7 +94,7 @@ export default function AiresAcondicionadosPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <svg className="w-4 h-4 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                Instalación en 24-48 hrs
+                Instalación en 3-7 días hábiles
               </span>
               <span className="flex items-center gap-1.5">
                 <svg className="w-4 h-4 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>

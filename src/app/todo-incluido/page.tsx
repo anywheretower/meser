@@ -113,7 +113,7 @@ export default function TodoIncluidoPage() {
                 price={449990}
                 className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
               >
-                Quiero este paquete
+                Comprar — $449.990
               </AddPackageButton>
             </div>
 
@@ -156,7 +156,7 @@ export default function TodoIncluidoPage() {
                 price={479990}
                 className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
               >
-                Quiero este paquete
+                Comprar — $479.990
               </AddPackageButton>
             </div>
 
@@ -196,7 +196,7 @@ export default function TodoIncluidoPage() {
                 price={659990}
                 className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
               >
-                Quiero este paquete
+                Comprar — $659.990
               </AddPackageButton>
             </div>
           </div>

@@ -194,7 +194,15 @@ export default function CotizarForm() {
   }
 
   return (
-    <div className="rounded-2xl bg-white border border-gray-200 overflow-hidden">
+    <form
+      className="rounded-2xl bg-white border border-gray-200 overflow-hidden"
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (step === TOTAL_STEPS) handleSubmit();
+        else handleNext();
+      }}
+      noValidate
+    >
       {/* Progress bar */}
       <div className="px-8 pt-8">
         <div className="flex items-center justify-between mb-2">
@@ -450,10 +458,19 @@ export default function CotizarForm() {
           </div>
         )}
 
+        {/* Validation hint */}
+        {!canAdvance() && step === TOTAL_STEPS && (formData.nombre.trim() === "" || formData.telefono.trim() === "") && (
+          <p className="mt-4 text-xs text-red-500" role="alert">
+            {formData.nombre.trim() === "" ? "Nombre es obligatorio. " : ""}
+            {formData.telefono.trim() === "" ? "Teléfono es obligatorio." : ""}
+          </p>
+        )}
+
         {/* Navigation */}
         <div className="mt-8 flex items-center justify-between">
           {step > 1 ? (
             <button
+              type="button"
               onClick={handleBack}
               disabled={sending}
               className="flex items-center gap-1 text-sm font-medium text-steel-dark hover:text-navy transition-colors disabled:opacity-40"
@@ -469,7 +486,7 @@ export default function CotizarForm() {
 
           {step === TOTAL_STEPS ? (
             <button
-              onClick={handleSubmit}
+              type="submit"
               disabled={!canAdvance() || sending}
               className="rounded-full bg-cyan px-8 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
@@ -477,7 +494,7 @@ export default function CotizarForm() {
             </button>
           ) : (
             <button
-              onClick={handleNext}
+              type="submit"
               disabled={!canAdvance()}
               className="rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
@@ -486,6 +503,6 @@ export default function CotizarForm() {
           )}
         </div>
       </div>
-    </div>
+    </form>
   );
 }
