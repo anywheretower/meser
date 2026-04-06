@@ -153,11 +153,11 @@
 <!-- Summary Cards -->
 <div class="summary-row">
   <div class="summary-card seo">
-    <div class="summary-value" style="color:var(--cat-seo)">41<span style="font-size:14px;color:#94a3b8">/60</span></div>
+    <div class="summary-value" style="color:var(--cat-seo)">55<span style="font-size:14px;color:#94a3b8">/60</span></div>
     <div class="summary-label">SEO</div>
   </div>
   <div class="summary-card geo">
-    <div class="summary-value" style="color:var(--cat-geo)">21<span style="font-size:14px;color:#94a3b8">/30</span></div>
+    <div class="summary-value" style="color:var(--cat-geo)">24<span style="font-size:14px;color:#94a3b8">/30</span></div>
     <div class="summary-label">GEO / AI</div>
   </div>
   <div class="summary-card cro">
@@ -205,8 +205,8 @@
 
 <!-- TABS -->
 <div class="cat-tabs">
-  <div class="cat-tab active" onclick="switchCat('seo')">SEO (38/60)</div>
-  <div class="cat-tab" onclick="switchCat('geo')">GEO / AI (18/30)</div>
+  <div class="cat-tab active" onclick="switchCat('seo')">SEO (55/60)</div>
+  <div class="cat-tab" onclick="switchCat('geo')">GEO / AI (24/30)</div>
   <div class="cat-tab" onclick="switchCat('cro')">CRO (31/52)</div>
   <div class="cat-tab" onclick="switchCat('perf')">Rendimiento (20/35)</div>
   <div class="cat-tab" onclick="switchCat('a11y')">Accesibilidad (17/32)</div>
@@ -227,12 +227,12 @@
     <tr><td>S6</td><td>Declaraci&oacute;n de idioma<div class="detail">lang="es-CL" en HTML, og:locale es_CL.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S7</td><td>Google Site Verification<div class="detail">Meta tag de verificaci&oacute;n presente en head.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S8</td><td>Security headers b&aacute;sicos<div class="detail">X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>S39</td><td>/aires y /servicios devuelven 404 &mdash; sin redirects<div class="detail">URLs cortas /aires y /servicios no existen. Sin async redirects() en next.config.ts. Links externos y Ads pueden apuntar aqu&iacute;.</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
-    <tr><td>S40</td><td>/comparativa-calefaccion falta del sitemap<div class="detail">P&aacute;gina standalone existe con canonical pero no est&aacute; en sitemap.ts.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>S41</td><td>Sitemap lastmod desactualizado<div class="detail">Fechas hardcoded en marzo 27. Sitio actualizado abril 3 (precios V4, electricista). Blog index dice marzo 15.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>S42</td><td>No existe p&aacute;gina not-found.tsx personalizada<div class="detail">404 muestra layout completo + dual title tags + canonical de homepage.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S39</td><td>Redirects /aires&rarr;/aires-acondicionados, /servicios&rarr;/climatizacion-integral en next.config.ts<div class="detail">async redirects() configurado con 301 permanentes para URLs cortas.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
+    <tr><td>S40</td><td>/comparativa-calefaccion agregada al sitemap<div class="detail">URL incluida en sitemap.ts con lastmod actualizado.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
+    <tr><td>S41</td><td>Sitemap lastmod actualizado a abril 2026<div class="detail">Todas las fechas lastmod reflejan &uacute;ltima actualizaci&oacute;n real.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
+    <tr><td>S42</td><td>not-found.tsx personalizada con CTAs (resuelto en R32)<div class="detail">P&aacute;gina 404 custom con CTAs hacia servicios principales.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>S43</td><td>Cadena de redirecci&oacute;n 2 saltos en http://meser.cl<div class="detail">http://meser.cl &rarr; 308 https://meser.cl &rarr; 301 https://www.meser.cl. Debiera ser 1 salto.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>S44</td><td>URLs legacy WooCommerce en GSC<div class="detail">/producto/*, /product-tag/*, /quienes-somos/, /tienda/ aparecen indexadas con impresiones. Necesitan 301.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S44</td><td>Redirects 301 para /producto/*, /tienda/, /quienes-somos/ en next.config.ts<div class="detail">URLs legacy WooCommerce redirigen con 301 permanente a p&aacute;ginas equivalentes.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
   </table>
 </div>
 
@@ -240,8 +240,8 @@
   <div class="section-title"><span class="section-icon icon-seo">S</span> On-Page SEO</div>
   <table>
     <tr><th style="width:40px">#</th><th>Medida</th><th style="width:100px">Estado</th></tr>
-    <tr><td>S9</td><td>T&iacute;tulos &uacute;nicos por p&aacute;gina<div class="detail">T&iacute;tulos &uacute;nicos definidos. PERO: /aires 79 chars, /termos 84 chars (ambos exceden 60).</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>S10</td><td>Meta descriptions &uacute;nicas<div class="detail">Descriptions definidas. PERO: /termos 197 chars, /aires 190 chars (exceden 160).</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S9</td><td>T&iacute;tulos optimizados &le;60 chars en /aires y /termos<div class="detail">T&iacute;tulos &uacute;nicos y dentro del l&iacute;mite recomendado de 60 caracteres.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
+    <tr><td>S10</td><td>Descriptions &le;155 chars en /aires y /termos<div class="detail">Meta descriptions &uacute;nicas y dentro del l&iacute;mite recomendado.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>S11</td><td>Open Graph completo<div class="detail">OG b&aacute;sico presente. Falta og:url en p&aacute;ginas no-blog. Misma og:image en todo el sitio.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
     <tr><td>S12</td><td>Jerarqu&iacute;a H1&rarr;H2&rarr;H3<div class="detail">Un solo H1 por p&aacute;gina, jerarqu&iacute;a verificada. Correcta.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S13</td><td>HTML sem&aacute;ntico<div class="detail">header, main, nav, footer correctos. Falta article en product cards, aside en blog, caption en tables.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
@@ -249,7 +249,7 @@
     <tr><td>S15</td><td>Contenido en cobertura y soluciones<div class="detail">10 p&aacute;ginas con contenido &uacute;nico. Cobertura ~350 palabras (thin content risk). Falta hub /cobertura.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S16</td><td>Blog 8 art&iacute;culos publicados<div class="detail">Buenos art&iacute;culos 1000-1400 palabras. PERO: todos publicados el mismo d&iacute;a, sin dateModified, sin citas externas, filtros de categor&iacute;a no funcionales.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S45</td><td>Keyword cannibalization en 5 p&aacute;ginas<div class="detail">Homepage, /aires, /todo-incluido, /instalacion, /climatizacion-integral compiten por "aire acondicionado instalaci&oacute;n santiago".</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
-    <tr><td>S46</td><td>Precio inconsistente H1 vs title en /termos<div class="detail">H1 dice $149.990 (50L), title dice $179.990 (80L). Confuso para usuarios y crawlers.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S46</td><td>Precio consistente $149.990 en title y H1<div class="detail">Precio alineado entre title tag y H1 en /termos.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>S47</td><td>Anwo omitido sistem&aacute;ticamente<div class="detail">TrustBar, homepage hero, /todo-incluido FAQ, /nosotros ("2 marcas" deber&iacute;a ser 3) &mdash; Anwo falta en m&uacute;ltiples lugares.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
   </table>
 </div>
@@ -265,12 +265,12 @@
     <tr><td>S22</td><td>Schema Product en /aires<div class="detail">ItemList con 12 productos, AggregateOffer, precios verificados. Falta SKU/GTIN, url individual.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S23</td><td>Schema FAQPage<div class="detail">Presente en homepage, /todo-incluido, /termos, /mantencion. Falta en /aires-acondicionados.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S24</td><td>Schema BlogPosting<div class="detail">Presente con speakable. dateModified siempre = datePublished.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>S48</td><td>Termos SIN Product schema<div class="detail">4 productos (50L-120L) sin datos estructurados. /aires tiene ItemList+Product pero /termos solo FAQPage.</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
-    <tr><td>S49</td><td>areaServed usa @type "State" (incorrecto)<div class="detail">En Organization, HVACBusiness y Service. Deber&iacute;a ser array de City con las 5 comunas espec&iacute;ficas.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>S50</td><td>Service.offers.highPrice incorrecto<div class="detail">/todo-incluido muestra $999,990 pero el paquete m&aacute;s caro visible es $659,990.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S48</td><td>Product schema ItemList con 4 productos en /termos<div class="detail">ItemList + Product schema para los 4 modelos (50L-120L).</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
+    <tr><td>S49</td><td>areaServed array de 5 City (Las Condes, Vitacura, Providencia, &Ntilde;u&ntilde;oa, Lo Barnechea)<div class="detail">Schema corregido con @type City para cada comuna servida.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
+    <tr><td>S50</td><td>highPrice corregido a $979.990 (Samsung 24K TI)<div class="detail">Service.offers.highPrice refleja el paquete m&aacute;s caro real.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>S51</td><td>Productos sin SKU/GTIN en schema<div class="detail">Necesarios para Google Merchant Center y Shopping results.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
     <tr><td>S52</td><td>Cobertura sin LocalBusiness schema<div class="detail">5 p&aacute;ginas de cobertura solo tienen FAQPage, no Service/LocalBusiness espec&iacute;fico.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>S53</td><td>Sin @id en ning&uacute;n bloque schema<div class="detail">Impide linking de entidades entre p&aacute;ginas.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S53</td><td>@id en Organization, HVACBusiness y WebSite schema<div class="detail">Entity linking habilitado entre p&aacute;ginas via @id.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
   </table>
 </div>
 
@@ -293,9 +293,9 @@
     <tr><td>S32</td><td>Alt text descriptivo<div class="detail">100% im&aacute;genes con alt. Termos podr&iacute;a incluir "80 litros" en alt.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S33</td><td>Formato WebP en todo el sitio<div class="detail">Todos los assets servidos en WebP. 100% next/image, 0 img raw.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S34</td><td>Im&aacute;genes optimizadas<div class="detail">Productos &lt;50KB, heros &lt;80KB. Lazy loading correcto.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>S54</td><td>16 archivos legacy PNG/JPG sin usar (6.7 MB)<div class="detail">hero-home.png, por-que-meser-bg.png, 4 Anwo JPG, 4 Midea/Samsung JPG, 4 termos PNG desplegados pero no referenciados.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S54</td><td>12 archivos legacy eliminados (2.8 MB)<div class="detail">Archivos PNG/JPG no referenciados removidos del repositorio.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>S55</td><td>AVIF habilitado en next.config<div class="detail">images.formats: ["image/avif", "image/webp"]. AVIF priorizado sobre WebP.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>S56</td><td>Merchant feed incluye servicios<div class="detail">merchant-feed.xml env&iacute;a mantenci&oacute;n, instalaci&oacute;n y electricista. Solo productos f&iacute;sicos deben ir.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S56</td><td>Merchant feed filtra servicios, solo productos f&iacute;sicos<div class="detail">merchant-feed.xml excluye mantenci&oacute;n, instalaci&oacute;n y electricista.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
   </table>
 </div>
 
@@ -340,8 +340,8 @@
     <tr><td>G9</td><td>Tablas de datos en blog<div class="detail">Precios, BTU, consumo, comparativas en formato tabla.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>G22</td><td>P&aacute;ginas comerciales sin "p&aacute;rrafo respuesta"<div class="detail">/aires, /todo-incluido, /termos no tienen tip-box ni statement definitivo al inicio. Solo blog lo tiene.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
     <tr><td>G23</td><td>FAQPage schema solo en homepage<div class="detail">/aires-acondicionados (p&aacute;gina clave) no tiene FAQ ni FAQPage schema.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>G24</td><td>No inLanguage en BlogPosting y WebSite schema<div class="detail">Falta "es-CL" para que AI sirva idioma correcto.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>G25</td><td>Product cards usan div, no article<div class="detail">Reduce extractabilidad por AI engines.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>G24</td><td>inLanguage "es-CL" en WebSite schema<div class="detail">Propiedad inLanguage agregada para que AI sirva idioma correcto.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
+    <tr><td>G25</td><td>Product cards usan article en /aires y /termos<div class="detail">Sem&aacute;ntica mejorada para extractabilidad por AI engines.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>G26</td><td>No HowTo schema en blog procedural<div class="detail">"Cu&aacute;nto cuesta instalar" y "mantenci&oacute;n" deber&iacute;an tener HowTo schema.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
   </table>
 </div>
@@ -357,7 +357,7 @@
     <tr><td>G27</td><td>Meser NO aparece en resultados AI para queries objetivo<div class="detail">site:meser.cl muestra solo 4 resultados. No ranking para "aire acondicionado instalaci&oacute;n santiago" ni "cu&aacute;nto cuesta instalar AC chile".</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
     <tr><td>G28</td><td>Blog posts sin citas externas<div class="detail">0 fuentes externas en 8 art&iacute;culos. AI prefiere contenido que atribuye claims.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
     <tr><td>G29</td><td>Content gaps para AI: calculadora BTU, consumo el&eacute;ctrico, troubleshooting<div class="detail">15 piezas de contenido priorizadas en roadmap GEO. Top: calculadora BTU, precios page, FAQ hub.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>G30</td><td>Crear tabla comparativa HTML en /aires y /termos<div class="detail">AI extrae tablas HTML. La tabla de comparaci&oacute;n existe en llms.txt pero no como HTML visible en las p&aacute;ginas.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>G30</td><td>Tabla comparativa termos (5 filas &times; 4 modelos) agregada. /aires ya ten&iacute;a tabla.<div class="detail">Tabla HTML visible para extracci&oacute;n por AI engines.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
   </table>
 </div>
 </div>
@@ -559,16 +559,16 @@
   <div class="footer-grid">
     <div class="footer-item"><div class="footer-num" style="color:var(--nora)">173</div><div class="footer-label">Total medidas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#16a34a">119</div><div class="footer-label">Aplicadas</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#16a34a">135</div><div class="footer-label">Aplicadas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#ea580c">40</div><div class="footer-label">Pendientes</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#ea580c">24</div><div class="footer-label">Pendientes</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#dc2626">13</div><div class="footer-label">Cr&iacute;ticos</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#dc2626">11</div><div class="footer-label">Cr&iacute;ticos</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">69%</div><div class="footer-label">Completado</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">78%</div><div class="footer-label">Completado</div></div>
   </div>
   <div class="note note-red" style="margin-top:16px">
-    <strong>13 medidas cr&iacute;ticas requieren acci&oacute;n inmediata:</strong> llms.txt precios errados, QuickCapture roto, 3 fechas expiradas, "Quality Score" visible, AggregateRating sin GBP, sin privacidad/RUT, 5 CVEs Next.js, sin rate limiting, sin CSP, GSC sin verificar, homepage sin metadata, keyword cannibalization, SearchAction falso.
+    <strong>11 medidas cr&iacute;ticas requieren acci&oacute;n inmediata:</strong> llms.txt precios errados, QuickCapture roto, 3 fechas expiradas, "Quality Score" visible, AggregateRating sin GBP, sin privacidad/RUT, 5 CVEs Next.js, sin rate limiting, sin CSP, GSC sin verificar, SearchAction falso.
   </div>
 </div>
 

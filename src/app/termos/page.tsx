@@ -8,15 +8,53 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Termo Eléctrico 80 Litros Precio · Desde $179.990 con Instalación Santiago",
+  title: "Termo Eléctrico Midea Lume — Desde $149.990 en Santiago",
   description:
-    "Termo eléctrico 80 litros Midea Lume desde $179.990. Con instalación todo incluido desde $279.990 en Santiago. También 50, 100 y 120 litros. El más vendido: 80L ideal para 2-3 personas. Agua caliente sin gas.",
+    "Termo eléctrico Midea Lume 50 a 120 litros desde $149.990. El 80L más vendido: $179.990, con instalación $279.990. Agua caliente sin gas en Santiago.",
   alternates: { canonical: "/termos" },
 };
+
+function TermosSchemaScript() {
+  const products = termosGroup.models.map((p) => ({
+    "@type": "Product",
+    name: p.name,
+    brand: { "@type": "Brand", name: p.brand },
+    description: `${p.name} - ${p.specs.join(", ")}. Agua caliente sin gas.`,
+    image: p.image ? `https://www.meser.cl${p.image}` : undefined,
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: p.price,
+      highPrice: p.todoIncluidoPrice,
+      priceCurrency: "CLP",
+      offerCount: 2,
+      availability: "https://schema.org/InStock",
+    },
+  }));
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Termos Eléctricos Midea Lume",
+    numberOfItems: products.length,
+    itemListElement: products.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: p,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
 
 export default function TermosPage() {
   return (
     <>
+      <TermosSchemaScript />
       <Breadcrumbs items={[{ label: "Termos Eléctricos" }]} />
       {/* Hero */}
       <section className="py-16 sm:py-20 bg-white">
@@ -92,7 +130,7 @@ export default function TermosPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {termosGroup.models.map((producto, idx) => (
-              <div
+              <article
                 key={producto.id}
                 className={`relative rounded-2xl border p-6 flex flex-col transition-all bg-white ${
                   producto.popular
@@ -189,7 +227,7 @@ export default function TermosPage() {
                     Consulta por este equipo
                   </WhatsAppLink>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -226,6 +264,44 @@ export default function TermosPage() {
                 horario contigo.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tabla comparativa */}
+      <section className="py-16 bg-gray-50">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy text-center mb-8">
+            Comparativa termos eléctricos Midea Lume
+          </h2>
+          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="w-full text-sm">
+              <thead>
+                <tr>
+                  <th className="bg-navy px-4 py-3 text-left text-xs font-semibold text-white">Modelo</th>
+                  <th className="bg-navy px-4 py-3 text-center text-xs font-semibold text-white">50L</th>
+                  <th className="bg-navy px-4 py-3 text-center text-xs font-semibold text-white">80L</th>
+                  <th className="bg-navy px-4 py-3 text-center text-xs font-semibold text-white">100L</th>
+                  <th className="bg-navy px-4 py-3 text-center text-xs font-semibold text-white">120L</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  ["Personas", "1–2", "2–3", "3–4", "4–5"],
+                  ["Precio solo equipo", "$149.990", "$179.990", "$219.990", "$249.990"],
+                  ["Precio con instalación", "$249.990", "$279.990", "$319.990", "$349.990"],
+                  ["Consumo mensual aprox.", "$6.000–$10.000", "$8.000–$15.000", "$10.000–$18.000", "$12.000–$20.000"],
+                  ["Tiempo calentamiento", "~1 hora", "~1,5 horas", "~2 horas", "~2,5 horas"],
+                ].map(([label, ...vals], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
+                    <td className="px-4 py-3 font-medium text-navy">{label}</td>
+                    {vals.map((v, j) => (
+                      <td key={j} className="px-4 py-3 text-center text-navy/80">{v}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

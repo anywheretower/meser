@@ -9,9 +9,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Midea y Samsung con Instalación Santiago · Desde $299.990",
+  title: "Aire Acondicionado con Instalación Santiago — Desde $299.990",
   description:
-    "Compra aire acondicionado Midea EcoMaster, Samsung Wind-Free y Anwo Inverter con instalación en Santiago. Solo equipo desde $299.990 o todo incluido desde $449.990. +150 hogares climatizados.",
+    "Aire acondicionado Midea, Samsung Wind-Free y Anwo Inverter con instalación en Santiago. Desde $299.990 o todo incluido desde $449.990. +150 hogares.",
   alternates: { canonical: "/aires-acondicionados" },
 };
 
@@ -150,7 +150,7 @@ export default function AiresAcondicionadosPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {grupo.models.map((producto, modelIdx) => (
-                <div
+                <article
                   key={producto.id}
                   className={`relative rounded-2xl border p-6 flex flex-col ${
                     producto.popular
@@ -269,7 +269,7 @@ export default function AiresAcondicionadosPage() {
                       Consulta por este equipo
                     </WhatsAppLink>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>

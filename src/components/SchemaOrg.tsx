@@ -1,7 +1,16 @@
+const AREA_SERVED = [
+  { "@type": "City", name: "Las Condes" },
+  { "@type": "City", name: "Vitacura" },
+  { "@type": "City", name: "Providencia" },
+  { "@type": "City", name: "Ñuñoa" },
+  { "@type": "City", name: "Lo Barnechea" },
+];
+
 export default function SchemaOrg() {
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://www.meser.cl/#organization",
     name: "Meser",
     url: "https://www.meser.cl",
     logo: "https://www.meser.cl/images/og-image.png",
@@ -29,10 +38,7 @@ export default function SchemaOrg() {
       "multi split",
       "bomba de calor",
     ],
-    areaServed: {
-      "@type": "State",
-      name: "Región Metropolitana de Santiago",
-    },
+    areaServed: AREA_SERVED,
     sameAs: [
       "https://www.facebook.com/profile.php?id=61575725826039",
       "https://instagram.com/meser_spa",
@@ -42,6 +48,7 @@ export default function SchemaOrg() {
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": "HVACBusiness",
+    "@id": "https://www.meser.cl/#localbusiness",
     name: "Meser - Climatización Integral",
     url: "https://www.meser.cl",
     telephone: "+56982351110",
@@ -59,10 +66,7 @@ export default function SchemaOrg() {
       latitude: -33.4103,
       longitude: -70.5876,
     },
-    areaServed: {
-      "@type": "State",
-      name: "Región Metropolitana de Santiago",
-    },
+    areaServed: AREA_SERVED,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
@@ -113,8 +117,10 @@ export default function SchemaOrg() {
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://www.meser.cl/#website",
     name: "Meser",
     url: "https://www.meser.cl",
+    inLanguage: "es-CL",
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", ".prose-meser p:first-of-type", ".tip-box"],

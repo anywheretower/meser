@@ -4,6 +4,20 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      // S39: URLs cortas
+      { source: "/aires", destination: "/aires-acondicionados", permanent: true },
+      { source: "/servicios", destination: "/climatizacion-integral", permanent: true },
+      // S44: Legacy WooCommerce URLs
+      { source: "/producto/:slug*", destination: "/aires-acondicionados", permanent: true },
+      { source: "/product-tag/:slug*", destination: "/aires-acondicionados", permanent: true },
+      { source: "/tienda", destination: "/aires-acondicionados", permanent: true },
+      { source: "/tienda/:slug*", destination: "/aires-acondicionados", permanent: true },
+      { source: "/quienes-somos", destination: "/nosotros", permanent: true },
+      { source: "/quienes-somos/", destination: "/nosotros", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

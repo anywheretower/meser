@@ -5,8 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.meser.cl";
 
   // Fechas reales de última modificación significativa
-  const lastUpdate = new Date("2026-03-27");
-  const contentUpdate = new Date("2026-03-24");
+  const lastUpdate = new Date("2026-04-06");
+  const contentUpdate = new Date("2026-04-03");
   const initialLaunch = new Date("2026-03-15");
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -119,5 +119,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...solucionPages, ...coberturaPages, ...blogPages];
+  const extraPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/comparativa-calefaccion`,
+      lastModified: contentUpdate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
+
+  return [...staticPages, ...extraPages, ...solucionPages, ...coberturaPages, ...blogPages];
 }
