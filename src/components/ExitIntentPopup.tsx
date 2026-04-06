@@ -26,15 +26,22 @@ export default function ExitIntentPopup() {
 
   useEffect(() => {
     if (!show) return;
-    document.addEventListener("keydown", trapFocus);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleDismiss();
+        return;
+      }
+      trapFocus(e);
+    };
+    document.addEventListener("keydown", handleKeyDown);
     const timer = setTimeout(() => {
       dialogRef.current?.querySelector<HTMLElement>("a, button")?.focus();
     }, 100);
     return () => {
-      document.removeEventListener("keydown", trapFocus);
+      document.removeEventListener("keydown", handleKeyDown);
       clearTimeout(timer);
     };
-  }, [show, trapFocus]);
+  }, [show, trapFocus]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     // Don't show if already dismissed this session

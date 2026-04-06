@@ -51,7 +51,7 @@ export default function Home() {
                 href="#agendar"
                 className="group inline-flex items-center justify-center rounded-full bg-cyan px-5 py-2.5 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow"
               >
-                <svg className="mr-1.5 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="mr-1.5 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 Agenda tu asesoría gratuita
@@ -60,7 +60,7 @@ export default function Home() {
                 href="/todo-incluido"
                 className="group inline-flex items-center justify-center rounded-full border border-white/30 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white hover:text-navy transition-all"
               >
-                <svg className="mr-1.5 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="mr-1.5 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
                 Ver paquetes todo incluido
@@ -81,7 +81,7 @@ export default function Home() {
               className="group flex items-center gap-4 rounded-2xl border border-gray-200 p-5 hover:border-cyan hover:shadow-lg transition-all"
             >
               <div className="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center shrink-0">
-                <svg className="w-6 h-6 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <svg className="w-6 h-6 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h14.25c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125H4.875A1.125 1.125 0 013.75 9.375v-4.5z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 13.5v6m-3-3h6" />
                 </svg>
@@ -96,7 +96,7 @@ export default function Home() {
               className="group flex items-center gap-4 rounded-2xl border border-gray-200 p-5 hover:border-cyan hover:shadow-lg transition-all"
             >
               <div className="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center shrink-0">
-                <svg className="w-6 h-6 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <svg className="w-6 h-6 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
                 </svg>
               </div>
@@ -110,7 +110,7 @@ export default function Home() {
               className="group flex items-center gap-4 rounded-2xl border-2 border-cyan p-5 hover:shadow-lg transition-all bg-cyan/5"
             >
               <div className="w-12 h-12 rounded-xl bg-cyan flex items-center justify-center shrink-0">
-                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
               </div>
@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* ── Paquetes destacados ── */}
-      <section className="py-24 bg-white" data-track-section="packages">
+      <section className="py-24 bg-white cv-auto" data-track-section="packages">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <RevealOnScroll className="text-center">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy">
@@ -279,6 +279,7 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         strokeWidth={2.5}
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -312,7 +313,7 @@ export default function Home() {
       </section>
 
       {/* ── Por qué Meser ── */}
-      <section className="relative pt-16 lg:pt-20 pb-80 lg:pb-[30rem] bg-navy overflow-hidden">
+      <section className="relative pt-16 lg:pt-20 pb-80 lg:pb-[30rem] bg-navy overflow-hidden cv-auto">
         {/* Background image */}
         <Image
           src="/images/por-que-meser-bg.webp"
@@ -382,6 +383,7 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     strokeWidth={1.5}
+                    aria-hidden="true"
                   >
                     {item.icon}
                   </svg>
@@ -399,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* ── Proceso en 3 pasos ── */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white cv-auto">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center">
@@ -455,7 +457,7 @@ export default function Home() {
       </section>
 
       {/* ── Equipos / Marcas ── */}
-      <section className="py-24 bg-gray-50 dot-grid-dark">
+      <section className="py-24 bg-gray-50 dot-grid-dark cv-auto">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <RevealOnScroll className="text-center">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy">
@@ -525,7 +527,7 @@ export default function Home() {
       </section>
 
       {/* ── Preguntas frecuentes ── */}
-      <section className="py-24 bg-gray-50" data-track-section="faq">
+      <section className="py-24 bg-gray-50 cv-auto" data-track-section="faq">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center">
@@ -633,7 +635,7 @@ export default function Home() {
       />
 
       {/* ── Testimonios ── */}
-      <section className="py-24 bg-white" data-track-section="testimonials">
+      <section className="py-24 bg-white cv-auto" data-track-section="testimonials">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy text-center">
@@ -674,6 +676,7 @@ export default function Home() {
                       className="w-3.5 h-3.5 text-cyan"
                       fill="currentColor"
                       viewBox="0 0 20 20"
+                      aria-hidden="true"
                     >
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>

@@ -1,7 +1,14 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { rateLimit, csrfCheck, escapeHtml } from "@/lib/api-security";
 
 export async function POST(request: Request) {
+  const rlResponse = rateLimit(request);
+  if (rlResponse) return rlResponse;
+
+  const csrfResponse = csrfCheck(request);
+  if (csrfResponse) return csrfResponse;
+
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const data = await request.json();
@@ -29,14 +36,14 @@ export async function POST(request: Request) {
     };
 
     const rows = [
-      { label: "Nombre", value: nombre },
-      { label: "Teléfono", value: telefono },
-      { label: "Email", value: email || "No proporcionado" },
-      { label: "Tipo de espacio", value: tipoLabels[tipoEspacio] || tipoEspacio },
-      { label: "Ambientes", value: ambientes === "4+" ? "4 o más" : ambientes },
-      { label: "Comuna", value: comuna },
-      { label: "Necesidad", value: necesidadLabels[necesidad] || necesidad },
-      { label: "Comentario", value: comentario || "—" },
+      { label: "Nombre", value: escapeHtml(nombre || "") },
+      { label: "Teléfono", value: escapeHtml(telefono || "") },
+      { label: "Email", value: escapeHtml(email || "No proporcionado") },
+      { label: "Tipo de espacio", value: escapeHtml(tipoLabels[tipoEspacio] || tipoEspacio || "") },
+      { label: "Ambientes", value: escapeHtml(ambientes === "4+" ? "4 o más" : (ambientes || "")) },
+      { label: "Comuna", value: escapeHtml(comuna || "") },
+      { label: "Necesidad", value: escapeHtml(necesidadLabels[necesidad] || necesidad || "") },
+      { label: "Comentario", value: escapeHtml(comentario || "—") },
     ];
 
     const tableRows = rows
@@ -70,7 +77,7 @@ export async function POST(request: Request) {
       from: "Meser Web <contacto@meser.cl>",
       to: ["contacto@meser.cl", "comercialmeser@gmail.com"],
       replyTo: email || undefined,
-      subject: `Nueva cotización — ${nombre} · ${tipoLabels[tipoEspacio] || tipoEspacio} · ${comuna}`,
+      subject: `Nueva cotización — ${escapeHtml(nombre || "")} · ${escapeHtml(tipoLabels[tipoEspacio] || tipoEspacio || "")} · ${escapeHtml(comuna || "")}`,
       html,
     });
 

@@ -8,6 +8,7 @@ import {
 } from "transbank-sdk";
 import { getProductById } from "@/lib/products";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
+import { rateLimit, csrfCheck } from "@/lib/api-security";
 
 function getTx() {
   const isProduction = process.env.TRANSBANK_ENVIRONMENT === "production";
@@ -28,6 +29,12 @@ function getTx() {
 }
 
 export async function POST(request: Request) {
+  const rlResponse = rateLimit(request);
+  if (rlResponse) return rlResponse;
+
+  const csrfResponse = csrfCheck(request);
+  if (csrfResponse) return csrfResponse;
+
   try {
     const { items, billing } = await request.json();
 

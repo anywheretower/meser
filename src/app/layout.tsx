@@ -6,8 +6,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioGlobal from "@/components/FormularioGlobal";
-import StickyCTA from "@/components/StickyCTA";
-import RouteChangeTracker from "@/components/RouteChangeTracker";
+const StickyCTA = dynamic(() => import("@/components/StickyCTA"));
+const RouteChangeTracker = dynamic(() => import("@/components/RouteChangeTracker"));
 import { CartProvider } from "@/lib/cart-context";
 import { GTM_ID } from "@/lib/gtm";
 import SchemaOrg from "@/components/SchemaOrg";
@@ -60,7 +60,6 @@ export default function RootLayout({
     <html lang="es-CL">
       <head>
         <SchemaOrg />
-        <link rel="preload" as="image" href="/images/hero-home.webp" type="image/webp" fetchPriority="high" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="dns-prefetch" href="https://api.whatsapp.com" />
@@ -80,7 +79,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${GTM_ID}');
 ['scroll','click','touchstart','keydown'].forEach(function(e){document.removeEventListener(e,loadGTM,{passive:true});});
 };['scroll','click','touchstart','keydown'].forEach(function(e){document.addEventListener(e,loadGTM,{once:true,passive:true});});
-setTimeout(loadGTM,5000);})();`,
+setTimeout(loadGTM,8000);})();`,
         }}
       />
       <body

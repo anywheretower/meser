@@ -96,6 +96,7 @@ summary:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-subtle-pulse { animation: none; }
+  .animate-ping { animation: none !important; }
 }
 
 @keyframes slide-in-right {
@@ -137,8 +138,18 @@ summary:focus-visible {
 /* ── Reveal on Scroll (CSS-only) ── */
 
 .reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(24px);
+  opacity: 1;
+  transform: none;
+}
+
+@media (scripting: enabled) {
+  .reveal-on-scroll:not(.reveal-visible) {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+.reveal-on-scroll {
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -177,6 +188,13 @@ summary:focus-visible {
 .stagger-4 { animation-delay: 360ms; }
 .stagger-5 { animation-delay: 480ms; }
 .stagger-6 { animation-delay: 600ms; }
+
+/* ── Content Visibility for below-fold sections ── */
+
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
 
 /* ── Glow Effects ── */
 

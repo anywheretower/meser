@@ -165,11 +165,11 @@
     <div class="summary-label">CRO</div>
   </div>
   <div class="summary-card perf">
-    <div class="summary-value" style="color:var(--cat-perf)">21<span style="font-size:14px;color:#94a3b8">/35</span></div>
+    <div class="summary-value" style="color:var(--cat-perf)">32<span style="font-size:14px;color:#94a3b8">/35</span></div>
     <div class="summary-label">Rendimiento</div>
   </div>
   <div class="summary-card a11y">
-    <div class="summary-value" style="color:var(--cat-a11y)">18<span style="font-size:14px;color:#94a3b8">/32</span></div>
+    <div class="summary-value" style="color:var(--cat-a11y)">26<span style="font-size:14px;color:#94a3b8">/32</span></div>
     <div class="summary-label">Accesibilidad</div>
   </div>
 </div>
@@ -451,12 +451,12 @@
     <tr><td>R5</td><td>Cache headers agresivos<div class="detail">max-age=31536000 immutable en /images/*. Vercel maneja /_next/static/*.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R6</td><td>GTM deferred loading<div class="detail">Carga en interacci&oacute;n o 5s fallback. Preconnect a GTM.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R7</td><td>Dynamic imports componentes pesados<div class="detail">ExitIntentPopup, SocialSidebar, ScrollDepthTracker importados din&aacute;micamente.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>R21</td><td>hero-home.webp preloaded en TODAS las p&aacute;ginas<div class="detail">layout.tsx l&iacute;nea 63 precarga hero en 29 rutas. Compite con LCP real en no-homepage. Duplica preload en homepage (next/image ya lo hace).</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
-    <tr><td>R22</td><td>RouteChangeTracker y StickyCTA sin dynamic import<div class="detail">6 client components en layout, 3 no son din&aacute;micos. RouteChangeTracker rende null, StickyCTA rende null hasta scroll &gt;400px.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>R23</td><td>GTM 5s timeout compite con Speed Index<div class="detail">SI mobile es 4.0s. GTM cargando a 5s compite con rendering. Subir a 8-10s.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>R24</td><td>RevealOnScroll opacity:0 retrasa Speed Index<div class="detail">15+ instancias en homepage. Contenido invisible hasta JS hydration + IntersectionObserver. Considerar content-visibility:auto o reducir threshold.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>R21</td><td>hero-home.webp preload removido de layout<div class="detail">Preload eliminado de layout.tsx. next/image priority en homepage ya lo maneja.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>R22</td><td>RouteChangeTracker y StickyCTA con dynamic import<div class="detail">Ambos importados din&aacute;micamente en layout.tsx. 5 de 6 client components ahora son lazy.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>R23</td><td>GTM timeout subido a 8s<div class="detail">setTimeout de 5000ms a 8000ms. Ya no compite con Speed Index mobile.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>R24</td><td>RevealOnScroll visible por defecto sin JS<div class="detail">CSS: opacity:1 por defecto, opacity:0 solo con @media (scripting:enabled). Sin JS el contenido es visible.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R25</td><td>CartProvider envuelve todo el app<div class="detail">Fuerza hidrataci&oacute;n client-side de Header, Footer, Form. Estrechar scope.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>R26</td><td>No content-visibility en secciones below-fold<div class="detail">8 secciones de homepage se renderizan todas al inicio. content-visibility:auto mejorar&iacute;a SI.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>R26</td><td>content-visibility:auto en secciones below-fold<div class="detail">Clase .cv-auto en 6 secciones de homepage. contain-intrinsic-size: auto 500px.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
 </div>
 
@@ -467,13 +467,13 @@
     <tr><td>R8</td><td>HSTS con preload<div class="detail">max-age=63072000; includeSubDomains; preload.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R9</td><td>X-Frame-Options + nosniff<div class="detail">DENY, nosniff activos.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R10</td><td>Referrer-Policy + Permissions-Policy<div class="detail">strict-origin-when-cross-origin, camera/micro/geo deshabilitados.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>R27</td><td>Sin Content-Security-Policy (CSP)<div class="detail">No hay CSP. 20+ usos de dangerouslySetInnerHTML. Necesita al menos un starter CSP.</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
+    <tr><td>R27</td><td>Content-Security-Policy starter<div class="detail">CSP en next.config.ts: self + GTM + GA4 + Transbank + Resend + fonts. object-src none, base-uri self.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R28</td><td>Next.js 16.1.6 con 5 CVEs conocidas<div class="detail">HTTP smuggling, CSRF bypass, unbounded image cache, DoS postponed, dev HMR CSRF. Upgrade a 16.2.2.</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
-    <tr><td>R29</td><td>Sin rate limiting en APIs<div class="detail">/api/contacto y /api/transbank/create sin l&iacute;mite. Spam de emails y transacciones posible.</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
-    <tr><td>R30</td><td>HTML injection en emails<div class="detail">nombre, comuna, comentario interpolados en HTML sin sanitizar (contacto + transbank).</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>R29</td><td>Rate limiting en APIs<div class="detail">10 req/min por IP en /api/contacto y /api/transbank/create. In-memory con cleanup.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>R30</td><td>HTML sanitizado en emails<div class="detail">escapeHtml() en todos los campos interpolados en /api/contacto.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R31</td><td>npm audit: 6 vulnerabilidades (3 high)<div class="detail">flatted, minimatch, picomatch high. ajv, brace-expansion moderate.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>R32</td><td>Sin p&aacute;ginas de error personalizadas<div class="detail">No error.tsx, not-found.tsx, global-error.tsx. Errores muestran default Next.js.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>R33</td><td>Sin CSRF protection en Route Handlers<div class="detail">POST endpoints sin verificaci&oacute;n de origin/referer.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>R32</td><td>P&aacute;ginas de error personalizadas<div class="detail">not-found.tsx (404 con CTAs) y error.tsx (retry + WhatsApp) creados.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>R33</td><td>CSRF protection en Route Handlers<div class="detail">Origin/Referer check en /api/contacto y /api/transbank/create. Bypass en dev.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
 </div>
 
@@ -482,7 +482,7 @@
   <table>
     <tr><th style="width:40px">#</th><th>Medida</th><th style="width:100px">Estado</th></tr>
     <tr><td>R16</td><td>Favicon presente<div class="detail">favicon.ico con 16x16 y 32x32.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>R34</td><td>Sin web app manifest (PWA)<div class="detail">No manifest.json, no theme-color meta, no apple-touch-icon.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>R34</td><td>Web app manifest<div class="detail">manifest.ts con name, icons, theme_color, display standalone.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R35</td><td>Stray .next/ eliminado de public/images/productos/<div class="detail">Directorio de build accidental removido.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
 </div>
@@ -501,7 +501,7 @@
     <tr><td>A4</td><td>Footer navs con aria-label distintos<div class="detail">"Productos y servicios", "Soluciones", "Empresa".</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>A5</td><td>Heading hierarchy sin saltos<div class="detail">H1&rarr;H2&rarr;H3 correcto en homepage y p&aacute;ginas principales.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>A16</td><td>Headings secuenciales verificados<div class="detail">Sin saltos de nivel en p&aacute;ginas auditadas.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>A22</td><td>Desktop nav sin aria-label<div class="detail">Header &lt;nav&gt; sin aria-label. Indistinguible de footer navs.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>A22</td><td>Desktop nav con aria-label<div class="detail">aria-label="Navegaci&oacute;n principal" en &lt;nav&gt; del header.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
 </div>
 
@@ -513,10 +513,10 @@
     <tr><td>A7</td><td>Desktop dropdown con keyboard<div class="detail">aria-haspopup, aria-expanded, Escape, ArrowDown.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>A8</td><td>Mobile menu con Escape y aria-expanded<div class="detail">Escape cierra, aria-label toggle, body scroll lock.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>A9</td><td>Exit intent popup con focus trap<div class="detail">role="dialog", aria-modal, focus moves to first element.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>A18</td><td>Mobile menu SIN focus trap<div class="detail">Tab no se mantiene dentro del men&uacute;. Usuario puede Tab a contenido detr&aacute;s.</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
-    <tr><td>A19</td><td>Mobile menu no retorna focus al cerrar<div class="detail">Focus no vuelve al bot&oacute;n hamburguesa al cerrar.</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
-    <tr><td>A21</td><td>Popup sin tecla Escape para cerrar<div class="detail">Focus trap funciona pero Escape no dispara handleDismiss.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>A25</td><td>Radio buttons sin indicador de focus visible<div class="detail">Inputs sr-only, labels sin focus-within:ring. Sin feedback visual al navegar con Tab.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>A18</td><td>Mobile menu con focus trap<div class="detail">Tab cycle dentro del men&uacute; mobile. role="dialog" aria-modal="true".</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>A19</td><td>Mobile menu retorna focus al cerrar<div class="detail">Focus vuelve al bot&oacute;n hamburguesa via ref al cerrar o Escape.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>A21</td><td>Popup cierra con tecla Escape<div class="detail">Escape dispara handleDismiss en ExitIntentPopup.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
+    <tr><td>A25</td><td>Radio buttons con focus visible<div class="detail">Labels con focus-within:ring-2 ring-cyan ring-offset-2 en tipoEspacio, ambientes y necesidad.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
 </div>
 
@@ -529,7 +529,7 @@
     <tr><td>A12</td><td>Progress bar accesible<div class="detail">role="progressbar" con aria-valuenow/min/max.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>A13</td><td>aria-live en step container<div class="detail">aria-live="polite" anuncia cambios de paso.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>A20</td><td>QuickCapture phone input con aria-label<div class="detail">Agregado aria-label="N&uacute;mero de tel&eacute;fono" al input.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>A23</td><td>Mobile accordion sin aria-expanded<div class="detail">Bot&oacute;n toggle sin aria-expanded ni aria-controls. SVG sin aria-hidden.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>A23</td><td>Mobile accordion con aria-expanded<div class="detail">aria-expanded, aria-controls e id en panel. SVG con aria-hidden.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
 </div>
 
@@ -538,7 +538,7 @@
   <table>
     <tr><th style="width:40px">#</th><th>Medida</th><th style="width:100px">Estado</th></tr>
     <tr><td>A14</td><td>Alt text en todas las im&aacute;genes<div class="detail">100% cobertura con alt descriptivo.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>A15</td><td>SVGs decorativos con aria-hidden<div class="detail">Presente en la mayor&iacute;a. PERO: falta en Hero CTAs, Footer contacto, "Por qu&eacute; Meser", mobile toggle.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>A15</td><td>SVGs decorativos con aria-hidden<div class="detail">aria-hidden="true" en todos los SVGs decorativos: Hero CTAs, quick nav, "Por qu&eacute; Meser", estrellas, mobile toggle.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>A17</td><td>Contraste WCAG AA<div class="detail">Verificado en combinaciones principales de color.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
 </div>
@@ -547,7 +547,7 @@
   <div class="section-title"><span class="section-icon icon-a11y">A</span> Movimiento &amp; Touch</div>
   <table>
     <tr><th style="width:40px">#</th><th>Medida</th><th style="width:100px">Estado</th></tr>
-    <tr><td>A26</td><td>prefers-reduced-motion respetado<div class="detail">globals.css desactiva animaciones custom. PERO: animate-ping de Tailwind no est&aacute; cubierto.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>A26</td><td>prefers-reduced-motion completo<div class="detail">globals.css ahora tambi&eacute;n desactiva animate-ping de Tailwind.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>A27</td><td>Touch targets &ge;48px en CTAs principales<div class="detail">StickyCTA con min-h-[48px]. Popup close button es 32px (pasa AA pero no AAA).</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>A28</td><td>aria-current="page" en nav activo<div class="detail">Presente en links del men&uacute; principal.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
@@ -559,13 +559,13 @@
   <div class="footer-grid">
     <div class="footer-item"><div class="footer-num" style="color:var(--nora)">173</div><div class="footer-label">Total medidas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#16a34a">91</div><div class="footer-label">Aplicadas</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#16a34a">110</div><div class="footer-label">Aplicadas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#ea580c">62</div><div class="footer-label">Pendientes</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#ea580c">48</div><div class="footer-label">Pendientes</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#dc2626">18</div><div class="footer-label">Cr&iacute;ticos</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#dc2626">13</div><div class="footer-label">Cr&iacute;ticos</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">53%</div><div class="footer-label">Completado</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">64%</div><div class="footer-label">Completado</div></div>
   </div>
   <div class="note note-red" style="margin-top:16px">
     <strong>13 medidas cr&iacute;ticas requieren acci&oacute;n inmediata:</strong> llms.txt precios errados, QuickCapture roto, 3 fechas expiradas, "Quality Score" visible, AggregateRating sin GBP, sin privacidad/RUT, 5 CVEs Next.js, sin rate limiting, sin CSP, GSC sin verificar, homepage sin metadata, keyword cannibalization, SearchAction falso.

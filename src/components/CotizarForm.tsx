@@ -230,7 +230,7 @@ export default function CotizarForm() {
                 ].map((option) => (
                   <label
                     key={option.value}
-                    className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition-all cursor-pointer ${
+                    className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition-all cursor-pointer focus-within:ring-2 focus-within:ring-cyan focus-within:ring-offset-2 ${
                       formData.tipoEspacio === option.value
                         ? "border-cyan bg-cyan/5 text-cyan"
                         : "border-gray-200 hover:border-gray-300 text-navy"
@@ -269,7 +269,7 @@ export default function CotizarForm() {
                 ].map((option) => (
                   <label
                     key={option.value}
-                    className={`rounded-xl border-2 p-3 text-center transition-all cursor-pointer ${
+                    className={`rounded-xl border-2 p-3 text-center transition-all cursor-pointer focus-within:ring-2 focus-within:ring-cyan focus-within:ring-offset-2 ${
                       formData.ambientes === option.value
                         ? "border-cyan bg-cyan/5"
                         : "border-gray-200 hover:border-gray-300"
@@ -338,7 +338,7 @@ export default function CotizarForm() {
                 ].map((option) => (
                   <label
                     key={option.value}
-                    className={`w-full flex items-center justify-between rounded-xl border-2 p-3.5 text-left transition-all cursor-pointer ${
+                    className={`w-full flex items-center justify-between rounded-xl border-2 p-3.5 text-left transition-all cursor-pointer focus-within:ring-2 focus-within:ring-cyan focus-within:ring-offset-2 ${
                       formData.necesidad === option.value
                         ? "border-cyan bg-cyan/5"
                         : "border-gray-200 hover:border-gray-300"

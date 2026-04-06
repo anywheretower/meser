@@ -180,6 +180,8 @@ function MobileAccordion({
     <div>
       <button
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={`mobile-accordion-${entry.label}`}
         className="w-full flex items-center justify-between text-sm font-medium text-navy/70 hover:text-navy rounded-lg px-3 py-2.5 transition-colors"
       >
         {entry.label}
@@ -189,6 +191,7 @@ function MobileAccordion({
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth={2}
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -198,7 +201,7 @@ function MobileAccordion({
         </svg>
       </button>
       {open && (
-        <div className="ml-3 pl-3 border-l border-gray-200 space-y-0.5 pb-1">
+        <div id={`mobile-accordion-${entry.label}`} className="ml-3 pl-3 border-l border-gray-200 space-y-0.5 pb-1">
           {entry.items.map((item) => (
             <Link
               key={item.href}
@@ -222,6 +225,8 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -229,21 +234,47 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on Escape key
+  // Close mobile menu on Escape key + focus trap
   useEffect(() => {
     if (!mobileOpen) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMobileOpen(false);
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        mobileToggleRef.current?.focus();
+        return;
+      }
+      // Focus trap
+      if (e.key === "Tab" && mobileNavRef.current) {
+        const focusable = mobileNavRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      }
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    // Focus first item in menu
+    const timer = setTimeout(() => {
+      mobileNavRef.current?.querySelector<HTMLElement>("a, button")?.focus();
+    }, 100);
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      clearTimeout(timer);
     };
   }, [mobileOpen]);
 
-  const closeMobile = () => setMobileOpen(false);
+  const closeMobile = () => {
+    setMobileOpen(false);
+    mobileToggleRef.current?.focus();
+  };
 
   return (
     <header
@@ -266,7 +297,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav aria-label="Navegación principal" className="hidden lg:flex items-center gap-7">
             {nav.map((entry) =>
               isDropdown(entry) ? (
                 <DesktopDropdown key={entry.label} entry={entry} pathname={pathname} />
@@ -305,6 +336,7 @@ export default function Header() {
           <div className="flex lg:hidden items-center gap-2">
             <CartButton />
             <button
+              ref={mobileToggleRef}
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 text-navy"
               aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
@@ -316,6 +348,7 @@ export default function Header() {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -330,6 +363,7 @@ export default function Header() {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -346,7 +380,7 @@ export default function Header() {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white/98 backdrop-blur-xl">
+        <div ref={mobileNavRef} role="dialog" aria-modal="true" aria-label="Menú de navegación" className="lg:hidden border-t border-gray-100 bg-white/98 backdrop-blur-xl">
           <div className="px-4 py-3 space-y-0.5">
             {nav.map((entry) =>
               isDropdown(entry) ? (
