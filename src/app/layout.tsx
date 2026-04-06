@@ -65,6 +65,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="dns-prefetch" href="https://api.whatsapp.com" />
         <link rel="llms-txt" href="/llms.txt" />
+        <link rel="llms-full-txt" href="/llms-full.txt" />
         <meta name="google-site-verification" content="CpYswW3k5lPNH4Cn5OkRIaX_yatm8PZz_gwfL85M2IA" />
       </head>
       <Script

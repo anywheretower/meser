@@ -82,6 +82,7 @@ export function QuickCapture() {
     <div className="flex gap-2">
       <input
         type="tel"
+        aria-label="Número de teléfono"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         placeholder="+569 XXXX XXXX"

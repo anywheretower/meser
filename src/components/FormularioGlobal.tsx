@@ -57,7 +57,7 @@ export default function FormularioGlobal() {
             <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-ping" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
           </span>
-          <span className="text-xs font-semibold text-white">Precios válidos hasta el 31 de marzo</span>
+          <span className="text-xs font-semibold text-white">Precios válidos por tiempo limitado</span>
         </div>
 
         <div className="mt-4 max-w-lg">

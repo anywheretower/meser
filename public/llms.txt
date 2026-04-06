@@ -7,10 +7,10 @@
 ## Servicios
 
 - **Climatización Integral**: Diagnóstico gratuito por Zoom (25 min), propuesta con precio cerrado todo incluido, instalación estética profesional.
-- **Instalación de Aire Acondicionado**: Instalación profesional con canaletas ocultas, cables invisibles y acabados prolijos. Desde $399.990 todo incluido.
-- **Mantención de Aire Acondicionado**: Limpieza profunda, revisión técnica, optimización de rendimiento. Desde $59.990.
+- **Instalación de Aire Acondicionado**: Instalación profesional con canaletas ocultas, cables invisibles y acabados prolijos. Desde $449.990 todo incluido.
+- **Mantención de Aire Acondicionado**: Limpieza profunda, revisión técnica, optimización de rendimiento. Desde $64.990.
 - **Climatización Inteligente**: Control WiFi, asistentes de voz, inteligencia artificial. Samsung SmartThings y Midea AIR app.
-- **Paquetes Todo Incluido**: Equipo + instalación + garantía desde $399.990. Precio cerrado, cero sorpresas.
+- **Paquetes Todo Incluido**: Equipo + instalación + garantía desde $449.990. Precio cerrado, cero sorpresas.
 
 ## Marcas
 
@@ -18,22 +18,22 @@
 - Midea (línea EcoMaster)
 - Anwo (línea Ecoflow)
 
-## Productos — Aires Acondicionados (precios en CLP)
+## Productos — Aires Acondicionados (precios en CLP, abril 2026)
 
-| Modelo | BTU | Solo equipo | Con instalación |
-|--------|-----|-------------|-----------------|
-| Midea EcoMaster 9K | 9.000 | $319.990 | $419.990 |
-| Midea EcoMaster 12K | 12.000 | $349.990 | $449.990 |
-| Midea EcoMaster 18K | 18.000 | $529.990 | $629.990 |
-| Midea EcoMaster 24K | 24.000 | $649.990 | $749.990 |
-| Anwo Ecoflow 9K | 9.000 | $319.990 | $419.990 |
-| Anwo Ecoflow 12K | 12.000 | $349.990 | $449.990 |
-| Anwo Ecoflow 18K | 18.000 | $529.990 | $629.990 |
-| Anwo Ecoflow 24K | 24.000 | $649.990 | $749.990 |
-| Samsung Wind-Free 9K | 9.000 | $449.990 | $549.990 |
-| Samsung Wind-Free 12K | 12.000 | $529.990 | $629.990 |
-| Samsung Wind-Free 18K | 18.000 | $699.990 | $799.990 |
-| Samsung Wind-Free 24K | 24.000 | $849.990 | $949.990 |
+| Modelo | BTU | Solo equipo | Todo incluido |
+|--------|-----|-------------|---------------|
+| Midea EcoMaster 9K | 9.000 | $319.990 | $449.990 |
+| Midea EcoMaster 12K | 12.000 | $349.990 | $479.990 |
+| Midea EcoMaster 18K | 18.000 | $529.990 | $659.990 |
+| Midea EcoMaster 24K | 24.000 | $649.990 | $779.990 |
+| Anwo Ecoflow 9K | 9.000 | $319.990 | $449.990 |
+| Anwo Ecoflow 12K | 12.000 | $349.990 | $479.990 |
+| Anwo Ecoflow 18K | 18.000 | $529.990 | $659.990 |
+| Anwo Ecoflow 24K | 24.000 | $649.990 | $779.990 |
+| Samsung Wind-Free 9K | 9.000 | $549.990 | $679.990 |
+| Samsung Wind-Free 12K | 12.000 | $599.990 | $729.990 |
+| Samsung Wind-Free 18K | 18.000 | $699.990 | $829.990 |
+| Samsung Wind-Free 24K | 24.000 | $849.990 | $979.990 |
 Todos los equipos son Inverter, frío/calor, eficiencia clase A.
 
 ## Productos — Termos Eléctricos
@@ -91,4 +91,4 @@ Toda la Región Metropolitana de Santiago, con presencia especial en: Las Condes
 - **NCh Elec. 4/2003:** Norma chilena que exige circuito eléctrico dedicado para aires acondicionados.
 
 ---
-Última actualización: 31 de marzo de 2026
+Última actualización: 6 de abril de 2026

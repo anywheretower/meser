@@ -36,6 +36,14 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "ChatGPT-User",
         allow: "/",
       },
+      {
+        userAgent: "Applebot-Extended",
+        allow: "/",
+      },
+      {
+        userAgent: "meta-externalagent",
+        allow: "/",
+      },
     ],
     sitemap: "https://www.meser.cl/sitemap.xml",
   };

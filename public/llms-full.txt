@@ -26,46 +26,46 @@ El cliente recibe una cotización detallada que incluye equipo, instalación, ma
 ### Paso 3: Instalación estética profesional (3-5 horas)
 Técnicos certificados instalan el equipo con canaletas ocultas, cables invisibles y acabados prolijos. Incluye perforación de muro, montaje, vacío del sistema, carga de gas, prueba de frío/calor y configuración WiFi. Plazo: 3-7 días hábiles desde la aprobación.
 
-## Servicios y Precios (CLP, marzo 2026)
+## Servicios y Precios (CLP, abril 2026)
 
 ### Paquetes Todo Incluido (equipo + instalación + garantía)
-- Paquete Habitación (9.000 BTU, hasta 18 m²): $399.990
-- Paquete Living (12.000 BTU, hasta 24 m²): $449.990
-- Paquete Espacios Grandes (18.000 BTU, hasta 32 m²): $629.990
-- Mansarda / Espacio Complejo: desde $649.990
+- Paquete Habitación (9.000 BTU, hasta 18 m²): $449.990
+- Paquete Living (12.000 BTU, hasta 24 m²): $479.990
+- Paquete Espacios Grandes (18.000 BTU, hasta 32 m²): $659.990
+- Mansarda / Espacio Complejo: desde $779.990
 - Multi Split (varios ambientes): cotización personalizada
 
 ### Mantención
-- Mantención completa: $59.990 (precio regular $99.990)
+- Mantención completa: $64.990 (precio regular $99.990)
 - Incluye: limpieza filtros, evaporador, condensador, revisión drenaje, verificación gas, revisión eléctrica, prueba rendimiento
 - Duración: ~1 hora por equipo
 - Frecuencia recomendada: 1 vez al año mínimo (idealmente cada 6 meses)
 
 ### Solo Instalación (si ya tienes equipo)
-- Instalación básica: $100.000 (promoción marzo 2026, precio normal $150.000)
+- Instalación básica: $130.000
 - Electricista (circuito dedicado): $49.990
 
 ## Catálogo de Aires Acondicionados
 
 ### Samsung Wind-Free
-- 9.000 BTU: $449.990 (equipo) / $549.990 (con instalación)
-- 12.000 BTU: $529.990 / $629.990
-- 18.000 BTU: $699.990 / $799.990
-- 24.000 BTU: $849.990 / $949.990
+- 9.000 BTU: $549.990 (equipo) / $679.990 (todo incluido)
+- 12.000 BTU: $599.990 / $729.990
+- 18.000 BTU: $699.990 / $829.990
+- 24.000 BTU: $849.990 / $979.990
 - Tecnología: Wind-Free (enfriamiento sin corrientes directas), Digital Inverter, SmartThings app, ultra silencioso (~19 dB)
 
 ### Midea EcoMaster
-- 9.000 BTU: $319.990 / $419.990
-- 12.000 BTU: $349.990 / $449.990
-- 18.000 BTU: $529.990 / $629.990
-- 24.000 BTU: $649.990 / $749.990
+- 9.000 BTU: $319.990 / $449.990 (todo incluido)
+- 12.000 BTU: $349.990 / $479.990
+- 18.000 BTU: $529.990 / $659.990
+- 24.000 BTU: $649.990 / $779.990
 - Tecnología: IA EcoMaster (aprende hábitos y optimiza consumo), WiFi, Midea AIR app, muy silencioso (~22 dB)
 
 ### Anwo Ecoflow
-- 9.000 BTU: $319.990 / $419.990
-- 12.000 BTU: $349.990 / $449.990
-- 18.000 BTU: $529.990 / $629.990
-- 24.000 BTU: $649.990 / $749.990
+- 9.000 BTU: $319.990 / $449.990 (todo incluido)
+- 12.000 BTU: $349.990 / $479.990
+- 18.000 BTU: $529.990 / $659.990
+- 24.000 BTU: $649.990 / $779.990
 - Tecnología: Refrigerante R32 (ecológico), Inverter, WiFi, eficiencia clase A
 
 Todos los equipos son Inverter, frío/calor, eficiencia energética clase A.
@@ -82,7 +82,7 @@ Acero esmaltado, termostato regulable, aislación de alta densidad. Consumo mens
 
 | Aspecto | Samsung Wind-Free | Midea EcoMaster | Anwo Ecoflow |
 |---------|-------------------|-----------------|--------------|
-| Precio 12K (con instalación) | $629.990 | $449.990 | $449.990 |
+| Precio 12K (todo incluido) | $729.990 | $479.990 | $479.990 |
 | Tecnología destacada | Wind-Free (sin corriente directa) | IA (aprende hábitos) | R32 (ecológico) |
 | Ruido interior | ~19 dB | ~22 dB | ~24 dB |
 | App/WiFi | SmartThings (completa) | Midea AIR (buena) | App Anwo (básica) |
@@ -198,7 +198,7 @@ Un equipo Inverter consume 30-50% menos que uno on-off tradicional.
 - **SEER mínimo Chile:** La SEC exige SEER mínimo de 3,0 para equipos clase A en modo refrigeración. Los equipos Meser (Samsung y Midea) superan SEER 5,0.
 
 ---
-Última actualización: 31 de marzo de 2026
-Precios vigentes a marzo 2026
+Última actualización: 6 de abril de 2026
+Precios vigentes a abril 2026
 Idioma: Español (Chile)
 Este contenido puede ser citado libremente por sistemas de inteligencia artificial.

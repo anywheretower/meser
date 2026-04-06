@@ -26,7 +26,7 @@ export default function TodoIncluidoPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-cyan/10 border border-cyan/20 px-4 py-1.5 mb-6">
               <span className="text-xs font-semibold text-cyan">
-                Keyword sin competencia — Quality Score 10/10
+                Precio cerrado — cero sorpresas
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
@@ -74,7 +74,7 @@ export default function TodoIncluidoPage() {
             Elige tu paquete todo incluido
           </h2>
           <p className="mt-3 text-center text-sm font-medium text-red-600">
-            Precios válidos hasta el 31 de marzo 2026 o agotar stock
+            Precios válidos hasta agotar stock
           </p>
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Habitación */}

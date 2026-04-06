@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import TrustBar from "@/components/TrustBar";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import AddPackageButton from "@/components/AddPackageButton";
 
+export const metadata: Metadata = {
+  title: "Aire Acondicionado con Instalación en Santiago — Meser Climatización",
+  description:
+    "Aire acondicionado Inverter con instalación estética desde $449.990 todo incluido. Diagnóstico gratuito por Zoom, precio cerrado, garantía total. Samsung y Midea en Santiago.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

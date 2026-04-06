@@ -8,7 +8,9 @@ export async function POST(request: Request) {
 
     const { tipoEspacio, ambientes, comuna, necesidad, nombre, telefono, email, comentario } = data;
 
-    if (!nombre || !telefono || !tipoEspacio || !ambientes || !comuna || !necesidad) {
+    const isQuickCapture = nombre === "Captura rápida" && telefono;
+
+    if (!isQuickCapture && (!nombre || !telefono || !tipoEspacio || !ambientes || !comuna || !necesidad)) {
       return NextResponse.json({ error: "Faltan campos obligatorios" }, { status: 400 });
     }
 
