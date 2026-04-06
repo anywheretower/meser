@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "Mantención de aire acondicionado en Santiago desde $64.990. Limpieza profunda, revisión técnica, optimización de rendimiento. Toda la RM.",
   alternates: { canonical: "/mantencion" },
+  openGraph: { url: "/mantencion" },
 };
 
 export default function MantencionPage() {

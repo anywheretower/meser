@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Climatización discreta para departamentos en Santiago. Equipos silenciosos, instalación sin afectar fachadas. Diagnóstico gratuito por Zoom.",
   alternates: { canonical: "/soluciones/departamento" },
+  openGraph: { url: "/soluciones/departamento" },
 };
 
 export default function DepartamentoPage() {

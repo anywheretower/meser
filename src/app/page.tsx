@@ -8,8 +8,9 @@ import AddPackageButton from "@/components/AddPackageButton";
 export const metadata: Metadata = {
   title: "Aire Acondicionado con Instalación en Santiago — Meser Climatización",
   description:
-    "Aire acondicionado Inverter con instalación estética desde $449.990 todo incluido. Diagnóstico gratuito por Zoom, precio cerrado, garantía total. Samsung y Midea en Santiago.",
+    "Aire acondicionado Inverter con instalación estética desde $449.990 todo incluido. Diagnóstico gratuito por Zoom, precio cerrado, garantía total. Samsung, Midea y Anwo en Santiago.",
   alternates: { canonical: "/" },
+  openGraph: { url: "/" },
 };
 
 export default function Home() {
@@ -43,7 +44,7 @@ export default function Home() {
             <p className="mt-8 text-lg sm:text-xl text-steel-light leading-relaxed max-w-xl animate-fade-in-up stagger-3">
               Precio cerrado todo incluido. Diagnóstico gratuito por Zoom,
               instalación estética invisible, garantía total.
-              Samsung y Midea Inverter.
+              Samsung, Midea y Anwo Inverter.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-4 whitespace-nowrap">

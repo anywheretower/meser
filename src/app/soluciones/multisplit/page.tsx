@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Un solo equipo exterior para múltiples ambientes. Multi Split ideal para departamentos y casas. Cotización personalizada con diagnóstico Zoom gratuito.",
   alternates: { canonical: "/soluciones/multisplit" },
+  openGraph: { url: "/soluciones/multisplit" },
 };
 
 export default function MultisplitPage() {

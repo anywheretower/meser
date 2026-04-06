@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "Refiere a un amigo que instale con Meser y acumula 25% de descuento en tu próxima mantención preventiva. Acumulable sin límite.",
   alternates: { canonical: "/club-meser" },
+  openGraph: { url: "/club-meser" },
 };
 
 const descuentos = [

@@ -147,6 +147,7 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
       </article>
 
       {/* CTA */}
+      <aside aria-label="Llamado a la acción">
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold text-navy">
@@ -172,6 +173,7 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
           </div>
         </div>
       </section>
+      </aside>
     </>
   );
 }

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Meser",
   },
   description:
-    "Climatización integral para hogares en Santiago. Diagnóstico gratuito por Zoom, precio cerrado todo incluido y instalación estética. Samsung y Midea. +150 hogares.",
+    "Climatización integral para hogares en Santiago. Diagnóstico gratuito por Zoom, precio cerrado todo incluido y instalación estética. Samsung, Midea y Anwo. +150 hogares.",
   authors: [{ name: "Meser", url: "https://www.meser.cl" }],
   metadataBase: new URL("https://www.meser.cl"),
   alternates: { canonical: "/" },

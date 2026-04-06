@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Climatización eficiente para oficinas y locales comerciales. Equipos silenciosos que mantienen la productividad sin elevar la cuenta de luz.",
   alternates: { canonical: "/soluciones/oficina" },
+  openGraph: { url: "/soluciones/oficina" },
 };
 
 export default function OficinaPage() {

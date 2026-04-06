@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Instalación de aire acondicionado en Ñuñoa. Departamentos y casas. Precio cerrado, instalación estética, garantía total. Diagnóstico gratuito.",
   alternates: { canonical: "/cobertura/nunoa" },
+  openGraph: { url: "/cobertura/nunoa" },
 };
 
 export default function NunoaPage() {

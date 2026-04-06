@@ -44,9 +44,64 @@ export default function CoberturaLayout({
   stats,
 }: CoberturaLayoutProps) {
   const otrasComunas = todasComunas.filter((c) => c.name !== comuna);
+  const slug = todasComunas.find((c) => c.name === comuna)?.slug ?? comuna.toLowerCase().replace(/\s+/g, "-");
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `https://www.meser.cl/cobertura/${slug}#business`,
+    name: `Meser Climatización — ${comuna}`,
+    description: `Instalación de aire acondicionado en ${comuna}. Precio cerrado, instalación estética, garantía total.`,
+    url: `https://www.meser.cl/cobertura/${slug}`,
+    telephone: "+56982351110",
+    email: "contacto@meser.cl",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Los Militares 5620, Of. 905",
+      addressLocality: comuna,
+      addressRegion: "Región Metropolitana",
+      addressCountry: "CL",
+    },
+    areaServed: {
+      "@type": "City",
+      name: comuna,
+    },
+    priceRange: "$$",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "150",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `Servicios de climatización en ${comuna}`,
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Instalación Aire Acondicionado",
+            description: "Equipo Inverter + instalación estética todo incluido",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Mantención Aire Acondicionado",
+            description: "Limpieza profunda + revisión técnica + optimización",
+          },
+        },
+      ],
+    },
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <Breadcrumbs items={[{ label: "Cobertura" }, { label: comuna }]} />
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">

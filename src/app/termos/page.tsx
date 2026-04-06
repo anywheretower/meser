@@ -12,12 +12,14 @@ export const metadata: Metadata = {
   description:
     "Termo eléctrico Midea Lume 50 a 120 litros desde $149.990. El 80L más vendido: $179.990, con instalación $279.990. Agua caliente sin gas en Santiago.",
   alternates: { canonical: "/termos" },
+  openGraph: { url: "/termos" },
 };
 
 function TermosSchemaScript() {
   const products = termosGroup.models.map((p) => ({
     "@type": "Product",
     name: p.name,
+    sku: p.id,
     brand: { "@type": "Brand", name: p.brand },
     description: `${p.name} - ${p.specs.join(", ")}. Agua caliente sin gas.`,
     image: p.image ? `https://www.meser.cl${p.image}` : undefined,

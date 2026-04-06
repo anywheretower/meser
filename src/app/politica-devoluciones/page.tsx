@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description:
     "Política de devoluciones, cambios y garantía de Meser. Conforme a la Ley 19.496 de Protección al Consumidor de Chile.",
   alternates: { canonical: "/politica-devoluciones" },
+  openGraph: { url: "/politica-devoluciones" },
   robots: { index: true, follow: true },
 };
 

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Contáctanos para tu proyecto de climatización. WhatsApp, teléfono, email o visítanos en Las Condes. Respuesta en menos de 2 horas.",
   alternates: { canonical: "/contacto" },
+  openGraph: { url: "/contacto" },
 };
 
 export default function ContactoPage() {

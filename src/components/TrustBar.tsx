@@ -17,7 +17,7 @@ const items = [
     ),
     text: "5.0 — 150+ hogares climatizados",
   },
-  { icon: null, text: "Samsung + Midea" },
+  { icon: null, text: "Samsung + Midea + Anwo" },
   { icon: null, text: "Garantía total" },
   { icon: null, text: "Hasta 3 cuotas sin interés", bold: true },
   { icon: null, text: "Toda la RM" },

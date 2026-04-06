@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Instalación de aire acondicionado en Providencia. Equipos silenciosos, instalación discreta, precio cerrado. Diagnóstico gratuito por Zoom.",
   alternates: { canonical: "/cobertura/providencia" },
+  openGraph: { url: "/cobertura/providencia" },
 };
 
 export default function ProvidenciaPage() {

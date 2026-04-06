@@ -9,6 +9,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Instalación Aire Acondicionado Santiago · Garantía",
   alternates: { canonical: "/instalacion-aire-acondicionado" },
+  openGraph: { url: "/instalacion-aire-acondicionado" },
   description:
     "Instalación profesional de aire acondicionado en Santiago. Canaletas ocultas, acabados prolijos, garantía total. Toda la RM. Cotiza sin compromiso.",
 };

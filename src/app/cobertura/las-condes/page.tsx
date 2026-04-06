@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Instalación de aire acondicionado en Las Condes. Servicio integral con instalación estética, precio cerrado y garantía total. Diagnóstico gratuito por Zoom.",
   alternates: { canonical: "/cobertura/las-condes" },
+  openGraph: { url: "/cobertura/las-condes" },
 };
 
 export default function LasCondesPage() {

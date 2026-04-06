@@ -153,7 +153,7 @@
 <!-- Summary Cards -->
 <div class="summary-row">
   <div class="summary-card seo">
-    <div class="summary-value" style="color:var(--cat-seo)">55<span style="font-size:14px;color:#94a3b8">/60</span></div>
+    <div class="summary-value" style="color:var(--cat-seo)">60<span style="font-size:14px;color:#94a3b8">/60</span></div>
     <div class="summary-label">SEO</div>
   </div>
   <div class="summary-card geo">
@@ -205,7 +205,7 @@
 
 <!-- TABS -->
 <div class="cat-tabs">
-  <div class="cat-tab active" onclick="switchCat('seo')">SEO (55/60)</div>
+  <div class="cat-tab active" onclick="switchCat('seo')">SEO (60/60)</div>
   <div class="cat-tab" onclick="switchCat('geo')">GEO / AI (24/30)</div>
   <div class="cat-tab" onclick="switchCat('cro')">CRO (31/52)</div>
   <div class="cat-tab" onclick="switchCat('perf')">Rendimiento (20/35)</div>
@@ -242,15 +242,15 @@
     <tr><th style="width:40px">#</th><th>Medida</th><th style="width:100px">Estado</th></tr>
     <tr><td>S9</td><td>T&iacute;tulos optimizados &le;60 chars en /aires y /termos<div class="detail">T&iacute;tulos &uacute;nicos y dentro del l&iacute;mite recomendado de 60 caracteres.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>S10</td><td>Descriptions &le;155 chars en /aires y /termos<div class="detail">Meta descriptions &uacute;nicas y dentro del l&iacute;mite recomendado.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
-    <tr><td>S11</td><td>Open Graph completo<div class="detail">OG b&aacute;sico presente. Falta og:url en p&aacute;ginas no-blog. Misma og:image en todo el sitio.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S11</td><td>Open Graph completo<div class="detail">og:url agregado a 25 p&aacute;ginas. og:image global mantenida (misma marca).</div></td><td><span class="badge badge-done">Aplicada</span></td></tr>
     <tr><td>S12</td><td>Jerarqu&iacute;a H1&rarr;H2&rarr;H3<div class="detail">Un solo H1 por p&aacute;gina, jerarqu&iacute;a verificada. Correcta.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>S13</td><td>HTML sem&aacute;ntico<div class="detail">header, main, nav, footer correctos. Falta article en product cards, aside en blog, caption en tables.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S13</td><td>HTML sem&aacute;ntico<div class="detail">caption en tabla comparativa aires, aside en blog CTA. article ya exist&iacute;a en product cards.</div></td><td><span class="badge badge-done">Aplicada</span></td></tr>
     <tr><td>S14</td><td>Homepage con metadata dedicada<div class="detail">page.tsx exporta title con "Aire Acondicionado" + description optimizada + canonical.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S15</td><td>Contenido en cobertura y soluciones<div class="detail">10 p&aacute;ginas con contenido &uacute;nico. Cobertura ~350 palabras (thin content risk). Falta hub /cobertura.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S16</td><td>Blog 8 art&iacute;culos publicados<div class="detail">Buenos art&iacute;culos 1000-1400 palabras. PERO: todos publicados el mismo d&iacute;a, sin dateModified, sin citas externas, filtros de categor&iacute;a no funcionales.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>S45</td><td>Keyword cannibalization en 5 p&aacute;ginas<div class="detail">Homepage, /aires, /todo-incluido, /instalacion, /climatizacion-integral compiten por "aire acondicionado instalaci&oacute;n santiago".</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
     <tr><td>S46</td><td>Precio consistente $149.990 en title y H1<div class="detail">Precio alineado entre title tag y H1 en /termos.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
-    <tr><td>S47</td><td>Anwo omitido sistem&aacute;ticamente<div class="detail">TrustBar, homepage hero, /todo-incluido FAQ, /nosotros ("2 marcas" deber&iacute;a ser 3) &mdash; Anwo falta en m&uacute;ltiples lugares.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S47</td><td>Anwo incluido sistem&aacute;ticamente<div class="detail">TrustBar: +Anwo. Hero home: Samsung, Midea y Anwo. Nosotros: 3 marcas. Meta descriptions actualizadas.</div></td><td><span class="badge badge-done">Aplicada</span></td></tr>
   </table>
 </div>
 
@@ -268,8 +268,8 @@
     <tr><td>S48</td><td>Product schema ItemList con 4 productos en /termos<div class="detail">ItemList + Product schema para los 4 modelos (50L-120L).</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>S49</td><td>areaServed array de 5 City (Las Condes, Vitacura, Providencia, &Ntilde;u&ntilde;oa, Lo Barnechea)<div class="detail">Schema corregido con @type City para cada comuna servida.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>S50</td><td>highPrice corregido a $979.990 (Samsung 24K TI)<div class="detail">Service.offers.highPrice refleja el paquete m&aacute;s caro real.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
-    <tr><td>S51</td><td>Productos sin SKU/GTIN en schema<div class="detail">Necesarios para Google Merchant Center y Shopping results.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>S52</td><td>Cobertura sin LocalBusiness schema<div class="detail">5 p&aacute;ginas de cobertura solo tienen FAQPage, no Service/LocalBusiness espec&iacute;fico.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>S51</td><td>SKU en Product schema<div class="detail">sku: p.id agregado a JSON-LD de aires (12 productos) y termos (4 productos). GTIN pendiente (requiere c&oacute;digos de fabricante).</div></td><td><span class="badge badge-done">Aplicada</span></td></tr>
+    <tr><td>S52</td><td>LocalBusiness schema en cobertura<div class="detail">Schema LocalBusiness + Service inyectado en CoberturaLayout.tsx para las 5 comunas.</div></td><td><span class="badge badge-done">Aplicada</span></td></tr>
     <tr><td>S53</td><td>@id en Organization, HVACBusiness y WebSite schema<div class="detail">Entity linking habilitado entre p&aacute;ginas via @id.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
   </table>
 </div>
@@ -559,13 +559,13 @@
   <div class="footer-grid">
     <div class="footer-item"><div class="footer-num" style="color:var(--nora)">173</div><div class="footer-label">Total medidas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#16a34a">135</div><div class="footer-label">Aplicadas</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#16a34a">140</div><div class="footer-label">Aplicadas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#ea580c">24</div><div class="footer-label">Pendientes</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#ea580c">19</div><div class="footer-label">Pendientes</div></div>
     <div class="footer-divider"></div>
     <div class="footer-item"><div class="footer-num" style="color:#dc2626">11</div><div class="footer-label">Cr&iacute;ticos</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">78%</div><div class="footer-label">Completado</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">81%</div><div class="footer-label">Completado</div></div>
   </div>
   <div class="note note-red" style="margin-top:16px">
     <strong>11 medidas cr&iacute;ticas requieren acci&oacute;n inmediata:</strong> llms.txt precios errados, QuickCapture roto, 3 fechas expiradas, "Quality Score" visible, AggregateRating sin GBP, sin privacidad/RUT, 5 CVEs Next.js, sin rate limiting, sin CSP, GSC sin verificar, SearchAction falso.

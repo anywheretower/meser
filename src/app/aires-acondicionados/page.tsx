@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Aire acondicionado Midea, Samsung Wind-Free y Anwo Inverter con instalación en Santiago. Desde $299.990 o todo incluido desde $449.990. +150 hogares.",
   alternates: { canonical: "/aires-acondicionados" },
+  openGraph: { url: "/aires-acondicionados" },
 };
 
 function ProductSchemaScript() {
@@ -20,6 +21,7 @@ function ProductSchemaScript() {
     grupo.models.map((p) => ({
       "@type": "Product",
       name: p.name,
+      sku: p.id,
       brand: { "@type": "Brand", name: p.brand },
       description: `${p.name} - ${p.specs.join(", ")}. ${p.coverage || ""}`.trim(),
       image: p.image ? `https://www.meser.cl${p.image}` : undefined,
@@ -287,6 +289,7 @@ export default function AiresAcondicionadosPage() {
           </p>
           <div className="overflow-x-auto rounded-2xl border border-gray-200">
             <table className="w-full text-sm">
+              <caption className="sr-only">Comparativa de aires acondicionados Samsung Wind-Free, Midea EcoMaster y Anwo Ecoflow: precio, tecnología, ruido y garantía</caption>
               <thead>
                 <tr>
                   <th className="bg-navy px-4 py-3 text-left text-xs font-semibold text-white">Aspecto</th>

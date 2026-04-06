@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Empresa chilena especializada en climatización integral. Diagnóstico gratuito, precio cerrado, instalación estética. +150 hogares climatizados en Santiago.",
   alternates: { canonical: "/nosotros" },
+  openGraph: { url: "/nosotros" },
 };
 
 export default function NosotrosPage() {
@@ -101,7 +102,7 @@ export default function NosotrosPage() {
             {[
               { number: "+150", label: "Hogares climatizados" },
               { number: "100%", label: "RM cubierta" },
-              { number: "2", label: "Marcas certificadas" },
+              { number: "3", label: "Marcas certificadas" },
               { number: "Total", label: "Garantía equipo + instalación" },
             ].map((stat) => (
               <div key={stat.label}>

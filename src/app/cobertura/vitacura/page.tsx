@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Instalación de aire acondicionado en Vitacura. Precio cerrado, instalación estética invisible, garantía total. Diagnóstico gratuito por Zoom.",
   alternates: { canonical: "/cobertura/vitacura" },
+  openGraph: { url: "/cobertura/vitacura" },
 };
 
 export default function VitacuraPage() {

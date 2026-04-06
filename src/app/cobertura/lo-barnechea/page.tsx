@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Instalación de aire acondicionado en Lo Barnechea. Casas amplias, mansardas, proyectos multi-ambiente. Precio cerrado con diagnóstico gratuito.",
   alternates: { canonical: "/cobertura/lo-barnechea" },
+  openGraph: { url: "/cobertura/lo-barnechea" },
 };
 
 export default function LoBarnecheaPage() {

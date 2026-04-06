@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description:
     "Cuadro comparativo de costos de calefacción en Chile (marzo 2026): aire acondicionado Inverter $25.560/mes vs parafina $41.760 vs gas $69.120 vs eléctrica $84.960. Retorno de inversión en 8 meses.",
   alternates: { canonical: "/comparativa-calefaccion" },
+  openGraph: { url: "/comparativa-calefaccion" },
 };
 
 const consumo = [

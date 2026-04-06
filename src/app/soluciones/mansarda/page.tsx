@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Climatización a medida para mansardas y altillos. Techos inclinados y geometrías difíciles requieren diagnóstico experto. Consola piso-cielo desde $649.990.",
   alternates: { canonical: "/soluciones/mansarda" },
+  openGraph: { url: "/soluciones/mansarda" },
 };
 
 export default function MansardaPage() {

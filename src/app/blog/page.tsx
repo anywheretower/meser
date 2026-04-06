@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Guías, consejos y comparativas sobre aire acondicionado. ¿Cuánto cuesta instalar? ¿Midea vs Samsung? ¿Qué son los BTU? Todo lo que necesitas saber.",
   alternates: { canonical: "/blog" },
+  openGraph: { url: "/blog" },
 };
 
 const categorias = [...new Set(blogPosts.map((a) => a.categoria))];
