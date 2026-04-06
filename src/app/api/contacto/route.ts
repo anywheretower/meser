@@ -86,6 +86,52 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Error al enviar el email" }, { status: 500 });
     }
 
+    // Email de confirmación al lead (solo si dejó email)
+    if (email) {
+      const safeName = escapeHtml(nombre || "");
+      const safeNecesidad = escapeHtml(necesidadLabels[necesidad] || necesidad || "cotización");
+
+      const confirmHtml = `
+        <div style="font-family:Arial,Helvetica,sans-serif;max-width:600px;margin:0 auto;">
+          <div style="background:#0A1628;padding:24px 30px;border-radius:8px 8px 0 0;">
+            <h1 style="color:#00D4FF;font-size:20px;margin:0;">¡Recibimos tu solicitud, ${safeName}!</h1>
+          </div>
+          <div style="background:#ffffff;padding:24px 30px;border:1px solid #eee;border-top:none;">
+            <p style="font-size:15px;color:#0A1628;line-height:1.6;margin:0 0 16px;">
+              Gracias por contactarnos. Un especialista de Meser te contactará en
+              <strong>menos de 2 horas</strong> para agendar tu diagnóstico gratuito por Zoom.
+            </p>
+            <div style="background:#f0fdff;border:1px solid rgba(0,212,255,0.2);border-radius:8px;padding:16px;margin:16px 0;">
+              <p style="font-size:14px;color:#0A1628;margin:0;">
+                <strong>Tu solicitud:</strong> ${safeNecesidad}
+              </p>
+            </div>
+            <p style="font-size:14px;color:#64748B;line-height:1.6;margin:16px 0 0;">
+              ¿Prefieres hablar ahora? Escríbenos directo por
+              <a href="https://wa.me/56982351110" style="color:#00D4FF;text-decoration:none;font-weight:600;">WhatsApp</a>
+              o llámanos al <a href="tel:+56982351110" style="color:#00D4FF;text-decoration:none;font-weight:600;">+569 8235 1110</a>.
+            </p>
+          </div>
+          <div style="background:#f8fafc;padding:16px 30px;border:1px solid #eee;border-top:none;border-radius:0 0 8px 8px;">
+            <p style="font-size:12px;color:#94a3b8;margin:0;">
+              Meser — Climatización Integral para tu Hogar en Santiago<br>
+              <a href="https://www.meser.cl" style="color:#00D4FF;text-decoration:none;">www.meser.cl</a>
+            </p>
+          </div>
+        </div>
+      `;
+
+      // Fire and forget — no bloquear respuesta si falla
+      resend.emails.send({
+        from: "Meser <contacto@meser.cl>",
+        to: [email],
+        subject: `${safeName}, recibimos tu solicitud — Meser`,
+        html: confirmHtml,
+      }).catch((confirmErr) => {
+        console.error("Error enviando confirmación al lead:", confirmErr);
+      });
+    }
+
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("API contacto error:", err);
