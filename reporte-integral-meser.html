@@ -165,7 +165,7 @@
     <div class="summary-label">CRO</div>
   </div>
   <div class="summary-card perf">
-    <div class="summary-value" style="color:var(--cat-perf)">32<span style="font-size:14px;color:#94a3b8">/35</span></div>
+    <div class="summary-value" style="color:var(--cat-perf)">33<span style="font-size:14px;color:#94a3b8">/35</span></div>
     <div class="summary-label">Rendimiento</div>
   </div>
   <div class="summary-card a11y">
@@ -208,7 +208,7 @@
   <div class="cat-tab active" onclick="switchCat('seo')">SEO (57/60)</div>
   <div class="cat-tab" onclick="switchCat('geo')">GEO / AI (27/30)</div>
   <div class="cat-tab" onclick="switchCat('cro')">CRO (31/52)</div>
-  <div class="cat-tab" onclick="switchCat('perf')">Rendimiento (20/35)</div>
+  <div class="cat-tab" onclick="switchCat('perf')">Rendimiento (33/35)</div>
   <div class="cat-tab" onclick="switchCat('a11y')">Accesibilidad (17/32)</div>
 </div>
 
@@ -471,7 +471,7 @@
     <tr><td>R28</td><td>Next.js 16.1.6 con 5 CVEs conocidas<div class="detail">HTTP smuggling, CSRF bypass, unbounded image cache, DoS postponed, dev HMR CSRF. Upgrade a 16.2.2.</div></td><td><span class="badge badge-critical">Cr&iacute;tico</span></td></tr>
     <tr><td>R29</td><td>Rate limiting en APIs<div class="detail">10 req/min por IP en /api/contacto y /api/transbank/create. In-memory con cleanup.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R30</td><td>HTML sanitizado en emails<div class="detail">escapeHtml() en todos los campos interpolados en /api/contacto.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>R31</td><td>npm audit: 6 vulnerabilidades (3 high)<div class="detail">flatted, minimatch, picomatch high. ajv, brace-expansion moderate.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>R31</td><td>npm audit: 5 de 6 vulnerabilidades resueltas<div class="detail">flatted, minimatch, picomatch, ajv, brace-expansion corregidos con npm audit fix. Solo queda Next.js (R28).</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R32</td><td>P&aacute;ginas de error personalizadas<div class="detail">not-found.tsx (404 con CTAs) y error.tsx (retry + WhatsApp) creados.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>R33</td><td>CSRF protection en Route Handlers<div class="detail">Origin/Referer check en /api/contacto y /api/transbank/create. Bypass en dev.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
   </table>
@@ -559,9 +559,9 @@
   <div class="footer-grid">
     <div class="footer-item"><div class="footer-num" style="color:var(--nora)">173</div><div class="footer-label">Total medidas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#16a34a">143</div><div class="footer-label">Aplicadas</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#16a34a">144</div><div class="footer-label">Aplicadas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#ea580c">16</div><div class="footer-label">Pendientes</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#ea580c">15</div><div class="footer-label">Pendientes</div></div>
     <div class="footer-divider"></div>
     <div class="footer-item"><div class="footer-num" style="color:#dc2626">11</div><div class="footer-label">Cr&iacute;ticos</div></div>
     <div class="footer-divider"></div>
