@@ -157,7 +157,7 @@
     <div class="summary-label">SEO</div>
   </div>
   <div class="summary-card geo">
-    <div class="summary-value" style="color:var(--cat-geo)">24<span style="font-size:14px;color:#94a3b8">/30</span></div>
+    <div class="summary-value" style="color:var(--cat-geo)">27<span style="font-size:14px;color:#94a3b8">/30</span></div>
     <div class="summary-label">GEO / AI</div>
   </div>
   <div class="summary-card cro">
@@ -206,7 +206,7 @@
 <!-- TABS -->
 <div class="cat-tabs">
   <div class="cat-tab active" onclick="switchCat('seo')">SEO (57/60)</div>
-  <div class="cat-tab" onclick="switchCat('geo')">GEO / AI (24/30)</div>
+  <div class="cat-tab" onclick="switchCat('geo')">GEO / AI (27/30)</div>
   <div class="cat-tab" onclick="switchCat('cro')">CRO (31/52)</div>
   <div class="cat-tab" onclick="switchCat('perf')">Rendimiento (20/35)</div>
   <div class="cat-tab" onclick="switchCat('a11y')">Accesibilidad (17/32)</div>
@@ -338,11 +338,11 @@
     <tr><td>G7</td><td>knowsAbout en Organization<div class="detail">11 temas listados.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>G8</td><td>tip-box en blog posts<div class="detail">Resumen citable al inicio de cada art&iacute;culo. Excelente para extracci&oacute;n AI.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
     <tr><td>G9</td><td>Tablas de datos en blog<div class="detail">Precios, BTU, consumo, comparativas en formato tabla.</div></td><td><span class="badge badge-done">Aplicado</span></td></tr>
-    <tr><td>G22</td><td>P&aacute;ginas comerciales sin "p&aacute;rrafo respuesta"<div class="detail">/aires, /todo-incluido, /termos no tienen tip-box ni statement definitivo al inicio. Solo blog lo tiene.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
-    <tr><td>G23</td><td>FAQPage schema solo en homepage<div class="detail">/aires-acondicionados (p&aacute;gina clave) no tiene FAQ ni FAQPage schema.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>G22</td><td>P&aacute;rrafo respuesta en p&aacute;ginas comerciales<div class="detail">Tip-box con statement definitivo agregado en /aires, /todo-incluido y /termos. Citeable por AI.</div></td><td><span class="badge badge-done">Aplicada</span></td></tr>
+    <tr><td>G23</td><td>FAQPage schema en /aires-acondicionados<div class="detail">5 FAQs con schema FAQPage JSON-LD: precios, marcas, BTU, instalaci&oacute;n, tiempos.</div></td><td><span class="badge badge-done">Aplicada</span></td></tr>
     <tr><td>G24</td><td>inLanguage "es-CL" en WebSite schema<div class="detail">Propiedad inLanguage agregada para que AI sirva idioma correcto.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
     <tr><td>G25</td><td>Product cards usan article en /aires y /termos<div class="detail">Sem&aacute;ntica mejorada para extractabilidad por AI engines.</div></td><td><span class="badge badge-done">Hecho</span></td></tr>
-    <tr><td>G26</td><td>No HowTo schema en blog procedural<div class="detail">"Cu&aacute;nto cuesta instalar" y "mantenci&oacute;n" deber&iacute;an tener HowTo schema.</div></td><td><span class="badge badge-pending">Pendiente</span></td></tr>
+    <tr><td>G26</td><td>HowTo schema en blog procedural<div class="detail">JSON-LD HowTo en "cu&aacute;nto cuesta instalar" (5 pasos) y "mantenci&oacute;n" (7 pasos).</div></td><td><span class="badge badge-done">Aplicada</span></td></tr>
   </table>
 </div>
 
@@ -559,13 +559,13 @@
   <div class="footer-grid">
     <div class="footer-item"><div class="footer-num" style="color:var(--nora)">173</div><div class="footer-label">Total medidas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#16a34a">140</div><div class="footer-label">Aplicadas</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#16a34a">143</div><div class="footer-label">Aplicadas</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#ea580c">19</div><div class="footer-label">Pendientes</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#ea580c">16</div><div class="footer-label">Pendientes</div></div>
     <div class="footer-divider"></div>
     <div class="footer-item"><div class="footer-num" style="color:#dc2626">11</div><div class="footer-label">Cr&iacute;ticos</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">81%</div><div class="footer-label">Completado</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:var(--nora)">83%</div><div class="footer-label">Completado</div></div>
   </div>
   <div class="note note-red" style="margin-top:16px">
     <strong>11 medidas cr&iacute;ticas requieren acci&oacute;n inmediata:</strong> llms.txt precios errados, QuickCapture roto, 3 fechas expiradas, "Quality Score" visible, AggregateRating sin GBP, sin privacidad/RUT, 5 CVEs Next.js, sin rate limiting, sin CSP, GSC sin verificar, SearchAction falso.

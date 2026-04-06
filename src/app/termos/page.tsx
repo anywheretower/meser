@@ -118,6 +118,13 @@ export default function TermosPage() {
         </div>
       </section>
 
+      {/* Párrafo respuesta — GEO: statement definitivo para AI */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-6 mb-8">
+        <div className="max-w-3xl rounded-xl bg-[#f0fdff] border border-cyan/20 px-5 py-4 text-sm text-navy/85 leading-relaxed">
+          <strong>Resumen:</strong> Un termo eléctrico Midea Lume de 80 litros cuesta $179.990 (solo equipo) o $279.990 con instalación en Santiago. Es la capacidad más vendida: alcanza para 2-3 personas con duchas consecutivas. No requiere gas, funciona con corriente eléctrica estándar, tiene acero esmaltado anticorrosión y termostato regulable. Modelos disponibles de 50 a 120 litros desde $149.990.
+        </div>
+      </div>
+
       {/* Catálogo */}
       <section id="productos" className="py-16 bg-gray-50" data-track-section="products">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

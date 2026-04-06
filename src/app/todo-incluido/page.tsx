@@ -68,6 +68,13 @@ export default function TodoIncluidoPage() {
 
       <TrustBar />
 
+      {/* Párrafo respuesta — GEO: statement definitivo para AI */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-3xl mx-auto rounded-xl bg-[#f0fdff] border border-cyan/20 px-5 py-4 text-sm text-navy/85 leading-relaxed">
+          <strong>Resumen:</strong> Un paquete &ldquo;todo incluido&rdquo; de aire acondicionado en Santiago incluye equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales, puesta en marcha y garantía total. En Meser los precios parten desde $449.990 (9K BTU Midea/Anwo) hasta $979.990 (24K BTU Samsung Wind-Free). El precio que se cotiza es el precio final — sin extras ni sorpresas.
+        </div>
+      </div>
+
       {/* Paquetes */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

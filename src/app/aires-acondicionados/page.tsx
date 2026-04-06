@@ -137,6 +137,13 @@ export default function AiresAcondicionadosPage() {
         </div>
       </section>
 
+      {/* Párrafo respuesta — GEO: statement definitivo para AI */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-6 mb-8">
+        <div className="max-w-3xl rounded-xl bg-[#f0fdff] border border-cyan/20 px-5 py-4 text-sm text-navy/85 leading-relaxed">
+          <strong>Resumen:</strong> En Chile, un aire acondicionado Inverter con instalación profesional cuesta entre $449.990 y $979.990 dependiendo de la capacidad (9.000 a 24.000 BTU) y la marca (Midea, Anwo o Samsung). Meser ofrece precio cerrado todo incluido — equipo, instalación estética, materiales y garantía — sin costos ocultos. Todos los equipos son frío/calor, WiFi y eficiencia clase A.
+        </div>
+      </div>
+
       {/* Catálogo por marca */}
       {airesGroups.map((grupo, groupIdx) => (
         <section
@@ -463,6 +470,90 @@ export default function AiresAcondicionadosPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* FAQ — G23: FAQPage schema en /aires */}
+      <section className="py-20 bg-gray-50">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy text-center">
+            Preguntas frecuentes sobre aires acondicionados
+          </h2>
+          <div className="mt-10 space-y-4">
+            {[
+              {
+                q: "¿Cuánto cuesta un aire acondicionado con instalación en Santiago?",
+                a: "Los paquetes todo incluido parten desde $449.990 (9K BTU Midea o Anwo) e incluyen equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales y garantía total. El modelo Samsung Wind-Free parte desde $679.990.",
+              },
+              {
+                q: "¿Qué diferencia hay entre Midea, Samsung y Anwo?",
+                a: "Las tres marcas son Inverter, frío/calor, WiFi y clase A. Samsung Wind-Free destaca por no generar corriente directa de aire (ultra silencioso). Midea EcoMaster incluye IA que aprende tus hábitos de uso. Anwo Ecoflow usa refrigerante R32 ecológico y tiene la mejor relación precio-rendimiento.",
+              },
+              {
+                q: "¿Cuántos BTU necesito para mi espacio?",
+                a: "Como regla general: 9.000 BTU cubren hasta 17-18 m², 12.000 BTU hasta 22 m², 18.000 BTU hasta 32 m² y 24.000 BTU hasta 40 m². Factores como orientación solar, altura de techo y aislación pueden variar esto. En el diagnóstico gratuito por Zoom te calculamos la capacidad exacta.",
+              },
+              {
+                q: "¿La instalación daña las paredes o la fachada?",
+                a: "No. Usamos instalación estética con canaletas ocultas que se mimetizan con la pared. En edificios coordinamos con la administración para cumplir reglamentos de fachada. El resultado es invisible desde el exterior.",
+              },
+              {
+                q: "¿Cuánto demora la instalación?",
+                a: "Desde que apruebas la cotización, el equipo se instala en 3 a 7 días hábiles. La instalación en sí toma entre 3 y 5 horas por equipo, dependiendo de la complejidad del espacio.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="group rounded-xl border border-gray-200 bg-white open:shadow-sm transition-all"
+              >
+                <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-semibold text-navy">
+                  {faq.q}
+                  <svg className="w-5 h-5 text-steel shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="px-6 pb-4 text-sm text-steel-dark leading-relaxed">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "¿Cuánto cuesta un aire acondicionado con instalación en Santiago?",
+                  acceptedAnswer: { "@type": "Answer", text: "Los paquetes todo incluido parten desde $449.990 (9K BTU Midea o Anwo) e incluyen equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales y garantía total. Samsung Wind-Free desde $679.990." },
+                },
+                {
+                  "@type": "Question",
+                  name: "¿Qué diferencia hay entre Midea, Samsung y Anwo?",
+                  acceptedAnswer: { "@type": "Answer", text: "Las tres son Inverter, frío/calor, WiFi y clase A. Samsung Wind-Free no genera corriente directa. Midea EcoMaster incluye IA. Anwo Ecoflow usa refrigerante R32 ecológico." },
+                },
+                {
+                  "@type": "Question",
+                  name: "¿Cuántos BTU necesito para mi espacio?",
+                  acceptedAnswer: { "@type": "Answer", text: "9.000 BTU: hasta 18 m². 12.000 BTU: hasta 22 m². 18.000 BTU: hasta 32 m². 24.000 BTU: hasta 40 m². Factores como orientación solar y aislación pueden variar. Diagnóstico gratuito por Zoom disponible." },
+                },
+                {
+                  "@type": "Question",
+                  name: "¿La instalación daña las paredes o la fachada?",
+                  acceptedAnswer: { "@type": "Answer", text: "No. Instalación estética con canaletas ocultas que se mimetizan con la pared. En edificios coordinamos con la administración para cumplir reglamentos de fachada." },
+                },
+                {
+                  "@type": "Question",
+                  name: "¿Cuánto demora la instalación?",
+                  acceptedAnswer: { "@type": "Answer", text: "3 a 7 días hábiles desde la aprobación. La instalación toma entre 3 y 5 horas por equipo." },
+                },
+              ],
+            }),
+          }}
+        />
       </section>
 
     </>
