@@ -63,7 +63,7 @@ export default function TermosPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-navy">
-              Termo eléctrico 80 litros y más — Midea Lume desde $149.990
+              Termo eléctrico 50 litros y más — Midea Lume desde $149.990
             </h1>
             <p className="mt-4 text-lg text-steel-dark leading-relaxed">
               Termo eléctrico de 50, 80, 100 y 120 litros. Agua caliente sin gas, segura y eficiente.
