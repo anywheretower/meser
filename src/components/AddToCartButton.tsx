@@ -32,7 +32,7 @@ export default function AddToCartButton({
         disabled
         role="status"
         aria-live="polite"
-        className="block w-full text-center rounded-full bg-cyan/80 px-4 py-2.5 text-sm font-semibold text-navy"
+        className="block w-full text-center rounded-full bg-cyan/80 px-4 py-3 text-sm font-semibold text-navy min-h-[48px]"
       >
         Agregado ✓
       </button>
@@ -43,13 +43,13 @@ export default function AddToCartButton({
     <div className="space-y-1.5">
       <button
         onClick={() => handleAdd(true)}
-        className="block w-full text-center rounded-full bg-cyan px-4 py-2.5 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors"
+        className="block w-full text-center rounded-full bg-cyan px-4 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors min-h-[48px]"
       >
         Con instalación — {formatPrice(todoIncluidoPrice)}
       </button>
       <button
         onClick={() => handleAdd(false)}
-        className="block w-full text-center text-xs text-steel-dark hover:text-navy transition-colors py-1"
+        className="block w-full text-center text-xs text-steel-dark hover:text-navy transition-colors py-2.5 min-h-[44px]"
       >
         Solo equipo {formatPrice(price)}
       </button>
