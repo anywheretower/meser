@@ -23,28 +23,28 @@ export default function TodoIncluidoPage() {
       <section className="relative bg-navy overflow-hidden">
         <Image src="/images/blog/midea-vs-samsung.webp" alt="Pareja eligiendo paquete todo incluido de aire acondicionado" fill className="object-cover opacity-25" sizes="100vw" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-navy from-40% to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-36">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-cyan/10 border border-cyan/20 px-4 py-1.5 mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-cyan/10 border border-cyan/20 px-4 py-1.5 mb-4 sm:mb-6">
               <span className="text-xs font-semibold text-cyan">
                 Precio cerrado — cero sorpresas
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Aire acondicionado con instalación incluida desde{" "}
               <span className="text-cyan">$449.990</span>
             </h1>
-            <p className="mt-4 text-lg text-cyan font-medium">
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-cyan font-medium">
               Equipo Inverter frío/calor + instalación estética + garantía
               total. Un precio. Cero sorpresas.
             </p>
-            <p className="mt-6 text-lg text-steel-light leading-relaxed max-w-2xl">
+            <p className="hidden sm:block mt-6 text-lg text-steel-light leading-relaxed max-w-2xl">
               ¿Cansado de cotizar el equipo por un lado, la instalación por
               otro, y que al final aparezcan &ldquo;extras&rdquo;? En Meser el precio
               incluye todo. El precio que te damos es el precio que pagas. Punto.
             </p>
             {/* W7: WhatsApp como CTA principal (69% de conversiones) + form como secundario */}
-            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row gap-3">
               <WhatsAppLink
                 href="https://wa.me/56982351110?text=Hola%2C%20me%20interesa%20un%20paquete%20todo%20incluido%20de%20aire%20acondicionado"
                 location="todo_incluido_hero"
@@ -68,8 +68,8 @@ export default function TodoIncluidoPage() {
 
       <TrustBar />
 
-      {/* Párrafo respuesta — GEO: statement definitivo para AI */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+      {/* Párrafo respuesta — GEO: statement definitivo para AI (oculto mobile) */}
+      <div className="hidden sm:block mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-3xl mx-auto rounded-xl bg-[#f0fdff] border border-cyan/20 px-5 py-4 text-sm text-navy/85 leading-relaxed">
           <strong>Resumen:</strong> Un paquete &ldquo;todo incluido&rdquo; de aire acondicionado en Santiago incluye equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales, puesta en marcha y garantía total. En Meser los precios parten desde $449.990 (9K BTU Midea/Anwo) hasta $979.990 (24K BTU Samsung Wind-Free). El precio que se cotiza es el precio final — sin extras ni sorpresas.
         </div>

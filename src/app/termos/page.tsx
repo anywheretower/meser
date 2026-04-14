@@ -59,18 +59,18 @@ export default function TermosPage() {
       <TermosSchemaScript />
       <Breadcrumbs items={[{ label: "Termos Eléctricos" }]} />
       {/* Hero */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-10 sm:py-16 lg:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-navy">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
               Termo eléctrico 80 litros Midea Lume — Desde $179.990 con instalación
             </h1>
-            <p className="mt-4 text-lg text-steel-dark leading-relaxed">
-              Termo eléctrico de 50, 80, 100 y 120 litros. Agua caliente sin gas, segura y eficiente.
-              Acero esmaltado, termostato regulable. El termo eléctrico 80 litros es el más vendido:
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-steel-dark leading-relaxed">
+              <span className="hidden sm:inline">Termo eléctrico de 50, 80, 100 y 120 litros. Agua caliente sin gas, segura y eficiente.
+              Acero esmaltado, termostato regulable. </span>El termo eléctrico 80 litros es el más vendido:
               ideal para 2-3 personas desde $179.990 o con instalación desde $279.990 en Santiago.
             </p>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-steel-dark">
+            <div className="mt-4 sm:mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-steel-dark">
               <span className="flex items-center gap-1.5">
                 <svg className="w-4 h-4 text-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                 Instalación profesional incluida
@@ -85,8 +85,8 @@ export default function TermosPage() {
               </span>
             </div>
 
-            {/* C27: Social proof específico termos */}
-            <div className="mt-6 flex items-center gap-4 text-sm">
+            {/* C27: Social proof específico termos — oculto en mobile para comprimir hero */}
+            <div className="hidden sm:flex mt-6 items-center gap-4 text-sm">
               <div className="flex items-center gap-1 text-amber-500">★★★★★</div>
               <span className="text-steel-dark">
                 <span className="font-semibold text-navy">5.0</span> — 150+ hogares climatizados
@@ -96,7 +96,7 @@ export default function TermosPage() {
             </div>
 
             {/* CTAs directos */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-5 sm:mt-8 flex flex-wrap gap-3">
               <a
                 href="#productos"
                 className="inline-flex items-center gap-2 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-white hover:bg-cyan-dark transition-colors shadow-md shadow-cyan/15"
@@ -118,8 +118,8 @@ export default function TermosPage() {
         </div>
       </section>
 
-      {/* Párrafo respuesta — GEO: statement definitivo para AI */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-6 mb-8">
+      {/* Párrafo respuesta — GEO: statement definitivo para AI (oculto mobile, visible crawlers) */}
+      <div className="hidden sm:block mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-6 mb-8">
         <div className="max-w-3xl rounded-xl bg-[#f0fdff] border border-cyan/20 px-5 py-4 text-sm text-navy/85 leading-relaxed">
           <strong>Resumen:</strong> Un termo eléctrico Midea Lume de 80 litros cuesta $179.990 (solo equipo) o $279.990 con instalación en Santiago. Es la capacidad más vendida: alcanza para 2-3 personas con duchas consecutivas. No requiere gas, funciona con corriente eléctrica estándar, tiene acero esmaltado anticorrosión y termostato regulable. Modelos disponibles de 50 a 120 litros desde $149.990.
         </div>
