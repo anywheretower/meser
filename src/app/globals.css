@@ -4,10 +4,10 @@
   --color-navy: #0A1628;
   --color-navy-light: #111D2E;
   --color-navy-dark: #060E1A;
-  --color-cyan: #00D4FF;
-  --color-cyan-dark: #00B8DB;
-  --color-steel: #94A3B8;
-  --color-steel-dark: #64748B;
+  --color-cyan: #0891B2;
+  --color-cyan-dark: #0E7490;
+  --color-steel: #64748B;
+  --color-steel-dark: #475569;
   --color-steel-light: #CBD5E1;
   --font-sans: var(--font-body);
   --font-serif: var(--font-body);
@@ -39,7 +39,7 @@ html {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid #00D4FF;
+  outline: 2px solid #0891B2;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -48,12 +48,12 @@ summary:focus-visible {
 .card-lift:focus-within {
   transform: translateY(-4px);
   box-shadow:
-    0 0 0 2px #00D4FF,
+    0 0 0 2px #0891B2,
     0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
 ::selection {
-  background-color: #00D4FF;
+  background-color: #0891B2;
   color: #0A1628;
 }
 
@@ -251,7 +251,7 @@ summary:focus-visible {
 /* ── Gradient Text ── */
 
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #00D4FF 0%, #00FFE0 60%, #00D4FF 100%);
+  background: linear-gradient(135deg, #0891B2 0%, #00FFE0 60%, #0891B2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -339,7 +339,7 @@ summary:focus-visible {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #00D4FF;
+  color: #0891B2;
   font-weight: 700;
 }
 
@@ -361,7 +361,7 @@ summary:focus-visible {
 }
 
 .prose-meser a {
-  color: #00D4FF;
+  color: #0891B2;
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -369,7 +369,7 @@ summary:focus-visible {
 }
 
 .prose-meser a:hover {
-  color: #00B8DB;
+  color: #0E7490;
 }
 
 .prose-meser table {
@@ -400,7 +400,7 @@ summary:focus-visible {
 }
 
 .prose-meser blockquote {
-  border-left: 4px solid #00D4FF;
+  border-left: 4px solid #0891B2;
   padding-left: 1rem;
   margin: 1.5rem 0;
   font-style: italic;

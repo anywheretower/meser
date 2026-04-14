@@ -30,6 +30,8 @@ export default function AddToCartButton({
     return (
       <button
         disabled
+        role="status"
+        aria-live="polite"
         className="block w-full text-center rounded-full bg-cyan/80 px-4 py-2.5 text-sm font-semibold text-navy"
       >
         Agregado ✓

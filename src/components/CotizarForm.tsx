@@ -83,6 +83,7 @@ export function QuickCapture() {
       <input
         type="tel"
         aria-label="Número de teléfono"
+        autoComplete="tel"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         placeholder="+569 XXXX XXXX"
@@ -394,6 +395,7 @@ export default function CotizarForm() {
                     id="cotizar-nombre"
                     type="text"
                     required
+                    autoComplete="name"
                     value={formData.nombre}
                     onChange={(e) => updateField("nombre", e.target.value)}
                     placeholder="Tu nombre"
@@ -408,6 +410,7 @@ export default function CotizarForm() {
                     id="cotizar-telefono"
                     type="tel"
                     required
+                    autoComplete="tel"
                     pattern="\+?[0-9\s]{8,15}"
                     value={formData.telefono}
                     onChange={(e) => updateField("telefono", e.target.value)}
@@ -424,6 +427,7 @@ export default function CotizarForm() {
                 <input
                   id="cotizar-email"
                   type="email"
+                  autoComplete="email"
                   value={formData.email}
                   onChange={(e) => updateField("email", e.target.value)}
                   placeholder="tu@email.com"

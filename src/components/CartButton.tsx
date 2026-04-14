@@ -18,6 +18,7 @@ export default function CartButton() {
         viewBox="0 0 24 24"
         stroke="currentColor"
         strokeWidth={1.5}
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -26,7 +27,7 @@ export default function CartButton() {
         />
       </svg>
       {totalItems > 0 && (
-        <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-cyan text-[10px] font-bold text-navy">
+        <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-cyan text-[10px] font-bold text-navy" aria-live="polite" aria-label={`${totalItems} producto${totalItems > 1 ? "s" : ""} en el carrito`}>
           {totalItems}
         </span>
       )}
