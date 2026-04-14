@@ -307,8 +307,8 @@ export default function InstalacionPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <div className="inline-flex items-center rounded-full bg-red-500 px-3 py-1 text-[11px] font-bold text-white uppercase tracking-wider mb-3">
-                Promo hasta 31/03
+              <div className="inline-flex items-center rounded-full bg-cyan px-3 py-1 text-[11px] font-bold text-navy uppercase tracking-wider mb-3">
+                Solo servicio
               </div>
               <h3 className="text-2xl font-bold text-navy">
                 ¿Ya tienes tu equipo? Solo instalación
@@ -439,32 +439,7 @@ export default function InstalacionPage() {
           }),
         }}
       />
-      {/* Schema: HowTo */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            name: "Cómo instalar un aire acondicionado con Meser",
-            description: "Proceso completo de instalación profesional de aire acondicionado en Santiago, desde el diagnóstico hasta la puesta en marcha.",
-            totalTime: "PT5H",
-            estimatedCost: { "@type": "MonetaryAmount", currency: "CLP", value: "449990" },
-            step: [
-              { "@type": "HowToStep", position: 1, name: "Diagnóstico por Zoom", text: "Un especialista Meser evalúa tu espacio por videollamada (25 min gratis) y calcula la capacidad exacta en BTU que necesitas." },
-              { "@type": "HowToStep", position: 2, name: "Propuesta con precio cerrado", text: "Recibes una cotización detallada que incluye equipo, instalación, materiales y garantía. El precio no cambia." },
-              { "@type": "HowToStep", position: 3, name: "Coordinación de fecha", text: "Elegimos juntos el día y horario de instalación. Plazo típico: 3-7 días hábiles desde la aprobación." },
-              { "@type": "HowToStep", position: 4, name: "Preparación del espacio", text: "El técnico protege pisos y muebles. Se define la ubicación exacta de unidades interior y exterior." },
-              { "@type": "HowToStep", position: 5, name: "Perforación y montaje", text: "Perforación de muro para paso de cañerías. Montaje de soportes para unidad exterior e interior." },
-              { "@type": "HowToStep", position: 6, name: "Cañerías con aislación", text: "Conexión de cañerías frigoríficas con aislación térmica entre ambas unidades." },
-              { "@type": "HowToStep", position: 7, name: "Canaletas ocultas", text: "Instalación de canaletas pintadas al tono de la pared para ocultar tubos y cables." },
-              { "@type": "HowToStep", position: 8, name: "Conexión eléctrica y desagüe", text: "Conexión al sistema eléctrico y canalización del desagüe de condensado." },
-              { "@type": "HowToStep", position: 9, name: "Vacío y carga de gas", text: "Proceso de vacío del sistema y verificación de presión del gas refrigerante." },
-              { "@type": "HowToStep", position: 10, name: "Puesta en marcha y prueba", text: "Encendido del equipo, prueba de frío y calor, configuración WiFi e inducción de uso al cliente." },
-            ],
-          }),
-        }}
-      />
+      {/* S64: HowTo schema removido — deprecated por Google desde 2023 */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

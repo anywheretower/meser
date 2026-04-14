@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
       { source: "/tienda/:slug*", destination: "/aires-acondicionados", permanent: true },
       { source: "/quienes-somos", destination: "/nosotros", permanent: true },
       { source: "/quienes-somos/", destination: "/nosotros", permanent: true },
+      // S69: Legacy WooCommerce política envío
+      { source: "/politicas-de-envio-y-devolucion", destination: "/politica-devoluciones", permanent: true },
+      { source: "/politicas-de-envio-y-devolucion/", destination: "/politica-devoluciones", permanent: true },
+      // S70: Legacy WooCommerce product-category
+      { source: "/product-category/:slug*", destination: "/", permanent: true },
     ];
   },
   async headers() {
@@ -41,7 +46,7 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net",
+              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://*.doubleclick.net",
               "font-src 'self' https://fonts.gstatic.com",

@@ -49,9 +49,9 @@ export function QuickCapture() {
       await fetch("/api/contacto", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ telefono: phone, nombre: "Captura rápida", tipoEspacio: "", ambientes: "", comuna: "", necesidad: "", email: "", comentario: "Captura rápida — solicita llamada" }),
+        body: JSON.stringify({ telefono: phone, nombre: "Captura rápida", tipoEspacio: "no-especificado", ambientes: "1", comuna: "no-especificada", necesidad: "callback", email: "", comentario: "Captura rápida — solicita llamada" }),
       });
-      trackFormSubmit({ telefono: phone, nombre: "Captura rápida", tipoEspacio: "", ambientes: "", comuna: "", necesidad: "", email: "", comentario: "" });
+      trackFormSubmit({ telefono: phone, nombre: "Captura rápida", tipoEspacio: "no-especificado", ambientes: "1", comuna: "no-especificada", necesidad: "callback", email: "", comentario: "" });
       setSent(true);
     } catch {
       setSent(false);

@@ -59,6 +59,12 @@ export function csrfCheck(request: Request): NextResponse | null {
 
   const source = origin || referer;
   if (!source) {
+    // C44: In-app browsers (Instagram, Facebook, TikTok) may not send origin/referer.
+    // Allow if Content-Type is application/json (not sent by plain HTML forms).
+    const contentType = request.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      return null;
+    }
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

@@ -9,9 +9,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado con Instalación Santiago — Desde $299.990",
+  title: "Aire Acondicionado con Instalación Santiago — Desde $319.990",
   description:
-    "Aire acondicionado Midea, Samsung Wind-Free y Anwo Inverter con instalación en Santiago. Desde $299.990 o todo incluido desde $449.990. +150 hogares.",
+    "Aire acondicionado Midea, Samsung Wind-Free y Anwo Inverter con instalación en Santiago. Desde $319.990 o todo incluido desde $449.990. +150 hogares.",
   alternates: { canonical: "/aires-acondicionados" },
   openGraph: { url: "/aires-acondicionados" },
 };
@@ -87,7 +87,7 @@ export default function AiresAcondicionadosPage() {
             </h1>
             <p className="mt-4 text-lg text-steel-dark leading-relaxed">
               Aire acondicionado Inverter frío/calor con WiFi y eficiencia clase A.
-              Solo equipo desde $299.990 o todo incluido con instalación estética desde $449.990.
+              Solo equipo desde $319.990 o todo incluido con instalación estética desde $449.990.
             </p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-steel-dark">
               <span className="flex items-center gap-1.5">
@@ -111,7 +111,7 @@ export default function AiresAcondicionadosPage() {
                 <span className="font-semibold text-navy">5.0</span> — 150+ instalaciones en Santiago
               </span>
               <span className="text-steel">|</span>
-              <span className="text-steel-dark">Desde <span className="font-semibold text-navy">$299.990</span></span>
+              <span className="text-steel-dark">Desde <span className="font-semibold text-navy">$319.990</span></span>
             </div>
 
             {/* CTAs directos */}
@@ -429,8 +429,8 @@ export default function AiresAcondicionadosPage() {
               </Link>
             </div>
             <div className="relative rounded-2xl border-2 border-cyan p-6">
-              <div className="absolute -top-3 left-4 rounded-full bg-red-500 px-3 py-0.5 text-[11px] font-bold text-white uppercase tracking-wider">
-                Promo hasta 31/03
+              <div className="absolute -top-3 left-4 rounded-full bg-cyan px-3 py-0.5 text-[11px] font-bold text-navy uppercase tracking-wider">
+                Solo servicio
               </div>
               <h3 className="text-base font-semibold text-navy">
                 Instalación (solo servicio)

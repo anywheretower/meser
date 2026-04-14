@@ -4,102 +4,106 @@ import { getPublishedPosts } from "@/lib/blog-posts";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.meser.cl";
 
-  // Fechas reales de última modificación significativa
-  const lastUpdate = new Date("2026-04-06");
-  const contentUpdate = new Date("2026-04-03");
-  const initialLaunch = new Date("2026-03-15");
+  // S71: Fecha dinámica de build — refleja último deploy real
+  const buildDate = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: lastUpdate,
+      lastModified: buildDate,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/aires-acondicionados`,
-      lastModified: lastUpdate,
+      lastModified: buildDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/termos`,
-      lastModified: lastUpdate,
+      lastModified: buildDate,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/todo-incluido`,
-      lastModified: lastUpdate,
+      lastModified: buildDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/climatizacion-integral`,
-      lastModified: contentUpdate,
+      lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/climatizacion-inteligente`,
-      lastModified: initialLaunch,
+      lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/instalacion-aire-acondicionado`,
-      lastModified: contentUpdate,
+      lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/mantencion`,
-      lastModified: lastUpdate,
+      lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/garantia`,
-      lastModified: initialLaunch,
+      lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/nosotros`,
-      lastModified: initialLaunch,
+      lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/contacto`,
-      lastModified: initialLaunch,
+      lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: initialLaunch,
+      lastModified: buildDate,
       changeFrequency: "weekly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/club-meser`,
-      lastModified: initialLaunch,
+      lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${baseUrl}/politica-devoluciones`,
-      lastModified: lastUpdate,
+      lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/comparativa-calefaccion`,
+      lastModified: buildDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
   ];
 
   const soluciones = ["departamento", "casa", "mansarda", "oficina", "multisplit"];
   const solucionPages: MetadataRoute.Sitemap = soluciones.map((s) => ({
     url: `${baseUrl}/soluciones/${s}`,
-    lastModified: contentUpdate,
+    lastModified: buildDate,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -107,7 +111,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const coberturas = ["las-condes", "lo-barnechea", "nunoa", "providencia", "vitacura"];
   const coberturaPages: MetadataRoute.Sitemap = coberturas.map((c) => ({
     url: `${baseUrl}/cobertura/${c}`,
-    lastModified: contentUpdate,
+    lastModified: buildDate,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
@@ -119,14 +123,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const extraPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/comparativa-calefaccion`,
-      lastModified: contentUpdate,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
-
-  return [...staticPages, ...extraPages, ...solucionPages, ...coberturaPages, ...blogPages];
+  return [...staticPages, ...solucionPages, ...coberturaPages, ...blogPages];
 }

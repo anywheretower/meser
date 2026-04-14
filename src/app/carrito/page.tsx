@@ -71,6 +71,8 @@ export default function CarritoPage() {
     }
   };
 
+  const [checkoutError, setCheckoutError] = useState("");
+
   const isFormValid =
     billing.nombre.trim() !== "" &&
     billing.apellidos.trim() !== "" &&
@@ -83,6 +85,7 @@ export default function CarritoPage() {
   const handleCheckout = async () => {
     if (!isFormValid) return;
     setLoading(true);
+    setCheckoutError("");
     try {
       const res = await fetch("/api/transbank/create", {
         method: "POST",
@@ -98,11 +101,11 @@ export default function CarritoPage() {
         });
         window.location.href = `${data.url}?token_ws=${data.token}`;
       } else {
-        alert("Error al iniciar el pago. Intenta nuevamente.");
+        setCheckoutError("payment");
         setLoading(false);
       }
     } catch {
-      alert("Error de conexión. Intenta nuevamente.");
+      setCheckoutError("connection");
       setLoading(false);
     }
   };
@@ -420,6 +423,32 @@ export default function CarritoPage() {
             <p className="mt-2 text-center text-xs text-steel">
               Completa todos los campos obligatorios para continuar.
             </p>
+          )}
+
+          {checkoutError && (
+            <div className="mt-3 rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-800">
+              <p className="font-medium">
+                {checkoutError === "payment"
+                  ? "No pudimos iniciar el pago. Intenta nuevamente."
+                  : "Error de conexión. Revisa tu internet e intenta de nuevo."}
+              </p>
+              <div className="mt-2 flex flex-wrap gap-3">
+                <button
+                  onClick={handleCheckout}
+                  className="text-sm font-semibold text-red-700 underline underline-offset-2 hover:text-red-900"
+                >
+                  Reintentar
+                </button>
+                <a
+                  href="https://wa.me/56982351110?text=Hola%2C%20tengo%20un%20problema%20con%20el%20pago"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-green-700 underline underline-offset-2 hover:text-green-900"
+                >
+                  Ayuda por WhatsApp
+                </a>
+              </div>
+            </div>
           )}
 
           <div className="mt-4 flex justify-between">

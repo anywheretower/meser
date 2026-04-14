@@ -10,6 +10,7 @@ export default function FormularioGlobal() {
         src="/images/formulario-bg.webp"
         alt="Living de hogar en Santiago con climatización integral instalada"
         fill
+        sizes="100vw"
         className="object-cover object-right"
       />
       {/* Gradient overlay left for form readability */}

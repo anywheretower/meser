@@ -9,6 +9,7 @@ import {
 import { Resend } from "resend";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 import { formatPrice } from "@/lib/products";
+import { escapeHtml } from "@/lib/api-security";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -72,11 +73,12 @@ async function handleConfirmation(tokenWs: string) {
 
       if (pedido) {
         const items = (pedido.items as PedidoItem[]) || [];
+        const esc = escapeHtml;
         const itemsHtml = items
           .map(
             (i) =>
               `<tr>
-                <td style="padding:8px;border-bottom:1px solid #eee">${i.name}</td>
+                <td style="padding:8px;border-bottom:1px solid #eee">${esc(i.name)}</td>
                 <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">${i.quantity}</td>
                 <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">${i.withInstallation ? "Sí" : "No"}</td>
                 <td style="padding:8px;border-bottom:1px solid #eee;text-align:right">${formatPrice(i.unitPrice * i.quantity)}</td>
@@ -97,13 +99,13 @@ async function handleConfirmation(tokenWs: string) {
 
               <h3 style="margin-top:24px;color:#333">Datos del cliente</h3>
               <table style="width:100%;border-collapse:collapse">
-                <tr><td style="padding:4px 8px;color:#666">Nombre</td><td style="padding:4px 8px">${pedido.nombre || ""} ${pedido.apellidos || ""}</td></tr>
-                <tr><td style="padding:4px 8px;color:#666">RUT</td><td style="padding:4px 8px">${pedido.rut || "—"}</td></tr>
-                <tr><td style="padding:4px 8px;color:#666">Teléfono</td><td style="padding:4px 8px">${pedido.telefono || "—"}</td></tr>
-                <tr><td style="padding:4px 8px;color:#666">Email</td><td style="padding:4px 8px">${pedido.email || "—"}</td></tr>
-                <tr><td style="padding:4px 8px;color:#666">Dirección</td><td style="padding:4px 8px">${pedido.direccion || "—"}${pedido.depto ? `, Depto ${pedido.depto}` : ""}</td></tr>
-                <tr><td style="padding:4px 8px;color:#666">Comuna</td><td style="padding:4px 8px">${pedido.comuna || "—"}</td></tr>
-                ${pedido.notas ? `<tr><td style="padding:4px 8px;color:#666">Notas</td><td style="padding:4px 8px">${pedido.notas}</td></tr>` : ""}
+                <tr><td style="padding:4px 8px;color:#666">Nombre</td><td style="padding:4px 8px">${esc(pedido.nombre || "")} ${esc(pedido.apellidos || "")}</td></tr>
+                <tr><td style="padding:4px 8px;color:#666">RUT</td><td style="padding:4px 8px">${esc(pedido.rut || "—")}</td></tr>
+                <tr><td style="padding:4px 8px;color:#666">Teléfono</td><td style="padding:4px 8px">${esc(pedido.telefono || "—")}</td></tr>
+                <tr><td style="padding:4px 8px;color:#666">Email</td><td style="padding:4px 8px">${esc(pedido.email || "—")}</td></tr>
+                <tr><td style="padding:4px 8px;color:#666">Dirección</td><td style="padding:4px 8px">${esc(pedido.direccion || "—")}${pedido.depto ? `, Depto ${esc(pedido.depto)}` : ""}</td></tr>
+                <tr><td style="padding:4px 8px;color:#666">Comuna</td><td style="padding:4px 8px">${esc(pedido.comuna || "—")}</td></tr>
+                ${pedido.notas ? `<tr><td style="padding:4px 8px;color:#666">Notas</td><td style="padding:4px 8px">${esc(pedido.notas)}</td></tr>` : ""}
               </table>
 
               <h3 style="margin-top:24px;color:#333">Productos</h3>
@@ -132,7 +134,7 @@ async function handleConfirmation(tokenWs: string) {
             .map(
               (i) =>
                 `<tr>
-                  <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;color:#333">${i.name}</td>
+                  <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;color:#333">${esc(i.name)}</td>
                   <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;color:#333">${i.quantity}</td>
                   <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;color:#333">${i.withInstallation ? "Incluida" : "No"}</td>
                   <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:right;font-weight:600;color:#333">${formatPrice(i.unitPrice * i.quantity)}</td>
@@ -201,9 +203,9 @@ async function handleConfirmation(tokenWs: string) {
                 <div style="padding:24px 32px;border-bottom:1px solid #e5e7eb">
                   <h3 style="color:#333;margin:0 0 12px;font-size:15px">Dirección de entrega</h3>
                   <p style="color:#555;margin:0;font-size:14px;line-height:1.5">
-                    ${pedido.nombre || ""} ${pedido.apellidos || ""}<br>
-                    ${pedido.direccion || ""}${pedido.depto ? `, Depto ${pedido.depto}` : ""}<br>
-                    ${pedido.comuna || ""}
+                    ${esc(pedido.nombre || "")} ${esc(pedido.apellidos || "")}<br>
+                    ${esc(pedido.direccion || "")}${pedido.depto ? `, Depto ${esc(pedido.depto)}` : ""}<br>
+                    ${esc(pedido.comuna || "")}
                   </p>
                 </div>
 

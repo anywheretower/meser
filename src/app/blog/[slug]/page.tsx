@@ -214,27 +214,7 @@ function ArticleCuantoCuesta() {
         </p>
       </div>
 
-      {/* G26: HowTo schema para artículo procedural */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            name: "Cómo instalar un aire acondicionado en Chile (paso a paso)",
-            description: "Guía para contratar la instalación de un aire acondicionado split Inverter en Santiago, Chile. Desde elegir el equipo hasta la puesta en marcha.",
-            totalTime: "P7D",
-            estimatedCost: { "@type": "MonetaryAmount", currency: "CLP", value: "449990" },
-            step: [
-              { "@type": "HowToStep", position: 1, name: "Evalúa tu espacio", text: "Calcula los BTU necesarios según el tamaño del espacio: 9.000 BTU para hasta 18 m², 12.000 BTU para hasta 22 m², 18.000 BTU para hasta 32 m², 24.000 BTU para hasta 40 m²." },
-              { "@type": "HowToStep", position: 2, name: "Elige marca y modelo", text: "Compara entre Midea EcoMaster (mejor relación calidad-precio), Samsung Wind-Free (premium, ultra silencioso) y Anwo Ecoflow (ecológico, refrigerante R32)." },
-              { "@type": "HowToStep", position: 3, name: "Solicita diagnóstico profesional", text: "Agenda un diagnóstico gratuito por videollamada donde un técnico evalúa tu espacio, orientación solar, aislación y complejidad de instalación." },
-              { "@type": "HowToStep", position: 4, name: "Recibe cotización con precio cerrado", text: "La cotización debe incluir equipo, instalación, materiales, puesta en marcha y garantía. Desconfía de presupuestos con 'extras' no especificados." },
-              { "@type": "HowToStep", position: 5, name: "Instalación profesional", text: "La instalación toma entre 3 y 5 horas. Incluye montaje de unidad interior y exterior, cañerías, canaletas estéticas, conexión eléctrica y puesta en marcha." },
-            ],
-          }),
-        }}
-      />
+      {/* S64: HowTo schema removido — deprecated por Google desde 2023 */}
     </>
   );
 }
@@ -1081,29 +1061,7 @@ function ArticleMantencion() {
         </p>
       </div>
 
-      {/* G26: HowTo schema para artículo procedural */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            name: "Cómo hacer mantención a un aire acondicionado split en Chile",
-            description: "Guía paso a paso para la limpieza y mantención preventiva de un aire acondicionado split Inverter. Incluye limpieza de filtros casera y mantención profesional.",
-            totalTime: "PT30M",
-            estimatedCost: { "@type": "MonetaryAmount", currency: "CLP", value: "64990" },
-            step: [
-              { "@type": "HowToStep", position: 1, name: "Desconecta el equipo", text: "Por seguridad, apaga y desenchufa el aire acondicionado antes de cualquier limpieza." },
-              { "@type": "HowToStep", position: 2, name: "Abre la tapa frontal", text: "Levanta o desliza la tapa frontal de la unidad interior según el modelo (Samsung, Midea o Anwo)." },
-              { "@type": "HowToStep", position: 3, name: "Extrae y limpia los filtros", text: "Retira los filtros (1-2 paneles plásticos). Aspira el polvo o lava con agua tibia y jabón neutro. Nunca uses agua caliente ni cepillo metálico." },
-              { "@type": "HowToStep", position: 4, name: "Seca los filtros al aire", text: "Deja secar completamente al aire libre. No uses secador de pelo ni los expongas a calor directo." },
-              { "@type": "HowToStep", position: 5, name: "Reinstala los filtros", text: "Coloca los filtros limpios en su posición original. Esto mejora el flujo de aire y reduce el consumo eléctrico inmediatamente." },
-              { "@type": "HowToStep", position: 6, name: "Limpieza exterior mensual", text: "Pasa un paño húmedo por la carcasa (sin mojar partes eléctricas). Revisa que el drenaje funcione correctamente." },
-              { "@type": "HowToStep", position: 7, name: "Mantención profesional anual", text: "Contrata una limpieza profunda anual ($64.990) que incluye limpieza de serpentinas con hidrolavadora, revisión de drenaje, verificación de presiones y diagnóstico electrónico." },
-            ],
-          }),
-        }}
-      />
+      {/* S64: HowTo schema removido — deprecated por Google desde 2023 */}
     </>
   );
 }
