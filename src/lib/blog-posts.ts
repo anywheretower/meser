@@ -5,6 +5,8 @@ export interface BlogPost {
   keywords: string;
   categoria: string;
   fecha: string;
+  /** Fecha de última revisión sustantiva del contenido (precios, datos, ejemplos). Si no está definido, se usa `fecha`. */
+  fechaActualizacion?: string;
   readTime: string;
   image?: string;
   imageAlt?: string;
@@ -118,4 +120,17 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 
 export function getPublishedPosts(): BlogPost[] {
   return blogPosts;
+}
+
+/**
+ * Devuelve hasta `limit` posts relacionados al slug dado.
+ * Prioriza misma categoría, luego resto en orden del array. Excluye el post mismo.
+ */
+export function getRelatedPosts(slug: string, limit = 3): BlogPost[] {
+  const current = getPostBySlug(slug);
+  if (!current) return blogPosts.slice(0, limit);
+  const others = blogPosts.filter((p) => p.slug !== slug);
+  const sameCategory = others.filter((p) => p.categoria === current.categoria);
+  const rest = others.filter((p) => p.categoria !== current.categoria);
+  return [...sameCategory, ...rest].slice(0, limit);
 }

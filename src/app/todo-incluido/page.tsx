@@ -8,11 +8,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado Todo Incluido desde $449.990",
+  title: "Paquete Todo Incluido: Equipo + Instalación + Garantía · Desde $449.990",
   alternates: { canonical: "/todo-incluido" },
   openGraph: { url: "/todo-incluido" },
   description:
-    "Aire acondicionado Inverter frío/calor + instalación + garantía desde $449.990. Precio cerrado, cero sorpresas. Ahorra hasta $172.000 vs comprar por separado.",
+    "Paquete todo incluido: equipo Inverter frío/calor + instalación estética + garantía. Precio cerrado desde $449.990 — ahorras hasta $172.000 vs comprar por separado.",
 };
 
 export default function TodoIncluidoPage() {
@@ -31,7 +31,7 @@ export default function TodoIncluidoPage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Aire acondicionado con instalación incluida desde{" "}
+              Paquete todo incluido: equipo + instalación + garantía desde{" "}
               <span className="text-cyan">$449.990</span>
             </h1>
             <p className="mt-3 sm:mt-4 text-base sm:text-lg text-cyan font-medium">
@@ -406,7 +406,7 @@ export default function TodoIncluidoPage() {
                 className="group rounded-2xl border border-gray-200 bg-white open:shadow-sm transition-all"
               >
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-5 text-sm font-semibold text-navy">
-                  {faq.q}
+                  <h3 className="m-0 text-sm font-semibold text-navy leading-snug">{faq.q}</h3>
                   <svg
                     className="w-5 h-5 text-steel shrink-0 ml-4 transition-transform group-open:rotate-180"
                     fill="none"

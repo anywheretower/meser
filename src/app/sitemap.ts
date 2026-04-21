@@ -93,10 +93,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/politica-privacidad`,
+      lastModified: buildDate,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
       url: `${baseUrl}/comparativa-calefaccion`,
       lastModified: buildDate,
       changeFrequency: "monthly",
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/glosario-climatizacion`,
+      lastModified: buildDate,
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
   ];
 
@@ -118,7 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = getPublishedPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.fecha),
+    lastModified: new Date(post.fechaActualizacion ?? post.fecha),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

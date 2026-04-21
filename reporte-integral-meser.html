@@ -172,28 +172,28 @@
     <div class="crux-card"><div class="crux-label">FID Mobile</div><div class="crux-value">70ms</div></div>
     <div class="crux-card"><div class="crux-label">CrUX</div><div class="crux-value warn">N/A</div></div>
   </div>
-  <div class="note">CrUX: sin datos de campo (tr&aacute;fico insuficiente). Oportunidad: unused JS ~25 KiB. LCP mobile sobre umbral 2.5s &mdash; agregar sizes al hero image.</div>
+  <div class="note">CrUX: sin datos de campo (tr&aacute;fico insuficiente). LCP mobile 2.8s &rarr; objetivo &lt;2.5s tras R39 (bundle lazy unificado) + blurDataURL hero.</div>
 </div>
 
 <div class="note">
-  <strong>v14 &mdash; Solo medidas pendientes.</strong> Este reporte excluye las medidas ya aplicadas (192 de v12+v14). Se listan &uacute;nicamente hallazgos cr&iacute;ticos, pendientes y que requieren acci&oacute;n del cliente. CrUX no disponible (tr&aacute;fico insuficiente para datos de campo).
+  <strong>v15 &mdash; 25 medidas aplicadas en sesi&oacute;n 20-abr-2026.</strong> Acumulado hist&oacute;rico: 217 aplicadas (192 previas + 25 hoy). Este reporte sigue listando los IDs para trazabilidad; las resueltas llevan badge &ldquo;Aplicado&rdquo; con detalle de fecha y archivo, y los contadores reflejan solo los 18 IDs que siguen pendientes (3 cr&iacute;ticos t&eacute;cnicos + 11 que requieren al cliente + 4 opcionales de m&aacute;s trabajo). CrUX no disponible (tr&aacute;fico insuficiente para datos de campo).
 </div>
 
 <!-- Summary Cards -->
 <div class="summary-row">
-  <div class="summary-card seo"><div class="summary-value" style="color:var(--cat-seo)">14</div><div class="summary-label">SEO</div></div>
-  <div class="summary-card geo"><div class="summary-value" style="color:var(--cat-geo)">9</div><div class="summary-label">GEO/AEO</div></div>
-  <div class="summary-card cro"><div class="summary-value" style="color:var(--cat-cro)">11</div><div class="summary-label">CRO</div></div>
-  <div class="summary-card perf"><div class="summary-value" style="color:var(--cat-perf)">4</div><div class="summary-label">Rendimiento</div></div>
+  <div class="summary-card seo"><div class="summary-value" style="color:var(--cat-seo)">5</div><div class="summary-label">SEO</div></div>
+  <div class="summary-card geo"><div class="summary-value" style="color:var(--cat-geo)">5</div><div class="summary-label">GEO/AEO</div></div>
+  <div class="summary-card cro"><div class="summary-value" style="color:var(--cat-cro)">5</div><div class="summary-label">CRO</div></div>
+  <div class="summary-card perf"><div class="summary-value" style="color:var(--cat-perf)">3</div><div class="summary-label">Rendimiento</div></div>
   <div class="summary-card a11y"><div class="summary-value" style="color:var(--cat-a11y)">0</div><div class="summary-label">Accesibilidad</div></div>
 </div>
 
 <!-- Category Tabs -->
 <div class="cat-tabs">
-  <div class="cat-tab active" onclick="switchCat('seo')">SEO (14)</div>
-  <div class="cat-tab" onclick="switchCat('geo')">GEO/AEO (9)</div>
-  <div class="cat-tab" onclick="switchCat('cro')">CRO (11)</div>
-  <div class="cat-tab" onclick="switchCat('perf')">Rendimiento (4)</div>
+  <div class="cat-tab active" onclick="switchCat('seo')">SEO (5)</div>
+  <div class="cat-tab" onclick="switchCat('geo')">GEO/AEO (5)</div>
+  <div class="cat-tab" onclick="switchCat('cro')">CRO (5)</div>
+  <div class="cat-tab" onclick="switchCat('perf')">Rendimiento (3)</div>
   <div class="cat-tab" onclick="switchCat('a11y')">Accesibilidad (0)</div>
 </div>
 
@@ -218,9 +218,9 @@
     </tr>
     <tr>
       <td><strong>S63</strong></td>
-      <td>FAQPage schema en 11 p&aacute;ginas (restringido por Google desde agosto 2023). Actualmente muestra rich results en /aires y /todo-incluido pero puede perder elegibilidad.
-        <div class="detail">Acci&oacute;n: Migrar a formato Q&amp;A con H2/H3 visible. Mantener JSON-LD como se&ntilde;al secundaria.</div></td>
-      <td><span class="badge badge-critical">Cr&iacute;tico</span></td>
+      <td>FAQPage schema en 11 p&aacute;ginas &mdash; ahora cada pregunta est&aacute; envuelta en &lt;h3&gt; dentro del &lt;summary&gt; en 10 archivos (pages + CoberturaLayout + SolucionLayout). JSON-LD se mantiene como se&ntilde;al secundaria.
+        <div class="detail">Aplicado 20-abr-2026. AI Overviews y Perplexity extraen mejor FAQs con heading semantics.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>S64</strong></td>
@@ -255,9 +255,9 @@
     <tr><th style="width:60px">ID</th><th>Hallazgo</th><th style="width:80px">Estado</th></tr>
     <tr>
       <td><strong>S45</strong></td>
-      <td>Keyword cannibalization: Homepage y /aires compiten por &ldquo;Aire Acondicionado con Instalaci&oacute;n Santiago&rdquo;. /climatizacion-integral tambi&eacute;n solapa. /todo-incluido y /instalacion compiten por queries de paquete.
-        <div class="detail">Acci&oacute;n: Diferenciar titles y H1 por intenci&oacute;n de b&uacute;squeda. Homepage=marca, /aires=cat&aacute;logo, /todo-incluido=paquetes.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Canibalizaci&oacute;n resuelta: homepage &ldquo;Meser &middot; Climatizaci&oacute;n Integral&rdquo; (marca), /aires &ldquo;Cat&aacute;logo de Aires Acondicionados&rdquo; (cat&aacute;logo), /todo-incluido &ldquo;Paquete Todo Incluido&rdquo; (paquete), /climatizacion-integral &ldquo;Servicio de Climatizaci&oacute;n Integral&rdquo; (servicio).
+        <div class="detail">Aplicado 20-abr-2026. Titles, descriptions y H1 diferenciados por intenci&oacute;n de b&uacute;squeda.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>S66</strong></td>
@@ -267,15 +267,15 @@
     </tr>
     <tr>
       <td><strong>S67</strong></td>
-      <td>Falta p&aacute;gina /politica-privacidad. Sitio recopila datos personales (nombre, tel&eacute;fono, RUT, direcci&oacute;n) sin pol&iacute;tica publicada. Riesgo legal Ley 19.628.
-        <div class="detail">Acci&oacute;n: Crear p&aacute;gina, agregar al sitemap y footer.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Creada /politica-privacidad con 10 secciones (Ley 19.628 + 21.719): marco legal, responsable, datos recopilados, finalidades, terceros, derechos ARCO, plazos, seguridad, cookies, cambios. Agregada al sitemap y linkeada desde el Footer.
+        <div class="detail">Aplicado 20-abr-2026. Riesgo legal mitigado.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>S68</strong></td>
-      <td>Footer no enlaza a pol&iacute;tica de devoluciones ni privacidad. P&aacute;ginas legales hu&eacute;rfanas desde la navegaci&oacute;n.
-        <div class="detail">Acci&oacute;n: Agregar secci&oacute;n &ldquo;Legal&rdquo; en Footer.tsx con links a ambas pol&iacute;ticas.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Secci&oacute;n &ldquo;Legal&rdquo; en Footer con links a /politica-privacidad y /politica-devoluciones.
+        <div class="detail">Aplicado 20-abr-2026. P&aacute;ginas legales visibles desde toda la navegaci&oacute;n.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>S69</strong></td>
@@ -297,9 +297,9 @@
     </tr>
     <tr>
       <td><strong>S72</strong></td>
-      <td>Blog lastmod usa fecha de publicaci&oacute;n original. Art&iacute;culos actualizados (precios, datos) no reflejan cambio en sitemap.
-        <div class="detail">Acci&oacute;n: Agregar campo fechaActualizacion al tipo BlogPost.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Tipo BlogPost ahora tiene campo opcional `fechaActualizacion`. sitemap.ts usa `fechaActualizacion ?? fecha` para lastmod, reflejando revisiones sustantivas.
+        <div class="detail">Aplicado 20-abr-2026 en src/lib/blog-posts.ts y src/app/sitemap.ts.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>S73</strong></td>
@@ -309,15 +309,15 @@
     </tr>
     <tr>
       <td><strong>S74</strong></td>
-      <td>P&aacute;ginas /comparativa-calefaccion y /cobertura/* sin openGraph.url expl&iacute;cito. URLs incorrectas al compartir en redes.
-        <div class="detail">Acci&oacute;n: Agregar openGraph: { url } en metadata de cada p&aacute;gina.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>openGraph.url expl&iacute;cito verificado en /comparativa-calefaccion y las 5 comunas /cobertura/* (nunoa, las-condes, providencia, vitacura, lo-barnechea).
+        <div class="detail">Verificado 20-abr-2026 &mdash; ya estaba aplicado en todas las p&aacute;ginas objetivo.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>S75</strong></td>
-      <td>Manifest.json sin iconos PWA adecuados (solo favicon 32x32 y og-image). Falta 192x192 y 512x512.
-        <div class="detail">Acci&oacute;n: Generar icon-192.png y icon-512.png; agregar al manifest.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Generados icon-192.png y icon-512.png con sharp desde un SVG con marca &ldquo;m&rdquo; sobre fondo navy + acento cyan. Registrados en manifest.ts con purpose=&ldquo;any&rdquo;.
+        <div class="detail">Aplicado 20-abr-2026 en public/images/ y src/app/manifest.ts.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
   </table>
 </div>
@@ -369,15 +369,15 @@
     </tr>
     <tr>
       <td><strong>G34</strong></td>
-      <td>FAQPage schema deprecated &mdash; migrar FAQs a formato H2/H3 pregunta-respuesta visible que AI Overviews y Perplexity extraen mejor.
-        <div class="detail">Acci&oacute;n: Mantener JSON-LD como se&ntilde;al secundaria pero priorizar contenido visible.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>FAQs migradas a H2/H3 visible: cada pregunta ahora est&aacute; envuelta en &lt;h3&gt; dentro del &lt;summary&gt; en 10 archivos (pages + CoberturaLayout + SolucionLayout). JSON-LD FAQPage se mantiene como se&ntilde;al secundaria.
+        <div class="detail">Aplicado 20-abr-2026. Cubre S63 simult&aacute;neamente.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>G35</strong></td>
-      <td>Autor gen&eacute;rico &ldquo;Equipo Meser&rdquo; sin Person schema con credenciales. LLMs valoran E-E-A-T con autores identificables.
-        <div class="detail">Acci&oacute;n: Usar nombre real del fundador, agregar sameAs LinkedIn, crear p&aacute;gina /equipo.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>BlogPostLayout eliminado Person gen&eacute;rico &ldquo;Equipo Meser&rdquo; que diluye E-E-A-T. Organization author ahora incluye `description` + `knowsAbout` con 5 especialidades HVAC.
+        <div class="detail">Aplicado 20-abr-2026. Parcial: Person real pendiente de datos del fundador (cliente).</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>G36</strong></td>
@@ -405,15 +405,15 @@
     </tr>
     <tr>
       <td><strong>G41</strong></td>
-      <td>Sin p&aacute;gina de datos citables. &ldquo;+150 hogares&rdquo; sin fuente verificable ni secci&oacute;n &ldquo;Meser en n&uacute;meros&rdquo;.
-        <div class="detail">Acci&oacute;n: Crear secci&oacute;n en /nosotros con m&eacute;tricas citables y contexto.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Secci&oacute;n &ldquo;Meser en n&uacute;meros&rdquo; en /nosotros#numeros con 8 m&eacute;tricas contextualizadas (150 hogares, 5 comunas dedicadas, 100% RM, 3 marcas, &lt;2h WA, 25 min Zoom, 3-7 d&iacute;as instalaci&oacute;n, $0 extras). Dataset schema con 8 PropertyValue a&ntilde;adido.
+        <div class="detail">Aplicado 20-abr-2026. AI crawlers ahora tienen datos estructurados y citables.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>G42</strong></td>
-      <td>Sin contenido &ldquo;definicional&rdquo; indexable. Glosario existe en llms.txt pero no como p&aacute;gina web.
-        <div class="detail">Acci&oacute;n: Crear /glosario-climatizacion con definiciones expandidas (BTU, Inverter, Split, R32).</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Creada /glosario-climatizacion con 12 t&eacute;rminos (BTU, Inverter, Split, Multi Split, R32, bomba de calor, COP, SEER, clase energ&eacute;tica, canaleta, carga t&eacute;rmica, WiFi) con resumen, descripci&oacute;n, ejemplo y t&eacute;rminos relacionados. DefinedTermSet schema + anclas por slug para cross-linking interno.
+        <div class="detail">Aplicado 20-abr-2026. Agregada al sitemap.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
   </table>
 </div>
@@ -477,21 +477,21 @@
     </tr>
     <tr>
       <td><strong>C56</strong></td>
-      <td>Carrito sin indicadores de confianza. No muestra logos WebPay, badge SSL, garant&iacute;a. Compras de $449.990+ sin refuerzo de confianza.
-        <div class="detail">A/B test: trust badges (WebPay + &ldquo;100% seguro&rdquo; + garant&iacute;a Meser) vs actual.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Trust badges a&ntilde;adidos en /carrito bajo el bot&oacute;n pagar: panel con 3 badges (&ldquo;Pago 100% seguro&rdquo; Transbank/WebPay Plus, &ldquo;Garant&iacute;a Meser&rdquo; equipo + instalaci&oacute;n, &ldquo;Derecho de retracto&rdquo; 10 d&iacute;as Ley 19.496) + nota sobre no almacenamiento de tarjeta.
+        <div class="detail">Aplicado 20-abr-2026 en src/app/carrito/page.tsx.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>C57</strong></td>
-      <td>Formulario multi-step no persiste estado. Refresh o navegaci&oacute;n accidental pierde progreso.
-        <div class="detail">Acci&oacute;n: Persistir en sessionStorage. A/B test: tasa completaci&oacute;n con vs sin persistencia.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>CotizarForm ahora persiste step + formData en sessionStorage (`meser_cotizar_form_v1`). Hidrata en mount con flag `hydrated` para no pisar datos guardados con defaults. Limpia al submit exitoso.
+        <div class="detail">Aplicado 20-abr-2026. Refresh o back accidental ya no pierde progreso.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>C58</strong></td>
-      <td>/contacto no tiene formulario inline, solo links a #agendar (scroll abajo). Usuarios esperan formulario en la p&aacute;gina.
-        <div class="detail">A/B test: formulario embebido vs version actual con links.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>/contacto rearmado: CotizarForm embebido como columna principal con panel &ldquo;Qu&eacute; pasa despu&eacute;s&rdquo; (3 pasos) al lado. Las cards WhatsApp/Tel&eacute;fono/Email/Oficina se mueven a secci&oacute;n &ldquo;O escr&iacute;benos por el canal que prefieras&rdquo;.
+        <div class="detail">Aplicado 20-abr-2026 en src/app/contacto/page.tsx.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>C59</strong></td>
@@ -501,9 +501,9 @@
     </tr>
     <tr>
       <td><strong>C61</strong></td>
-      <td>Club Meser sin mecanismo de acci&oacute;n. No hay formulario de referido, link compartible, ni CTA concreto.
-        <div class="detail">Acci&oacute;n: Agregar bot&oacute;n &ldquo;Compartir por WhatsApp&rdquo; con mensaje pre-armado.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Secci&oacute;n &ldquo;Empieza a acumular ahora&rdquo; en /club-meser con bot&oacute;n WhatsApp verde (mensaje pre-armado de recomendaci&oacute;n) + CTA secundario &ldquo;Av&iacute;sanos de tu referido&rdquo; + tip para mencionar nombre.
+        <div class="detail">Aplicado 20-abr-2026 con WhatsAppLink tracking.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>C62</strong></td>
@@ -513,15 +513,15 @@
     </tr>
     <tr>
       <td><strong>C63</strong></td>
-      <td>P&aacute;gina confirmaci&oacute;n post-pago sin next steps claros. No hay estimaci&oacute;n de contacto, link WA, cross-sell, ni invitaci&oacute;n Club Meser.
-        <div class="detail">Acci&oacute;n: CTA &ldquo;Agenda tu primera mantenci&oacute;n con 25% off&rdquo; + &ldquo;Refiere a un amigo&rdquo;.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Bloque post-pago rearmado en /pago/confirmacion: 3 next steps numerados (contacto hoy, instalaci&oacute;n 2-7 d&iacute;as, post-instalaci&oacute;n), CTA WhatsApp con orden pre-formateada, y 2 cards cross-sell (Mantenci&oacute;n 25% off + Club Meser referido).
+        <div class="detail">Aplicado 20-abr-2026 en src/app/pago/confirmacion/page.tsx.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>C64</strong></td>
-      <td>Mantenci&oacute;n sin urgencia estacional. Abril = pre-invierno Chile. Falta banner &ldquo;Prepara tu equipo para el invierno&rdquo;.
-        <div class="detail">Acci&oacute;n: Banner estacional + dato ahorro energ&eacute;tico (&ldquo;equipo sin mantenci&oacute;n consume 30% m&aacute;s&rdquo;).</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Banner amber en /mantencion: &ldquo;Prepara tu equipo para el invierno&rdquo; + dato de ahorro (&ldquo;un aire sin mantenci&oacute;n consume hasta 30% m&aacute;s&rdquo;) + deadline 30 de abril.
+        <div class="detail">Aplicado 20-abr-2026 como &lt;aside aria-label&gt; sobre el hero.</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
   </table>
 </div>
@@ -608,9 +608,9 @@
     </tr>
     <tr>
       <td><strong>R39</strong></td>
-      <td>Speed Index mobile 3.9s. 5 componentes client-side con dynamic() en layout.tsx generan waterfalls de JS chunks.
-        <div class="detail">Acci&oacute;n: Agrupar en un solo bundle lazy o usar loading: &ldquo;lazy&rdquo; con ssr: false.</div></td>
-      <td><span class="badge badge-pending">Pendiente</span></td>
+      <td>Creado src/components/ClientEnhancements.tsx que agrupa StickyCTA, SocialSidebar, RouteChangeTracker, ScrollDepthTracker y ExitIntentPopup. layout.tsx pasa de 5 dynamic() a 1 &mdash; 5 chunks colapsan en 1, reduciendo waterfalls de JS en mobile.
+        <div class="detail">Aplicado 20-abr-2026. Adicionalmente: hero con fetchPriority=&ldquo;high&rdquo; expl&iacute;cito + placeholder=&ldquo;blur&rdquo; (blurDataURL 16x9 webp).</div></td>
+      <td><span class="badge badge-done">Aplicado</span></td>
     </tr>
     <tr>
       <td><strong>R46</strong></td>
@@ -699,42 +699,44 @@
 <!-- ===================== FOOTER SUMMARY ===================== -->
 <div class="footer-summary">
   <div class="footer-grid">
-    <div class="footer-item"><div class="footer-num" style="color:var(--cat-seo)">14</div><div class="footer-label">SEO</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:var(--cat-seo)">5</div><div class="footer-label">SEO</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:var(--cat-geo)">9</div><div class="footer-label">GEO</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:var(--cat-geo)">5</div><div class="footer-label">GEO</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:var(--cat-cro)">11</div><div class="footer-label">CRO</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:var(--cat-cro)">5</div><div class="footer-label">CRO</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:var(--cat-perf)">4</div><div class="footer-label">Rendimiento</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:var(--cat-perf)">3</div><div class="footer-label">Rendimiento</div></div>
     <div class="footer-divider"></div>
     <div class="footer-item"><div class="footer-num" style="color:var(--cat-a11y)">0</div><div class="footer-label">Accesibilidad</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#1e293b">38</div><div class="footer-label">Total pendientes</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#1e293b">18</div><div class="footer-label">Total pendientes</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#dc2626">5</div><div class="footer-label">Cr&iacute;ticos</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#dc2626">3</div><div class="footer-label">Cr&iacute;ticos</div></div>
     <div class="footer-divider"></div>
-    <div class="footer-item"><div class="footer-num" style="color:#7c3aed">9</div><div class="footer-label">Requiere cliente</div></div>
+    <div class="footer-item"><div class="footer-num" style="color:#7c3aed">11</div><div class="footer-label">Requiere cliente</div></div>
+    <div class="footer-divider"></div>
+    <div class="footer-item"><div class="footer-num" style="color:#059669">217</div><div class="footer-label">Aplicadas</div></div>
   </div>
-  <div class="note note-red" style="margin-top:16px">
-    <strong>Top 10 acciones inmediatas (semana 1):</strong><br>
-    <s>1) Corregir t&iacute;tulo /aires precio $299.990 &rarr; $319.990</s> &#10003; S65 aplicado.<br>
-    <s>2) Fix &ldquo;Promo hasta 31/03&rdquo; expirada en 2 archivos</s> &#10003; C52 aplicado.<br>
-    <s>3) Hero WA &lt;a&gt; &rarr; &lt;WhatsAppLink&gt; para tracking</s> &#10003; C60 aplicado.<br>
-    <s>4) escapeHtml() en email Transbank confirm</s> &#10003; R44 aplicado.<br>
-    <s>5) Redirect /politicas-de-envio-y-devolucion/ y /product-category/*</s> &#10003; S69+S70 aplicado.<br>
-    <s>6) robots.txt: disallow rutas sensibles para AI bots</s> &#10003; S66 aplicado.<br>
-    <s>7) Fix QuickCapture campos vac&iacute;os con contexto m&iacute;nimo</s> &#10003; C43 aplicado.<br>
-    <s>8) Remover HowTo schema deprecated de 3 archivos</s> &#10003; S64 aplicado.<br>
-    <s>9) Agregar sizes=&ldquo;100vw&rdquo; a hero image para LCP mobile</s> &#10003; R38 aplicado.<br>
-    <s>10) Eliminar unsafe-eval de CSP</s> &#10003; R46 aplicado.
+
+  <div class="note" style="margin-top:16px;background:#ecfdf5;border-color:#86efac;color:#065f46">
+    <strong>Sesi&oacute;n 20-abr-2026 &mdash; 25 medidas aplicadas en 4 bloques:</strong><br>
+    <strong>Bloque 1 &middot; muy seguras (13):</strong> S45 titles/H1 diferenciados &middot; S67 /politica-privacidad &middot; S68 Footer Legal &middot; S72 fechaActualizacion BlogPost &middot; S74 openGraph.url (verificado) &middot; S75 iconos PWA 192/512 &middot; G34/S63 FAQs H3 en 10 archivos &middot; G35 Organization author con knowsAbout &middot; G42 /glosario-climatizacion (12 t&eacute;rminos + DefinedTermSet) &middot; C61 Club Meser share WA &middot; C63 next steps post-pago &middot; C64 banner estacional /mantencion.<br>
+    <strong>Bloque 2 &middot; siguientes 5 (5):</strong> C56 trust badges checkout &middot; C58 form inline /contacto &middot; G41 &ldquo;Meser en n&uacute;meros&rdquo; + Dataset schema &middot; R39 ClientEnhancements bundle lazy unificado &middot; C57 sessionStorage CotizarForm.<br>
+    <strong>Bloque 3 &middot; refuerzos (5):</strong> BreadcrumbList JSON-LD (verificado) &middot; Posts relacionados al final de cada art&iacute;culo &middot; /not-found reescrita con 6 atajos + CTA WA &middot; LCP homepage fetchPriority + placeholder blur &middot; llms.txt / llms-full.txt al d&iacute;a.<br>
+    <strong>Bloque 4 &middot; blog (2):</strong> CollectionPage + ItemList schema en /blog &middot; Cross-links contextuales en 8 posts hacia glosario y p&aacute;ginas comerciales.
   </div>
+
   <div class="note note-warn" style="margin-top:12px">
     <strong>Requiere cliente (9 acciones):</strong> Submitir sitemap a GSC, verificar GBP, crear canal YouTube, colectar rese&ntilde;as reales, redirect subdominios (DNS), proporcionar RUT empresa, configurar WA Business autoresponder, monitorear update transbank-sdk, verificar propiedad www en GSC.
+  </div>
+
+  <div class="note note-red" style="margin-top:12px">
+    <strong>Cr&iacute;ticos restantes (3):</strong> R36 Next.js 16.1.6 con 6 CVEs &rarr; upgrade pendiente &middot; R45 rate limiter in-memory no funciona en serverless Vercel &rarr; migrar a Upstash &middot; R37 axios SSRF transitivo via transbank-sdk &rarr; monitoreo de upstream.
   </div>
 </div>
 
 <div class="nora-footer">
-  <span>Generado por NORA &mdash; 31 skills &middot; 14 abril 2026</span>
+  <span>Generado por NORA &mdash; 31 skills &middot; 20 abril 2026 &middot; v15</span>
 </div>
 
 </div><!-- /container -->

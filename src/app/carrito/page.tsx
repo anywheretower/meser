@@ -419,6 +419,49 @@ export default function CarritoPage() {
             {loading ? "Procesando..." : `Pagar ${formatPrice(totalPrice)} con WebPay`}
           </button>
 
+          {/* C56: Trust badges */}
+          <div className="mt-5 rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white border border-gray-200 text-green-600">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-7a2 2 0 00-2-2H6a2 2 0 00-2 2v7a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                </span>
+                <div>
+                  <p className="font-semibold text-navy">Pago 100% seguro</p>
+                  <p className="text-steel-dark">Procesado por Transbank / WebPay Plus</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white border border-gray-200 text-cyan">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </span>
+                <div>
+                  <p className="font-semibold text-navy">Garantía Meser</p>
+                  <p className="text-steel-dark">Equipo + instalación · 6 meses legal mínimo</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white border border-gray-200 text-navy">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </span>
+                <div>
+                  <p className="font-semibold text-navy">Derecho de retracto</p>
+                  <p className="text-steel-dark">10 días corridos · Ley 19.496</p>
+                </div>
+              </div>
+            </div>
+            <p className="mt-4 text-[11px] text-steel">
+              Al hacer clic en &ldquo;Pagar&rdquo; serás redirigido al entorno seguro de
+              Transbank. Meser no almacena datos de tu tarjeta.
+            </p>
+          </div>
+
           {!isFormValid && (
             <p className="mt-2 text-center text-xs text-steel">
               Completa todos los campos obligatorios para continuar.

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import PhoneLink from "@/components/PhoneLink";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CotizarForm from "@/components/CotizarForm";
 
 export const metadata: Metadata = {
   title: "Contacto · Climatización Santiago",
@@ -22,11 +22,45 @@ export default function ContactoPage() {
             Contacto
           </h1>
           <p className="mt-4 text-lg text-steel-dark">
-            ¿Tienes preguntas? Estamos acá para ayudarte. Elige el canal que
-            prefieras.
+            ¿Tienes preguntas? Estamos acá para ayudarte. Cuéntanos sobre tu
+            espacio en el formulario o elige el canal que prefieras.
           </p>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* C58: Form inline */}
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+            <div className="lg:col-span-3">
+              <CotizarForm />
+            </div>
+            <div className="lg:col-span-2 rounded-2xl bg-gray-50 border border-gray-200 p-6">
+              <h2 className="text-base font-semibold text-navy">
+                ¿Qué pasa después?
+              </h2>
+              <ol className="mt-4 space-y-3 text-sm text-steel-dark">
+                <li className="flex gap-3">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan text-xs font-bold text-navy">1</span>
+                  <span>Recibes una respuesta por WhatsApp en menos de 2 horas hábiles.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan text-xs font-bold text-navy">2</span>
+                  <span>Agendamos una asesoría gratuita por Zoom (25 minutos).</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan text-xs font-bold text-navy">3</span>
+                  <span>Te entregamos una propuesta con precio cerrado y cero sorpresas.</span>
+                </li>
+              </ol>
+              <p className="mt-6 text-xs text-steel">
+                Sin compromiso. Tus datos sólo se usan para contactarte (ver{" "}
+                <a href="/politica-privacidad" className="text-cyan hover:text-cyan-dark">política de privacidad</a>).
+              </p>
+            </div>
+          </div>
+
+          <h2 className="mt-16 text-2xl font-bold text-navy">
+            O escríbenos por el canal que prefieras
+          </h2>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* WhatsApp */}
             <WhatsAppLink
               href="https://wa.me/56982351110?text=Hola%2C%20quiero%20consultar%20por%20climatizaci%C3%B3n"
@@ -113,22 +147,6 @@ export default function ContactoPage() {
             </div>
           </div>
 
-          {/* Cotización rápida */}
-          <div className="mt-12 rounded-2xl bg-navy p-8 sm:p-10 text-center">
-            <h2 className="text-2xl font-bold text-white">
-              ¿Prefieres cotizar directamente?
-            </h2>
-            <p className="mt-3 text-steel-light">
-              En menos de 1 minuto nos cuentas qué necesitas. Te contactamos en
-              menos de 2 horas con una propuesta personalizada.
-            </p>
-            <Link
-              href="#agendar"
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-cyan px-8 py-4 text-base font-semibold text-navy hover:bg-cyan-dark transition-colors"
-            >
-              Cotizar ahora
-            </Link>
-          </div>
         </div>
       </section>
     </>

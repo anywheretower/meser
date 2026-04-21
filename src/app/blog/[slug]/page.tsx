@@ -49,10 +49,18 @@ function ArticleCuantoCuesta() {
         por separado.
       </p>
       <p>
-        El costo varía según el tipo de equipo, la capacidad (BTU), la complejidad de
-        la instalación y si incluye o no el equipo mismo. Acá te dejamos un
+        El costo varía según el tipo de equipo, la capacidad (
+        <Link href="/glosario-climatizacion#btu" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+          BTU
+        </Link>
+        ), la complejidad de la instalación y si incluye o no el equipo mismo. Acá te dejamos un
         resumen actualizado con rangos basados en precios del mercado chileno
-        para empresas formales que entregan garantía por su trabajo.
+        para empresas formales que entregan garantía por su trabajo. Si todavía
+        no decidiste qué equipo necesitas, en nuestro{" "}
+        <Link href="/aires-acondicionados" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+          catálogo de aires acondicionados
+        </Link>{" "}
+        verás los modelos Midea, Samsung y Anwo con sus precios actuales.
       </p>
 
       <div className="tip-box">
@@ -398,8 +406,21 @@ function ArticleDepartamentoSantiago() {
           (más caro si pasa por losa o requiere andamios).
         </li>
         <li>
-          <strong>Marcas recomendadas 2026:</strong> Midea, Anwo y Samsung.
-          Evita marcas muy baratas sin repuestos.
+          <strong>Marcas recomendadas 2026:</strong> Midea, Anwo y Samsung. En
+          nuestro{" "}
+          <Link href="/aires-acondicionados" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+            catálogo
+          </Link>{" "}
+          tienes los modelos disponibles con precio. Evita marcas muy baratas sin
+          repuestos.
+        </li>
+        <li>
+          <strong>Plan de mantención:</strong> en edificio con contaminación y
+          mascotas, agenda una{" "}
+          <Link href="/mantencion" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+            mantención anual
+          </Link>{" "}
+          para conservar eficiencia y garantía.
         </li>
       </ul>
 
@@ -562,9 +583,17 @@ function ArticleMideaVsSamsung() {
 
       <p>
         La diferencia real a 10 años es de ~$300.000 — menos de lo que parece por la
-        brecha inicial de $250.000. Midea ahorra un poco más en electricidad gracias a su
-        SEER más alto (22.5 vs 21.7), pero la diferencia es marginal ($6.000/año). La
+        brecha inicial de $250.000. Midea ahorra un poco más en electricidad gracias a su{" "}
+        <Link href="/glosario-climatizacion#seer" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+          SEER
+        </Link>{" "}
+        más alto (22.5 vs 21.7), pero la diferencia es marginal ($6.000/año). La
         decisión final depende más de las funcionalidades que valoras que del ahorro económico.
+        Si prefieres no manejar por separado equipo e instalación, los{" "}
+        <Link href="/todo-incluido" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+          paquetes todo incluido
+        </Link>{" "}
+        dejan ambos elementos con un solo responsable y precio cerrado.
       </p>
 
       <h2>Garantía y servicio técnico en Chile</h2>
@@ -647,8 +676,11 @@ function ArticleBTU() {
         </li>
         <li>
           Cuantos más BTU, más potente es el aire y puede enfriar espacios más
-          grandes o con más carga térmica (calor generado por sol, personas,
-          electrodomésticos, etc.).
+          grandes o con más{" "}
+          <Link href="/glosario-climatizacion#carga-termica" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+            carga térmica
+          </Link>{" "}
+          (calor generado por sol, personas, electrodomésticos, etc.).
         </li>
       </ul>
 
@@ -1053,7 +1085,13 @@ function ArticleMantencion() {
             mantención profesional
           </Link>{" "}
           parte desde <strong>$64.990</strong>. Incluye limpieza profunda,
-          revisión técnica completa y optimización de rendimiento. Agenda tu{" "}
+          revisión técnica completa y optimización de rendimiento. Y si te unes
+          al{" "}
+          <Link href="/club-meser" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+            Club Meser
+          </Link>
+          , cada amigo que refieras suma 25% de descuento en tu próxima
+          mantención — acumulable sin tope. Agenda tu{" "}
           <Link href="#agendar" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
             mantención aquí
           </Link>
@@ -1130,8 +1168,16 @@ function ArticleMultiSplit() {
           individuales.
         </li>
         <li>
-          <strong>Calor y frío todo el año</strong> → Bomba de calor eficiente
-          hasta -15 °C aprox. (excelente en zona central y sur).
+          <strong>Calor y frío todo el año</strong> →{" "}
+          <Link href="/glosario-climatizacion#bomba-de-calor" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+            bomba de calor
+          </Link>{" "}
+          eficiente hasta -15 °C aprox. (excelente en zona central y sur).
+          Revisa nuestra{" "}
+          <Link href="/comparativa-calefaccion" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+            comparativa de costos de calefacción
+          </Link>{" "}
+          para ver por qué supera a parafina, gas y eléctrica.
         </li>
         <li>
           <strong>Menor ruido exterior</strong> → Una sola unidad grande suele
@@ -1421,8 +1467,10 @@ function ArticleInstalacionEstetica() {
         <li>
           Instaladores certificados que usan{" "}
           <strong>
-            canaletas pintadas al tono de la pared, tubos empotrados o falsos
-            techos
+            <Link href="/glosario-climatizacion#canaleta" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+              canaletas
+            </Link>{" "}
+            pintadas al tono de la pared, tubos empotrados o falsos techos
           </strong>
           .
         </li>
@@ -1537,10 +1585,17 @@ function ArticleComparativaCalefaccion() {
 
       <p>
         <strong>¿Por qué el AC es tan barato?</strong> Porque no genera calor &ldquo;desde cero&rdquo;
-        como los otros métodos. La tecnología de <strong>bomba de calor</strong> extrae calor
-        del aire exterior y lo &ldquo;multiplica&rdquo; dentro de la habitación. Por cada 1 kWh de
-        electricidad que consume, produce entre 3 y 4 kWh de calor. Es como si cada peso
-        que gastas en luz te diera 3 pesos de calor.
+        como los otros métodos. La tecnología de{" "}
+        <Link href="/glosario-climatizacion#bomba-de-calor" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+          <strong>bomba de calor</strong>
+        </Link>{" "}
+        extrae calor del aire exterior y lo &ldquo;multiplica&rdquo; dentro de la habitación. Por cada 1 kWh de
+        electricidad que consume, produce entre 3 y 4 kWh de calor (un{" "}
+        <Link href="/glosario-climatizacion#cop" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
+          COP
+        </Link>{" "}
+        de 3 a 4). Es como si cada peso que gastas en luz te diera 3 pesos de
+        calor.
       </p>
 
       <h2>¿Cuánto cuesta cada equipo?</h2>

@@ -419,7 +419,7 @@ export default function ClimatizacionInteligentePage() {
                 className="group rounded-xl border border-gray-200 bg-white overflow-hidden"
               >
                 <summary className="flex items-center justify-between cursor-pointer px-6 py-5 text-sm font-semibold text-navy hover:bg-gray-50 transition-colors">
-                  {faq.q}
+                  <h3 className="m-0 text-sm font-semibold text-navy leading-snug">{faq.q}</h3>
                   <svg
                     className="w-5 h-5 text-steel shrink-0 group-open:rotate-180 transition-transform"
                     fill="none"

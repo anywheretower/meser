@@ -5,6 +5,7 @@ import { termosGroup, formatPrice } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SECBadge from "@/components/SECBadge";
 
 
 export const metadata: Metadata = {
@@ -188,6 +189,10 @@ export default function TermosPage() {
                     Ficha técnica
                   </a>
                 )}
+
+                <div className="mt-2">
+                  <SECBadge certCode={producto.secCert} />
+                </div>
 
                 {/* Precio */}
                 <div className="mt-4">
@@ -422,7 +427,7 @@ export default function TermosPage() {
                 className="group rounded-xl border border-gray-200 bg-gray-50 open:bg-white open:shadow-sm transition-all"
               >
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-semibold text-navy">
-                  {faq.q}
+                  <h3 className="m-0 text-sm font-semibold text-navy leading-snug">{faq.q}</h3>
                   <svg
                     className="w-5 h-5 text-steel shrink-0 transition-transform group-open:rotate-180"
                     fill="none"

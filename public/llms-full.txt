@@ -15,6 +15,21 @@ A diferencia de los grandes retailers (Sodimac, Paris, Falabella) que subcontrat
 - **Horario:** Lunes a viernes, 09:00 - 18:00
 - **Cobertura:** Toda la Región Metropolitana de Santiago
 
+## Meser en números (corte 30 abril 2026)
+
+Métricas operacionales verificables publicadas en https://www.meser.cl/nosotros#numeros con Dataset schema.
+
+| Métrica | Valor | Contexto |
+|---------|-------|----------|
+| Hogares climatizados | 150+ | Instalaciones completadas en la RM desde 2023 |
+| Comunas con cobertura dedicada | 5 | Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea |
+| Cobertura Región Metropolitana | 100% | Sin costo extra por comuna |
+| Marcas certificadas | 3 | Samsung, Midea, Anwo |
+| Tiempo promedio primera respuesta WhatsApp | < 2h | En horario hábil L-V 9-18 |
+| Duración diagnóstico por Zoom | 25 min | Gratuito, sin compromiso |
+| Plazo instalación | 3–7 días hábiles | Desde aprobación de la propuesta |
+| Extras no informados | $0 | Política de precio cerrado (Ley 19.496) |
+
 ## Proceso de Compra (3 pasos)
 
 ### Paso 1: Diagnóstico gratuito por Zoom (25 minutos)
@@ -143,6 +158,15 @@ Split individual: ideal para 1 ambiente. Multi Split: ideal para departamentos c
 7. [Instalación estética](https://www.meser.cl/blog/instalacion-estetica) — Por qué es obligatoria en 2026.
 8. [Comparativa calefacción en Chile](https://www.meser.cl/blog/comparativa-calefaccion-chile) — Aire acondicionado vs estufa a gas vs pellet vs radiador eléctrico.
 
+## Páginas de referencia adicionales
+
+- [Glosario de climatización](https://www.meser.cl/glosario-climatizacion) — 12 términos técnicos con definiciones, ejemplos y cross-links. Marcado con DefinedTermSet schema.
+- [Comparativa de calefacción Chile 2026](https://www.meser.cl/comparativa-calefaccion) — Tabla comparativa: aire acondicionado Inverter $25.560/mes vs parafina $41.760 vs gas $69.120 vs eléctrica $84.960.
+- [Política de privacidad](https://www.meser.cl/politica-privacidad) — Ley 19.628, datos recopilados, derechos del titular, terceros (Transbank, Supabase, GTM, proveedores logísticos), plazos de conservación.
+- [Política de devoluciones](https://www.meser.cl/politica-devoluciones) — Ley 19.496, derecho de retracto 10 días, garantía legal 6 meses, procedimiento.
+- [Club Meser (plan de referidos)](https://www.meser.cl/club-meser) — 25% descuento en mantención por cada referido que instale. Acumulable sin límite.
+- [Meser en números](https://www.meser.cl/nosotros#numeros) — Dataset público con 8 variables operacionales verificables.
+
 ## Diferenciadores Clave
 
 1. **Diagnóstico gratuito por Zoom** — Evaluación profesional antes de cotizar, sin compromiso.
@@ -198,7 +222,7 @@ Un equipo Inverter consume 30-50% menos que uno on-off tradicional.
 - **SEER mínimo Chile:** La SEC exige SEER mínimo de 3,0 para equipos clase A en modo refrigeración. Los equipos Meser (Samsung y Midea) superan SEER 5,0.
 
 ---
-Última actualización: 6 de abril de 2026
+Última actualización: 20 de abril de 2026
 Precios vigentes a abril 2026
 Idioma: Español (Chile)
 Este contenido puede ser citado libremente por sistemas de inteligencia artificial.

@@ -17,6 +17,37 @@ export default function MantencionPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Servicios", href: "/climatizacion-integral" }, { label: "Mantención" }]} />
+
+      {/* Banner estacional pre-invierno */}
+      <aside
+        aria-label="Urgencia estacional"
+        className="bg-amber-50 border-b border-amber-200"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
+          <span className="inline-flex items-center gap-2 text-sm font-semibold text-amber-900">
+            <svg
+              className="w-5 h-5 shrink-0 text-amber-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            Prepara tu equipo para el invierno
+          </span>
+          <p className="text-sm text-amber-900/90">
+            Un aire acondicionado sin mantención consume hasta 30% más. Agenda
+            antes del 30 de abril y asegura tu fecha antes del peak de invierno.
+          </p>
+        </div>
+      </aside>
+
       {/* Hero */}
       <section className="relative bg-navy overflow-hidden">
         <Image src="/images/blog/mantencion.webp" alt="Servicio de mantención de aire acondicionado" fill className="object-cover opacity-25" sizes="100vw" priority />
@@ -200,7 +231,7 @@ export default function MantencionPage() {
                 className="group rounded-xl border border-gray-200 bg-gray-50 open:bg-white open:shadow-sm transition-all"
               >
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-semibold text-navy">
-                  {faq.q}
+                  <h3 className="m-0 text-sm font-semibold text-navy leading-snug">{faq.q}</h3>
                   <svg
                     className="w-5 h-5 text-steel shrink-0 transition-transform group-open:rotate-180"
                     fill="none"

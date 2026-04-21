@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { trackFormSubmit, trackFormStep, trackWhatsAppClick } from "@/lib/gtm";
+
+const STORAGE_KEY = "meser_cotizar_form_v1";
 
 const COMUNAS = [
   "Las Condes",
@@ -115,6 +117,43 @@ export default function CotizarForm() {
     email: "",
     comentario: "",
   });
+  const hydrated = useRef(false);
+
+  // C57: Hidrata el estado desde sessionStorage para no perder progreso en refresh/back
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const saved = sessionStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved) as {
+          step?: number;
+          formData?: Partial<FormData>;
+        };
+        if (parsed.formData) {
+          setFormData((prev) => ({ ...prev, ...parsed.formData }));
+        }
+        if (parsed.step && parsed.step >= 1 && parsed.step <= TOTAL_STEPS) {
+          setStep(parsed.step);
+        }
+      }
+    } catch {
+      // sessionStorage inaccesible (incógnito estricto, cuota). Seguimos sin hidratar.
+    }
+    hydrated.current = true;
+  }, []);
+
+  // C57: Persiste cambios sólo después de hidratar, para no pisar datos guardados con el default.
+  useEffect(() => {
+    if (typeof window === "undefined" || !hydrated.current) return;
+    try {
+      sessionStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({ step, formData })
+      );
+    } catch {
+      // quota o incógnito — no bloqueamos el flujo.
+    }
+  }, [step, formData]);
 
   const updateField = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -154,6 +193,7 @@ export default function CotizarForm() {
       trackFormSubmit(formData);
       if (typeof window !== "undefined") {
         sessionStorage.setItem("meser_form_submitted", "1");
+        sessionStorage.removeItem(STORAGE_KEY);
       }
       setSubmitted(true);
     } catch {

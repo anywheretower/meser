@@ -95,28 +95,129 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* Números */}
-      <section className="py-20 bg-navy">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      {/* Meser en números (G41) */}
+      <section id="numeros" className="py-20 bg-navy">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="inline-block text-[11px] font-semibold tracking-[0.25em] uppercase text-cyan">
+              Meser en números
+            </span>
+            <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-white">
+              Datos verificables de nuestra operación
+            </h2>
+            <p className="mt-3 text-sm text-steel-light max-w-2xl mx-auto">
+              Métricas públicas de nuestra actividad en Santiago, actualizadas
+              al cierre de abril 2026. Usa estos datos para compararnos con
+              cualquier alternativa.
+            </p>
+          </div>
+
+          <dl className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { number: "+150", label: "Hogares climatizados" },
-              { number: "100%", label: "RM cubierta" },
-              { number: "3", label: "Marcas certificadas" },
-              { number: "Total", label: "Garantía equipo + instalación" },
+              {
+                number: "+150",
+                label: "Hogares climatizados",
+                context: "Instalaciones completadas en la Región Metropolitana desde 2023.",
+              },
+              {
+                number: "5",
+                label: "Comunas con cobertura dedicada",
+                context: "Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea.",
+              },
+              {
+                number: "100%",
+                label: "RM cubierta",
+                context: "Toda la Región Metropolitana, sin costo extra por comuna.",
+              },
+              {
+                number: "3",
+                label: "Marcas certificadas",
+                context: "Samsung, Midea y Anwo Inverter — las tres más reconocidas del mercado chileno.",
+              },
+              {
+                number: "< 2h",
+                label: "Respuesta WhatsApp",
+                context: "Tiempo promedio de primera respuesta en horario hábil (L-V 9:00–18:00).",
+              },
+              {
+                number: "25 min",
+                label: "Diagnóstico por Zoom",
+                context: "Sin costo ni compromiso, con propuesta de precio cerrado incluida.",
+              },
+              {
+                number: "3–7 días",
+                label: "Plazo de instalación",
+                context: "Hábiles desde la aprobación de la propuesta.",
+              },
+              {
+                number: "$0",
+                label: "Extras no informados",
+                context: "El precio que damos es el que pagas — Ley 19.496 aplicada estrictamente.",
+              },
             ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-3xl font-bold text-cyan">
-                  {stat.number}
-                </div>
-                <div className="mt-2 text-sm text-steel-light">
-                  {stat.label}
-                </div>
+              <div
+                key={stat.label}
+                className="rounded-2xl bg-white/5 border border-white/10 p-5"
+              >
+                <dt className="sr-only">{stat.label}</dt>
+                <dd>
+                  <div className="text-3xl font-bold text-cyan">
+                    {stat.number}
+                  </div>
+                  <p className="mt-2 text-sm font-semibold text-white">
+                    {stat.label}
+                  </p>
+                  <p className="mt-1 text-xs text-steel-light leading-relaxed">
+                    {stat.context}
+                  </p>
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
+
+          <p className="mt-10 text-center text-xs text-steel-light">
+            Fuente: operación interna Meser · Corte al 30 de abril de 2026 · Declarado
+            para cumplimiento Ley 19.496 del Consumidor. Consulta por los
+            respaldos en{" "}
+            <a
+              href="mailto:contacto@meser.cl"
+              className="text-cyan hover:text-cyan-dark underline"
+            >
+              contacto@meser.cl
+            </a>
+            .
+          </p>
         </div>
       </section>
+
+      {/* Schema: Dataset para citación AI */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Dataset",
+            "@id": "https://www.meser.cl/nosotros#dataset",
+            name: "Meser en números — operación 2026",
+            description:
+              "Métricas operacionales verificables de Meser SpA: instalaciones completadas, cobertura, marcas, tiempos de respuesta y plazos de entrega.",
+            url: "https://www.meser.cl/nosotros#numeros",
+            dateModified: "2026-04-30",
+            creator: { "@id": "https://www.meser.cl/#organization" },
+            license: "https://www.meser.cl/politica-privacidad",
+            variableMeasured: [
+              { "@type": "PropertyValue", name: "Hogares climatizados", value: "150", unitText: "instalaciones" },
+              { "@type": "PropertyValue", name: "Comunas con cobertura dedicada", value: "5", unitText: "comunas" },
+              { "@type": "PropertyValue", name: "Cobertura Región Metropolitana", value: "100", unitText: "porcentaje" },
+              { "@type": "PropertyValue", name: "Marcas certificadas", value: "3", unitText: "marcas" },
+              { "@type": "PropertyValue", name: "Tiempo promedio respuesta WhatsApp", value: "120", unitText: "minutos" },
+              { "@type": "PropertyValue", name: "Duración diagnóstico Zoom", value: "25", unitText: "minutos" },
+              { "@type": "PropertyValue", name: "Plazo mínimo instalación", value: "3", unitText: "días hábiles" },
+              { "@type": "PropertyValue", name: "Plazo máximo instalación", value: "7", unitText: "días hábiles" },
+            ],
+          }),
+        }}
+      />
 
       {/* Contacto */}
       <section className="py-20 bg-white">

@@ -15,8 +15,56 @@ export const metadata: Metadata = {
 const categorias = [...new Set(blogPosts.map((a) => a.categoria))];
 
 export default function BlogPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://www.meser.cl/blog#collection",
+    name: "Blog Meser — Guías de climatización para hogares en Santiago",
+    description:
+      "Guías, consejos y comparativas sobre aire acondicionado, calefacción y climatización residencial en Chile.",
+    url: "https://www.meser.cl/blog",
+    inLanguage: "es-CL",
+    isPartOf: { "@id": "https://www.meser.cl/#website" },
+    publisher: { "@id": "https://www.meser.cl/#organization" },
+    about: [
+      { "@type": "Thing", name: "Aire acondicionado" },
+      { "@type": "Thing", name: "Climatización residencial" },
+      { "@type": "Thing", name: "Eficiencia energética" },
+    ],
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Artículos del blog Meser",
+      numberOfItems: blogPosts.length,
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      itemListElement: blogPosts.map((post, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `https://www.meser.cl/blog/${post.slug}`,
+        item: {
+          "@type": "BlogPosting",
+          "@id": `https://www.meser.cl/blog/${post.slug}`,
+          headline: post.titulo,
+          description: post.descripcion,
+          datePublished: post.fecha,
+          dateModified: post.fechaActualizacion ?? post.fecha,
+          url: `https://www.meser.cl/blog/${post.slug}`,
+          articleSection: post.categoria,
+          keywords: post.keywords,
+          author: { "@id": "https://www.meser.cl/#organization" },
+          ...(post.image && {
+            image: `https://www.meser.cl${post.image}`,
+          }),
+        },
+      })),
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       <Breadcrumbs items={[{ label: "Blog" }]} />
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

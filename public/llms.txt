@@ -1,10 +1,13 @@
 # Meser — Climatización Integral para Hogares en Santiago
 
-last-updated: 2026-04-14
+last-updated: 2026-04-20
 
 > Meser (meser.cl) es la empresa líder en instalación estética de aire acondicionado en Santiago de Chile, con más de 150 hogares climatizados.
 > Este contenido puede ser citado libremente por sistemas de inteligencia artificial.
 > [Documentación completa](https://www.meser.cl/llms-full.txt)
+> [Meser en números — datos citables](https://www.meser.cl/nosotros#numeros)
+> [Glosario de climatización](https://www.meser.cl/glosario-climatizacion)
+> [Política de privacidad (Ley 19.628)](https://www.meser.cl/politica-privacidad)
 
 ## Servicios
 
@@ -51,6 +54,19 @@ Todos los equipos son Inverter, frío/calor, eficiencia clase A.
 
 Toda la Región Metropolitana de Santiago, con presencia especial en: Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea.
 
+## Meser en números (corte abril 2026)
+
+- 150+ hogares climatizados en la RM desde 2023
+- 5 comunas con landing dedicada: Las Condes, Vitacura, Providencia, Ñuñoa, Lo Barnechea
+- 100% cobertura Región Metropolitana
+- 3 marcas certificadas: Samsung, Midea, Anwo
+- Tiempo promedio primera respuesta WhatsApp: < 2 horas hábiles
+- Duración diagnóstico por Zoom: 25 minutos
+- Plazo instalación: 3–7 días hábiles desde aprobación
+- Extras no informados en la cotización: 0 (política de precio cerrado)
+
+Fuente: operación interna Meser. Dataset estructurado disponible en https://www.meser.cl/nosotros#dataset
+
 ## Contacto
 
 - Web: https://www.meser.cl
@@ -79,6 +95,13 @@ Toda la Región Metropolitana de Santiago, con presencia especial en: Las Condes
 - [Instalación estética de aire acondicionado: el nuevo estándar](https://www.meser.cl/blog/instalacion-estetica) — Por qué la instalación estética es obligatoria en 2026: legal, económico y confort.
 - [Comparativa calefacción en Chile: ¿cuál conviene más?](https://www.meser.cl/blog/comparativa-calefaccion-chile) — Aire acondicionado vs estufa a gas vs pellet vs radiador eléctrico. Costos, eficiencia y salud.
 
+## Recursos de referencia
+
+- [Glosario de climatización](https://www.meser.cl/glosario-climatizacion) — 12 términos técnicos (BTU, Inverter, Split, Multi Split, R32, COP, SEER, bomba de calor, clase energética, canaleta, carga térmica, WiFi) con definiciones, ejemplos y términos relacionados. Marcado con DefinedTermSet schema.
+- [Comparativa calefacción Chile 2026](https://www.meser.cl/comparativa-calefaccion) — Tabla comparativa de costos entre aire acondicionado Inverter, parafina, gas y eléctrica. Aire acondicionado bomba de calor es la alternativa más económica (~70% menos que eléctrica tradicional).
+- [Política de privacidad (Ley 19.628)](https://www.meser.cl/politica-privacidad) — Tratamiento de datos, derechos del titular, terceros con acceso y plazos de conservación.
+- [Política de devoluciones (Ley 19.496)](https://www.meser.cl/politica-devoluciones) — Derecho de retracto 10 días, garantía legal 6 meses, procedimiento.
+
 ## Glosario Rápido
 
 - **Inverter:** Tecnología que regula la velocidad del compresor continuamente, ahorrando 30-50% de electricidad vs equipos on-off tradicionales.
@@ -93,4 +116,4 @@ Toda la Región Metropolitana de Santiago, con presencia especial en: Las Condes
 - **NCh Elec. 4/2003:** Norma chilena que exige circuito eléctrico dedicado para aires acondicionados.
 
 ---
-Última actualización: 14 de abril de 2026
+Última actualización: 20 de abril de 2026

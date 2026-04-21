@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import type { BlogPost } from "@/lib/blog-posts";
+import { getRelatedPosts, type BlogPost } from "@/lib/blog-posts";
 
 interface BlogPostLayoutProps {
   post: BlogPost;
@@ -16,23 +16,21 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
     description: post.descripcion,
     datePublished: post.fecha,
     dateModified: post.fecha,
-    author: [
-      {
-        "@type": "Organization",
-        name: "Meser",
-        url: "https://www.meser.cl",
-      },
-      {
-        "@type": "Person",
-        name: "Equipo Meser",
-        url: "https://www.meser.cl/nosotros",
-        worksFor: {
-          "@type": "Organization",
-          name: "Meser",
-        },
-        jobTitle: "Especialista en climatización",
-      },
-    ],
+    author: {
+      "@type": "Organization",
+      "@id": "https://www.meser.cl/#organization",
+      name: "Meser",
+      url: "https://www.meser.cl",
+      description:
+        "Empresa chilena de climatización integral. +150 hogares instalados en Santiago desde 2023.",
+      knowsAbout: [
+        "aire acondicionado Inverter",
+        "instalación estética split",
+        "mantención HVAC residencial",
+        "BTU y dimensionamiento térmico",
+        "bomba de calor",
+      ],
+    },
     publisher: {
       "@type": "Organization",
       name: "Meser",
@@ -145,6 +143,59 @@ export default function BlogPostLayout({ post, children }: BlogPostLayoutProps) 
           <div className="prose-meser">{children}</div>
         </div>
       </article>
+
+      {/* Artículos relacionados */}
+      {(() => {
+        const related = getRelatedPosts(post.slug, 3);
+        if (related.length === 0) return null;
+        return (
+          <section className="py-14 bg-white border-t border-gray-100">
+            <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+              <h2 className="text-2xl font-bold text-navy">
+                Sigue leyendo
+              </h2>
+              <p className="mt-2 text-sm text-steel-dark">
+                Más guías relacionadas con {post.categoria.toLowerCase()}.
+              </p>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {related.map((rel) => (
+                  <Link
+                    key={rel.slug}
+                    href={`/blog/${rel.slug}`}
+                    className="group rounded-2xl border border-gray-200 overflow-hidden hover:border-cyan hover:shadow-md transition-all"
+                  >
+                    {rel.image && (
+                      <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
+                        <Image
+                          src={rel.image}
+                          alt={rel.imageAlt || rel.titulo}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+                    <div className="p-5">
+                      <span className="text-[11px] font-semibold uppercase tracking-wide text-cyan">
+                        {rel.categoria}
+                      </span>
+                      <h3 className="mt-2 text-base font-semibold text-navy leading-snug group-hover:text-cyan transition-colors">
+                        {rel.titulo}
+                      </h3>
+                      <p className="mt-2 text-xs text-steel-dark line-clamp-2">
+                        {rel.descripcion}
+                      </p>
+                      <p className="mt-3 text-xs text-steel">
+                        {rel.readTime} de lectura
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* CTA */}
       <aside aria-label="Llamado a la acción">

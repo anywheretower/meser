@@ -14,6 +14,8 @@ export interface ProductModel {
   coverage?: string;
   popular?: boolean;
   fichaUrl?: string;
+  /** Código de aprobación SEC Chile (Superintendencia de Electricidad y Combustibles). Si se completa, el badge lo muestra. */
+  secCert?: string;
 }
 
 export interface ProductGroup {

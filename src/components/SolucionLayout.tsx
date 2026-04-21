@@ -216,7 +216,7 @@ export default function SolucionLayout({
                   className="group rounded-xl border border-gray-200 bg-gray-50 open:bg-white open:shadow-sm transition-all"
                 >
                   <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-semibold text-navy">
-                    {faq.q}
+                    <h3 className="m-0 text-sm font-semibold text-navy leading-snug">{faq.q}</h3>
                     <svg className="w-5 h-5 text-steel shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>

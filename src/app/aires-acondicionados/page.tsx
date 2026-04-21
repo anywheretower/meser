@@ -6,12 +6,13 @@ import AddToCartButton from "@/components/AddToCartButton";
 import AddPackageButton from "@/components/AddPackageButton";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SECBadge from "@/components/SECBadge";
 
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado con Instalación Santiago — Desde $319.990",
+  title: "Catálogo de Aires Acondicionados Midea, Samsung y Anwo · Desde $319.990",
   description:
-    "Aire acondicionado Midea, Samsung Wind-Free y Anwo Inverter con instalación en Santiago. Desde $319.990 o todo incluido desde $449.990. +150 hogares.",
+    "Catálogo de aires acondicionados Inverter: Midea, Samsung Wind-Free y Anwo. Solo equipo desde $319.990 o con instalación todo incluido desde $449.990. Cobertura Santiago.",
   alternates: { canonical: "/aires-acondicionados" },
   openGraph: { url: "/aires-acondicionados" },
 };
@@ -83,7 +84,7 @@ export default function AiresAcondicionadosPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-navy">
-              Aire acondicionado Midea, Samsung y Anwo con instalación en Santiago
+              Catálogo de aires acondicionados Midea, Samsung y Anwo
             </h1>
             <p className="mt-4 text-lg text-steel-dark leading-relaxed">
               Aire acondicionado Inverter frío/calor con WiFi y eficiencia clase A.
@@ -215,6 +216,9 @@ export default function AiresAcondicionadosPage() {
                         Ficha técnica
                       </a>
                     )}
+                  </div>
+                  <div className="mt-2">
+                    <SECBadge certCode={producto.secCert} />
                   </div>
 
                   {/* Precio equipo */}
@@ -506,7 +510,7 @@ export default function AiresAcondicionadosPage() {
                 className="group rounded-xl border border-gray-200 bg-white open:shadow-sm transition-all"
               >
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-semibold text-navy">
-                  {faq.q}
+                  <h3 className="m-0 text-sm font-semibold text-navy leading-snug">{faq.q}</h3>
                   <svg className="w-5 h-5 text-steel shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>

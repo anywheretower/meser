@@ -7,11 +7,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Climatización Integral Santiago · Precio Cerrado",
+  title: "Servicio de Climatización Integral · Diagnóstico, Equipo e Instalación",
   alternates: { canonical: "/climatizacion-integral" },
   openGraph: { url: "/climatizacion-integral" },
   description:
-    "Resolvemos tu climatización completa: diagnóstico gratis por Zoom, precio cerrado sin sorpresas, instalación estética invisible. Desde $449.990 todo incluido.",
+    "Servicio integral: diagnóstico gratuito por Zoom, selección del equipo correcto, instalación estética y acompañamiento post-venta. Un solo responsable de principio a fin.",
 };
 
 export default function ClimatizacionIntegralPage() {
@@ -25,7 +25,7 @@ export default function ClimatizacionIntegralPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Climatización integral para tu hogar en Santiago
+              Servicio de climatización integral: diagnóstico, equipo e instalación
             </h1>
             <p className="mt-4 text-lg text-cyan font-medium">
               Diagnóstico gratuito por Zoom · Precio cerrado sin sorpresas ·
@@ -373,7 +373,7 @@ export default function ClimatizacionIntegralPage() {
                 className="group rounded-xl border border-gray-200 bg-white overflow-hidden"
               >
                 <summary className="flex items-center justify-between cursor-pointer px-6 py-5 text-sm font-semibold text-navy hover:bg-gray-50 transition-colors">
-                  {faq.q}
+                  <h3 className="m-0 text-sm font-semibold text-navy leading-snug">{faq.q}</h3>
                   <svg
                     className="w-5 h-5 text-steel shrink-0 group-open:rotate-180 transition-transform"
                     fill="none"

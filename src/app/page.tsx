@@ -7,9 +7,9 @@ import AddPackageButton from "@/components/AddPackageButton";
 import WhatsAppLink from "@/components/WhatsAppLink";
 
 export const metadata: Metadata = {
-  title: "Aire Acondicionado con Instalación en Santiago — Meser Climatización",
+  title: "Meser · Climatización Integral con Precio Cerrado en Santiago",
   description:
-    "Aire acondicionado Inverter con instalación estética desde $449.990 todo incluido. Diagnóstico gratuito por Zoom, precio cerrado, garantía total. Samsung, Midea y Anwo en Santiago.",
+    "Climatización integral para tu hogar en Santiago: diagnóstico gratuito por Zoom, propuesta con precio cerrado en 24h e instalación estética con garantía total. Samsung, Midea y Anwo.",
   alternates: { canonical: "/" },
   openGraph: { url: "/" },
 };
@@ -25,7 +25,10 @@ export default function Home() {
           alt="Pareja revisando opciones de climatización junto a aire acondicionado Midea"
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoQAAkAA4BaJaACdADGPHjBgAD+9tewvU9uUptygqNMmib1psmGaRil3+uY612bUfTIuwCI0YibKbt1EpG+yj+o7H4AAA=="
           className="object-cover object-right"
         />
         {/* Gradient overlay for text readability */}
@@ -40,7 +43,7 @@ export default function Home() {
             </div>
 
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.9] animate-fade-in-up stagger-2">
-              Aire acondicionado con instalación desde $449.990
+              Climatización integral para tu hogar en Santiago
             </h1>
 
             <p className="mt-8 text-lg sm:text-xl text-steel-light leading-relaxed max-w-xl animate-fade-in-up stagger-3">
@@ -570,7 +573,7 @@ export default function Home() {
               <RevealOnScroll key={faq.q}>
                 <details className="group rounded-2xl border border-gray-200 bg-white open:shadow-sm transition-all">
                   <summary className="flex cursor-pointer items-center justify-between px-6 py-5 text-sm font-semibold text-navy">
-                    {faq.q}
+                    <h3 className="m-0 text-sm font-semibold text-navy leading-snug">{faq.q}</h3>
                     <svg
                       className="w-5 h-5 text-steel shrink-0 ml-4 transition-transform group-open:rotate-180"
                       fill="none"

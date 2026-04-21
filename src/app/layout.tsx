@@ -6,16 +6,16 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioGlobal from "@/components/FormularioGlobal";
-const StickyCTA = dynamic(() => import("@/components/StickyCTA"));
-const RouteChangeTracker = dynamic(() => import("@/components/RouteChangeTracker"));
 import { CartProvider } from "@/lib/cart-context";
 import { GTM_ID } from "@/lib/gtm";
 import SchemaOrg from "@/components/SchemaOrg";
 
-// R17: Code splitting — lazy load non-critical client components
-const SocialSidebar = dynamic(() => import("@/components/SocialSidebar"));
-const ScrollDepthTracker = dynamic(() => import("@/components/ScrollDepthTracker"));
-const ExitIntentPopup = dynamic(() => import("@/components/ExitIntentPopup"));
+// R39: Code splitting — 5 componentes client no-críticos (StickyCTA, SocialSidebar,
+// RouteChangeTracker, ScrollDepthTracker, ExitIntentPopup) agrupados en un solo
+// bundle lazy para evitar waterfalls de JS en mobile.
+const ClientEnhancements = dynamic(
+  () => import("@/components/ClientEnhancements")
+);
 
 const geist = Geist({
   variable: "--font-body",
@@ -101,11 +101,7 @@ setTimeout(loadGTM,3000);})();`,
           <main id="main-content">{children}</main>
           <FormularioGlobal />
           <Footer />
-          <StickyCTA />
-          <SocialSidebar />
-          <RouteChangeTracker />
-          <ScrollDepthTracker />
-          <ExitIntentPopup />
+          <ClientEnhancements />
         </CartProvider>
       </body>
     </html>

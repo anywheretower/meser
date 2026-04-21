@@ -1,6 +1,7 @@
 import Link from "next/link";
 import WhatsAppLink from "./WhatsAppLink";
 import PhoneLink from "./PhoneLink";
+import SECBadge from "./SECBadge";
 
 const footerLinks = {
   productos: [
@@ -24,6 +25,10 @@ const footerLinks = {
     { href: "/blog", label: "Blog" },
     { href: "/garantia", label: "Garantía" },
     { href: "/contacto", label: "Contacto" },
+  ],
+  legal: [
+    { href: "/politica-privacidad", label: "Política de Privacidad" },
+    { href: "/politica-devoluciones", label: "Política de Devoluciones" },
   ],
 };
 
@@ -178,11 +183,39 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-steel mt-6">
+              Legal
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerLinks.legal.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-steel-light hover:text-cyan transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
 
+        {/* Certificaciones */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <div className="flex flex-wrap items-center gap-3">
+            <SECBadge variant="full" />
+            <div className="text-xs text-steel-light max-w-md leading-relaxed">
+              Todos nuestros aires acondicionados y termos cuentan con
+              certificación SEC Chile (Superintendencia de Electricidad y
+              Combustibles), eficiencia energética clase A.
+            </div>
+          </div>
+        </div>
+
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-steel">
             &copy; {new Date().getFullYear()} Meser. Todos los derechos reservados.
           </p>
