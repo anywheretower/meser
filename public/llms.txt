@@ -12,10 +12,10 @@ last-updated: 2026-04-20
 ## Servicios
 
 - **Climatización Integral**: Diagnóstico gratuito por Zoom (25 min), propuesta con precio cerrado todo incluido, instalación estética profesional.
-- **Instalación de Aire Acondicionado**: Instalación profesional con canaletas ocultas, cables invisibles y acabados prolijos. Desde $449.990 todo incluido.
+- **Instalación de Aire Acondicionado**: Instalación profesional con canaletas ocultas, cables invisibles y acabados prolijos. Desde $469.990 todo incluido.
 - **Mantención de Aire Acondicionado**: Limpieza profunda, revisión técnica, optimización de rendimiento. Desde $64.990.
 - **Climatización Inteligente**: Control WiFi, asistentes de voz, inteligencia artificial. Samsung SmartThings y Midea AIR app.
-- **Paquetes Todo Incluido**: Equipo + instalación + garantía desde $449.990. Precio cerrado, cero sorpresas.
+- **Paquetes Todo Incluido**: Equipo + instalación + garantía desde $469.990. Precio cerrado, cero sorpresas.
 
 ## Marcas
 
@@ -27,18 +27,22 @@ last-updated: 2026-04-20
 
 | Modelo | BTU | Solo equipo | Todo incluido |
 |--------|-----|-------------|---------------|
-| Midea EcoMaster 9K | 9.000 | $319.990 | $449.990 |
-| Midea EcoMaster 12K | 12.000 | $349.990 | $479.990 |
-| Midea EcoMaster 18K | 18.000 | $529.990 | $659.990 |
-| Midea EcoMaster 24K | 24.000 | $649.990 | $779.990 |
-| Anwo Ecoflow 9K | 9.000 | $319.990 | $449.990 |
-| Anwo Ecoflow 12K | 12.000 | $349.990 | $479.990 |
-| Anwo Ecoflow 18K | 18.000 | $529.990 | $659.990 |
-| Anwo Ecoflow 24K | 24.000 | $649.990 | $779.990 |
-| Samsung Wind-Free 9K | 9.000 | $549.990 | $679.990 |
-| Samsung Wind-Free 12K | 12.000 | $599.990 | $729.990 |
-| Samsung Wind-Free 18K | 18.000 | $699.990 | $829.990 |
-| Samsung Wind-Free 24K | 24.000 | $849.990 | $979.990 |
+| Midea EcoMaster 9K | 9.000 | $319.990 | $469.990 |
+| Midea EcoMaster 12K | 12.000 | $359.990 | $509.990 |
+| Midea EcoMaster 18K | 18.000 | $529.990 | $679.990 |
+| Midea EcoMaster 24K | 24.000 | $649.990 | $799.990 |
+| Anwo Ecoflow 9K | 9.000 | $339.990 | $489.990 |
+| Anwo Ecoflow 12K | 12.000 | $379.990 | $529.990 |
+| Anwo Ecoflow 18K | 18.000 | $549.990 | $699.990 |
+| Anwo Ecoflow 24K | 24.000 | $669.990 | $819.990 |
+| Samsung Wind-Free 9K | 9.000 | $549.990 | $699.990 |
+| Samsung Wind-Free 12K | 12.000 | $599.990 | $749.990 |
+| Samsung Wind-Free 18K | 18.000 | $699.990 | $849.990 |
+| Samsung Wind-Free 24K | 24.000 | $849.990 | $999.990 |
+| Hisense Hi-Vida 9K | 9.000 | Consultar | Consultar |
+| Hisense Hi-Vida 12K | 12.000 | Consultar | Consultar |
+| Hisense Hi-Vida 18K | 18.000 | Consultar | Consultar |
+| Hisense Hi-Vida 22K | 22.000 | Consultar | Consultar |
 Todos los equipos son Inverter, frío/calor, eficiencia clase A.
 
 ## Productos — Termos Eléctricos

@@ -341,7 +341,7 @@ export default function ClimatizacionIntegralPage() {
             {[
               {
                 q: "¿Cuánto cuesta instalar un aire acondicionado con Meser?",
-                a: "Nuestros paquetes todo incluido (equipo + instalación + garantía) parten desde $449.990 para espacios de hasta 18 m². El precio exacto depende de tu espacio y necesidades — por eso ofrecemos un diagnóstico gratuito por Zoom donde definimos juntos la mejor solución.",
+                a: "Nuestros paquetes todo incluido (equipo + instalación + garantía) parten desde $469.990 para espacios de hasta 18 m². El precio exacto depende de tu espacio y necesidades — por eso ofrecemos un diagnóstico gratuito por Zoom donde definimos juntos la mejor solución.",
               },
               {
                 q: "¿Qué incluye el precio cerrado?",
@@ -410,7 +410,7 @@ export default function ClimatizacionIntegralPage() {
                 name: "¿Cuánto cuesta instalar un aire acondicionado con Meser?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Nuestros paquetes todo incluido (equipo + instalación + garantía) parten desde $449.990 para espacios de hasta 18 m².",
+                  text: "Nuestros paquetes todo incluido (equipo + instalación + garantía) parten desde $469.990 para espacios de hasta 18 m².",
                 },
               },
               {

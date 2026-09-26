@@ -86,7 +86,8 @@ function buildProductEntry(product: typeof allProducts[number]): string {
 }
 
 export async function GET() {
-  const physicalProducts = allProducts.filter((p) => p.category !== "servicio");
+  // Sin precio publicado (price 0) no se lista: Merchant lo mostraría a $0.
+  const physicalProducts = allProducts.filter((p) => p.category !== "servicio" && p.price > 0);
   const items = physicalProducts.map(buildProductEntry).join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

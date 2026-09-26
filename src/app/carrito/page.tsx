@@ -5,6 +5,7 @@ import { useCart } from "@/lib/cart-context";
 import { getProductById, formatPrice } from "@/lib/products";
 import { useState } from "react";
 import { pushEvent } from "@/lib/gtm";
+import PhoneInput, { telefonoCompleto } from "@/components/PhoneInput";
 
 const COMUNAS = [
   "Las Condes",
@@ -77,7 +78,7 @@ export default function CarritoPage() {
     billing.nombre.trim() !== "" &&
     billing.apellidos.trim() !== "" &&
     billing.rut.trim().length >= 9 &&
-    billing.telefono.trim() !== "" &&
+    telefonoCompleto(billing.telefono) &&
     billing.email.trim() !== "" &&
     billing.direccion.trim() !== "" &&
     billing.comuna !== "";
@@ -143,7 +144,7 @@ export default function CarritoPage() {
               <div className="text-xs font-semibold text-cyan uppercase tracking-wide">Más popular</div>
               <div className="mt-2 text-base font-bold text-navy group-hover:text-cyan transition-colors">Paquete Todo Incluido</div>
               <div className="mt-1 text-sm text-steel-dark">Aire + instalación + garantía</div>
-              <div className="mt-3 text-lg font-bold text-navy">Desde $449.990</div>
+              <div className="mt-3 text-lg font-bold text-navy">Desde $469.990</div>
             </Link>
             <Link
               href="/aires-acondicionados"
@@ -324,12 +325,12 @@ export default function CarritoPage() {
                 <label className="block text-sm font-medium text-navy mb-1.5">
                   Teléfono <span className="text-red-400">*</span>
                 </label>
-                <input
-                  type="tel"
+                <PhoneInput
                   value={billing.telefono}
-                  onChange={(e) => updateBilling("telefono", e.target.value)}
-                  placeholder="+56 9 1234 5678"
-                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy bg-white placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                  onChange={(v) => updateBilling("telefono", v)}
+                  className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm bg-white focus-within:border-cyan transition-colors"
+                  prefijoClassName="text-steel-dark"
+                  inputClassName="text-navy placeholder:text-steel"
                 />
               </div>
               <div>

@@ -27,7 +27,7 @@ export function trackFormSubmit(formData: Record<string, string>) {
   pushEvent({
     event: "generate_lead",
     currency: "CLP",
-    value: 449990,
+    value: 469990,
   });
 }
 

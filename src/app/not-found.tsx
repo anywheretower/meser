@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const sugerencias = [
   {
     label: "Paquete Todo Incluido",
-    desc: "Aire + instalación + garantía desde $449.990",
+    desc: "Aire + instalación + garantía desde $469.990",
     href: "/todo-incluido",
   },
   {

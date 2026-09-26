@@ -43,7 +43,7 @@ function ArticleCuantoCuesta() {
     <>
       <p>
         <strong>Instalar un aire acondicionado split en Chile cuesta entre $120.000 y $200.000 CLP
-        solo la instalación, o entre $449.990 y $979.990 con equipo Inverter incluido (precios
+        solo la instalación, o entre $469.990 y $999.990 con equipo Inverter incluido (precios
         abril 2026).</strong> Según datos de Meser, empresa con más de 150 instalaciones en Santiago,
         el modelo todo incluido ahorra entre $80.000 y $172.000 versus comprar equipo e instalación
         por separado.
@@ -126,7 +126,7 @@ function ArticleCuantoCuesta() {
         <Link href="/todo-incluido" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
           paquetes todo incluido
         </Link>{" "}
-        parten desde <strong>$449.990</strong> con equipo Inverter frío/calor,
+        parten desde <strong>$469.990</strong> con equipo Inverter frío/calor,
         instalación estética y garantía total. Precio cerrado, cero sorpresas.
       </p>
 
@@ -176,7 +176,7 @@ function ArticleCuantoCuesta() {
         </li>
         <li>
           <strong>Precio todo incluido Meser:</strong> mismo equipo + instalación estética +
-          garantía integral = <strong>$449.990</strong>.
+          garantía integral = <strong>$469.990</strong>.
         </li>
         <li>
           <strong>Garantía dividida:</strong> si compras por separado, la garantía del equipo
@@ -447,8 +447,8 @@ function ArticleMideaVsSamsung() {
     <>
       <p>
         <strong>Para la mayoría de los hogares en Santiago, Midea EcoMaster ofrece la mejor
-        relación calidad-precio desde $479.990 con instalación incluida. Samsung Wind-Free
-        es la opción premium desde $729.990, ideal para quienes priorizan silencio total
+        relación calidad-precio desde $509.990 con instalación incluida. Samsung Wind-Free
+        es la opción premium desde $749.990, ideal para quienes priorizan silencio total
         (~19 dB) y tecnología smart avanzada.</strong> En la experiencia de Meser, con más
         de 150 instalaciones en la Región Metropolitana, ambas marcas son excelentes — la
         elección depende de tu presupuesto y prioridades.
@@ -459,7 +459,7 @@ function ArticleMideaVsSamsung() {
       </p>
 
       <div className="tip-box">
-        <p><strong>Veredicto:</strong> Midea EcoMaster gana en relación calidad-precio y eficiencia energética (SEER 22.5 vs 21.7 de Samsung). Samsung Wind-Free gana en silencio (19 dB vs 22 dB), tecnología smart (SmartThings + IA) y diseño minimalista. Ambas marcas ofrecen Inverter frío/calor, conectividad WiFi y garantía del fabricante. En el mercado chileno 2026, Midea cuesta entre $449.990-$659.990 todo incluido y Samsung entre $679.990-$979.990. Si tu presupuesto es limitado, Midea. Si priorizas tecnología y silencio absoluto, Samsung. En ambos casos, la instalación profesional es idéntica.</p>
+        <p><strong>Veredicto:</strong> Midea EcoMaster gana en relación calidad-precio y eficiencia energética (SEER 22.5 vs 21.7 de Samsung). Samsung Wind-Free gana en silencio (19 dB vs 22 dB), tecnología smart (SmartThings + IA) y diseño minimalista. Ambas marcas ofrecen Inverter frío/calor, conectividad WiFi y garantía del fabricante. En el mercado chileno 2026, Midea cuesta entre $469.990-$679.990 todo incluido y Samsung entre $699.990-$999.990. Si tu presupuesto es limitado, Midea. Si priorizas tecnología y silencio absoluto, Samsung. En ambos casos, la instalación profesional es idéntica.</p>
       </div>
 
       <h2>Comparación rápida: Midea vs Samsung</h2>
@@ -560,8 +560,8 @@ function ArticleMideaVsSamsung() {
         <tbody>
           <tr>
             <td>Equipo + instalación</td>
-            <td>$479.990</td>
-            <td>$729.990</td>
+            <td>$509.990</td>
+            <td>$749.990</td>
           </tr>
           <tr>
             <td>Consumo eléctrico anual</td>
@@ -1718,7 +1718,7 @@ function ArticleComparativaCalefaccion() {
         </Link>{" "}
         o consulta los{" "}
         <Link href="/todo-incluido" className="text-cyan font-medium underline underline-offset-2 hover:text-cyan-dark transition-colors">
-          paquetes todo incluido desde $449.990
+          paquetes todo incluido desde $469.990
         </Link>.
       </p>
     </>

@@ -4,7 +4,7 @@ import SolucionLayout from "@/components/SolucionLayout";
 export const metadata: Metadata = {
   title: "Aire Acondicionado para Mansardas · Santiago",
   description:
-    "Climatización a medida para mansardas y altillos. Techos inclinados y geometrías difíciles requieren diagnóstico experto. Consola piso-cielo desde $649.990.",
+    "Climatización a medida para mansardas y altillos. Techos inclinados y geometrías difíciles requieren diagnóstico experto. Consola piso-cielo desde $669.990.",
   alternates: { canonical: "/soluciones/mansarda" },
   openGraph: { url: "/soluciones/mansarda" },
 };
@@ -40,13 +40,13 @@ export default function MansardaPage() {
           label: "Mansarda pequeña",
           btu: "Consola 14K BTU",
           espacio: "Hasta 23 m²",
-          precio: "Desde $649.990",
+          precio: "Desde $669.990",
         },
         {
           label: "Mansarda grande",
           btu: "Consola 18K BTU",
           espacio: "Hasta 32 m²",
-          precio: "Desde $679.990",
+          precio: "Desde $699.990",
         },
         {
           label: "Mansarda + otra habitación",

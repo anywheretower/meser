@@ -225,7 +225,7 @@ export default function CoberturaLayout({
               {
                 title: "Instalación",
                 desc: "Equipo + instalación estética todo incluido",
-                precio: "Desde $449.990",
+                precio: "Desde $469.990",
                 href: "/instalacion-aire-acondicionado",
               },
               {

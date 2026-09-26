@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { trackFormSubmit, trackFormStep, trackWhatsAppClick } from "@/lib/gtm";
+import PhoneInput, { telefonoCompleto } from "./PhoneInput";
 
 const STORAGE_KEY = "meser_cotizar_form_v1";
 
@@ -45,7 +46,7 @@ export function QuickCapture() {
   const [error, setError] = useState(false);
 
   const handleQuickSubmit = async () => {
-    if (!phone.trim() || phone.trim().length < 8) return;
+    if (!telefonoCompleto(phone)) return;
     setSending(true);
     try {
       await fetch("/api/contacto", {
@@ -82,18 +83,16 @@ export function QuickCapture() {
 
   return (
     <div className="flex gap-2">
-      <input
-        type="tel"
-        aria-label="Número de teléfono"
-        autoComplete="tel"
+      <PhoneInput
         value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-        placeholder="+569 XXXX XXXX"
-        className="flex-1 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-steel-light/50 focus:border-cyan focus:outline-none"
+        onChange={setPhone}
+        className="flex-1 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-sm focus-within:border-cyan"
+        prefijoClassName="text-steel-light"
+        inputClassName="text-white placeholder:text-steel-light/50"
       />
       <button
         onClick={handleQuickSubmit}
-        disabled={sending || phone.trim().length < 8}
+        disabled={sending || !telefonoCompleto(phone)}
         className="rounded-full bg-cyan px-5 py-2.5 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors disabled:opacity-40"
       >
         {sending ? "..." : "Llámame"}
@@ -166,7 +165,7 @@ export default function CotizarForm() {
       case 2:
         return formData.comuna !== "" && formData.necesidad !== "";
       case 3:
-        return formData.nombre.trim() !== "" && formData.telefono.trim() !== "";
+        return formData.nombre.trim() !== "" && telefonoCompleto(formData.telefono);
       default:
         return false;
     }
@@ -446,16 +445,14 @@ export default function CotizarForm() {
                   <label htmlFor="cotizar-telefono" className="block text-sm font-medium text-navy mb-1.5">
                     Teléfono *
                   </label>
-                  <input
+                  <PhoneInput
                     id="cotizar-telefono"
-                    type="tel"
                     required
-                    autoComplete="tel"
-                    pattern="\+?[0-9\s]{8,15}"
                     value={formData.telefono}
-                    onChange={(e) => updateField("telefono", e.target.value)}
-                    placeholder="+569 XXXX XXXX"
-                    className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm text-navy placeholder:text-steel focus:border-cyan focus:outline-none transition-colors"
+                    onChange={(v) => updateField("telefono", v)}
+                    className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm focus-within:border-cyan transition-colors"
+                    prefijoClassName="text-steel-dark"
+                    inputClassName="text-navy placeholder:text-steel"
                   />
                 </div>
               </div>
@@ -503,10 +500,10 @@ export default function CotizarForm() {
         )}
 
         {/* Validation hint */}
-        {!canAdvance() && step === TOTAL_STEPS && (formData.nombre.trim() === "" || formData.telefono.trim() === "") && (
+        {!canAdvance() && step === TOTAL_STEPS && (formData.nombre.trim() === "" || !telefonoCompleto(formData.telefono)) && (
           <p className="mt-4 text-xs text-red-500" role="alert">
             {formData.nombre.trim() === "" ? "Nombre es obligatorio. " : ""}
-            {formData.telefono.trim() === "" ? "Teléfono es obligatorio." : ""}
+            {formData.telefono.trim() === "" ? "Teléfono es obligatorio." : !telefonoCompleto(formData.telefono) ? "El celular lleva 8 dígitos después del +56 9." : ""}
           </p>
         )}
 
