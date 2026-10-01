@@ -229,8 +229,9 @@ export const airesGroups: ProductGroup[] = [
     category: "aire-acondicionado",
     // Precios del cliente (req #160, planilla del 29-sep): instalación $150.000 en
     // todos los tramos. Sin precio de lista ⇒ originalPrice 0 (sin tachado ni %).
-    // La planilla dice «24.000 BTU»: la serie Hi-Vida llega a 22.000 (ficha técnica),
-    // así que ese tramo es el 22K. Modelos de hisense.cl, serie Hi-Vida.
+    // El modelo grande (AS-22UR4RBTKA, 21.850 BTU en la ficha) Meser lo vende como
+    // 24.000 BTU: confirmado por el cliente el 01-oct. El id conserva «22k» para no
+    // romper carritos guardados ni el historial del feed de Merchant.
     models: [
       {
         id: "hisense-hi-vida-9k",
@@ -276,7 +277,7 @@ export const airesGroups: ProductGroup[] = [
       },
       {
         id: "hisense-hi-vida-22k",
-        name: "Hisense Hi-Vida 22.000 BTU",
+        name: "Hisense Hi-Vida 24.000 BTU",
         category: "aire-acondicionado",
         brand: "Hisense",
         line: "Hi-Vida",
@@ -286,6 +287,7 @@ export const airesGroups: ProductGroup[] = [
         originalPrice: 0,
         todoIncluidoPrice: 799990,
         specs: ["Inverter frío/calor", "WiFi", "Filtro 4 en 1", "Autolimpieza", "Clase A"],
+        coverage: "Hasta 40 m²",
       },
     ],
   },
