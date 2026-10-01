@@ -39,10 +39,10 @@ last-updated: 2026-04-20
 | Samsung Wind-Free 12K | 12.000 | $599.990 | $749.990 |
 | Samsung Wind-Free 18K | 18.000 | $699.990 | $849.990 |
 | Samsung Wind-Free 24K | 24.000 | $849.990 | $999.990 |
-| Hisense Hi-Vida 9K | 9.000 | Consultar | Consultar |
-| Hisense Hi-Vida 12K | 12.000 | Consultar | Consultar |
-| Hisense Hi-Vida 18K | 18.000 | Consultar | Consultar |
-| Hisense Hi-Vida 22K | 22.000 | Consultar | Consultar |
+| Hisense Hi-Vida 9K | 9.000 | $319.990 | $469.990 |
+| Hisense Hi-Vida 12K | 12.000 | $349.990 | $499.990 |
+| Hisense Hi-Vida 18K | 18.000 | $529.990 | $679.990 |
+| Hisense Hi-Vida 22K | 22.000 | $649.990 | $799.990 |
 Todos los equipos son Inverter, frío/calor, eficiencia clase A.
 
 ## Productos — Termos Eléctricos

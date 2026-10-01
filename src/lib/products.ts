@@ -227,8 +227,10 @@ export const airesGroups: ProductGroup[] = [
     brand: "Hisense",
     line: "Hi-Vida",
     category: "aire-acondicionado",
-    // Sin precio publicado todavía: price 0 ⇒ la tarjeta dice «Consultar» y el
-    // pago los rechaza (transbank/create). Modelos de hisense.cl, serie Hi-Vida.
+    // Precios del cliente (req #160, planilla del 29-sep): instalación $150.000 en
+    // todos los tramos. Sin precio de lista ⇒ originalPrice 0 (sin tachado ni %).
+    // La planilla dice «24.000 BTU»: la serie Hi-Vida llega a 22.000 (ficha técnica),
+    // así que ese tramo es el 22K. Modelos de hisense.cl, serie Hi-Vida.
     models: [
       {
         id: "hisense-hi-vida-9k",
@@ -238,9 +240,9 @@ export const airesGroups: ProductGroup[] = [
         line: "Hi-Vida",
         image: "/images/productos/hisense-hi-vida.webp",
         fichaUrl: "/fichas/Ficha%20AC%20Hisense%20Hi%20Vida.pdf",
-        price: 0,
+        price: 319990,
         originalPrice: 0,
-        todoIncluidoPrice: 0,
+        todoIncluidoPrice: 469990,
         specs: ["Inverter frío/calor", "WiFi", "Filtro 4 en 1", "Autolimpieza", "Clase A"],
         coverage: "Hasta 17 m²",
       },
@@ -252,9 +254,9 @@ export const airesGroups: ProductGroup[] = [
         line: "Hi-Vida",
         image: "/images/productos/hisense-hi-vida.webp",
         fichaUrl: "/fichas/Ficha%20AC%20Hisense%20Hi%20Vida.pdf",
-        price: 0,
+        price: 349990,
         originalPrice: 0,
-        todoIncluidoPrice: 0,
+        todoIncluidoPrice: 499990,
         specs: ["Inverter frío/calor", "WiFi", "Filtro 4 en 1", "Autolimpieza", "Clase A"],
         coverage: "Hasta 22 m²",
       },
@@ -266,9 +268,9 @@ export const airesGroups: ProductGroup[] = [
         line: "Hi-Vida",
         image: "/images/productos/hisense-hi-vida.webp",
         fichaUrl: "/fichas/Ficha%20AC%20Hisense%20Hi%20Vida.pdf",
-        price: 0,
+        price: 529990,
         originalPrice: 0,
-        todoIncluidoPrice: 0,
+        todoIncluidoPrice: 679990,
         specs: ["Inverter frío/calor", "WiFi", "Filtro 4 en 1", "Autolimpieza", "Clase A"],
         coverage: "Hasta 32 m²",
       },
@@ -280,9 +282,9 @@ export const airesGroups: ProductGroup[] = [
         line: "Hi-Vida",
         image: "/images/productos/hisense-hi-vida.webp",
         fichaUrl: "/fichas/Ficha%20AC%20Hisense%20Hi%20Vida.pdf",
-        price: 0,
+        price: 649990,
         originalPrice: 0,
-        todoIncluidoPrice: 0,
+        todoIncluidoPrice: 799990,
         specs: ["Inverter frío/calor", "WiFi", "Filtro 4 en 1", "Autolimpieza", "Clase A"],
       },
     ],

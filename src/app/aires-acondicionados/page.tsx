@@ -12,7 +12,7 @@ import SECBadge from "@/components/SECBadge";
 export const metadata: Metadata = {
   title: "Catálogo de Aires Acondicionados Midea, Samsung y Anwo · Desde $319.990",
   description:
-    "Catálogo de aires acondicionados Inverter: Midea, Samsung Wind-Free y Anwo. Solo equipo desde $319.990 o con instalación todo incluido desde $469.990. Cobertura Santiago.",
+    "Catálogo de aires acondicionados Inverter: Midea, Samsung Wind-Free, Anwo y Hisense. Solo equipo desde $319.990 o con instalación todo incluido desde $469.990. Cobertura Santiago.",
   alternates: { canonical: "/aires-acondicionados" },
   openGraph: { url: "/aires-acondicionados" },
 };
