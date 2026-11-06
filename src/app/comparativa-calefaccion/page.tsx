@@ -285,7 +285,7 @@ export default function ComparativaCalefaccionPage() {
       <section className="py-16 bg-navy">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="text-3xl font-bold text-white">
-            Empieza a ahorrar desde este invierno
+            Empieza a ahorrar en calefacción
           </h2>
           <p className="mt-4 text-steel-light leading-relaxed">
             Paquetes todo incluido desde $469.990: equipo Inverter + instalación

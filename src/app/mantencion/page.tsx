@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AddPackageButton from "@/components/AddPackageButton";
+import { AVISOS, temporadaDe } from "@/lib/aviso-temporada";
 
 
 export const metadata: Metadata = {
@@ -13,20 +14,27 @@ export const metadata: Metadata = {
   openGraph: { url: "/mantencion" },
 };
 
+// Se regenera una vez al día para que el aviso cambie de temporada sin deploy.
+export const revalidate = 86400;
+
 export default function MantencionPage() {
+  const temporada = temporadaDe(new Date());
+  const aviso = AVISOS[temporada];
+  const esInvierno = temporada === "invierno";
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Servicios", href: "/climatizacion-integral" }, { label: "Mantención" }]} />
 
-      {/* Banner estacional pre-invierno */}
+      {/* Aviso de temporada: cambia solo (lib/aviso-temporada.ts) */}
       <aside
-        aria-label="Urgencia estacional"
-        className="bg-amber-50 border-b border-amber-200"
+        aria-label="Aviso de temporada"
+        className={esInvierno ? "bg-sky-50 border-b border-sky-200" : "bg-amber-50 border-b border-amber-200"}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
-          <span className="inline-flex items-center gap-2 text-sm font-semibold text-amber-900">
+          <span className={`inline-flex items-center gap-2 text-sm font-semibold ${esInvierno ? "text-sky-900" : "text-amber-900"}`}>
             <svg
-              className="w-5 h-5 shrink-0 text-amber-600"
+              className={`w-5 h-5 shrink-0 ${esInvierno ? "text-sky-600" : "text-amber-600"}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -36,14 +44,17 @@ export default function MantencionPage() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                d={
+                  esInvierno
+                    ? "M12 2v20M3.34 7l17.32 10M3.34 17l17.32-10M12 6l-2.5-2.5M12 6l2.5-2.5M12 18l-2.5 2.5M12 18l2.5 2.5"
+                    : "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                }
               />
             </svg>
-            Prepara tu equipo para el invierno
+            {aviso.titulo}
           </span>
-          <p className="text-sm text-amber-900/90">
-            Un aire acondicionado sin mantención consume hasta 30% más. Agenda
-            antes del 30 de abril y asegura tu fecha antes del peak de invierno.
+          <p className={`text-sm ${esInvierno ? "text-sky-900/90" : "text-amber-900/90"}`}>
+            {aviso.texto}
           </p>
         </div>
       </aside>
