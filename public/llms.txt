@@ -27,8 +27,8 @@ last-updated: 2026-04-20
 
 | Modelo | BTU | Solo equipo | Todo incluido |
 |--------|-----|-------------|---------------|
-| Midea EcoMaster 9K | 9.000 | $319.990 | $469.990 |
-| Midea EcoMaster 12K | 12.000 | $359.990 | $509.990 |
+| Midea EcoMaster 9K | 9.000 | $329.990 | $479.990 |
+| Midea EcoMaster 12K | 12.000 | $369.990 | $519.990 |
 | Midea EcoMaster 18K | 18.000 | $529.990 | $679.990 |
 | Midea EcoMaster 24K | 24.000 | $649.990 | $799.990 |
 | Anwo Ecoflow 9K | 9.000 | $339.990 | $489.990 |

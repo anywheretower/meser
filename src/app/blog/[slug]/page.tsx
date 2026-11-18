@@ -176,7 +176,7 @@ function ArticleCuantoCuesta() {
         </li>
         <li>
           <strong>Precio todo incluido Meser:</strong> mismo equipo + instalación estética +
-          garantía integral = <strong>$469.990</strong>.
+          garantía integral = <strong>$479.990</strong>.
         </li>
         <li>
           <strong>Garantía dividida:</strong> si compras por separado, la garantía del equipo
@@ -447,7 +447,7 @@ function ArticleMideaVsSamsung() {
     <>
       <p>
         <strong>Para la mayoría de los hogares en Santiago, Midea EcoMaster ofrece la mejor
-        relación calidad-precio desde $509.990 con instalación incluida. Samsung Wind-Free
+        relación calidad-precio desde $519.990 con instalación incluida. Samsung Wind-Free
         es la opción premium desde $749.990, ideal para quienes priorizan silencio total
         (~19 dB) y tecnología smart avanzada.</strong> En la experiencia de Meser, con más
         de 150 instalaciones en la Región Metropolitana, ambas marcas son excelentes — la
@@ -459,7 +459,7 @@ function ArticleMideaVsSamsung() {
       </p>
 
       <div className="tip-box">
-        <p><strong>Veredicto:</strong> Midea EcoMaster gana en relación calidad-precio y eficiencia energética (SEER 22.5 vs 21.7 de Samsung). Samsung Wind-Free gana en silencio (19 dB vs 22 dB), tecnología smart (SmartThings + IA) y diseño minimalista. Ambas marcas ofrecen Inverter frío/calor, conectividad WiFi y garantía del fabricante. En el mercado chileno 2026, Midea cuesta entre $469.990-$679.990 todo incluido y Samsung entre $699.990-$999.990. Si tu presupuesto es limitado, Midea. Si priorizas tecnología y silencio absoluto, Samsung. En ambos casos, la instalación profesional es idéntica.</p>
+        <p><strong>Veredicto:</strong> Midea EcoMaster gana en relación calidad-precio y eficiencia energética (SEER 22.5 vs 21.7 de Samsung). Samsung Wind-Free gana en silencio (19 dB vs 22 dB), tecnología smart (SmartThings + IA) y diseño minimalista. Ambas marcas ofrecen Inverter frío/calor, conectividad WiFi y garantía del fabricante. En el mercado chileno 2026, Midea cuesta entre $479.990-$679.990 todo incluido y Samsung entre $699.990-$999.990. Si tu presupuesto es limitado, Midea. Si priorizas tecnología y silencio absoluto, Samsung. En ambos casos, la instalación profesional es idéntica.</p>
       </div>
 
       <h2>Comparación rápida: Midea vs Samsung</h2>
@@ -560,7 +560,7 @@ function ArticleMideaVsSamsung() {
         <tbody>
           <tr>
             <td>Equipo + instalación</td>
-            <td>$509.990</td>
+            <td>$519.990</td>
             <td>$749.990</td>
           </tr>
           <tr>

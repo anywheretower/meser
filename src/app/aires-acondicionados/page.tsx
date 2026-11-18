@@ -10,7 +10,7 @@ import SECBadge from "@/components/SECBadge";
 
 
 export const metadata: Metadata = {
-  title: "Catálogo de Aires Acondicionados Midea, Samsung y Anwo · Desde $319.990",
+  title: "Catálogo de Aires Acondicionados Midea, Samsung, Anwo y Hisense · Desde $319.990",
   description:
     "Catálogo de aires acondicionados Inverter: Midea, Samsung Wind-Free, Anwo y Hisense. Solo equipo desde $319.990 o con instalación todo incluido desde $469.990. Cobertura Santiago.",
   alternates: { canonical: "/aires-acondicionados" },
@@ -312,7 +312,7 @@ export default function AiresAcondicionadosPage() {
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {[
-                  ["Precio (12K BTU con instalación)", "$749.990", "$509.990", "$529.990"],
+                  ["Precio (12K BTU con instalación)", "$749.990", "$519.990", "$529.990"],
                   ["Tecnología destacada", "Wind-Free (sin corriente directa)", "IA EcoMaster (aprende hábitos)", "Refrigerante R32 (ecológico)"],
                   ["Eficiencia energética", "Clase A", "Clase A", "Clase A"],
                   ["Nivel de ruido interior", "~19 dB (ultra silencioso)", "~22 dB (muy silencioso)", "~24 dB (silencioso)"],
@@ -486,7 +486,7 @@ export default function AiresAcondicionadosPage() {
             {[
               {
                 q: "¿Cuánto cuesta un aire acondicionado con instalación en Santiago?",
-                a: "Los paquetes todo incluido parten desde $469.990 (9K BTU Midea) e incluyen equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales y garantía total. El modelo Samsung Wind-Free parte desde $699.990.",
+                a: "Los paquetes todo incluido parten desde $479.990 (9K BTU Midea) e incluyen equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales y garantía total. El modelo Samsung Wind-Free parte desde $699.990.",
               },
               {
                 q: "¿Qué diferencia hay entre Midea, Samsung y Anwo?",
@@ -532,7 +532,7 @@ export default function AiresAcondicionadosPage() {
                 {
                   "@type": "Question",
                   name: "¿Cuánto cuesta un aire acondicionado con instalación en Santiago?",
-                  acceptedAnswer: { "@type": "Answer", text: "Los paquetes todo incluido parten desde $469.990 (9K BTU Midea) e incluyen equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales y garantía total. Samsung Wind-Free desde $699.990." },
+                  acceptedAnswer: { "@type": "Answer", text: "Los paquetes todo incluido parten desde $479.990 (9K BTU Midea) e incluyen equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales y garantía total. Samsung Wind-Free desde $699.990." },
                 },
                 {
                   "@type": "Question",

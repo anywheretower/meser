@@ -101,7 +101,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-navy group-hover:text-cyan transition-colors">Aires Acondicionados</p>
-                <p className="text-xs text-steel-dark mt-0.5">Samsung, Midea y Anwo desde $319.990</p>
+                <p className="text-xs text-steel-dark mt-0.5">Midea, Samsung, Anwo y Hisense desde $319.990</p>
               </div>
             </Link>
             <Link
@@ -162,7 +162,7 @@ export default function Home() {
                 <div className="mt-5">
                   <span className="text-sm text-steel line-through mr-2">$549.990</span>
                   <span className="text-3xl font-bold text-navy tracking-tight">
-                    $469.990
+                    $479.990
                   </span>
                 </div>
                 <ul className="mt-6 space-y-3">
@@ -196,10 +196,10 @@ export default function Home() {
                 </ul>
                 <AddPackageButton
                   productId="midea-ecomaster-9k"
-                  price={469990}
+                  price={479990}
                   className="mt-8 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
                 >
-                  Comprar — $469.990
+                  Comprar — $479.990
                 </AddPackageButton>
               </div>
             </RevealOnScroll>
@@ -219,7 +219,7 @@ export default function Home() {
                 <div className="mt-5">
                   <span className="text-sm text-steel line-through mr-2">$629.990</span>
                   <span className="text-3xl font-bold text-navy tracking-tight">
-                    $509.990
+                    $519.990
                   </span>
                 </div>
                 <ul className="mt-6 space-y-3">
@@ -253,10 +253,10 @@ export default function Home() {
                 </ul>
                 <AddPackageButton
                   productId="midea-ecomaster-12k"
-                  price={509990}
+                  price={519990}
                   className="mt-8 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-all btn-glow cursor-pointer"
                 >
-                  Comprar — $509.990
+                  Comprar — $519.990
                 </AddPackageButton>
               </div>
             </RevealOnScroll>

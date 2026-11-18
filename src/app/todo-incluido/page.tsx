@@ -8,11 +8,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 
 export const metadata: Metadata = {
-  title: "Paquete Todo Incluido: Equipo + Instalación + Garantía · Desde $469.990",
+  title: "Paquete Todo Incluido: Equipo + Instalación + Garantía · Desde $479.990",
   alternates: { canonical: "/todo-incluido" },
   openGraph: { url: "/todo-incluido" },
   description:
-    "Paquete todo incluido: equipo Inverter frío/calor + instalación estética + garantía. Precio cerrado desde $469.990 — ahorras hasta $152.000 vs comprar por separado.",
+    "Paquete todo incluido: equipo Inverter frío/calor + instalación estética + garantía. Precio cerrado desde $479.990 — ahorras hasta $142.000 vs comprar por separado.",
 };
 
 export default function TodoIncluidoPage() {
@@ -32,7 +32,7 @@ export default function TodoIncluidoPage() {
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Paquete todo incluido: equipo + instalación + garantía desde{" "}
-              <span className="text-cyan">$469.990</span>
+              <span className="text-cyan">$479.990</span>
             </h1>
             <p className="mt-3 sm:mt-4 text-base sm:text-lg text-cyan font-medium">
               Equipo Inverter frío/calor + instalación estética + garantía
@@ -71,7 +71,7 @@ export default function TodoIncluidoPage() {
       {/* Párrafo respuesta — GEO: statement definitivo para AI (oculto mobile) */}
       <div className="hidden sm:block mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-3xl mx-auto rounded-xl bg-[#f0fdff] border border-cyan/20 px-5 py-4 text-sm text-navy/85 leading-relaxed">
-          <strong>Resumen:</strong> Un paquete &ldquo;todo incluido&rdquo; de aire acondicionado en Santiago incluye equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales, puesta en marcha y garantía total. En Meser los precios parten desde $469.990 (9K BTU Midea) hasta $999.990 (24K BTU Samsung Wind-Free). El precio que se cotiza es el precio final — sin extras ni sorpresas.
+          <strong>Resumen:</strong> Un paquete &ldquo;todo incluido&rdquo; de aire acondicionado en Santiago incluye equipo Inverter frío/calor, instalación estética con canaletas ocultas, materiales, puesta en marcha y garantía total. En Meser los precios parten desde $479.990 (9K BTU Midea) hasta $999.990 (24K BTU Samsung Wind-Free). El precio que se cotiza es el precio final — sin extras ni sorpresas.
         </div>
       </div>
 
@@ -94,7 +94,7 @@ export default function TodoIncluidoPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel line-through">$549.990</span>
                 <span className="ml-2 text-3xl font-bold text-navy">
-                  $469.990
+                  $479.990
                 </span>
               </div>
               <ul className="mt-6 space-y-2.5">
@@ -118,10 +118,10 @@ export default function TodoIncluidoPage() {
               </p>
               <AddPackageButton
                 productId="midea-ecomaster-9k"
-                price={469990}
+                price={479990}
                 className="mt-6 block w-full text-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-navy-light transition-colors cursor-pointer"
               >
-                Comprar — $469.990
+                Comprar — $479.990
               </AddPackageButton>
             </div>
 
@@ -137,7 +137,7 @@ export default function TodoIncluidoPage() {
               <div className="mt-4">
                 <span className="text-sm text-steel line-through">$629.990</span>
                 <span className="ml-2 text-3xl font-bold text-navy">
-                  $509.990
+                  $519.990
                 </span>
               </div>
               <ul className="mt-6 space-y-2.5">
@@ -161,10 +161,10 @@ export default function TodoIncluidoPage() {
               </p>
               <AddPackageButton
                 productId="midea-ecomaster-12k"
-                price={509990}
+                price={519990}
                 className="mt-6 block w-full text-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy hover:bg-cyan-dark transition-colors cursor-pointer"
               >
-                Comprar — $509.990
+                Comprar — $519.990
               </AddPackageButton>
             </div>
 
@@ -354,7 +354,7 @@ export default function TodoIncluidoPage() {
                     $530.000 - $622.000
                   </td>
                   <td className="px-6 py-4 text-sm text-center bg-navy/5">
-                    <span className="text-lg text-cyan">$469.990</span>
+                    <span className="text-lg text-cyan">$479.990</span>
                   </td>
                 </tr>
                 <tr className="bg-cyan/5">
@@ -363,7 +363,7 @@ export default function TodoIncluidoPage() {
                   </td>
                   <td className="px-6 py-4" />
                   <td className="px-6 py-4 text-sm font-bold text-green-600 text-center">
-                    Ahorras $60.000 - $152.000
+                    Ahorras $50.000 - $142.000
                   </td>
                 </tr>
               </tbody>
@@ -502,7 +502,7 @@ export default function TodoIncluidoPage() {
             ],
             offers: {
               "@type": "AggregateOffer",
-              lowPrice: "469990",
+              lowPrice: "479990",
               highPrice: "999990",
               priceCurrency: "CLP",
               offerCount: 3,
