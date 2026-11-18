@@ -46,7 +46,7 @@ export default function DepartamentoPage() {
           label: "Living-comedor",
           btu: "Split Muro 12K BTU",
           espacio: "Hasta 24 m²",
-          precio: "Desde $509.990",
+          precio: "Desde $499.990",
         },
         {
           label: "Departamento completo",

@@ -46,7 +46,7 @@ export default function CasaPage() {
           label: "Living o comedor",
           btu: "Split Muro 12K-18K BTU",
           espacio: "Hasta 32 m²",
-          precio: "Desde $509.990",
+          precio: "Desde $499.990",
         },
         {
           label: "Casa completa",
