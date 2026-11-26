@@ -77,10 +77,10 @@ Técnicos certificados instalan el equipo con canaletas ocultas, cables invisibl
 - Tecnología: IA EcoMaster (aprende hábitos y optimiza consumo), WiFi, Midea AIR app, muy silencioso (~22 dB)
 
 ### Anwo Ecoflow
-- 9.000 BTU: $339.990 / $489.990 (todo incluido)
-- 12.000 BTU: $379.990 / $529.990
-- 18.000 BTU: $549.990 / $699.990
-- 24.000 BTU: $669.990 / $819.990
+- 9.000 BTU: $349.990 / $499.990 (todo incluido)
+- 12.000 BTU: $389.990 / $539.990
+- 18.000 BTU: $559.990 / $709.990
+- 24.000 BTU: $679.990 / $829.990
 - Tecnología: Refrigerante R32 (ecológico), Inverter, WiFi, eficiencia clase A
 
 ### Hisense Hi-Vida
@@ -104,7 +104,7 @@ Acero esmaltado, termostato regulable, aislación de alta densidad. Consumo mens
 
 | Aspecto | Samsung Wind-Free | Midea EcoMaster | Anwo Ecoflow |
 |---------|-------------------|-----------------|--------------|
-| Precio 12K (todo incluido) | $749.990 | $519.990 | $529.990 |
+| Precio 12K (todo incluido) | $749.990 | $519.990 | $539.990 |
 | Tecnología destacada | Wind-Free (sin corriente directa) | IA (aprende hábitos) | R32 (ecológico) |
 | Ruido interior | ~19 dB | ~22 dB | ~24 dB |
 | App/WiFi | SmartThings (completa) | Midea AIR (buena) | App Anwo (básica) |

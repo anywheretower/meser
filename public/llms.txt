@@ -31,10 +31,10 @@ last-updated: 2026-04-20
 | Midea EcoMaster 12K | 12.000 | $369.990 | $519.990 |
 | Midea EcoMaster 18K | 18.000 | $529.990 | $679.990 |
 | Midea EcoMaster 24K | 24.000 | $649.990 | $799.990 |
-| Anwo Ecoflow 9K | 9.000 | $339.990 | $489.990 |
-| Anwo Ecoflow 12K | 12.000 | $379.990 | $529.990 |
-| Anwo Ecoflow 18K | 18.000 | $549.990 | $699.990 |
-| Anwo Ecoflow 24K | 24.000 | $669.990 | $819.990 |
+| Anwo Ecoflow 9K | 9.000 | $349.990 | $499.990 |
+| Anwo Ecoflow 12K | 12.000 | $389.990 | $539.990 |
+| Anwo Ecoflow 18K | 18.000 | $559.990 | $709.990 |
+| Anwo Ecoflow 24K | 24.000 | $679.990 | $829.990 |
 | Samsung Wind-Free 9K | 9.000 | $549.990 | $699.990 |
 | Samsung Wind-Free 12K | 12.000 | $599.990 | $749.990 |
 | Samsung Wind-Free 18K | 18.000 | $699.990 | $849.990 |

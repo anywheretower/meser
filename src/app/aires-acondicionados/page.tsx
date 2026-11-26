@@ -312,7 +312,7 @@ export default function AiresAcondicionadosPage() {
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {[
-                  ["Precio (12K BTU con instalación)", "$749.990", "$519.990", "$529.990"],
+                  ["Precio (12K BTU con instalación)", "$749.990", "$519.990", "$539.990"],
                   ["Tecnología destacada", "Wind-Free (sin corriente directa)", "IA EcoMaster (aprende hábitos)", "Refrigerante R32 (ecológico)"],
                   ["Eficiencia energética", "Clase A", "Clase A", "Clase A"],
                   ["Nivel de ruido interior", "~19 dB (ultra silencioso)", "~22 dB (muy silencioso)", "~24 dB (silencioso)"],
